@@ -1,0 +1,114 @@
+import UIKit
+
+class StartScreenVC: UIViewController, IsGameVC {
+    
+    @IBOutlet weak var image: UIImageView!
+
+    @IBOutlet weak var text: UILabel!
+    
+    @IBOutlet weak var button: TextButton!
+    
+    @IBOutlet weak var background: UIImageView!
+    private var frameForImage: CGRect? = nil
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureText()
+        configureButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        prepareAnimation()
+        animation()
+    }
+    
+    func prepareAnimation() {
+        self.view.layoutSubviews()
+        self.frameForImage = image.frame
+        self.text.alpha = 0.0
+        self.button.alpha = 0.0
+        self.background.alpha = 0.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    func animation() {
+        image.center = view.center
+        UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
+            self.image.frame = self.frameForImage!
+        }) { (completed) in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.text.alpha = 1.0
+                self.button.alpha = 1.0
+                self.background.alpha = 1.0
+            })
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func configureText() {
+        text.attributedText = createAttributedText(
+            fromString: NSLocalizedString("FunnyMultiTable", comment: ""), 
+            strokeColor: UIColor.init(white: 100/255, alpha: 1), 
+            sizeForIPhone7Plus: 43
+        )
+    }
+    
+    func createAttributedText(fromString string: String, strokeColor: UIColor, sizeForIPhone7Plus size: CGFloat) -> NSAttributedString {
+        let attrStr = NSMutableAttributedString.init(string: string)
+        let attributes: [String : Any] = [
+            NSStrokeWidthAttributeName : -2,
+            NSStrokeColorAttributeName : strokeColor,
+            NSFontAttributeName : UIFont.init(name: "Lato-Black", size: size * UIScreen.main.bounds.width / 414.0)!,
+            NSForegroundColorAttributeName : UIColor.white,
+            ]
+        attrStr.addAttributes(attributes, range: NSRange.init(location: 0, length: string.characters.count))
+        return attrStr
+    }
+    
+    func configureButton() {
+        let titleKey = Game.current.newGame ? "StartScreen.newGame" : "StartScreen.continue"
+        let title = NSLocalizedString(titleKey, comment: "")
+        button.setTitle(titleText: title)
+    }
+    
+    var isGameViewController: Bool {
+        return false
+    }
+    
+    @IBAction func buttonWasPressed(_ sender: TextButton) {
+        if Game.current.newGame {
+            newGame()
+        } else {
+            continueGame()
+        }
+    }
+    
+    func continueGame() {
+        let currentGlobalStagePassing = Game.current.currentGlobalStagePassing
+        switch currentGlobalStagePassing.currentStagePassing!.stage.type {
+        case .introduction:
+            let vc = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)
+            vc.globalStagePassing = currentGlobalStagePassing
+            AppDelegate.current.setRootVC(vc)
+            break
+        default:
+            let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
+            vc.globalStagePassing = currentGlobalStagePassing
+            AppDelegate.current.setRootVC(vc)
+            break
+        }
+    }
+    
+    func newGame() {
+        Game.current.reset()
+        let vc = TutorialVC(nibName: "TutorialVC", bundle: nil)
+        (UIApplication.shared.delegate as! AppDelegate).setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
+    }
+}

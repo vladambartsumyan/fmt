@@ -1,0 +1,103 @@
+"InBetweenMessage.introduction" = "Привет! Давай изучим цифры!";
+"InBetweenMessage.exercise" = "Молодец! А теперь давай решать примеры!";
+"InBetweenMessage.bonus" = "Молодец! Теперь ты знаешь таблицу умножения!";
+"InBetweenMessage.completed" = "Ты справился! Продолжим отрабатывать примеры!";
+
+"Number.Introduction.Question.0" = "На какую цифру похожа шляпа?";
+"Number.Introduction.Question.2" = "На какую цифру похож гусь?";
+"Number.Introduction.Question.3" = "На какую цифру похож воробей?";
+"Number.Introduction.Question.4" = "На какую цифру похожа мышь?";
+"Number.Introduction.Question.5" = "На какую цифру похож заяц?";
+"Number.Introduction.Question.6" = "На какую цифру похож баран?";
+"Number.Introduction.Question.7" = "На какую цифру похож крокодил?";
+"Number.Introduction.Question.8" = "На какую цифру похож медведь?";
+"Number.Introduction.Question.9" = "На какую цифру похож слон?";
+
+"Color.Introduction.Question.0" = "Каким цветом мы закрасим шляпу?";
+"Color.Introduction.Question.2" = "Каким цветом мы закрасим гуся?";
+"Color.Introduction.Question.3" = "Каким цветом мы закрасим воробья?";
+"Color.Introduction.Question.4" = "Каким цветом мы закрасим мышь?";
+"Color.Introduction.Question.5" = "Каким цветом мы закрасим зайца?";
+"Color.Introduction.Question.6" = "Каким цветом мы закрасим барана?";
+"Color.Introduction.Question.7" = "Каким цветом мы закрасим крокодила?";
+"Color.Introduction.Question.8" = "Каким цветом мы закрасим медведя?";
+"Color.Introduction.Question.9" = "Каким цветом мы закрасим слона?";
+
+"Button.next" = "Продолжить";
+
+"Preview.Exercise.Text.22" = "Жили у бабуси два веселых гуся…";
+"Preview.Exercise.Text.23" = "Гусь и птичка нашли червячка…";
+"Preview.Exercise.Text.24" = "Мышонок летит на гусе и смотрит в бинокль…";
+"Preview.Exercise.Text.25" = "Зайчик и гусь раскрасили яичко…";
+"Preview.Exercise.Text.26" = "Гусь с барашком пошли на рыбалку…";
+"Preview.Exercise.Text.27" = "Гусь с крокодилом плавают на лодочке…";
+"Preview.Exercise.Text.28" = "Гусь с медвежонком поймали рыбку…";
+"Preview.Exercise.Text.29" = "Гусь со слонёнком слепили снеговика…";
+"Preview.Exercise.Text.33" = "Одна птичка дарит другой цветок…";
+"Preview.Exercise.Text.34" = "Мышонок с птичкой поют песенку…";
+"Preview.Exercise.Text.35" = "Зайчик просит птичку сорвать яблочко…";
+"Preview.Exercise.Text.36" = "Барашек дарит птичке бантик…";
+"Preview.Exercise.Text.37" = "Птичка чистит крокодилу зубки…";
+"Preview.Exercise.Text.38" = "Птичка с медвежонком собрались в огород…";
+"Preview.Exercise.Text.39" = "Птичка просит у слонёнка зонтик…";
+"Preview.Exercise.Text.44" = "Мышка поливает водой другую мышку…";
+"Preview.Exercise.Text.45" = "Зайчик с мышкой пьют чай…";
+"Preview.Exercise.Text.46" = "Барашек с мышкой идут играть с лошадкой…";
+"Preview.Exercise.Text.47" = "Крокодил катит мышку в коляске…";
+"Preview.Exercise.Text.48" = "Медвежонок подарил мышонку цветок…";
+"Preview.Exercise.Text.49" = "Мышонок со слоненком играют с телефоном…";
+"Preview.Exercise.Text.55" = "Зайчата ставят цветок в вазу…";
+"Preview.Exercise.Text.56" = "Барашек принес зайчику помидор…";
+"Preview.Exercise.Text.57" = "Зайчик с крододилом пускают кораблик в ванне…";
+"Preview.Exercise.Text.58" = "Зайчик играет с медвежонком в шашки…";
+"Preview.Exercise.Text.59" = "Слоненок и зайчик катаются на самокате…";
+"Preview.Exercise.Text.66" = "Один барашек гадает другому на ромашке…";
+"Preview.Exercise.Text.67" = "Барашек заглядывает в окно, чтобы поговорить с крокодилом…";
+"Preview.Exercise.Text.68" = "Барашек дарит медвежонку коробку с тортом…";
+"Preview.Exercise.Text.69" = "Барашек дает слоненку покататься на своем велосипеде…";
+"Preview.Exercise.Text.77" = "Крокодилы смотрят на звезды…";
+"Preview.Exercise.Text.78" = "Крокодил и медвежонок занимаются спортом…";
+"Preview.Exercise.Text.79" = "Крокодил и слоненок нашли старый замок…";
+"Preview.Exercise.Text.88" = "Медвежата собирают грибы в корзинку…";
+"Preview.Exercise.Text.89" = "Медвежонок со слоненком балуются, выдавливают крем из тюбика…";
+"Preview.Exercise.Text.99" = "Слонята играют на музыкальных инструментах…";
+
+"Numbers.Exercise.Text.2" = "Гусь — это цифра …";
+"Numbers.Exercise.Text.3" = "Воробей — это цифра …";
+"Numbers.Exercise.Text.4" = "Мышь — это цифра …";
+"Numbers.Exercise.Text.5" = "Заяц — это цифра …";
+"Numbers.Exercise.Text.6" = "Баран — это цифра …";
+"Numbers.Exercise.Text.7" = "Крокодил — это цифра …";
+"Numbers.Exercise.Text.8" = "Медведь — это цифра ";
+"Numbers.Exercise.Text.9" = "Слон — это цифра …";
+
+"Alert.newGame.title" = "Хотите начать заново?";
+"Alert.newGame.message" = "Прогресс и статистика по приложению будут полностью обнулены";
+"Alert.newGame.yesTitle" = "Да";
+"Alert.newGame.noTitle" = "Нет";
+
+"Statistic.introduction.title" = "Цифры:";
+"Statistic.introduction.mistakes" = "Ошибок:";
+"Statistic.exercises.title" = "Примеры:";
+"Statistic.exercises.elapsedTime" = "Времени затрачено:";
+"Statistic.exercises.mistakes" = "Ошибок:";
+"Statistic.bonus.title" = "Тренажёр";
+"Statistic.bonus.elapsedTime" = "Времени затрачено:";
+"Statistic.bonus.rightAnswers" = "Правильных ответов:";
+"Statistic.bonus.mistakes" = "Ошибок:";
+"Statistic.more" = "Подробнее";
+
+"FunnyMultiTable" = "Весёлая таблица умножения";
+
+"Menu.newGame" = "Начать заново";
+"Menu.continue" = "Продолжить";
+"Menu.offSound" = "Отключить звук";
+"Menu.onSound" = "Включить звук";
+"Menu.feedback" = "Оставить отзыв";
+"Menu.statistic" = "Статистика";
+
+"StartScreen.newGame" = "Начать игру";
+"StartScreen.continue" = "Продолжить";
+
+"Notification.message" = "Привет, давай продолжим играть";
+"Notification.action" = "продолжить играть";

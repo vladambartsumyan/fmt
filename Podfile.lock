@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.4.0)
+  - Moya (8.0.4):
+    - Moya/Core (= 8.0.4)
+  - Moya/Core (8.0.4):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
+  - Result (3.2.2)
+  - SMSegmentView (1.1)
+
+DEPENDENCIES:
+  - Moya
+  - Realm
+  - RealmSwift
+  - SMSegmentView (~> 1.1)
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Moya: a08bc060c7a44eee27447b239ed33a189b641e2b
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  Result: 4edd39003fdccf281d418ee1b006571f70123250
+  SMSegmentView: a99862f36ea73478558ae665c209cb80c0d4f059
+
+PODFILE CHECKSUM: 4108c782e91ac6b0978bb91ba5489335683566a1
+
+COCOAPODS: 1.2.0

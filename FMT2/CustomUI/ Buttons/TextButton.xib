@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextButton" customModule="FMT" customModuleProvider="target">
+            <connections>
+                <outlet property="body" destination="H3s-gt-3EW" id="d8W-9l-sQJ"/>
+                <outlet property="titleDown" destination="rng-C2-e0w" id="YOA-Bk-haU"/>
+                <outlet property="titleLeft" destination="MuP-fs-4Av" id="3kg-Fy-6j9"/>
+                <outlet property="titleRight" destination="0VJ-hr-lzk" id="DY0-q1-lkR"/>
+                <outlet property="titleUp" destination="3Yu-32-cKL" id="NFG-2P-IwV"/>
+                <outlet property="view" destination="iN0-l3-epB" id="hjI-1A-gJI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="67"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenButton" translatesAutoresizingMaskIntoConstraints="NO" id="H3s-gt-3EW">
+                    <rect key="frame" x="0.0" y="0.0" width="321" height="67"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMH-LA-GTg">
+                    <rect key="frame" x="99.5" y="22.5" width="123" height="23"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для родителей" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rng-C2-e0w">
+                            <rect key="frame" x="0.0" y="1.5" width="123" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="highlightedColor" red="0.2156862745" green="0.22829131652857143" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.29750880281690145" colorSpace="custom" customColorSpace="sRGB"/>
+                            <size key="shadowOffset" width="0.0" height="1"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для родителей" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yu-32-cKL">
+                            <rect key="frame" x="0.0" y="1.5" width="123" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="highlightedColor" red="0.2156862745" green="0.22829131650000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.29750880280000003" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для родителей" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuP-fs-4Av">
+                            <rect key="frame" x="0.0" y="1.5" width="123" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="highlightedColor" red="0.2156862745" green="0.22829131650000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.29750880280000003" colorSpace="custom" customColorSpace="sRGB"/>
+                            <size key="shadowOffset" width="-1" height="0.0"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для родителей" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VJ-hr-lzk">
+                            <rect key="frame" x="0.0" y="1.5" width="123" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="highlightedColor" red="0.2156862745" green="0.22829131650000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.29750880280000003" colorSpace="custom" customColorSpace="sRGB"/>
+                            <size key="shadowOffset" width="1" height="0.0"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="0VJ-hr-lzk" firstAttribute="width" secondItem="rng-C2-e0w" secondAttribute="width" id="5Xy-IC-qEj"/>
+                        <constraint firstItem="0VJ-hr-lzk" firstAttribute="height" secondItem="rng-C2-e0w" secondAttribute="height" id="97R-k5-heD"/>
+                        <constraint firstItem="0VJ-hr-lzk" firstAttribute="leading" secondItem="gMH-LA-GTg" secondAttribute="leading" id="9cj-zP-5kB"/>
+                        <constraint firstAttribute="trailing" secondItem="rng-C2-e0w" secondAttribute="trailing" id="HFj-7G-ogI"/>
+                        <constraint firstItem="MuP-fs-4Av" firstAttribute="centerY" secondItem="rng-C2-e0w" secondAttribute="centerY" id="LuL-un-Xlp"/>
+                        <constraint firstItem="3Yu-32-cKL" firstAttribute="centerX" secondItem="rng-C2-e0w" secondAttribute="centerX" id="ZBY-D1-5OI"/>
+                        <constraint firstItem="MuP-fs-4Av" firstAttribute="centerX" secondItem="rng-C2-e0w" secondAttribute="centerX" id="iK8-Nl-n5q"/>
+                        <constraint firstItem="MuP-fs-4Av" firstAttribute="height" secondItem="rng-C2-e0w" secondAttribute="height" id="ivO-1h-ajg"/>
+                        <constraint firstItem="0VJ-hr-lzk" firstAttribute="centerY" secondItem="rng-C2-e0w" secondAttribute="centerY" id="mZj-Wh-PKu"/>
+                        <constraint firstItem="3Yu-32-cKL" firstAttribute="height" secondItem="rng-C2-e0w" secondAttribute="height" id="n6C-Hq-CFq"/>
+                        <constraint firstItem="3Yu-32-cKL" firstAttribute="width" secondItem="rng-C2-e0w" secondAttribute="width" id="qRX-h0-BT4"/>
+                        <constraint firstItem="3Yu-32-cKL" firstAttribute="centerY" secondItem="rng-C2-e0w" secondAttribute="centerY" id="vy1-JQ-W1B"/>
+                        <constraint firstItem="0VJ-hr-lzk" firstAttribute="centerX" secondItem="rng-C2-e0w" secondAttribute="centerX" id="wHD-PX-WOE"/>
+                        <constraint firstItem="MuP-fs-4Av" firstAttribute="width" secondItem="rng-C2-e0w" secondAttribute="width" id="xIt-7Z-PzS"/>
+                        <constraint firstItem="rng-C2-e0w" firstAttribute="centerY" secondItem="gMH-LA-GTg" secondAttribute="centerY" id="yIT-FM-t7F"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gMH-LA-GTg" firstAttribute="centerX" secondItem="H3s-gt-3EW" secondAttribute="centerX" id="FaI-x9-nyi"/>
+                <constraint firstAttribute="bottom" secondItem="H3s-gt-3EW" secondAttribute="bottom" id="Itn-im-q5p"/>
+                <constraint firstAttribute="trailing" secondItem="H3s-gt-3EW" secondAttribute="trailing" id="Kcq-us-hF8"/>
+                <constraint firstItem="H3s-gt-3EW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OJx-Na-FJW"/>
+                <constraint firstItem="gMH-LA-GTg" firstAttribute="centerY" secondItem="H3s-gt-3EW" secondAttribute="centerY" id="PwP-I6-fTA"/>
+                <constraint firstItem="gMH-LA-GTg" firstAttribute="height" secondItem="H3s-gt-3EW" secondAttribute="height" multiplier="1:3" id="bfp-On-qih"/>
+                <constraint firstItem="H3s-gt-3EW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pU7-HI-5gf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-70.5" y="-551.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="GreenButton" width="543" height="123"/>
+    </resources>
+</document>
