@@ -11,10 +11,6 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
     var mode: InBetweenMode!
     
     var globalStagePassing: GlobalStagePassing!
-    
-    var isGameViewController: Bool {
-        return false
-    }
 
     @IBOutlet private weak var message: UILabel!
 

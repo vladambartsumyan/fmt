@@ -1,6 +1,6 @@
 import UIKit
 
-class StartScreenVC: UIViewController, IsGameVC {
+class StartScreenVC: UIViewController {
     
     @IBOutlet weak var image: UIImageView!
 
@@ -78,10 +78,6 @@ class StartScreenVC: UIViewController, IsGameVC {
         button.setTitle(titleText: title)
     }
     
-    var isGameViewController: Bool {
-        return false
-    }
-    
     @IBAction func buttonWasPressed(_ sender: TextButton) {
         if Game.current.newGame {
             newGame()
@@ -98,6 +94,6 @@ class StartScreenVC: UIViewController, IsGameVC {
     func newGame() {
         Game.current.reset()
         let vc = TutorialVC(nibName: "TutorialVC", bundle: nil)
-        (UIApplication.shared.delegate as! AppDelegate).setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
+        AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
     }
 }

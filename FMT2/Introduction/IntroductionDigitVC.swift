@@ -24,10 +24,6 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     
     var newGameWasPressed = false
     
-    var isGameViewController: Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()
@@ -132,6 +128,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
                 switch result {
                 case .endOfGlobalStage:
                     let inBetweenVC = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
+                    inBetweenVC.globalStagePassing = globalStagePassing
                     inBetweenVC.mode = .introductionExamPassed
                     vc = inBetweenVC
                     break

@@ -19,10 +19,6 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     
     var globalStagePassing: GlobalStagePassing!
     
-    var isGameViewController: Bool {
-        return true
-    }
-    
     let digitWidth = 40.0 * UIScreen.main.bounds.width / 414.0
     let signWidth = 30.0 * UIScreen.main.bounds.width / 414.0
     

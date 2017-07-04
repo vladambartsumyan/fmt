@@ -1,6 +1,6 @@
 import UIKit
 
-class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, IsGameVC {
+class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var menu: UICollectionView!
 
@@ -10,9 +10,6 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     private let menuCellReuseId = "menuCellReuseId"
     
-    var isGameViewController: Bool {
-        return false
-    }
     // LIFECYCLE
 
     override func viewDidLoad() {
@@ -103,7 +100,7 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     func statistic() {
         let vc = GeneralStatisticVC(nibName: "GeneralStatisticVC", bundle: nil)
-        (UIApplication.shared.delegate as! AppDelegate).setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
+        AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
     }
 
     func feedback() {

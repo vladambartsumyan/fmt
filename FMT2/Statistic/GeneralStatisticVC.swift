@@ -1,6 +1,6 @@
 import UIKit
 
-class GeneralStatisticVC: UIViewController, IsGameVC {
+class GeneralStatisticVC: UIViewController {
     
     let statistic = Statistic()
     
@@ -152,15 +152,11 @@ class GeneralStatisticVC: UIViewController, IsGameVC {
     
     @IBAction func dismissButtonPressed(_ sender: TopButton) {
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
-        (UIApplication.shared.delegate as! AppDelegate).setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
+        AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
     
     @IBAction func moreButtonTouchUpInside(_ sender: TextButton) {
         let vc = MoreStatisticVC(nibName: "MoreStatisticVC", bundle: nil)
-        (UIApplication.shared.delegate as! AppDelegate).setRootVC(vc)
-    }
-    
-    var isGameViewController: Bool {
-        return false
+        AppDelegate.current.setRootVC(vc)
     }
 }

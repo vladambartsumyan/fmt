@@ -80,7 +80,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
-        (UIApplication.shared.delegate as! AppDelegate).setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
+        AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
     
     @IBAction func newGameTouchUpInside(_ sender: LeapingButton) {
@@ -90,7 +90,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             let vc = TutorialVC(nibName: "TutorialVC", bundle: nil)
             Game.current.reset()
             self.fadeOut {
-                (UIApplication.shared.delegate as! AppDelegate).setRootVC(vc)
+                AppDelegate.current.setRootVC(vc)
             }
         }
         self.present(alert, animated: true, completion: nil)      
@@ -291,10 +291,6 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             }
             break
         }
-    }
-    
-    var isGameViewController: Bool {
-        return true
     }
     
     var beforeExamMode: InBetweenMode {

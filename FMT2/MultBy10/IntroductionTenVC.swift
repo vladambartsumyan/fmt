@@ -1,10 +1,6 @@
 import UIKit
 
 class IntroductionTenVC: FadeInOutVC, IsGameVC {
-
-    var isGameViewController: Bool {
-        return true
-    }
     
     var globalStagePassing: GlobalStagePassing!
     

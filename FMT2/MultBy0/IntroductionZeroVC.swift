@@ -26,10 +26,6 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     
     var newGameWasPressed = false
     
-    var isGameViewController: Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()

@@ -1,6 +1,6 @@
 import UIKit
 
-class TutorialVC: FadeInOutVC, IsGameVC {
+class TutorialVC: FadeInOutVC {
 
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
@@ -36,10 +36,6 @@ class TutorialVC: FadeInOutVC, IsGameVC {
         perform(#selector(showResult), with: nil, afterDelay: 1.5)
         perform(#selector(showExercise), with: nil, afterDelay: 2)
         perform(#selector(showAnswer), with: nil, afterDelay: 2.5)
-    }
-    
-    var isGameViewController: Bool {
-        return true
     }
     
     func showImages() {

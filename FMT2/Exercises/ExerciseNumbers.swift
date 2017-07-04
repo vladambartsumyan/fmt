@@ -43,7 +43,6 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fadeIn()
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -155,20 +154,18 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
             self.view.isUserInteractionEnabled = false
             if !isSecondNumber && exercise.firstDigit != exercise.secondDigit && !skipSecondDigit {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
+                vc.globalStagePassing = globalStagePassing
                 vc.isSecondNumber = true
                 fadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             } else {
                 let vc = ExerciseVC(nibName: "ExerciseVC", bundle: nil)
+                vc.globalStagePassing = globalStagePassing
                 fadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             }
         }
-    }
-    
-    var isGameViewController: Bool {
-        return true
     }
 }

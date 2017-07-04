@@ -26,10 +26,6 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     
     var newGameWasPressed = false
     
-    var isGameViewController: Bool {
-        return true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()
@@ -42,7 +38,6 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fadeIn()
-        self.perform(#selector(self.nextVC), with: nil, afterDelay: 4)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

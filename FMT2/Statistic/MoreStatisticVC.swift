@@ -1,7 +1,7 @@
 import UIKit
 import SMSegmentView
 
-class MoreStatisticVC: UIViewController, SMSegmentViewDelegate, IsGameVC, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class MoreStatisticVC: UIViewController, SMSegmentViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var segmentView: UIView!
     
@@ -297,11 +297,7 @@ class MoreStatisticVC: UIViewController, SMSegmentViewDelegate, IsGameVC, UIColl
     
     @IBAction func dismissButtonPressed(_ sender: Any) {
         let vc = GeneralStatisticVC(nibName: "GeneralStatisticVC", bundle: nil)
-        (UIApplication.shared.delegate as! AppDelegate).setRootVC(vc)
-    }
-    
-    var isGameViewController: Bool {
-        return false
+        AppDelegate.current.setRootVC(vc)
     }
     
     // Collection View

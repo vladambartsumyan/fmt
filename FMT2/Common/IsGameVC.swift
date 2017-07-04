@@ -1,5 +1,5 @@
 import Foundation
 
 protocol IsGameVC {
-    var isGameViewController: Bool { get }
+    var globalStagePassing: GlobalStagePassing! { get set }
 }

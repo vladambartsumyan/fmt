@@ -97,7 +97,7 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
-        (UIApplication.shared.delegate as! AppDelegate).setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
+        AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
     
     @IBAction func newGameTouchUpInside(_ sender: LeapingButton) {    
@@ -107,7 +107,7 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
             let vc = TutorialVC(nibName: "TutorialVC", bundle: nil)
             Game.current.reset()
             self.fadeOut {
-                (UIApplication.shared.delegate as! AppDelegate).setRootVC(vc)
+                AppDelegate.current.setRootVC(vc)
             }
         }
         self.present(alert, animated: true, completion: nil) 
@@ -127,14 +127,11 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     @IBAction func continueButtonTouchUpInside(_ sender: TextButton) {
         self.view.isUserInteractionEnabled = false
         let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
+        vc.globalStagePassing = globalStagePassing
         fadeOut {
-            (UIApplication.shared.delegate as! AppDelegate).setRootVC(vc)
+            AppDelegate.current.setRootVC(vc)
         }
     }   
-    
-    var isGameViewController: Bool {
-        return true
-    }
     
     func reverseImage(firstDigit: Int, secondDigit: Int) -> Bool {
         return [(4, 7), (7, 4)].reduce(false){ $0.0 || ($0.1.0 == firstDigit && $0.1.1 == secondDigit) }

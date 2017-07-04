@@ -2,7 +2,7 @@ import UIKit
 import RealmSwift
 
 class StageMapVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var curGlobalStagePassing: GlobalStagePassing!
