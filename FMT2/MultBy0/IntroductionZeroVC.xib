@@ -54,7 +54,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buy-SK-IE1" userLabel="TopBar">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buy-SK-IE1" userLabel="TopBar">
                     <rect key="frame" x="0.0" y="35" width="414" height="51"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlQ-VH-nsy" customClass="TopButton" customModule="FMT2" customModuleProvider="target">

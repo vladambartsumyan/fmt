@@ -85,27 +85,13 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     func newGameTransition() {
         Game.current.reset()
         let vc = TutorialVC(nibName: "TutorialVC", bundle: nil)
-        (UIApplication.shared.delegate as! AppDelegate).setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
+        AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
     }
 
     func continueGame() {
-//        if let level = Game.lastLevel {
-//            loadLevel(level)
-//        }
+        let vc = StageMapVC(nibName: "StageMapVC", bundle: nil)
+        AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
     }
-    
-//    func loadLevel(_ level: Level) {
-//        switch level.gameStage {
-//        case .introduction:
-//            let vc = IntroductionNumber(nibName: "IntroductionNumber", bundle: nil)
-//            (UIApplication.shared.delegate as! AppDelegate).setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
-//            break
-//        default:
-//            let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
-//            (UIApplication.shared.delegate as! AppDelegate).setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
-//            break
-//        }
-//    }
 
     func switchSounds() {
         let key = "soundOn"

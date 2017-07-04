@@ -43,47 +43,66 @@ class StageMapVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if globalStages[indexPath.row]._type == curGlobalStagePassing._type {
-            loadCurGlobalStage()
+            loadGlobalStage(curGlobalStagePassing)
         } else {
-            
+            let globalStagePassing = globalStages[indexPath.row].globalStage.createGlobalStagePassing()
+            loadGlobalStage(globalStagePassing)
         }
     }
     
-    func loadCurGlobalStage() {
-        let type = StageType(rawValue: curGlobalStagePassing._type)!
+    
+    
+    func loadGlobalStage(_ globalStagePassing: GlobalStagePassing) {
+        let type = StageType(rawValue: globalStagePassing._type)!
         switch type {
         case .introduction:
             let vc = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)
-            vc.globalStagePassing = curGlobalStagePassing
+            vc.globalStagePassing = globalStagePassing
             AppDelegate.current.setRootVC(vc)
             break
         case .multiplicationBy0:
-            let needTutorial = curGlobalStagePassing.index == 0 && curGlobalStagePassing.currentStagePassing!.index == 0
+            let needTutorial = globalStagePassing.index == 0 && globalStagePassing.currentStagePassing!.index == 0
             if needTutorial {
                 let vc = IntroductionZeroVC(nibName: "IntroductionZeroVC", bundle: nil)
-                vc.globalStagePassing = self.curGlobalStagePassing
+                vc.globalStagePassing = globalStagePassing
                 AppDelegate.current.setRootVC(vc)
             } else {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
-                vc.globalStagePassing = self.curGlobalStagePassing
+                vc.globalStagePassing = globalStagePassing
                 vc.skipSecondDigit = true
                 AppDelegate.current.setRootVC(vc)
             }
             break
         case .multiplicationBy1:
-            let needTutorial = curGlobalStagePassing.index == 0 && curGlobalStagePassing.currentStagePassing!.index == 0
+            let needTutorial = globalStagePassing.index == 0 && globalStagePassing.currentStagePassing!.index == 0
             if needTutorial {
                 let vc = IntroductionOneVC(nibName: "IntroductionOneVC", bundle: nil)
-                vc.globalStagePassing = self.curGlobalStagePassing
+                vc.globalStagePassing = globalStagePassing
                 AppDelegate.current.setRootVC(vc)
             } else {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
-                vc.globalStagePassing = self.curGlobalStagePassing
+                vc.globalStagePassing = globalStagePassing
+                vc.skipSecondDigit = true
+                AppDelegate.current.setRootVC(vc)
+            }
+            break
+        case .multiplicationBy10:
+            let needTutorial = globalStagePassing.index == 0 && globalStagePassing.currentStagePassing!.index == 0
+            if needTutorial {
+                let vc = IntroductionTenVC(nibName: "IntroductionTenVC", bundle: nil)
+                vc.globalStagePassing = globalStagePassing
+                AppDelegate.current.setRootVC(vc)
+            } else {
+                let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
+                vc.globalStagePassing = globalStagePassing
                 vc.skipSecondDigit = true
                 AppDelegate.current.setRootVC(vc)
             }
             break
         default:
+            let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
+            vc.globalStagePassing = globalStagePassing
+            AppDelegate.current.setRootVC(vc)
             break
         }
     }

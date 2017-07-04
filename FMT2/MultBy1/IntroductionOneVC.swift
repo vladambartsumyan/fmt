@@ -42,7 +42,7 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fadeIn()
-        
+        self.perform(#selector(self.nextVC), with: nil, afterDelay: 4)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

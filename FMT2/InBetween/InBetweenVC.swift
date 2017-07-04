@@ -10,8 +10,6 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
 
     var mode: InBetweenMode!
     
-//    var gameStage: GameStage!
-    
     var globalStagePassing: GlobalStagePassing!
     
     var isGameViewController: Bool {
@@ -22,8 +20,6 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        message.text = gameStage.InBetweenMessage()
-//        image.image = UIImage.init(named: Game.getColor(forDigit: 2).toString() + "InBetween")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -52,15 +48,15 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
             let vc = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)
             vc.globalStagePassing = self.globalStagePassing
             return vc
-        case .introductionExamPassed, .multByZeroExamPassed, .multByOneExamPassed:
+        case .introductionExamPassed, .multByZeroExamPassed, .multByOneExamPassed, .multByTenExamPassed, .examPassed:
             let vc = StageMapVC(nibName: "StageMapVC", bundle: nil)
             return vc
-        case .afterZeroTutorial, .afterOneTutorial: 
+        case .afterZeroTutorial, .afterOneTutorial, .afterTenTutorial: 
             let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
             vc.globalStagePassing = globalStagePassing
             vc.skipSecondDigit = true
             return vc
-        case .beforeMultByZeroExam, .beforeMultByOneExam:
+        case .beforeMultByZeroExam, .beforeMultByOneExam, .beforeMultByTenExam:
             let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
             vc.globalStagePassing = globalStagePassing
             vc.skipSecondDigit = true
@@ -73,8 +69,14 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
             let vc = IntroductionOneVC(nibName: "IntroductionOneVC", bundle: nil)
             vc.globalStagePassing = globalStagePassing
             return vc
-        default:
-            return UIViewController()
+        case .multByTenExamFailed:
+            let vc = IntroductionTenVC(nibName: "IntroductionTenVC", bundle: nil)
+            vc.globalStagePassing = globalStagePassing
+            return vc
+        case .beforeExam, .examFailed:
+            let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
+            vc.globalStagePassing = globalStagePassing
+            return vc
         }
     }
 
@@ -99,4 +101,11 @@ enum InBetweenMode {
     case beforeMultByOneExam
     case multByOneExamPassed
     case multByOneExamFailed
+    case afterTenTutorial
+    case beforeMultByTenExam
+    case multByTenExamPassed
+    case multByTenExamFailed
+    case beforeExam
+    case examPassed
+    case examFailed
 }

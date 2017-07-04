@@ -91,19 +91,8 @@ class StartScreenVC: UIViewController, IsGameVC {
     }
     
     func continueGame() {
-        let currentGlobalStagePassing = Game.current.currentGlobalStagePassing
-        switch currentGlobalStagePassing.currentStagePassing!.stage.type {
-        case .introduction:
-            let vc = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)
-            vc.globalStagePassing = currentGlobalStagePassing
-            AppDelegate.current.setRootVC(vc)
-            break
-        default:
-            let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
-            vc.globalStagePassing = currentGlobalStagePassing
-            AppDelegate.current.setRootVC(vc)
-            break
-        }
+        let vc = StageMapVC(nibName: "StageMapVC", bundle: nil)
+        AppDelegate.current.setRootVC(vc)
     }
     
     func newGame() {
