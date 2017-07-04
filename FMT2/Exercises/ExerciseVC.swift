@@ -20,20 +20,28 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var fourthVariant: VariantButton!
     
     // Exercise
-    @IBOutlet weak var firstDigitEx: UIImageView!
-    @IBOutlet weak var multiplicationEx: UIImageView!
-    @IBOutlet weak var secondDigitEx: UIImageView!
-    @IBOutlet weak var equalityEx: UIImageView!
-    @IBOutlet weak var answerFirstDigit: UIImageView!
-    @IBOutlet weak var answerSecondDigit: UIImageView!
-    @IBOutlet weak var questionMark: UIImageView!
+    @IBOutlet weak var fst1: UIImageView!
+    @IBOutlet weak var fst2: UIImageView!
+    @IBOutlet weak var mult: UIImageView!
+    @IBOutlet weak var snd1: UIImageView!
+    @IBOutlet weak var snd2: UIImageView!
+    @IBOutlet weak var equality: UIImageView!
+    @IBOutlet weak var res1: UIImageView!
+    @IBOutlet weak var res2: UIImageView!
+    @IBOutlet weak var question: UIImageView!
+    
+    let digitWidth = 40.0 * UIScreen.main.bounds.width / 414.0
+    let signWidth = 30.0 * UIScreen.main.bounds.width / 414.0
     
     var exercise: Exercise!
     var globalStagePassing: GlobalStagePassing!
     var mode: StageMode!
     
-    @IBOutlet weak var answerSecondDigitExWidthToFirstDigitExWidth: NSLayoutConstraint!
-    @IBOutlet weak var answerSecondDigitExWidth: NSLayoutConstraint!
+    @IBOutlet weak var fst2width: NSLayoutConstraint!
+    @IBOutlet weak var snd2width: NSLayoutConstraint!
+    @IBOutlet weak var res2width: NSLayoutConstraint!
+    @IBOutlet weak var mulWidth: NSLayoutConstraint!
+    @IBOutlet weak var eqWidth: NSLayoutConstraint!
     
     var newGameWasPressed = false
     
@@ -89,18 +97,18 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     }
     
     override func getFadeInArray() -> [[UIView]] {
-        return [[firstDigitEx, multiplicationEx, secondDigitEx, equalityEx, questionMark], 
+        return [[fst1, fst2, snd1, snd2, question, equality, mult], 
                 [firstVariant, secondVariant, thirdVariant, fourthVariant]]
     }
     
     override func getFadeOutArray() -> [[UIView]] {
         if newGameWasPressed {
             return [[background, firstDigit, secondDigit, result], 
-                    [firstDigitEx, multiplicationEx, secondDigitEx, equalityEx, questionMark], 
+                    [fst1, fst2, snd1, snd2, question, equality, mult, res1, res2], 
                     [firstVariant, secondVariant, thirdVariant, fourthVariant]]
         }
         return [[background, firstDigit, secondDigit, result], 
-                [firstDigitEx, multiplicationEx, secondDigitEx, equalityEx, answerFirstDigit, answerSecondDigit, questionMark], 
+                [fst1, fst2, snd1, snd2, question, equality, mult, res1, res2], 
                 [firstVariant, secondVariant, thirdVariant, fourthVariant]]
     }
     
@@ -155,19 +163,38 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     }
     
     func configureExercise() {
+        mulWidth.constant = signWidth
+        eqWidth.constant = signWidth
+        
         let res = exercise.firstDigit * exercise.secondDigit
-        if res >= 10 {
-            answerFirstDigit.image = UIImage.init(named: "\(Int(res / 10))exercise")
-            answerSecondDigit.image = UIImage.init(named: "\(res % 10)exercise")
-            answerSecondDigitExWidthToFirstDigitExWidth.priority = 1000
-            answerSecondDigitExWidth.priority = 999
+        
+        if exercise.firstDigit >= 10 {
+            fst2width.constant = digitWidth
+            fst1.image = UIImage(named: "\(Int(exercise.firstDigit / 10))exercise")
+            fst2.image = UIImage(named: "\(exercise.firstDigit % 10)exercise")
         } else {
-            answerFirstDigit.image = UIImage.init(named: "\(res)exercise")
-            answerSecondDigitExWidthToFirstDigitExWidth.priority = 999
-            answerSecondDigitExWidth.priority = 1000
+            fst2width.constant = 0.0
+            fst1.image = UIImage(named: "\(exercise.firstDigit)exercise")
         }
-        firstDigitEx.image = UIImage.init(named: "\(exercise.firstDigit)exercise")
-        secondDigitEx.image = UIImage.init(named: "\(exercise.secondDigit)exercise")
+        
+        if exercise.secondDigit >= 10 {
+            snd2width.constant = digitWidth
+            snd1.image = UIImage(named: "\(Int(exercise.secondDigit / 10))exercise")
+            snd2.image = UIImage(named: "\(exercise.secondDigit % 10)exercise")
+        } else {
+            snd2width.constant = 0.0
+            snd1.image = UIImage(named: "\(exercise.secondDigit)exercise")
+        }
+        
+        if res >= 10 {
+            res2width.constant = digitWidth
+            res1.image = UIImage(named: "\(Int(res / 10))exercise")
+            res2.image = UIImage(named: "\(res % 10)exercise")
+        } else {
+            res2width.constant = 0.0
+            res1.image = UIImage(named: "\(res)exercise")
+        }
+        
     }
     
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
@@ -209,18 +236,18 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         var t = CGAffineTransform.identity
         t = t.translatedBy(x: 0.0, y: 40.0)
         t = t.scaledBy(x: 0.5, y: 1.0)
-        self.answerFirstDigit.alpha = 0.0
-        self.answerSecondDigit.alpha = 0.0
-        answerFirstDigit.isHidden = false
-        answerSecondDigit.isHidden = false
-        answerFirstDigit.transform = t
-        answerSecondDigit.transform = t
+        self.res1.alpha = 0.0
+        self.res2.alpha = 0.0
+        res1.isHidden = false
+        res2.isHidden = false
+        res1.transform = t
+        res2.transform = t
         UIView.animate(withDuration: 0.2, animations: { 
-            self.answerFirstDigit.transform = CGAffineTransform.identity
-            self.answerSecondDigit.transform = CGAffineTransform.identity
-            self.questionMark.alpha = 0.0
-            self.answerFirstDigit.alpha = 1.0
-            self.answerSecondDigit.alpha = 1.0
+            self.res1.transform = CGAffineTransform.identity
+            self.res2.transform = CGAffineTransform.identity
+            self.question.alpha = 0.0
+            self.res1.alpha = 1.0
+            self.res2.alpha = 1.0
         }) { (_) in
             handler()
         }

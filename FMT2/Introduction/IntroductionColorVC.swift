@@ -108,6 +108,7 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     }
     
     func animateSelectPencil(_ pencil: UIImageView) {
+        self.view.isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.2, animations: {
             pencil.transform = CGAffineTransform.init(translationX: 0, y: -25)
             self.selectedPencil?.transform = CGAffineTransform.init(translationX: 0, y: 0)
@@ -116,6 +117,7 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
                 self.replaceLabelToButton()
             }
             self.selectedPencil = pencil
+            self.view.isUserInteractionEnabled = true
         }
     }
     

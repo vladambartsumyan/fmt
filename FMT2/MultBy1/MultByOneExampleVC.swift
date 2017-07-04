@@ -23,9 +23,18 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
         return true
     }
     
+    let digitWidth = 40.0 * UIScreen.main.bounds.width / 414.0
+    let signWidth = 30.0 * UIScreen.main.bounds.width / 414.0
+    
+    @IBOutlet weak var firstDigitWidth: NSLayoutConstraint!
+    @IBOutlet weak var equalityWidth: NSLayoutConstraint!
+    @IBOutlet weak var secondDigitWidth: NSLayoutConstraint!
+    @IBOutlet weak var multiplicationWidth: NSLayoutConstraint!
+    @IBOutlet weak var resultWidth: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureExerciseSize()
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(Game.current.currentGlobalStagePassing.progress)
@@ -39,6 +48,11 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
         super.viewDidAppear(animated)
         fadeIn()
         perform(#selector(nextScreen), with: nil, afterDelay: 3)
+    }
+    
+    func configureExerciseSize() {
+        [firstDigitWidth, secondDigitWidth, resultWidth].forEach{$0?.constant = self.digitWidth}
+        [equalityWidth, multiplicationWidth].forEach{$0?.constant = self.signWidth} 
     }
     
     override func getFadeInArray() -> [[UIView]] {
