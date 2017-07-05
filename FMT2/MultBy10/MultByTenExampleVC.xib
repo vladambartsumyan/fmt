@@ -46,19 +46,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQZ-4z-dQV" userLabel="Exercise">
-                    <rect key="frame" x="65.666666666666686" y="499.33333333333337" width="284" height="47.333333333333371"/>
+                    <rect key="frame" x="65.666666666666686" y="499.33333333333337" width="284" height="47.000000000000114"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPI-WV-TIF">
-                            <rect key="frame" x="0.0" y="0.0" width="36" height="47.333333333333314"/>
+                            <rect key="frame" x="0.0" y="0.0" width="36" height="47.000000000000057"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8exercise" translatesAutoresizingMaskIntoConstraints="NO" id="Tnc-Mr-azZ">
-                                    <rect key="frame" x="36" y="0.0" width="0.0" height="47.333333333333314"/>
+                                    <rect key="frame" x="36" y="0.0" width="0.0" height="47.000000000000057"/>
                                     <constraints>
                                         <constraint firstAttribute="width" id="spB-ck-coe"/>
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2exercise" translatesAutoresizingMaskIntoConstraints="NO" id="AvA-B5-ia7">
-                                    <rect key="frame" x="0.0" y="0.0" width="40" height="47.333333333333314"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="47.000000000000057"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="AvA-B5-ia7" secondAttribute="height" multiplier="70:83" id="TNt-Us-fnL"/>
                                         <constraint firstAttribute="width" constant="40" id="o6F-QF-dLC"/>
@@ -77,17 +77,17 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGP-BG-P3U">
-                            <rect key="frame" x="81.999999999999986" y="0.0" width="76.000000000000014" height="47.333333333333314"/>
+                            <rect key="frame" x="81.999999999999986" y="0.0" width="76.000000000000014" height="47.000000000000057"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1exercise" translatesAutoresizingMaskIntoConstraints="NO" id="Ddj-Ca-NNx">
-                                    <rect key="frame" x="0.0" y="0.0" width="40" height="47.333333333333314"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="47.000000000000057"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="TSL-DK-0T2"/>
                                         <constraint firstAttribute="width" secondItem="Ddj-Ca-NNx" secondAttribute="height" multiplier="70:83" id="bjq-so-Rxu"/>
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0exercise" translatesAutoresizingMaskIntoConstraints="NO" id="9cC-RP-Fqx">
-                                    <rect key="frame" x="36" y="0.0" width="40" height="47.333333333333314"/>
+                                    <rect key="frame" x="36" y="0.0" width="40" height="47.000000000000057"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="hgy-Vm-lpQ"/>
                                     </constraints>
@@ -105,17 +105,17 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuO-c7-PFx">
-                            <rect key="frame" x="204" y="0.0" width="80" height="47.333333333333314"/>
+                            <rect key="frame" x="204" y="0.0" width="80" height="47.000000000000057"/>
                             <subviews>
                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2exercise" translatesAutoresizingMaskIntoConstraints="NO" id="dnc-QD-gdI">
-                                    <rect key="frame" x="0.0" y="0.0" width="40" height="47.333333333333314"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="47.000000000000057"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="dnc-QD-gdI" secondAttribute="height" multiplier="70:83" id="5mM-kU-C1K"/>
                                         <constraint firstAttribute="width" constant="40" id="jLR-cP-v2R"/>
                                     </constraints>
                                 </imageView>
                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0exercise" translatesAutoresizingMaskIntoConstraints="NO" id="a0X-FH-Ryb">
-                                    <rect key="frame" x="40" y="0.0" width="40" height="47.333333333333314"/>
+                                    <rect key="frame" x="40" y="0.0" width="40" height="47.000000000000057"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="XRp-wX-zNv"/>
                                     </constraints>
@@ -132,14 +132,14 @@
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xexercise" translatesAutoresizingMaskIntoConstraints="NO" id="CHf-ws-qee">
-                            <rect key="frame" x="44" y="16.000000000000057" width="29.999999999999986" height="31.333333333333258"/>
+                            <rect key="frame" x="44" y="16.000000000000057" width="29.999999999999986" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="CHf-ws-qee" secondAttribute="height" multiplier="18:19" id="NYj-a8-M1l"/>
                                 <constraint firstAttribute="width" constant="30" id="cIN-AV-7aL"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="=exercise" translatesAutoresizingMaskIntoConstraints="NO" id="Imz-LM-IOn">
-                            <rect key="frame" x="166" y="16.000000000000057" width="30.000000000000028" height="31.333333333333258"/>
+                            <rect key="frame" x="166" y="16.000000000000057" width="30.000000000000028" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="6Fs-uz-nXC"/>
                                 <constraint firstAttribute="width" secondItem="Imz-LM-IOn" secondAttribute="height" multiplier="18:19" id="zb1-Sh-2wi"/>

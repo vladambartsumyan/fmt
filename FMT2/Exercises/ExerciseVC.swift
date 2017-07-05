@@ -305,7 +305,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         case .multiplicationBy10: 
             return .beforeMultByTenExam
         default:
-            fatalError()
+            return .beforeExam
         }
     }
     
@@ -321,7 +321,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         case .multiplicationBy10:
             return .multByTenExamPassed
         default:
-            fatalError()
+            return .examPassed
         }
     }
     
@@ -337,7 +337,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         case .multiplicationBy10:
             return .multByTenExamFailed
         default:
-            fatalError()
+            return .examFailed
         }
     }
 }
