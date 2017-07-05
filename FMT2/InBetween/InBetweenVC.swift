@@ -73,6 +73,14 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
             let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
             vc.globalStagePassing = globalStagePassing
             return vc
+        case .afterPermutationTutorial:
+            let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
+            vc.globalStagePassing = globalStagePassing
+            return vc
+        case .permutationExamFailed:
+            let vc = IntroductionPermutationVC(nibName: "IntroductionPermutationVC", bundle: nil)
+            vc.globalStagePassing = globalStagePassing
+            return vc
         }
     }
 
@@ -104,4 +112,6 @@ enum InBetweenMode {
     case beforeExam
     case examPassed
     case examFailed
+    case afterPermutationTutorial
+    case permutationExamFailed
 }

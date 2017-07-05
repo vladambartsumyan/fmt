@@ -83,7 +83,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
-        let color = Game.current.getColor(forDigit: exercise.firstDigit)
+        let color = globalStagePassing.currentStagePassing!.stage.mode == .exam ? Game.current.getColor(forDigit: exercise.firstDigit) : .clear
         animalImageView.image = UIImage.init(named: "\(exercise.firstDigit)\(color.rawValue)")
         digitImageView.image = UIImage.init(named: "\(exercise.firstDigit)")
     }

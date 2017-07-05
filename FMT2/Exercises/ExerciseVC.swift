@@ -336,6 +336,8 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             return .multByOneExamFailed
         case .multiplicationBy10:
             return .multByTenExamFailed
+        case .permutation:
+            return .permutationExamFailed
         default:
             return .examFailed
         }

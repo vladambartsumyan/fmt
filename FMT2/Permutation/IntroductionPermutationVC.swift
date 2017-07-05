@@ -49,7 +49,7 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     }
     
     func nextVC() {
-        let vc = MultByTenExampleVC(nibName: "MultByTenExampleVC", bundle: nil)
+        let vc = PermutationExampleVC(nibName: "PermutationExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         fadeOut {
             AppDelegate.current.setRootVC(vc)

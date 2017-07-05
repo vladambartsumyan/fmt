@@ -51,7 +51,7 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
     }
     
     func configureExerciseSize() {
-        [firstDigitWidth, secondDigitWidth, secondDigitWidth2, resultWidth, resultWidth2].forEach{$0?.constant = self.digitWidth}
+        [firstDigitWidth, secondDigitWidth, resultWidth].forEach{$0?.constant = self.digitWidth}
         [equalityWidth, multiplicationWidth].forEach{$0?.constant = self.signWidth} 
     }
     
@@ -71,7 +71,7 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
     func nextScreen() {
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
-        vc.mode = .afterTenTutorial
+        vc.mode = .afterPermutationTutorial
         fadeOut {
             AppDelegate.current.setRootVC(vc)
         }

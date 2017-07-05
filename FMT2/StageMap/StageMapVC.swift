@@ -97,6 +97,18 @@ class StageMapVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 AppDelegate.current.setRootVC(vc)
             }
             break
+        case .permutation:
+            let needTutorial = globalStagePassing.index == 0 && globalStagePassing.currentStagePassing!.index == 0
+            if needTutorial {
+                let vc = IntroductionPermutationVC(nibName: "IntroductionPermutationVC", bundle: nil)
+                vc.globalStagePassing = globalStagePassing
+                AppDelegate.current.setRootVC(vc)
+            } else {
+                let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
+                vc.globalStagePassing = globalStagePassing
+                AppDelegate.current.setRootVC(vc)
+            }
+            break
         default:
             let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
             vc.globalStagePassing = globalStagePassing
