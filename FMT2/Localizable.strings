@@ -1,7 +1,23 @@
-"InBetweenMessage.introduction" = "Привет! Давай изучим цифры!";
-"InBetweenMessage.exercise" = "Молодец! А теперь давай решать примеры!";
-"InBetweenMessage.bonus" = "Молодец! Теперь ты знаешь таблицу умножения!";
-"InBetweenMessage.completed" = "Ты справился! Продолжим отрабатывать примеры!";
+"InBetween.message.beforeIntroductionExam" = "А теперь давай сдадим экзамен";
+"InBetween.message.introductionExamFailed" = "Ты делаешь ошибки, давай изучим примеры заново";
+"InBetween.message.introductionExamPassed" = "Отлично! А теперь давай перейдем к следующему уровню";
+"InBetween.message.afterZeroTutorial" = "А теперь давай решать примеры";
+"InBetween.message.beforeMultByZeroExam" = "А теперь давай сдадим экзамен";
+"InBetween.message.multByZeroExamPassed" = "Отлично! А теперь давай перейдем к следующему уровню";
+"InBetween.message.multByZeroExamFailed" = "Ты делаешь ошибки, давай изучим примеры заново";
+"InBetween.message.afterOneTutorial" = "А теперь давай решать примеры";
+"InBetween.message.beforeMultByOneExam" = "А теперь давай сдадим экзамен";
+"InBetween.message.multByOneExamPassed" = "Отлично! А теперь давай перейдем к следующему уровню";
+"InBetween.message.multByOneExamFailed" = "Ты делаешь ошибки, давай изучим примеры заново";
+"InBetween.message.afterTenTutorial" = "А теперь давай решать примеры";
+"InBetween.message.beforeMultByTenExam" = "А теперь давай сдадим экзамен";
+"InBetween.message.multByTenExamPassed" = "Отлично! А теперь давай перейдем к следующему уровню";
+"InBetween.message.multByTenExamFailed" = "Ты делаешь ошибки, давай изучим примеры заново";
+"InBetween.message.beforeExam" = "А теперь давай сдадим экзамен";
+"InBetween.message.examPassed" = "Отлично! А теперь давай перейдем к следующему уровню";
+"InBetween.message.examFailed" = "Ты делаешь ошибки, давай изучим примеры заново";
+"InBetween.message.afterPermutationTutorial" = "А теперь давай решать примеры";
+"InBetween.message.permutationExamFailed" = "Ты делаешь ошибки, давай изучим примеры заново";
 
 "Number.Introduction.Question.0" = "На какую цифру похожа шляпа?";
 "Number.Introduction.Question.1" = "На какую цифру похоже зеркало?";
@@ -107,3 +123,5 @@
 "Tutorial.one.text" = "При умножении любого числа на один будет то же число";
 "Tutorial.ten.text" = "При умножении любого числа на 10 нужно приписать к этому числу ноль";
 "Tutorial.permutation.text" = "От перемены мест множителей произведение не меняется";
+
+

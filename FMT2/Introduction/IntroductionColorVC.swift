@@ -37,7 +37,6 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fadeIn()
-//        Game.updateTimeMarker()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

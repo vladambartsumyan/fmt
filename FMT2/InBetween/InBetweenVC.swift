@@ -4,7 +4,7 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
 
     @IBOutlet weak var bubble: UIImageView!
 
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var gooseImage: UIImageView!
 
     private var timer: Timer!
 
@@ -16,6 +16,8 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureImage()
+        configureMessage()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -32,6 +34,15 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
         super.didReceiveMemoryWarning()
     }
 
+    func configureImage() {
+        let color = Game.current.getColor(forDigit: 2)
+        gooseImage.image = UIImage.init(named: "\(color.rawValue)InBetween")
+    }
+    
+    func configureMessage() {
+        self.message.text = NSLocalizedString("InBetween.message.\(mode.rawValue)", comment: "")
+    }
+    
     func dismissSelf() {
         self.fadeOut {
             AppDelegate.current.setRootVC(self.nextVC())
@@ -85,15 +96,15 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
     }
 
     override func getFadeInArray() -> [[UIView]] {
-        return [[message, bubble], [image]]
+        return [[message, bubble], [gooseImage]]
     }
     
     override func getFadeOutArray() -> [[UIView]] {
-        return [[message, bubble], [image]]
+        return [[message, bubble], [gooseImage]]
     }
 }
 
-enum InBetweenMode {
+enum InBetweenMode: String {
     case beforeIntroductionExam
     case introductionExamFailed
     case introductionExamPassed

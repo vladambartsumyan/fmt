@@ -96,6 +96,16 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     }
 
     func configureImages() {
+        if globalStagePassing.type == .multiplicationBy0 {
+            let mult = max(exercise.firstDigit, exercise.secondDigit)
+            let multColor = Game.current.getColor(forDigit: mult)
+            firstDigit.image = UIImage.init(named: "\(mult)\(multColor.rawValue)")
+            background.image = nil
+            secondDigit.image = nil
+            result.image = nil
+            return
+        }
+        
         let fst = min(exercise.firstDigit, exercise.secondDigit)
         let snd = max(exercise.firstDigit, exercise.secondDigit)
         let reverseImage = ReverseImageOrder.check(firstDigit: fst, secondDigit: snd)
@@ -138,7 +148,6 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
         if let index = allDigits.index(of: digit) {
             allDigits.remove(at: index)
         }
-        
         for ind in 0..<variantButtons.count {
             if ind == i {
                 continue

@@ -33,16 +33,23 @@ class FadeInOutVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    func fadeIn() {
+    func fadeIn(_ handler: ((()) -> ())? = nil) {
         let viewsForAnimate = getFadeInArray()
         var delay: TimeInterval = 0.2
-        for viewArray in viewsForAnimate {
+        for ind in 0..<viewsForAnimate.count {
             UIView.animate(withDuration: 0.5, delay: delay, animations: {
-                for view in viewArray {
+                for view in viewsForAnimate[ind] {
                     view.alpha = 1.0
                 }
-            })
+            }) { _ in
+                if ind == 0 {
+                    handler?()
+                }
+            }
             delay += 0.2
+        }
+        if viewsForAnimate.count == 0 {
+            handler?()
         }
     }
 
@@ -64,14 +71,14 @@ class FadeInOutVC: UIViewController {
                         view.alpha = 0.0
                     }
                 }) { completed in
-                    if (ind == 0) {
+                    if ind == 0 {
                         handler?()
                     }
                 }
             })
             delay += 0.2
         }
-        if (array.count == 0) {
+        if array.count == 0 {
             handler?()
         }
     }

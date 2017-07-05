@@ -57,6 +57,19 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fadeIn()
+        if self.globalStagePassing.type == .multiplicationBy0 {
+            self.secondDigit.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)
+            self.result.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)
+            UIView.animate(withDuration: 0.8) {
+                self.secondDigit.transform = .identity
+                self.secondDigit.alpha = 1.0
+                self.result.transform = .identity
+                self.result.alpha = 1.0
+            }
+            UIView.animate(withDuration: 0.3, delay: 0.5, animations: {
+                self.firstDigit.alpha = 0.0
+            })
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,6 +126,22 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImages() {
+        if globalStagePassing.type == .multiplicationBy0 {
+            let mult = max(exercise.firstDigit, exercise.secondDigit)
+            let multColor = Game.current.getColor(forDigit: mult)
+            firstDigit.image = UIImage.init(named: "\(mult)\(multColor.rawValue)")
+            
+            let zeroColor = Game.current.getColor(forDigit: 0)
+            secondDigit.image = UIImage.init(named: "\(0)\(zeroColor.rawValue)")
+            secondDigit.alpha = 0.0
+            
+            result.image = mode == .exam ? nil : UIImage.init(named: "0")
+            result.alpha = 0.0
+            
+            background.image = nil
+            return
+        }
+        
         let fst = min(exercise.firstDigit, exercise.secondDigit)
         let snd = max(exercise.firstDigit, exercise.secondDigit)
         let reverseImage = ReverseImageOrder.check(firstDigit: fst, secondDigit: snd)

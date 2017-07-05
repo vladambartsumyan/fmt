@@ -49,48 +49,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="SPu-pO-gAu">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydO-NO-04u" userLabel="TopBar">
-                    <rect key="frame" x="0.0" y="35" width="414" height="50.666666666666671"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzb-Og-bVe" customClass="TopButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="21" y="0.0" width="50.666666666666671" height="50.666666666666671"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="fzb-Og-bVe" secondAttribute="height" id="wM5-AE-f2X"/>
-                            </constraints>
-                            <connections>
-                                <action selector="menuTouchUpInside:" destination="-1" eventType="touchUpInside" id="Ppm-Tf-Oma"/>
-                            </connections>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCS-NL-SV7" customClass="TopButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="343.33333333333326" y="0.0" width="50.666666666666686" height="50.666666666666671"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="yCS-NL-SV7" secondAttribute="height" id="4ic-wg-49O"/>
-                            </constraints>
-                            <connections>
-                                <action selector="newGameTouchUpInside:" destination="-1" eventType="touchUpInside" id="CEm-1n-kzT"/>
-                            </connections>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUd-a6-kpe" customClass="ProgressBar" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="92.666666666666686" y="0.0" width="229.66666666666663" height="50.666666666666671"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="JUd-a6-kpe" firstAttribute="leading" secondItem="fzb-Og-bVe" secondAttribute="trailing" constant="21" id="1Mj-tx-aZN"/>
-                        <constraint firstItem="JUd-a6-kpe" firstAttribute="height" secondItem="ydO-NO-04u" secondAttribute="height" id="1PP-1U-JnE"/>
-                        <constraint firstItem="fzb-Og-bVe" firstAttribute="top" secondItem="ydO-NO-04u" secondAttribute="top" id="BYV-M8-Tnh"/>
-                        <constraint firstAttribute="bottom" secondItem="yCS-NL-SV7" secondAttribute="bottom" id="Hrv-ux-3Jo"/>
-                        <constraint firstItem="fzb-Og-bVe" firstAttribute="leading" secondItem="ydO-NO-04u" secondAttribute="leading" constant="21" id="X7v-L5-3Ir"/>
-                        <constraint firstItem="yCS-NL-SV7" firstAttribute="top" secondItem="ydO-NO-04u" secondAttribute="top" id="cqZ-zl-Yez"/>
-                        <constraint firstAttribute="bottom" secondItem="fzb-Og-bVe" secondAttribute="bottom" id="d42-is-w8R"/>
-                        <constraint firstItem="JUd-a6-kpe" firstAttribute="centerY" secondItem="ydO-NO-04u" secondAttribute="centerY" id="fVN-iy-TcU"/>
-                        <constraint firstAttribute="trailing" secondItem="yCS-NL-SV7" secondAttribute="trailing" constant="20" id="oEW-NJ-hsn"/>
-                        <constraint firstItem="yCS-NL-SV7" firstAttribute="leading" secondItem="JUd-a6-kpe" secondAttribute="trailing" constant="21" id="wt0-1H-fsS"/>
-                    </constraints>
-                </view>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lmg-fo-mvN">
                     <rect key="frame" x="0.0" y="85.666666666666686" width="414" height="65.333333333333314"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -302,6 +260,48 @@
                         <constraint firstItem="VY8-P5-fhH" firstAttribute="bottom" secondItem="Iq5-tu-xtm" secondAttribute="bottom" id="jXA-U1-gnW"/>
                         <constraint firstAttribute="trailing" secondItem="hVF-ij-HLR" secondAttribute="trailing" id="l7l-VS-JgM"/>
                         <constraint firstItem="Iq5-tu-xtm" firstAttribute="leading" secondItem="TWa-z4-dK6" secondAttribute="trailing" constant="8" id="oSr-md-ZTO"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydO-NO-04u" userLabel="TopBar">
+                    <rect key="frame" x="0.0" y="35" width="414" height="50.666666666666671"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzb-Og-bVe" customClass="TopButton" customModule="FMT2" customModuleProvider="target">
+                            <rect key="frame" x="21" y="0.0" width="50.666666666666671" height="50.666666666666671"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="fzb-Og-bVe" secondAttribute="height" id="wM5-AE-f2X"/>
+                            </constraints>
+                            <connections>
+                                <action selector="menuTouchUpInside:" destination="-1" eventType="touchUpInside" id="Ppm-Tf-Oma"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCS-NL-SV7" customClass="TopButton" customModule="FMT2" customModuleProvider="target">
+                            <rect key="frame" x="343.33333333333326" y="0.0" width="50.666666666666686" height="50.666666666666671"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="yCS-NL-SV7" secondAttribute="height" id="4ic-wg-49O"/>
+                            </constraints>
+                            <connections>
+                                <action selector="newGameTouchUpInside:" destination="-1" eventType="touchUpInside" id="CEm-1n-kzT"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUd-a6-kpe" customClass="ProgressBar" customModule="FMT2" customModuleProvider="target">
+                            <rect key="frame" x="92.666666666666686" y="0.0" width="229.66666666666663" height="50.666666666666671"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="JUd-a6-kpe" firstAttribute="leading" secondItem="fzb-Og-bVe" secondAttribute="trailing" constant="21" id="1Mj-tx-aZN"/>
+                        <constraint firstItem="JUd-a6-kpe" firstAttribute="height" secondItem="ydO-NO-04u" secondAttribute="height" id="1PP-1U-JnE"/>
+                        <constraint firstItem="fzb-Og-bVe" firstAttribute="top" secondItem="ydO-NO-04u" secondAttribute="top" id="BYV-M8-Tnh"/>
+                        <constraint firstAttribute="bottom" secondItem="yCS-NL-SV7" secondAttribute="bottom" id="Hrv-ux-3Jo"/>
+                        <constraint firstItem="fzb-Og-bVe" firstAttribute="leading" secondItem="ydO-NO-04u" secondAttribute="leading" constant="21" id="X7v-L5-3Ir"/>
+                        <constraint firstItem="yCS-NL-SV7" firstAttribute="top" secondItem="ydO-NO-04u" secondAttribute="top" id="cqZ-zl-Yez"/>
+                        <constraint firstAttribute="bottom" secondItem="fzb-Og-bVe" secondAttribute="bottom" id="d42-is-w8R"/>
+                        <constraint firstItem="JUd-a6-kpe" firstAttribute="centerY" secondItem="ydO-NO-04u" secondAttribute="centerY" id="fVN-iy-TcU"/>
+                        <constraint firstAttribute="trailing" secondItem="yCS-NL-SV7" secondAttribute="trailing" constant="20" id="oEW-NJ-hsn"/>
+                        <constraint firstItem="yCS-NL-SV7" firstAttribute="leading" secondItem="JUd-a6-kpe" secondAttribute="trailing" constant="21" id="wt0-1H-fsS"/>
                     </constraints>
                 </view>
             </subviews>

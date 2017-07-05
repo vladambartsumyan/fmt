@@ -31,14 +31,13 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
         configureLevel()
         configureQuestion()
         configureTopBar()
-        configureVariantPanel()
         configureImage()
+        configureVariantPanel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fadeIn()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -85,9 +84,9 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
-//        let color = Game.current.getColor(forDigit: 0)
-//        animalImageView.image = UIImage.init(named: "0\(color.rawValue)")
-//        digitImageView.image = UIImage.init(named: "0")
+        let color = Game.current.getColor(forDigit: 0)
+        animalImageView.image = UIImage.init(named: "0\(color.rawValue)")
+        digitImageView.image = UIImage.init(named: "0")
     }
     
     override func getFadeInArray() -> [[UIView]] {
