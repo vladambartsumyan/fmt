@@ -124,7 +124,8 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
         if !sender.isWrongAnswer {
             digitGuessed = true
             fadeOut(array: [[digitImageView], [question], [variantButton1, variantButton2, variantButton3, variantButton4]]) {
-                self.question.text = NSLocalizedString("Tutorial.multBy.1", comment: "")
+                self.question.transform = .identity
+                self.question.text = NSLocalizedString("Tutorial.one.text", comment: "")
                 self.fadeInView(self.question)
                 self.perform(#selector(self.nextVC), with: nil, afterDelay: 4)
             }

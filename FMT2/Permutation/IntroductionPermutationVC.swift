@@ -1,6 +1,6 @@
 import UIKit
 
-class IntroductionTenVC: FadeInOutVC, IsGameVC {
+class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     
     var globalStagePassing: GlobalStagePassing!
     
@@ -19,7 +19,7 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
         configureTopBar()
         configureText()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -37,9 +37,9 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     }
     
     func configureText() {
-        textLabel.text = NSLocalizedString("Tutorial.ten.text", comment: "")
+        textLabel.text = NSLocalizedString("Tutorial.permutation.text", comment: "")
     }
-
+    
     override func getFadeInArray() -> [[UIView]] {
         return [[result, secondDigit, firstDigit, background], [textLabel]]
     }

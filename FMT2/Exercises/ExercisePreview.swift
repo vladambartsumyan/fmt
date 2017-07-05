@@ -85,7 +85,8 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     }
     
     func configureText() {
-        textLabel.text = NSLocalizedString("Preview.Exercise.Text.\(exercise.firstDigit)\(exercise.secondDigit)", comment: "")
+        let keys: (Int, Int) = globalStagePassing.type == .permutation ? (exercise.secondDigit, exercise.firstDigit) : (exercise.firstDigit, exercise.secondDigit)
+        textLabel.text = NSLocalizedString("Preview.Exercise.Text.\(keys.0)\(keys.1)", comment: "")
     }
     
     func configureTopBar() {

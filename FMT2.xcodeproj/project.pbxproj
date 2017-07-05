@@ -129,6 +129,10 @@
 		65DE92731F0A3FE6009DDB77 /* ReverseImageOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE92721F0A3FE6009DDB77 /* ReverseImageOrder.swift */; };
 		65DE927A1F0A492F009DDB77 /* StageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE92781F0A492F009DDB77 /* StageCell.swift */; };
 		65DE927B1F0A492F009DDB77 /* StageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65DE92791F0A492F009DDB77 /* StageCell.xib */; };
+		65F6054B1F0CE1F6004421E5 /* PermutationExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F605491F0CE1F6004421E5 /* PermutationExampleVC.swift */; };
+		65F6054C1F0CE1F6004421E5 /* PermutationExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F6054A1F0CE1F6004421E5 /* PermutationExampleVC.xib */; };
+		65F6054F1F0CE35C004421E5 /* IntroductionPermutationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6054D1F0CE35C004421E5 /* IntroductionPermutationVC.swift */; };
+		65F605501F0CE35C004421E5 /* IntroductionPermutationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F6054E1F0CE35C004421E5 /* IntroductionPermutationVC.xib */; };
 		A6CB13A3330107AEFCBADA23 /* Pods_FMT2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECB2962FE3E71B7E2BB64BE /* Pods_FMT2.framework */; };
 /* End PBXBuildFile section */
 
@@ -257,6 +261,10 @@
 		65DE92721F0A3FE6009DDB77 /* ReverseImageOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReverseImageOrder.swift; path = Common/ReverseImageOrder.swift; sourceTree = "<group>"; };
 		65DE92781F0A492F009DDB77 /* StageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StageCell.swift; path = StageMap/StageCell.swift; sourceTree = "<group>"; };
 		65DE92791F0A492F009DDB77 /* StageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StageCell.xib; path = StageMap/StageCell.xib; sourceTree = "<group>"; };
+		65F605491F0CE1F6004421E5 /* PermutationExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PermutationExampleVC.swift; path = Permutation/PermutationExampleVC.swift; sourceTree = "<group>"; };
+		65F6054A1F0CE1F6004421E5 /* PermutationExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PermutationExampleVC.xib; path = Permutation/PermutationExampleVC.xib; sourceTree = "<group>"; };
+		65F6054D1F0CE35C004421E5 /* IntroductionPermutationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroductionPermutationVC.swift; path = Permutation/IntroductionPermutationVC.swift; sourceTree = "<group>"; };
+		65F6054E1F0CE35C004421E5 /* IntroductionPermutationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroductionPermutationVC.xib; path = Permutation/IntroductionPermutationVC.xib; sourceTree = "<group>"; };
 		8A08864C89FD1F606BCB458B /* Pods-FMT2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMT2.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMT2/Pods-FMT2.release.xcconfig"; sourceTree = "<group>"; };
 		8EEB223F15EDE19A1172DD45 /* Pods-FMT2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMT2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMT2/Pods-FMT2.debug.xcconfig"; sourceTree = "<group>"; };
 		BECB2962FE3E71B7E2BB64BE /* Pods_FMT2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMT2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -573,6 +581,7 @@
 				65DE92611F0A2D50009DDB77 /* MultBy0 */,
 				656BCDEC1F0A711200F81798 /* MultBy1 */,
 				653481A31F0BD03F0094A9CB /* MultBy10 */,
+				65F605481F0CE114004421E5 /* Permutation */,
 				65104DC61F051AE100547F35 /* Exercises */,
 				656222AE1F0538C400B6C64B /* Statistic */,
 			);
@@ -604,6 +613,17 @@
 				65DE92671F0A2DAA009DDB77 /* IntroductionZeroVC.xib */,
 			);
 			name = MultBy0;
+			sourceTree = "<group>";
+		};
+		65F605481F0CE114004421E5 /* Permutation */ = {
+			isa = PBXGroup;
+			children = (
+				65F6054D1F0CE35C004421E5 /* IntroductionPermutationVC.swift */,
+				65F6054E1F0CE35C004421E5 /* IntroductionPermutationVC.xib */,
+				65F605491F0CE1F6004421E5 /* PermutationExampleVC.swift */,
+				65F6054A1F0CE1F6004421E5 /* PermutationExampleVC.xib */,
+			);
+			name = Permutation;
 			sourceTree = "<group>";
 		};
 		A58D1124A11084874685B2A8 /* Pods */ = {
@@ -732,10 +752,12 @@
 				650EF3151F04E6AD0047C30C /* Lato-Thin.ttf in Resources */,
 				650EF30A1F04E6AD0047C30C /* Lato-HairlineItalic.ttf in Resources */,
 				650EF30F1F04E6AD0047C30C /* Lato-LightItalic.ttf in Resources */,
+				65F6054C1F0CE1F6004421E5 /* PermutationExampleVC.xib in Resources */,
 				653481AB1F0BD4350094A9CB /* MultByTenExampleVC.xib in Resources */,
 				65104DB61F0510A400547F35 /* StageMapVC.xib in Resources */,
 				650EF3051F04E6AD0047C30C /* Lato-Black.ttf in Resources */,
 				656222D81F053D1200B6C64B /* InBetweenVC.xib in Resources */,
+				65F605501F0CE35C004421E5 /* IntroductionPermutationVC.xib in Resources */,
 				656222CA1F05390100B6C64B /* FooterView.xib in Resources */,
 				650EF3121F04E6AD0047C30C /* Lato-Regular.ttf in Resources */,
 				656222B61F0538EB00B6C64B /* MoreStatisticVC.xib in Resources */,
@@ -805,6 +827,7 @@
 				656222D21F05390100B6C64B /* TimeRatingCell.swift in Sources */,
 				650EF2E81F04E6070047C30C /* SoundHelper.swift in Sources */,
 				659277DF1F03C718009BC04E /* StageType.swift in Sources */,
+				65F6054B1F0CE1F6004421E5 /* PermutationExampleVC.swift in Sources */,
 				650EF2DF1F04E58C0047C30C /* CGPoint+Operations.swift in Sources */,
 				650EF2C81F04E4450047C30C /* MenuButton.swift in Sources */,
 				656222CC1F05390100B6C64B /* HeaderView.swift in Sources */,
@@ -842,6 +865,7 @@
 				650EF2E31F04E58C0047C30C /* Int+Random.swift in Sources */,
 				656222D71F053D1200B6C64B /* InBetweenVC.swift in Sources */,
 				656222C91F05390100B6C64B /* FooterView.swift in Sources */,
+				65F6054F1F0CE35C004421E5 /* IntroductionPermutationVC.swift in Sources */,
 				650EF2AE1F0409830047C30C /* ServerTaskType.swift in Sources */,
 				65104DD11F051AF300547F35 /* ExerciseVC.swift in Sources */,
 				650EF2B91F04E3AF0047C30C /* IsGameVC.swift in Sources */,

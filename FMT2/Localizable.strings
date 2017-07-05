@@ -4,6 +4,7 @@
 "InBetweenMessage.completed" = "Ты справился! Продолжим отрабатывать примеры!";
 
 "Number.Introduction.Question.0" = "На какую цифру похожа шляпа?";
+"Number.Introduction.Question.1" = "На какую цифру похоже зеркало?";
 "Number.Introduction.Question.2" = "На какую цифру похож гусь?";
 "Number.Introduction.Question.3" = "На какую цифру похож воробей?";
 "Number.Introduction.Question.4" = "На какую цифру похожа мышь?";
@@ -102,4 +103,7 @@
 "Notification.message" = "Привет, давай продолжим играть";
 "Notification.action" = "продолжить играть";
 
-"Introduction.ten.text" = "При умножении любого числа на 10 нужно приписать к этому числу ноль";
+"Tutorial.zero.text" = "При умножении любого числа на ноль будет ноль";
+"Tutorial.one.text" = "При умножении любого числа на один будет то же число";
+"Tutorial.ten.text" = "При умножении любого числа на 10 нужно приписать к этому числу ноль";
+"Tutorial.permutation.text" = "От перемены мест множителей произведение не меняется";

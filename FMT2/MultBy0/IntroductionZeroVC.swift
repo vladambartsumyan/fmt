@@ -85,9 +85,9 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
-        let color = Game.current.getColor(forDigit: 0)
-        animalImageView.image = UIImage.init(named: "0\(color.rawValue)")
-        digitImageView.image = UIImage.init(named: "0")
+//        let color = Game.current.getColor(forDigit: 0)
+//        animalImageView.image = UIImage.init(named: "0\(color.rawValue)")
+//        digitImageView.image = UIImage.init(named: "0")
     }
     
     override func getFadeInArray() -> [[UIView]] {
@@ -126,7 +126,8 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
         if !sender.isWrongAnswer {
             digitGuessed = true
             fadeOut(array: [[digitImageView], [question], [variantButton1, variantButton2, variantButton3, variantButton4]]) {
-                self.question.text = NSLocalizedString("Tutorial.multBy.0", comment: "")
+                self.question.transform = .identity
+                self.question.text = NSLocalizedString("Tutorial.zero.text", comment: "")
                 self.fadeInView(self.question)
                 self.perform(#selector(self.nextVC), with: nil, afterDelay: 4)
             }

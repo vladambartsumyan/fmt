@@ -50,8 +50,6 @@ class StageMapVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    
-    
     func loadGlobalStage(_ globalStagePassing: GlobalStagePassing) {
         let type = StageType(rawValue: globalStagePassing._type)!
         switch type {
