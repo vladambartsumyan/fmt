@@ -48,6 +48,14 @@ class StageMapVC: UIViewController {
         
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        drawLine()
+    }
+    
+    override func viewDidLayoutSubviews() {
+    }
+    
     func updateButtons() {
         for ind in 0..<globalStages.count {
             configureButton(mapButtons[ind], withGlobalStagePassing: globalStages[ind])
@@ -179,6 +187,7 @@ class StageMapVC: UIViewController {
             break
         }
     }
+    
     @IBAction func buttonPressed(_ sender: MapButton) {
         let index = mapButtons.index(of: sender)!
         let stage = globalStages[index]
@@ -188,5 +197,89 @@ class StageMapVC: UIViewController {
             let globalStagePassing = globalStages[index].globalStage.createGlobalStagePassing()
             loadGlobalStage(globalStagePassing)
         }
+    }
+    
+    @IBOutlet weak var map: UIView!
+    
+    func drawLine() {
+        let d = button0.frame.width
+        var points: [CGPoint] = []
+        
+        
+        points.append(button0.convert(pointOnCircle(withRadius: d/2, angle: 90, shift: 8), to: map))
+        points.append(button1.convert(pointOnCircle(withRadius: d/2, angle: 190, shift: 0), to: map))
+        points.append(button1.convert(pointOnCircle(withRadius: d/2, angle: 10, shift: 10), to: map))
+        points.append(button2.convert(pointOnCircle(withRadius: d/2, angle: 190, shift: 0), to: map))
+        points.append(button2.convert(pointOnCircle(withRadius: d/2, angle: 105, shift: 8), to: map))
+        points.append(button3.convert(pointOnCircle(withRadius: d/2, angle: -10, shift: 0), to: map))
+        points.append(button3.convert(pointOnCircle(withRadius: d/2, angle: 165, shift: 10), to: map))
+        points.append(button4.convert(pointOnCircle(withRadius: d/2, angle: -10, shift: 0), to: map))
+        points.append(button4.convert(pointOnCircle(withRadius: d/2, angle: 65, shift: 10), to: map))
+        points.append(button5.convert(pointOnCircle(withRadius: d/2, angle: -165, shift: 0), to: map))
+        points.append(button5.convert(pointOnCircle(withRadius: d/2, angle: 7, shift: 10), to: map))
+        points.append(button6.convert(pointOnCircle(withRadius: d/2, angle: -120, shift: 0), to: map))
+        points.append(button6.convert(pointOnCircle(withRadius: d/2, angle: 145, shift: 10), to: map))
+        points.append(button7.convert(pointOnCircle(withRadius: d/2, angle: -18, shift: 0), to: map))
+        points.append(button7.convert(pointOnCircle(withRadius: d/2, angle: 178, shift: 10), to: map))
+        points.append(button8.convert(pointOnCircle(withRadius: d/2, angle: -30, shift: 0), to: map))
+        points.append(button8.convert(pointOnCircle(withRadius: d/2, angle: 65, shift: 10), to: map))
+        points.append(button9.convert(pointOnCircle(withRadius: d/2, angle: -165, shift: 0), to: map))
+        points.append(button9.convert(pointOnCircle(withRadius: d/2, angle: 7, shift: 10), to: map))
+        points.append(button10.convert(pointOnCircle(withRadius: d/2, angle: -120, shift: 0), to: map))
+        points.append(button10.convert(pointOnCircle(withRadius: d/2, angle: 145, shift: 10), to: map))
+        points.append(button11.convert(pointOnCircle(withRadius: d/2, angle: -18, shift: 0), to: map))
+        points.append(button11.convert(pointOnCircle(withRadius: d/2, angle: 176, shift: 10), to: map))
+        points.append(button12.convert(pointOnCircle(withRadius: d/2, angle: -70, shift: 0), to: map))
+        
+        var controlPoints: [CGPoint] = []
+        controlPoints.append(CGPoint(x: points[0].x, y: (points[1].y + points[0].y) / 2.0))
+        controlPoints.append(CGPoint(x: (points[2].x + points[3].x) / 2, y: (points[2].y + points[3].y) / 2.0 - 5))
+        controlPoints.append(CGPoint(x: (points[4].x + points[5].x) / 2, y: (points[4].y + points[5].y) / 2.0 + 5))
+        controlPoints.append(CGPoint(x: (points[6].x + points[7].x) / 2, y: (points[6].y + points[7].y) / 2.0 - 5))
+        controlPoints.append(CGPoint(x: (points[8].x + points[9].x) / 2, y: (points[8].y + points[9].y) / 2.0 + 5))
+        controlPoints.append(CGPoint(x: (points[10].x + points[11].x) / 2, y: (points[10].y + points[11].y) / 2.0 - 5))
+        controlPoints.append(CGPoint(x: (points[12].x + points[13].x) / 2, y: (points[12].y + points[13].y) / 2.0))
+        controlPoints.append(CGPoint(x: (points[14].x + points[15].x) / 2, y: (points[14].y + points[15].y) / 2.0 - 5))
+        controlPoints.append(CGPoint(x: (points[16].x + points[17].x) / 2, y: (points[16].y + points[17].y) / 2.0 + 5))
+        controlPoints.append(CGPoint(x: (points[18].x + points[19].x) / 2, y: (points[18].y + points[19].y) / 2.0 - 5))
+        controlPoints.append(CGPoint(x: (points[20].x + points[21].x) / 2, y: (points[20].y + points[21].y) / 2.0))
+        controlPoints.append(CGPoint(x: points[23].x, y: (points[22].y + points[23].y) / 2.0))
+        
+        for ind in 0..<controlPoints.count {
+            let reached = mapButtons[ind].mode == .passed
+            addDashedLineOnMap(fromPoint: points[ind * 2], toPoint: points[ind * 2 + 1], reached: reached,  withControlPoint: controlPoints[ind])
+        }
+        
+    }
+    
+    func addDashedLineOnMap(fromPoint a: CGPoint, toPoint b: CGPoint, reached: Bool, withControlPoint c1: CGPoint, andControlPoint c2: CGPoint? = nil) {
+        let color = reached ? UIColor.init(red255: 164, green: 237, blue: 255).cgColor : UIColor.init(red255: 225, green: 225, blue: 225).cgColor
+        let path = UIBezierPath()
+        path.move(to: a)
+        if let c2 = c2 {
+            path.addCurve(to: b, controlPoint1: c1, controlPoint2: c2)
+        } else {
+            path.addQuadCurve(to: b, controlPoint: c1)
+        }
+        
+        let layer = CAShapeLayer()
+        layer.lineWidth = 7
+        layer.strokeColor = color
+        layer.fillColor = UIColor.clear.cgColor
+        layer.lineJoin = kCALineJoinRound
+        layer.lineCap = kCALineJoinRound
+        layer.lineDashPattern = [ 0.0, 16]
+        layer.path = path.cgPath
+        if self.map.layer.sublayers != nil {
+            self.map.layer.sublayers!.insert(layer, at: 0)
+        } else {
+            self.map.layer.addSublayer(layer)
+        }
+    }
+    
+    func pointOnCircle(withRadius radius: CGFloat, angle: CGFloat, shift: CGFloat) -> CGPoint {
+        let radians = angle * CGFloat.pi / 180
+        let center = CGPoint(x: radius, y: radius)
+        return CGPoint(x: center.x + (radius + shift) * cos(radians), y: center.y + (radius + shift) * sin(radians))
     }
 }
