@@ -20,6 +20,7 @@
                 <outlet property="firstVariant" destination="Mwd-0D-iPi" id="fmv-ZH-EG4"/>
                 <outlet property="fourthVariant" destination="hfM-kO-P0B" id="d8w-SA-nU2"/>
                 <outlet property="fst1" destination="QeH-Ua-Sng" id="phU-4D-Wnu"/>
+                <outlet property="fst1width" destination="sK7-05-nx2" id="ibb-Bd-tfi"/>
                 <outlet property="fst2" destination="MN0-fJ-6tZ" id="m58-hj-emB"/>
                 <outlet property="fst2width" destination="Hdk-O2-sm8" id="Djd-Mp-CYq"/>
                 <outlet property="menuButton" destination="fzb-Og-bVe" id="Ay0-zO-6gf"/>
@@ -28,13 +29,16 @@
                 <outlet property="newGameButton" destination="yCS-NL-SV7" id="KDD-IU-tOM"/>
                 <outlet property="progressBar" destination="JUd-a6-kpe" id="Vhs-j4-WHk"/>
                 <outlet property="question" destination="oiI-gv-g9k" id="ns0-Kx-u3i"/>
+                <outlet property="questionWidth" destination="TRz-gj-kzD" id="IJW-6q-oUw"/>
                 <outlet property="res1" destination="wQ8-sZ-BjZ" id="PKB-Vy-bT4"/>
+                <outlet property="res1width" destination="f2m-dK-J8H" id="65v-6H-Zhy"/>
                 <outlet property="res2" destination="CdF-xU-nqc" id="cP9-zu-rHN"/>
                 <outlet property="res2width" destination="amx-Dm-De4" id="Vxp-IF-CVs"/>
                 <outlet property="result" destination="vN6-5U-18p" id="vzL-gL-oRz"/>
                 <outlet property="secondDigit" destination="R59-HR-owU" id="2wO-0c-y6B"/>
                 <outlet property="secondVariant" destination="XaY-4N-XXp" id="VQR-dd-lLF"/>
                 <outlet property="snd1" destination="ilq-PQ-Hgk" id="OLm-Al-rTD"/>
+                <outlet property="snd1width" destination="NPd-fs-xF3" id="zee-C1-Rbb"/>
                 <outlet property="snd2" destination="0RN-Cs-P1V" id="oZ1-ia-ogP"/>
                 <outlet property="snd2width" destination="tGm-KR-fax" id="GCY-I6-kGe"/>
                 <outlet property="thirdVariant" destination="xW3-ZM-N0u" id="gn0-xE-TxS"/>

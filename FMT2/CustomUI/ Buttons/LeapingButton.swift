@@ -77,8 +77,11 @@ class LeapingButton: UIControl {
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        self.sendActions(for: .touchCancel)
+        self.normalize {
+            self.sendActions(for: .touchCancel)
+        }
     }
+    
 
     func sendTouchUpInside() {
         self.sendActions(for: .touchUpInside)

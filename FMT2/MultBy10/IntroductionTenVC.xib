@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -31,17 +31,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ikx-2H-RrZ">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2za-T5-yGC" userLabel="TopBar">
-                    <rect key="frame" x="0.0" y="35" width="414" height="50.666666666666671"/>
+                    <rect key="frame" x="0.0" y="35" width="320" height="39"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iow-8u-YFa" customClass="TopButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="21" y="0.0" width="50.666666666666671" height="50.666666666666671"/>
+                            <rect key="frame" x="21" y="0.0" width="39" height="39"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="iow-8u-YFa" secondAttribute="height" id="EQ8-7u-yE6"/>
@@ -51,7 +51,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxe-Pk-o2B" customClass="TopButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="343.33333333333326" y="0.0" width="50.666666666666686" height="50.666666666666671"/>
+                            <rect key="frame" x="261" y="0.0" width="39" height="39"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Jxe-Pk-o2B" secondAttribute="height" id="oum-zE-NrO"/>
@@ -61,7 +61,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UO1-GO-atu" customClass="ProgressBar" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="92.666666666666686" y="0.0" width="229.66666666666663" height="50.666666666666671"/>
+                            <rect key="frame" x="81" y="0.0" width="159" height="39"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
@@ -79,33 +79,33 @@
                         <constraint firstItem="Jxe-Pk-o2B" firstAttribute="top" secondItem="2za-T5-yGC" secondAttribute="top" id="z9D-Ry-FKa"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Медвежонок со слоненком балуются, выдавливают крем из тюбика…" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="8C0-as-5Nn">
-                    <rect key="frame" x="62.333333333333343" y="485" width="291" height="126"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="При умножении любого числа на 10 нужно приписать к этому числу ноль" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="8C0-as-5Nn">
+                    <rect key="frame" x="47.5" y="384" width="225" height="130"/>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="27"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x23background" translatesAutoresizingMaskIntoConstraints="NO" id="4qC-g5-0M7" userLabel="BackgroundImage">
-                    <rect key="frame" x="46" y="151.66666666666669" width="323.33333333333331" height="323.33333333333337"/>
+                    <rect key="frame" x="35.5" y="124.5" width="250" height="249.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="4qC-g5-0M7" secondAttribute="height" multiplier="1:1" id="D2d-tc-ORi"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x233blue" translatesAutoresizingMaskIntoConstraints="NO" id="51e-8V-lBf" userLabel="FirstDigit">
-                    <rect key="frame" x="46" y="151.66666666666669" width="323.33333333333331" height="323.33333333333337"/>
+                    <rect key="frame" x="35.5" y="124.5" width="250" height="249.5"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x232green" translatesAutoresizingMaskIntoConstraints="NO" id="T4U-iH-pXw" userLabel="SecondDigit">
-                    <rect key="frame" x="46" y="151.66666666666669" width="323.33333333333331" height="323.33333333333337"/>
+                    <rect key="frame" x="35.5" y="124.5" width="250" height="249.5"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x23result" translatesAutoresizingMaskIntoConstraints="NO" id="yUZ-EA-j4v" userLabel="Result">
-                    <rect key="frame" x="46" y="151.66666666666669" width="323.33333333333331" height="323.33333333333337"/>
+                    <rect key="frame" x="35.5" y="124.5" width="250" height="249.5"/>
                 </imageView>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IY-6D-0qv">
-                    <rect key="frame" x="0.0" y="85.666666666666657" width="414" height="65.999999999999972"/>
+                    <rect key="frame" x="0.0" y="74" width="320" height="50.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMH-4V-Bzm">
-                    <rect key="frame" x="0.0" y="701" width="414" height="34.333333333333371"/>
+                    <rect key="frame" x="0.0" y="541.5" width="320" height="26.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -131,6 +131,7 @@
                 <constraint firstItem="8C0-as-5Nn" firstAttribute="centerX" secondItem="ikx-2H-RrZ" secondAttribute="centerX" id="R5j-ut-C9w"/>
                 <constraint firstItem="4qC-g5-0M7" firstAttribute="height" secondItem="ikx-2H-RrZ" secondAttribute="height" multiplier="200:456" id="TeM-kV-HZ0"/>
                 <constraint firstItem="51e-8V-lBf" firstAttribute="width" secondItem="4qC-g5-0M7" secondAttribute="width" id="U44-WB-8Q2"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8C0-as-5Nn" secondAttribute="bottom" constant="15" id="VKV-iG-O6y"/>
                 <constraint firstItem="7IY-6D-0qv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XYC-84-hns"/>
                 <constraint firstItem="51e-8V-lBf" firstAttribute="height" secondItem="4qC-g5-0M7" secondAttribute="height" id="YAj-i8-m4T"/>
                 <constraint firstItem="51e-8V-lBf" firstAttribute="centerX" secondItem="4qC-g5-0M7" secondAttribute="centerX" id="ZH1-eb-58I"/>

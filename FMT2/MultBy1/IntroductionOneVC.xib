@@ -166,6 +166,7 @@
                 <constraint firstItem="OCn-VB-Gc7" firstAttribute="width" secondItem="vCC-3r-FWF" secondAttribute="width" multiplier="0.8" id="5PI-wv-l7B"/>
                 <constraint firstItem="ANI-rj-t8q" firstAttribute="centerX" secondItem="vCC-3r-FWF" secondAttribute="centerX" id="C3u-kC-aGg"/>
                 <constraint firstItem="buy-SK-IE1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="Eyf-fU-Sui"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OCn-VB-Gc7" secondAttribute="bottom" constant="15" id="KVX-xG-fqf"/>
                 <constraint firstItem="buy-SK-IE1" firstAttribute="height" secondItem="vCC-3r-FWF" secondAttribute="height" multiplier="57:830" id="Kfr-GW-07v"/>
                 <constraint firstItem="OCn-VB-Gc7" firstAttribute="centerX" secondItem="8Ze-aP-UEt" secondAttribute="centerX" id="Q6F-iy-o7V"/>
                 <constraint firstItem="buy-SK-IE1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S9G-48-HhQ"/>

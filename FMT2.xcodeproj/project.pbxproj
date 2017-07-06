@@ -81,6 +81,8 @@
 		65104DD01F051AF300547F35 /* ExercisePreview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65104DCA1F051AF300547F35 /* ExercisePreview.xib */; };
 		65104DD11F051AF300547F35 /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104DCB1F051AF300547F35 /* ExerciseVC.swift */; };
 		65104DD21F051AF300547F35 /* ExerciseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65104DCC1F051AF300547F35 /* ExerciseVC.xib */; };
+		652983F01F0E2C5D0003CE55 /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652983EE1F0E2C5D0003CE55 /* MapButton.swift */; };
+		652983F11F0E2C5D0003CE55 /* MapButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 652983EF1F0E2C5D0003CE55 /* MapButton.xib */; };
 		653481A61F0BD0800094A9CB /* IntroductionTenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653481A41F0BD0800094A9CB /* IntroductionTenVC.swift */; };
 		653481A71F0BD0800094A9CB /* IntroductionTenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653481A51F0BD0800094A9CB /* IntroductionTenVC.xib */; };
 		653481AA1F0BD4350094A9CB /* MultByTenExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653481A81F0BD4350094A9CB /* MultByTenExampleVC.swift */; };
@@ -211,6 +213,8 @@
 		65104DCA1F051AF300547F35 /* ExercisePreview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExercisePreview.xib; path = Exercises/ExercisePreview.xib; sourceTree = "<group>"; };
 		65104DCB1F051AF300547F35 /* ExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseVC.swift; path = Exercises/ExerciseVC.swift; sourceTree = "<group>"; };
 		65104DCC1F051AF300547F35 /* ExerciseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExerciseVC.xib; path = Exercises/ExerciseVC.xib; sourceTree = "<group>"; };
+		652983EE1F0E2C5D0003CE55 /* MapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapButton.swift; path = "CustomUI/ Buttons/MapButton.swift"; sourceTree = "<group>"; };
+		652983EF1F0E2C5D0003CE55 /* MapButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapButton.xib; path = "CustomUI/ Buttons/MapButton.xib"; sourceTree = "<group>"; };
 		653481A41F0BD0800094A9CB /* IntroductionTenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroductionTenVC.swift; path = MultBy10/IntroductionTenVC.swift; sourceTree = "<group>"; };
 		653481A51F0BD0800094A9CB /* IntroductionTenVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroductionTenVC.xib; path = MultBy10/IntroductionTenVC.xib; sourceTree = "<group>"; };
 		653481A81F0BD4350094A9CB /* MultByTenExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultByTenExampleVC.swift; path = MultBy10/MultByTenExampleVC.swift; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 				650EF2C41F04E4450047C30C /* TopButton.xib */,
 				650EF2C51F04E4450047C30C /* VariantButton.swift */,
 				650EF2C61F04E4450047C30C /* VariantButton.xib */,
+				652983EE1F0E2C5D0003CE55 /* MapButton.swift */,
+				652983EF1F0E2C5D0003CE55 /* MapButton.xib */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -710,6 +716,7 @@
 				650EF3101F04E6AD0047C30C /* Lato-Medium.ttf in Resources */,
 				650EF3131F04E6AD0047C30C /* Lato-Semibold.ttf in Resources */,
 				656222CD1F05390100B6C64B /* HeaderView.xib in Resources */,
+				652983F11F0E2C5D0003CE55 /* MapButton.xib in Resources */,
 				650EF30D1F04E6AD0047C30C /* Lato-Italic.ttf in Resources */,
 				656222CF1F05390100B6C64B /* MistakesAndRightAnswersCell.xib in Resources */,
 				65DE927B1F0A492F009DDB77 /* StageCell.xib in Resources */,
@@ -835,6 +842,7 @@
 				650EF2941F03D2C20047C30C /* DigitColor.swift in Sources */,
 				650EF29C1F03F1A60047C30C /* ExercisePassing.swift in Sources */,
 				650EF2DE1F04E58C0047C30C /* Array+RandomElement.swift in Sources */,
+				652983F01F0E2C5D0003CE55 /* MapButton.swift in Sources */,
 				650EF2981F03E6F40047C30C /* Stage.swift in Sources */,
 				650EF2AA1F0409830047C30C /* CustomEncoding.swift in Sources */,
 				659277E21F03CFE7009BC04E /* Exercise.swift in Sources */,

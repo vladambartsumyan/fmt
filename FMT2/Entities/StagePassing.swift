@@ -34,4 +34,14 @@ class StagePassing: Object {
             index += 1
         }
     }
+    
+    func save() {
+        let realm = try! Realm()
+        try! realm.write {
+            for exercisePassing in exercises {
+                realm.add(exercisePassing)
+            }
+            realm.add(self)
+        }
+    }
 }

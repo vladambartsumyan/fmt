@@ -102,4 +102,10 @@ class GlobalStagePassing: Object {
             elapsedTime.createdAt = now
         }
     }
+    
+    func saveStages() {
+        for stagePassing in stagesPassing {
+            stagePassing.save()
+        }
+    }
 }

@@ -66,6 +66,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
+        self.newGameWasPressed = true
         fadeOut {
             AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
         }
@@ -85,7 +86,12 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     }
     
     override func getFadeInArray() -> [[UIView]] {
-        return [[textLabel], [firstVariant, secondVariant, thirdVariant, fourthVariant]]
+        let needPreview = !([StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10].contains(globalStagePassing.type))
+        if needPreview {
+            return [[textLabel], [firstVariant, secondVariant, thirdVariant, fourthVariant]]
+        } else {
+            return [[background, firstDigit, secondDigit, result], [textLabel], [firstVariant, secondVariant, thirdVariant, fourthVariant]]
+        }
     }
     
     override func getFadeOutArray() -> [[UIView]] {

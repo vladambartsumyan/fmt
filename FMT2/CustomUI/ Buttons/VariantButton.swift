@@ -27,7 +27,6 @@ class VariantButton: LeapingButton {
 
     func setTitleSize() {
         let font = UIFont.init(name: "Lato-Black", size: 37 * UIScreen.main.bounds.width / 414)
-        // where 50 is size of font for button with 100 points width.
         self.titleUp.font = font
         self.titleDown.font = font
         self.titleRight.font = font

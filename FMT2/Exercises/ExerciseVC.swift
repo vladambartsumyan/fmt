@@ -38,10 +38,14 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     var mode: StageMode!
     
     @IBOutlet weak var fst2width: NSLayoutConstraint!
+    @IBOutlet weak var fst1width: NSLayoutConstraint!
     @IBOutlet weak var snd2width: NSLayoutConstraint!
+    @IBOutlet weak var snd1width: NSLayoutConstraint!
     @IBOutlet weak var res2width: NSLayoutConstraint!
+    @IBOutlet weak var res1width: NSLayoutConstraint!
     @IBOutlet weak var mulWidth: NSLayoutConstraint!
     @IBOutlet weak var eqWidth: NSLayoutConstraint!
+    @IBOutlet weak var questionWidth: NSLayoutConstraint!
     
     var newGameWasPressed = false
     
@@ -194,6 +198,10 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     func configureExercise() {
         mulWidth.constant = signWidth
         eqWidth.constant = signWidth
+        fst1width.constant = digitWidth
+        snd1width.constant = digitWidth
+        res1width.constant = digitWidth
+        questionWidth.constant = digitWidth
         
         let res = exercise.firstDigit * exercise.secondDigit
         
@@ -231,11 +239,11 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             self.view.isUserInteractionEnabled = false
             rightAnswerAppearing { self.nextScreen() }
         } else {
-            let specialLevel = ([StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10].contains(globalStagePassing.type))
+            let needPreview = !([StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10].contains(globalStagePassing.type))
             let result = globalStagePassing.mistake()
             if mode == .exam {
                 if result == .normal {
-                    if !specialLevel {
+                    if needPreview {
                         let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
                         vc.globalStagePassing = globalStagePassing
                         fadeOut {
