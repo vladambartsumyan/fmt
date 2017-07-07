@@ -24,6 +24,8 @@ class StageMapVC: UIViewController {
     var globalStages: Results<GlobalStagePassing>!
     var token: NotificationToken!
     
+    var proportion: CGFloat = UIScreen.main.bounds.width / 414
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapButtons.append(button0)
@@ -48,12 +50,17 @@ class StageMapVC: UIViewController {
         
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        layoutAllViews(inView: view)
         drawLine()
     }
     
-    override func viewDidLayoutSubviews() {
+    func layoutAllViews(inView view: UIView) {
+        for subview in view.subviews {
+            layoutAllViews(inView: subview)
+        }
+        view.layoutSubviews()
     }
     
     func updateButtons() {
@@ -254,30 +261,28 @@ class StageMapVC: UIViewController {
     
     func addDashedLineOnMap(fromPoint a: CGPoint, toPoint b: CGPoint, reached: Bool, withControlPoint c1: CGPoint, andControlPoint c2: CGPoint? = nil) {
         let color = reached ? UIColor.init(red255: 164, green: 237, blue: 255).cgColor : UIColor.init(red255: 225, green: 225, blue: 225).cgColor
+        
         let path = UIBezierPath()
         path.move(to: a)
-        if let c2 = c2 {
-            path.addCurve(to: b, controlPoint1: c1, controlPoint2: c2)
-        } else {
+        c2 != nil ?
+            path.addCurve(to: b, controlPoint1: c1, controlPoint2: c2!) :
             path.addQuadCurve(to: b, controlPoint: c1)
-        }
         
         let layer = CAShapeLayer()
-        layer.lineWidth = 7
+        layer.lineWidth = 7 * proportion
         layer.strokeColor = color
         layer.fillColor = UIColor.clear.cgColor
         layer.lineJoin = kCALineJoinRound
         layer.lineCap = kCALineJoinRound
-        layer.lineDashPattern = [ 0.0, 16]
+        layer.lineDashPattern = [0.0, NSNumber(value: Double(16 * proportion))]
         layer.path = path.cgPath
-        if self.map.layer.sublayers != nil {
-            self.map.layer.sublayers!.insert(layer, at: 0)
-        } else {
+        self.map.layer.sublayers != nil ?
+            self.map.layer.sublayers!.insert(layer, at: 0) :
             self.map.layer.addSublayer(layer)
-        }
     }
     
     func pointOnCircle(withRadius radius: CGFloat, angle: CGFloat, shift: CGFloat) -> CGPoint {
+        let shift = shift * proportion
         let radians = angle * CGFloat.pi / 180
         let center = CGPoint(x: radius, y: radius)
         return CGPoint(x: center.x + (radius + shift) * cos(radians), y: center.y + (radius + shift) * sin(radians))
