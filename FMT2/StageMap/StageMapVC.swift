@@ -16,6 +16,8 @@ class StageMapVC: UIViewController {
     @IBOutlet weak var button10: MapButton!
     @IBOutlet weak var button11: MapButton!
     @IBOutlet weak var button12: MapButton!
+    
+    @IBOutlet weak var map: UIView!
 
     var mapButtons: [MapButton] = []
     
@@ -24,7 +26,13 @@ class StageMapVC: UIViewController {
     var globalStages: Results<GlobalStagePassing>!
     var token: NotificationToken!
     
+    @IBOutlet weak var trainingButton: TextButton!
     var proportion: CGFloat = UIScreen.main.bounds.width / 414
+    
+    @IBOutlet weak var gradientBottomBorder: UIView!
+    @IBOutlet weak var blurUpBorder: UIView!
+    
+    var lines: [CAShapeLayer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,18 +50,21 @@ class StageMapVC: UIViewController {
         self.mapButtons.append(button11)
         self.mapButtons.append(button12)
         
+        configureTrainingButton()
         curGlobalStagePassing = Game.current.currentGlobalStagePassing
         globalStages = (try! Realm()).objects(GlobalStagePassing.self).sorted(byKeyPath: "_type")
-        token = globalStages.addNotificationBlock { (changes) in
-            self.updateButtons()
-        }
-        
+        self.updateButtons()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         layoutAllViews(inView: view)
         drawLine()
+        addGradientToBottomBorder()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     func layoutAllViews(inView view: UIView) {
@@ -67,6 +78,35 @@ class StageMapVC: UIViewController {
         for ind in 0..<globalStages.count {
             configureButton(mapButtons[ind], withGlobalStagePassing: globalStages[ind])
         }
+        mapButtons.filter{$0.mode == .locked}.forEach{$0.isUserInteractionEnabled = false}
+    }
+    
+    func configureTrainingButton() {
+        trainingButton.setTitle(titleText: "Тренировка")
+    }
+    
+    func addBlurToUpBorder() {
+        blurUpBorder.backgroundColor = UIColor.clear
+        
+        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.alpha = 0.4
+        
+        blurEffectView.frame = blurUpBorder.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        blurUpBorder.addSubview(blurEffectView)
+    }
+    
+    func addGradientToBottomBorder() {
+        let gradient = CAGradientLayer()
+        
+        gradient.frame = gradientBottomBorder.bounds
+        gradient.colors = [UIColor.white.cgColor, UIColor.white.withAlphaComponent(0).cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 1)
+        gradient.endPoint = CGPoint(x: 0.5, y: 0)
+        
+        gradientBottomBorder.layer.insertSublayer(gradient, at: 0)
     }
     
     func configureButton(_ button: MapButton, withGlobalStagePassing stage: GlobalStagePassing) {
@@ -206,12 +246,12 @@ class StageMapVC: UIViewController {
         }
     }
     
-    @IBOutlet weak var map: UIView!
-    
     func drawLine() {
+        lines.forEach{$0.removeFromSuperlayer()}
+        lines.removeAll()
+        
         let d = button0.frame.width
         var points: [CGPoint] = []
-        
         
         points.append(button0.convert(pointOnCircle(withRadius: d/2, angle: 90, shift: 8), to: map))
         points.append(button1.convert(pointOnCircle(withRadius: d/2, angle: 190, shift: 0), to: map))
@@ -279,6 +319,7 @@ class StageMapVC: UIViewController {
         self.map.layer.sublayers != nil ?
             self.map.layer.sublayers!.insert(layer, at: 0) :
             self.map.layer.addSublayer(layer)
+        lines.append(layer)
     }
     
     func pointOnCircle(withRadius radius: CGFloat, angle: CGFloat, shift: CGFloat) -> CGPoint {

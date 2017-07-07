@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StageMapVC" customModule="FMT2" customModuleProvider="target">
             <connections>
+                <outlet property="blurUpBorder" destination="2Li-bd-jcq" id="AQq-Yg-jmd"/>
                 <outlet property="button0" destination="Fwq-2n-BCo" id="9SS-XB-rsG"/>
                 <outlet property="button1" destination="CXA-BJ-QZb" id="rrB-Kx-IiI"/>
                 <outlet property="button10" destination="L8Q-bG-j2m" id="74e-Nu-vvr"/>
@@ -26,7 +27,9 @@
                 <outlet property="button7" destination="uGt-pd-VKn" id="IAb-YI-E1P"/>
                 <outlet property="button8" destination="sys-zw-rRp" id="sNf-yi-sE5"/>
                 <outlet property="button9" destination="Mht-1t-X22" id="0fi-za-JPm"/>
+                <outlet property="gradientBottomBorder" destination="zV3-iK-8Bu" id="Qw4-px-k1q"/>
                 <outlet property="map" destination="RnN-hS-y8k" id="AIs-Lz-svE"/>
+                <outlet property="trainingButton" destination="4HB-3D-9dv" id="dLE-Rq-9DL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,30 +42,43 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1Z-lF-lc5" userLabel="Bottom panel">
-                    <rect key="frame" x="0.0" y="603.66666666666652" width="414" height="132.33333333333337"/>
+                    <rect key="frame" x="0.0" y="604" width="414" height="132"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4HB-3D-9dv" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
+                            <rect key="frame" x="58" y="10" width="298" height="66"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="4HB-3D-9dv" secondAttribute="height" multiplier="1085:243" id="um4-pI-7ft"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="4HB-3D-9dv" firstAttribute="centerX" secondItem="U1Z-lF-lc5" secondAttribute="centerX" id="1je-N3-ywP"/>
+                        <constraint firstItem="4HB-3D-9dv" firstAttribute="width" secondItem="U1Z-lF-lc5" secondAttribute="width" multiplier="812:1126" id="9bt-Yy-gSc"/>
+                        <constraint firstAttribute="height" priority="900" id="f50-ir-wQF"/>
                         <constraint firstAttribute="width" secondItem="U1Z-lF-lc5" secondAttribute="height" multiplier="375:120" id="s2F-ip-HHH"/>
+                        <constraint firstItem="4HB-3D-9dv" firstAttribute="top" secondItem="U1Z-lF-lc5" secondAttribute="top" constant="10" id="sHg-aV-jUD"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lmp-l5-pgD" userLabel="TopBorder">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="38.666666666666664"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="39"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Lmp-l5-pgD" secondAttribute="height" multiplier="375:35" id="ifK-aR-xx1"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYX-OY-VOl">
-                    <rect key="frame" x="0.0" y="38.666666666666686" width="414" height="565"/>
+                    <rect key="frame" x="0.0" y="39" width="414" height="565"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnN-hS-y8k" userLabel="Map">
-                            <rect key="frame" x="0.0" y="20" width="414" height="771.33333333333337"/>
+                            <rect key="frame" x="0.0" y="20" width="414" height="771"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ka3-Fc-wEV" userLabel="First Column">
-                                    <rect key="frame" x="35.333333333333329" y="0.0" width="67.333333333333343" height="771.33333333333337"/>
+                                    <rect key="frame" x="35" y="0.0" width="68" height="771"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwq-2n-BCo" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="67.333333333333343" height="67.333333333333343"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Fwq-2n-BCo" secondAttribute="height" id="64J-B4-Gie"/>
@@ -72,7 +88,7 @@
                                             </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZi-HQ-NdF" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="242.33333333333337" width="67.333333333333343" height="68"/>
+                                            <rect key="frame" x="0.0" y="243" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="FZi-HQ-NdF" secondAttribute="height" id="fdv-S0-2w5"/>
@@ -82,21 +98,21 @@
                                             </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGG-am-TD1">
-                                            <rect key="frame" x="0.0" y="67.333333333333343" width="67.333333333333343" height="175"/>
+                                            <rect key="frame" x="0.0" y="68" width="68" height="175"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="yGG-am-TD1" secondAttribute="height" multiplier="61:158" id="k1z-6y-w8S"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRg-OU-1aI">
-                                            <rect key="frame" x="0.0" y="310.33333333333331" width="67.333333333333343" height="148"/>
+                                            <rect key="frame" x="0.0" y="311" width="68" height="148"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="wRg-OU-1aI" secondAttribute="height" multiplier="61:133" id="ZAo-Yj-j02"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sys-zw-rRp" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="458.33333333333331" width="67.333333333333343" height="67.666666666666686"/>
+                                            <rect key="frame" x="0.0" y="459" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="sys-zw-rRp" secondAttribute="height" id="3Vo-uh-JPj"/>
@@ -106,7 +122,7 @@
                                             </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q63-IO-Ilx" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="703.66666666666674" width="67.333333333333343" height="67.666666666666629"/>
+                                            <rect key="frame" x="0.0" y="703" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="q63-IO-Ilx" secondAttribute="height" id="3tH-qa-6j7"/>
@@ -139,10 +155,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jif-bE-YCK" userLabel="Second Column">
-                                    <rect key="frame" x="143.66666666666666" y="0.0" width="68" height="771.33333333333337"/>
+                                    <rect key="frame" x="144" y="0.0" width="68" height="771"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXA-BJ-QZb" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="88" width="68" height="67.333333333333343"/>
+                                            <rect key="frame" x="0.0" y="88" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="CXA-BJ-QZb" secondAttribute="height" id="x7A-8N-s0x"/>
@@ -159,21 +175,21 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRt-Z6-6FQ">
-                                            <rect key="frame" x="0.0" y="155.33333333333334" width="68" height="153.33333333333329"/>
+                                            <rect key="frame" x="0.0" y="156" width="68" height="154"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="JRt-Z6-6FQ" secondAttribute="height" multiplier="61:138" id="hME-hf-fWJ"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pA-tq-CbF">
-                                            <rect key="frame" x="0.0" y="376.66666666666663" width="68" height="149.33333333333337"/>
+                                            <rect key="frame" x="0.0" y="378" width="68" height="149"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="8pA-tq-CbF" secondAttribute="height" multiplier="61:134" id="S4M-MQ-mIU"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P58-QG-BFj" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="308.66666666666663" width="68" height="68"/>
+                                            <rect key="frame" x="0.0" y="310" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="P58-QG-BFj" secondAttribute="height" id="3sh-pg-I8m"/>
@@ -183,7 +199,7 @@
                                             </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mht-1t-X22" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="526" width="68" height="68"/>
+                                            <rect key="frame" x="0.0" y="527" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Mht-1t-X22" secondAttribute="height" id="PA5-x3-b1m"/>
@@ -216,10 +232,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbb-RL-Fqp" userLabel="Third Column">
-                                    <rect key="frame" x="201" y="0.0" width="67.333333333333314" height="771.33333333333337"/>
+                                    <rect key="frame" x="201" y="0.0" width="68" height="771"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBS-9E-jCd" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="-3.3333333333333428" y="197.66666666666666" width="67.333333333333343" height="66.666666666666714"/>
+                                            <rect key="frame" x="-4" y="200" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="GBS-9E-jCd" secondAttribute="height" id="mQU-le-TRa"/>
@@ -229,28 +245,28 @@
                                             </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-vp-OPA">
-                                            <rect key="frame" x="0.0" y="0.0" width="67.333333333333314" height="197.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="68" height="200"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Fnx-vp-OPA" secondAttribute="height" multiplier="61:180" id="Kef-lw-e8H"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxq-Nl-hSc">
-                                            <rect key="frame" x="0.0" y="264.33333333333326" width="67.333333333333314" height="149.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="268" width="68" height="152"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="rxq-Nl-hSc" secondAttribute="height" multiplier="61:136" id="T3A-st-ek5"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdZ-Yt-yoK">
-                                            <rect key="frame" x="0.0" y="481.33333333333331" width="67.333333333333314" height="146.33333333333343"/>
+                                            <rect key="frame" x="0.0" y="488" width="68" height="151"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="PdZ-Yt-yoK" secondAttribute="height" multiplier="61:134" id="seA-qq-VF3"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGt-pd-VKn" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="414" width="67.333333333333314" height="67.333333333333314"/>
+                                            <rect key="frame" x="0.0" y="420" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="uGt-pd-VKn" secondAttribute="height" id="KId-fx-6Vx"/>
@@ -260,7 +276,7 @@
                                             </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQj-av-NsB" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="627.66666666666674" width="67.333333333333314" height="67.666666666666629"/>
+                                            <rect key="frame" x="0.0" y="639" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="gQj-av-NsB" secondAttribute="height" id="ngu-tu-aPh"/>
@@ -293,10 +309,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5RY-aV-U3L" userLabel="Fourth Column">
-                                    <rect key="frame" x="309" y="0.0" width="67.333333333333314" height="771.33333333333337"/>
+                                    <rect key="frame" x="309" y="0.0" width="68" height="771"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Mw-eC-ceh" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="128.66666666666669" width="67.333333333333314" height="68"/>
+                                            <rect key="frame" x="0.0" y="129" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="6Mw-eC-ceh" secondAttribute="height" id="kQk-Ht-5I9"/>
@@ -306,28 +322,28 @@
                                             </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Bh-e9-Blp">
-                                            <rect key="frame" x="0.0" y="0.0" width="67.333333333333314" height="128.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="68" height="129"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="3Bh-e9-Blp" secondAttribute="height" multiplier="61:116" id="d7O-Vy-Xzq"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoL-zz-h9k">
-                                            <rect key="frame" x="0.0" y="196.66666666666669" width="67.333333333333314" height="173.99999999999994"/>
+                                            <rect key="frame" x="0.0" y="197" width="68" height="175"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="SoL-zz-h9k" secondAttribute="height" multiplier="61:157" id="Yos-XF-bbn"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxR-iA-dHw">
-                                            <rect key="frame" x="0.0" y="438.33333333333331" width="67.333333333333314" height="143.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="440" width="68" height="145"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="WxR-iA-dHw" secondAttribute="height" multiplier="61:130" id="iyY-vg-Ru7"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKh-hU-qOZ" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="370.66666666666663" width="67.333333333333314" height="67.666666666666686"/>
+                                            <rect key="frame" x="0.0" y="372" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="uKh-hU-qOZ" secondAttribute="height" id="W1a-Yx-Hho"/>
@@ -337,7 +353,7 @@
                                             </connections>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8Q-bG-j2m" customClass="MapButton" customModule="FMT2" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="582" width="67.333333333333314" height="67.666666666666742"/>
+                                            <rect key="frame" x="0.0" y="585" width="68" height="68"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="L8Q-bG-j2m" secondAttribute="height" id="AN6-ZV-rpn"/>
@@ -370,11 +386,11 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKc-AV-HWx">
-                                    <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="771.33333333333337"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="35" height="771"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZe-yp-jE6">
-                                    <rect key="frame" x="376.33333333333326" y="0.0" width="37.666666666666686" height="771.33333333333337"/>
+                                    <rect key="frame" x="377" y="0.0" width="37" height="771"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
@@ -416,11 +432,18 @@
                         <constraint firstItem="RnN-hS-y8k" firstAttribute="top" secondItem="eYX-OY-VOl" secondAttribute="top" constant="20" id="o3z-YK-ijN"/>
                     </constraints>
                 </scrollView>
-                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zV3-iK-8Bu" userLabel="Border with gradient">
-                    <rect key="frame" x="0.0" y="583" width="414" height="20"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zV3-iK-8Bu" userLabel="Border with gradient">
+                    <rect key="frame" x="0.0" y="584" width="414" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="F0a-qN-s0d"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Li-bd-jcq" userLabel="Border with gradient">
+                    <rect key="frame" x="0.0" y="39" width="414" height="10"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="hWH-fk-Xih"/>
                     </constraints>
                 </view>
             </subviews>
@@ -430,7 +453,9 @@
                 <constraint firstItem="3ND-14-rZm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="EEv-HU-Drz"/>
                 <constraint firstItem="zV3-iK-8Bu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hx8-iz-cdT"/>
                 <constraint firstItem="U1Z-lF-lc5" firstAttribute="top" secondItem="zV3-iK-8Bu" secondAttribute="bottom" id="IS5-Vh-KtF"/>
+                <constraint firstItem="2Li-bd-jcq" firstAttribute="top" secondItem="Lmp-l5-pgD" secondAttribute="bottom" id="Nd0-eh-yP8"/>
                 <constraint firstItem="3ND-14-rZm" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ZC3-E1-xqP"/>
+                <constraint firstItem="2Li-bd-jcq" firstAttribute="centerX" secondItem="Lmp-l5-pgD" secondAttribute="centerX" id="ZFl-1d-iWz"/>
                 <constraint firstItem="OKc-AV-HWx" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="32:375" id="ZXt-VO-Au5"/>
                 <constraint firstItem="3ND-14-rZm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="a5H-4i-zub"/>
                 <constraint firstItem="eYX-OY-VOl" firstAttribute="top" secondItem="Lmp-l5-pgD" secondAttribute="bottom" id="da6-Uf-dT0"/>
@@ -439,6 +464,7 @@
                 <constraint firstAttribute="trailing" secondItem="Lmp-l5-pgD" secondAttribute="trailing" id="kOZ-3y-aZw"/>
                 <constraint firstItem="eYX-OY-VOl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="man-x7-2tY"/>
                 <constraint firstAttribute="bottom" secondItem="U1Z-lF-lc5" secondAttribute="bottom" id="on9-4A-FMP"/>
+                <constraint firstItem="2Li-bd-jcq" firstAttribute="width" secondItem="zV3-iK-8Bu" secondAttribute="width" id="s5M-YM-IbL"/>
                 <constraint firstItem="3ND-14-rZm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="syu-MU-Q9u"/>
                 <constraint firstItem="U1Z-lF-lc5" firstAttribute="top" secondItem="eYX-OY-VOl" secondAttribute="bottom" id="tPt-EV-whr"/>
                 <constraint firstItem="Lmp-l5-pgD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wMY-zS-I44"/>
