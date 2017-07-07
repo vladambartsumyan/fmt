@@ -242,6 +242,7 @@ class StageMapVC: UIViewController {
             loadGlobalStage(curGlobalStagePassing)
         } else {
             let globalStagePassing = globalStages[index].globalStage.createGlobalStagePassing()
+            globalStagePassing.saveStages()
             loadGlobalStage(globalStagePassing)
         }
     }
