@@ -1,7 +1,9 @@
 import UIKit
 import RealmSwift
 
-class StageMapVC: UIViewController {
+class StageMapVC: FadeInOutVC {
+    
+    @IBOutlet weak var menuButton: TopButton!
     
     @IBOutlet weak var button0: MapButton!
     @IBOutlet weak var button1: MapButton!
@@ -18,6 +20,10 @@ class StageMapVC: UIViewController {
     @IBOutlet weak var button12: MapButton!
     
     @IBOutlet weak var map: UIView!
+    
+    @IBOutlet weak var statistic: UILabel!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
 
     var mapButtons: [MapButton] = []
     
@@ -30,12 +36,13 @@ class StageMapVC: UIViewController {
     var proportion: CGFloat = UIScreen.main.bounds.width / 414
     
     @IBOutlet weak var gradientBottomBorder: UIView!
-    @IBOutlet weak var blurUpBorder: UIView!
+    @IBOutlet weak var gradientUpBorder: UIView!
     
     var lines: [CAShapeLayer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.mapButtons.append(button0)
         self.mapButtons.append(button1)
         self.mapButtons.append(button2)
@@ -54,24 +61,37 @@ class StageMapVC: UIViewController {
         curGlobalStagePassing = Game.current.currentGlobalStagePassing
         globalStages = (try! Realm()).objects(GlobalStagePassing.self).sorted(byKeyPath: "_type")
         self.updateButtons()
+        configureStatistic()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        layoutAllViews(inView: view)
-        drawLine()
-        addGradientToBottomBorder()
+//        layoutAllViews(inView: self.view)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        fadeIn()
+        drawLine()
+        addGradientToBottomBorder()
+        addGradientToUpBorder()
+        
     }
     
-    func layoutAllViews(inView view: UIView) {
-        for subview in view.subviews {
-            layoutAllViews(inView: subview)
-        }
-        view.layoutSubviews()
+    func configureStatistic() {
+        let passedCount = mapButtons.filter{$0.mode == .passed}.count
+        let totalCount = mapButtons.count
+        let text = NSLocalizedString("StageMap.statistic", comment: "") + ": \(passedCount)/\(totalCount)"
+        
+        self.statistic.attributedText = NSAttributedString(
+            string : text, 
+            attributes : [
+                NSFontAttributeName : UIFont(name: "Lato-Black", size: 22 * proportion)!,
+                NSStrokeWidthAttributeName : -2.0,
+                NSStrokeColorAttributeName : UIColor.black,
+                NSForegroundColorAttributeName : UIColor.white
+            ]
+        )
     }
     
     func updateButtons() {
@@ -82,20 +102,18 @@ class StageMapVC: UIViewController {
     }
     
     func configureTrainingButton() {
-        trainingButton.setTitle(titleText: "Тренировка")
+        trainingButton.setTitle(titleText: NSLocalizedString("StageMap.trainingButton.title", comment: ""))
     }
     
-    func addBlurToUpBorder() {
-        blurUpBorder.backgroundColor = UIColor.clear
+    func addGradientToUpBorder() {
+        let gradient = CAGradientLayer()
         
-        let blurEffect = UIBlurEffect(style: .extraLight)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.alpha = 0.4
+        gradient.frame = gradientUpBorder.bounds
+        gradient.colors = [UIColor(red255: 237, green: 244, blue: 254).cgColor, UIColor(red255: 239, green: 246, blue: 254).withAlphaComponent(0).cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1)
         
-        blurEffectView.frame = blurUpBorder.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        blurUpBorder.addSubview(blurEffectView)
+        gradientUpBorder.layer.insertSublayer(gradient, at: 0)
     }
     
     func addGradientToBottomBorder() {
@@ -174,19 +192,25 @@ class StageMapVC: UIViewController {
         case .introduction:
             let vc = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)
             vc.globalStagePassing = globalStagePassing
-            AppDelegate.current.setRootVC(vc)
+            fadeOut {
+                AppDelegate.current.setRootVC(vc)
+            }
             break
         case .multiplicationBy0:
             let needTutorial = globalStagePassing.index == 0 && globalStagePassing.currentStagePassing!.index == 0
             if needTutorial {
                 let vc = IntroductionZeroVC(nibName: "IntroductionZeroVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                AppDelegate.current.setRootVC(vc)
+                fadeOut {
+                    AppDelegate.current.setRootVC(vc)
+                }
             } else {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 vc.skipSecondDigit = true
-                AppDelegate.current.setRootVC(vc)
+                fadeOut {
+                    AppDelegate.current.setRootVC(vc)
+                }
             }
             break
         case .multiplicationBy1:
@@ -194,12 +218,16 @@ class StageMapVC: UIViewController {
             if needTutorial {
                 let vc = IntroductionOneVC(nibName: "IntroductionOneVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                AppDelegate.current.setRootVC(vc)
+                fadeOut {
+                    AppDelegate.current.setRootVC(vc)
+                }
             } else {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 vc.skipSecondDigit = true
-                AppDelegate.current.setRootVC(vc)
+                fadeOut {
+                    AppDelegate.current.setRootVC(vc)
+                }
             }
             break
         case .multiplicationBy10:
@@ -207,12 +235,16 @@ class StageMapVC: UIViewController {
             if needTutorial {
                 let vc = IntroductionTenVC(nibName: "IntroductionTenVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                AppDelegate.current.setRootVC(vc)
+                fadeOut {
+                    AppDelegate.current.setRootVC(vc)
+                }
             } else {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 vc.skipSecondDigit = true
-                AppDelegate.current.setRootVC(vc)
+                fadeOut {
+                    AppDelegate.current.setRootVC(vc)
+                }
             }
             break
         case .permutation:
@@ -220,17 +252,23 @@ class StageMapVC: UIViewController {
             if needTutorial {
                 let vc = IntroductionPermutationVC(nibName: "IntroductionPermutationVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                AppDelegate.current.setRootVC(vc)
+                fadeOut {
+                    AppDelegate.current.setRootVC(vc)
+                }
             } else {
                 let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                AppDelegate.current.setRootVC(vc)
+                fadeOut {
+                    AppDelegate.current.setRootVC(vc)
+                }
             }
             break
         default:
             let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
             vc.globalStagePassing = globalStagePassing
-            AppDelegate.current.setRootVC(vc)
+            fadeOut {
+                AppDelegate.current.setRootVC(vc)
+            }
             break
         }
     }
@@ -327,5 +365,27 @@ class StageMapVC: UIViewController {
         let radians = angle * CGFloat.pi / 180
         let center = CGPoint(x: radius, y: radius)
         return CGPoint(x: center.x + (radius + shift) * cos(radians), y: center.y + (radius + shift) * sin(radians))
+    }
+    
+    @IBAction func menuButtonTouched(_ sender: TopButton) {
+        self.view.isUserInteractionEnabled = false
+        let vc = MenuVC(nibName: "MenuVC", bundle: nil)
+        AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
+    }
+    
+    override func fadeOut(_ handler: ((()) -> ())?) {
+        super.fadeOut(handler)
+        UIView.animate(withDuration: 0.3) {
+            self.gradientUpBorder.alpha = 0.0
+            self.gradientBottomBorder.alpha = 0.0
+        }
+    }
+    
+    override func getFadeInArray() -> [[UIView]] {
+        return [[menuButton, statistic], [scrollView], [trainingButton]]
+    }
+    
+    override func getFadeOutArray() -> [[UIView]] {
+        return [[menuButton, statistic], [scrollView], [trainingButton]]
     }
 }

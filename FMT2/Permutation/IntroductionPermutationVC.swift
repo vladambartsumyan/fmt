@@ -27,6 +27,7 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fadeIn()
+        globalStagePassing.addElapsedTime()
         perform(#selector(nextVC), with: nil, afterDelay: 3)
     }
     

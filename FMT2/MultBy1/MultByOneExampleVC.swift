@@ -42,6 +42,7 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        globalStagePassing.addElapsedTime()
         fadeIn()
         perform(#selector(nextScreen), with: nil, afterDelay: 3)
     }

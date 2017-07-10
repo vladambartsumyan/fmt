@@ -1,6 +1,6 @@
 import UIKit
 
-class StartScreenVC: UIViewController {
+class StartScreenVC: FadeInOutVC {
     
     @IBOutlet weak var image: UIImageView!
 
@@ -8,10 +8,13 @@ class StartScreenVC: UIViewController {
     
     @IBOutlet weak var button: TextButton!
     
+    let isNewGame = Game.current.newGame
+    
     @IBOutlet weak var background: UIImageView!
     private var frameForImage: CGRect? = nil
     
     override func viewDidLoad() {
+        self.needsFadeIn = false
         super.viewDidLoad()
         configureText()
         configureButton()
@@ -67,7 +70,7 @@ class StartScreenVC: UIViewController {
             NSStrokeColorAttributeName : strokeColor,
             NSFontAttributeName : UIFont.init(name: "Lato-Black", size: size * UIScreen.main.bounds.width / 414.0)!,
             NSForegroundColorAttributeName : UIColor.white,
-            ]
+        ]
         attrStr.addAttributes(attributes, range: NSRange.init(location: 0, length: string.characters.count))
         return attrStr
     }
@@ -79,7 +82,7 @@ class StartScreenVC: UIViewController {
     }
     
     @IBAction func buttonWasPressed(_ sender: TextButton) {
-        if Game.current.newGame {
+        if isNewGame {
             newGame()
         } else {
             continueGame()
@@ -88,12 +91,22 @@ class StartScreenVC: UIViewController {
     
     func continueGame() {
         let vc = StageMapVC(nibName: "StageMapVC", bundle: nil)
-        AppDelegate.current.setRootVC(vc)
+        fadeOut {
+            AppDelegate.current.setRootVC(vc)
+        }
     }
     
     func newGame() {
         Game.current.reset()
         let vc = TutorialVC(nibName: "TutorialVC", bundle: nil)
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
+    }
+    
+    override func getFadeInArray() -> [[UIView]] {
+        return [[image], [text], [button]]
+    }
+    
+    override func getFadeOutArray() -> [[UIView]] {
+        return [[image], [text], [button]]
     }
 }

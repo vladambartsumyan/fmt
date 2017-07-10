@@ -42,6 +42,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        globalStagePassing.addElapsedTime()
         fadeIn()
     }
     

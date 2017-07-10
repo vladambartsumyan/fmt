@@ -88,6 +88,7 @@
 		653481AA1F0BD4350094A9CB /* MultByTenExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653481A81F0BD4350094A9CB /* MultByTenExampleVC.swift */; };
 		653481AB1F0BD4350094A9CB /* MultByTenExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653481A91F0BD4350094A9CB /* MultByTenExampleVC.xib */; };
 		6541A9AE1F05527B005A1D94 /* UIWindow+RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541A9AD1F05527B005A1D94 /* UIWindow+RootVC.swift */; };
+		6548535E1F0FD69100DFEA0A /* UIViewController+LayoutAllSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548535D1F0FD69100DFEA0A /* UIViewController+LayoutAllSubviews.swift */; };
 		654D02271F06886600DE1A77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 654D02261F06886600DE1A77 /* Localizable.strings */; };
 		656222A71F0537BB00B6C64B /* MenuButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656222A21F0537BB00B6C64B /* MenuButtonCell.swift */; };
 		656222A81F0537BB00B6C64B /* MenuButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656222A31F0537BB00B6C64B /* MenuButtonCell.xib */; };
@@ -220,6 +221,7 @@
 		653481A81F0BD4350094A9CB /* MultByTenExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultByTenExampleVC.swift; path = MultBy10/MultByTenExampleVC.swift; sourceTree = "<group>"; };
 		653481A91F0BD4350094A9CB /* MultByTenExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultByTenExampleVC.xib; path = MultBy10/MultByTenExampleVC.xib; sourceTree = "<group>"; };
 		6541A9AD1F05527B005A1D94 /* UIWindow+RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+RootVC.swift"; path = "Common/UIWindow+RootVC.swift"; sourceTree = "<group>"; };
+		6548535D1F0FD69100DFEA0A /* UIViewController+LayoutAllSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+LayoutAllSubviews.swift"; path = "Common/UIViewController+LayoutAllSubviews.swift"; sourceTree = "<group>"; };
 		654D02261F06886600DE1A77 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		656222A21F0537BB00B6C64B /* MenuButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuButtonCell.swift; path = Menu/MenuButtonCell.swift; sourceTree = "<group>"; };
 		656222A31F0537BB00B6C64B /* MenuButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuButtonCell.xib; path = Menu/MenuButtonCell.xib; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				650EF2B81F04E3AF0047C30C /* IsGameVC.swift */,
 				6541A9AD1F05527B005A1D94 /* UIWindow+RootVC.swift */,
 				65DE92721F0A3FE6009DDB77 /* ReverseImageOrder.swift */,
+				6548535D1F0FD69100DFEA0A /* UIViewController+LayoutAllSubviews.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				656222A91F0537BB00B6C64B /* MenuItem.swift in Sources */,
 				656222DC1F053EC200B6C64B /* GlobalStagePassing.swift in Sources */,
 				650EF2AC1F0409830047C30C /* ServerTask+Init.swift in Sources */,
+				6548535E1F0FD69100DFEA0A /* UIViewController+LayoutAllSubviews.swift in Sources */,
 				65104DCF1F051AF300547F35 /* ExercisePreview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

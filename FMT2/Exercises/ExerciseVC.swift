@@ -60,6 +60,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        globalStagePassing.addElapsedTime()
         fadeIn()
         if self.globalStagePassing.type == .multiplicationBy0 {
             self.secondDigit.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)

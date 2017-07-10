@@ -124,4 +124,5 @@
 "Tutorial.ten.text" = "При умножении любого числа на 10 нужно приписать к этому числу ноль";
 "Tutorial.permutation.text" = "От перемены мест множителей произведение не меняется";
 
-
+"StageMap.trainingButton.title" = "Тренировка";
+"StageMap.statistic" = "Пройдено уровней";
