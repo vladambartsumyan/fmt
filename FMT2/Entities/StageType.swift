@@ -14,6 +14,7 @@ enum StageType: Int {
     case multiplicationBy8
     case multiplicationBy9
     case permutation
+    case training
 }
 
 enum StageMode: Int {

@@ -169,6 +169,8 @@ class StageMapVC: FadeInOutVC {
         case .permutation:
             button.configureWithIcon(mode: mode, icon: .star)
             break
+        default:
+            fatalError("Training stage is unexpected")
         }
     }
     
@@ -378,6 +380,16 @@ class StageMapVC: FadeInOutVC {
         UIView.animate(withDuration: 0.3) {
             self.gradientUpBorder.alpha = 0.0
             self.gradientBottomBorder.alpha = 0.0
+        }
+    }
+    
+    @IBAction func trainingButtonTouched(_ sender: TextButton) {
+        let trainingGlobalStagePassing = GlobalStage.createTrainingGlobalStage().createGlobalStagePassing()
+        let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
+        vc.globalStagePassing = trainingGlobalStagePassing
+        vc.skipSecondDigit = true
+        fadeOut {
+            AppDelegate.current.setRootVC(vc)
         }
     }
     

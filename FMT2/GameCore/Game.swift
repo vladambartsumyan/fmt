@@ -168,28 +168,9 @@ class Game {
         if digit == 1 || digit == 10 {
             return .clear
         }
-        guard (introductionDigits.contains(digit)) else {
+        guard introductionDigits.contains(digit) else {
             fatalError("\(digit) do not stored in database.")
         }
         return (try! Realm()).object(ofType: DigitColor.self, forPrimaryKey: digit)!.color
     }    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,16 +1,17 @@
 import UIKit
 import RealmSwift
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
+        registerLocalNotification(application: application)
         firstLaunch()
-        
         setStartScreen()
         
         return true
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        resetNotification()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -40,10 +42,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func firstLaunch() {
         let launchedBefore = UserDefaults.standard.bool(forKey: UserDefaultsKey.launchedBefore.rawValue)
         if !launchedBefore  {
-            Game.current.initOnDevice()
-            UserDefaults.standard.set(Date().timeIntervalSince1970.hashValue, forKey: UserDefaultsKey.dateHashed.rawValue)
-            UserDefaults.standard.set(true, forKey: UserDefaultsKey.soundOn.rawValue)
-            UserDefaults.standard.set(true, forKey: UserDefaultsKey.launchedBefore.rawValue)
+            setUserDefaults()
+        }
+    }
+    
+    func setUserDefaults() {
+        Game.current.initOnDevice()
+        UserDefaults.standard.set(Date().timeIntervalSince1970.hashValue, forKey: UserDefaultsKey.dateHashed.rawValue)
+        UserDefaults.standard.set(true, forKey: UserDefaultsKey.soundOn.rawValue)
+        UserDefaults.standard.set(true, forKey: UserDefaultsKey.launchedBefore.rawValue)
+    }
+    
+    func registerLocalNotification(application: UIApplication) {
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {_ in})
+        } else {
+            let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
         }
     }
     
@@ -76,5 +91,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
 
+    func resetNotification() {
+        if #available(iOS 10, *) {
+            // Cancell all notifications
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+            
+            // Content
+            let content = UNMutableNotificationContent()
+            content.title = "Notification.message"
+            content.body = "Notification.action"
+            content.sound = UNNotificationSound.default()
+            
+            // Time-trigger
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: true)
+            
+            // Request
+            let identifier = "DailyNotification"
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            
+            // Registration
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        } else {
+            // Cancell all notifications
+            UIApplication.shared.cancelAllLocalNotifications()
+            
+            // Content
+            let notification = UILocalNotification()
+            notification.alertBody = NSLocalizedString("Notification.message", comment: "")
+            notification.alertAction = NSLocalizedString("Notification.action", comment: "")
+            notification.soundName = UILocalNotificationDefaultSoundName
+            
+            // Time-trigger
+            notification.fireDate = Date(timeIntervalSinceNow: 86400)
+            notification.repeatInterval = .day
+            
+            // Registration
+            UIApplication.shared.scheduleLocalNotification(notification)
+        }
+    }
+    
 }
 

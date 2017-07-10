@@ -53,6 +53,9 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="4HB-3D-9dv" secondAttribute="height" multiplier="1085:243" id="um4-pI-7ft"/>
                             </constraints>
+                            <connections>
+                                <action selector="trainingButtonTouched:" destination="-1" eventType="touchUpInside" id="1zP-6Y-mYB"/>
+                            </connections>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

@@ -117,7 +117,7 @@
 "StartScreen.continue" = "Продолжить";
 
 "Notification.message" = "Привет, давай продолжим играть";
-"Notification.action" = "продолжить играть";
+"Notification.action" = "Продолжить играть";
 
 "Tutorial.zero.text" = "При умножении любого числа на ноль будет ноль";
 "Tutorial.one.text" = "При умножении любого числа на один будет то же число";

@@ -178,8 +178,6 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
                     break
                 }
             }
-            
-            
         }
     }
 }

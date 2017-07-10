@@ -27,4 +27,25 @@ class GlobalStage: Object {
         }
         return globalStagePassing
     }
+    
+    static func createTrainingGlobalStage() -> GlobalStage {
+        var possibleExercises: [Exercise] = []
+        
+        let globalStagesPassing = Game.current.globalStagesPassing.filter {
+            $0.type != .introduction && $0.isPassed
+        }
+        for item in globalStagesPassing {
+            let notExamStages: [Stage] = item.globalStage.stages.filter{$0.mode != .exam}
+            for stage in notExamStages {
+                for exercise in stage.possibleExercises {
+                    possibleExercises.append(exercise)
+                }
+            }
+        }
+        
+        
+        let stage = Stage.create(type: .training, mode: .exam, numberOfExercises: possibleExercises.count, possibleExercises: possibleExercises)
+        let training = create(stages: [stage], type: .training)
+        return training
+    }
 }
