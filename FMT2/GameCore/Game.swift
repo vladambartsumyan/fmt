@@ -114,6 +114,7 @@ class Game {
             Stage.create(type: .permutation,        mode: .simple, numberOfExercises: 28, possibleExercises: fun(["3x2", "4x2", "5x2", "6x2", "7x2", "8x2", "9x2", "4x3", "5x3", "6x3", "7x3", "8x3", "9x3", "5x4", "6x4", "7x4", "8x4", "9x4", "6x5", "7x5", "8x5", "9x5", "7x6", "8x6", "9x6", "8x7", "9x7", "9x8"])),
             Stage.create(type: .permutation,        mode: .exam,   numberOfExercises: 15, possibleExercises: fun(["3x2", "4x2", "5x2", "6x2", "7x2", "8x2", "9x2", "4x3", "5x3", "6x3", "7x3", "8x3", "9x3", "5x4", "6x4", "7x4", "8x4", "9x4", "6x5", "7x5", "8x5", "9x5", "7x6", "8x6", "9x6", "8x7", "9x7", "9x8"]))            
         ]
+        allStages.forEach{stage in stage.possibleExercises.forEach{ $0.type = stage.type }}
         return allStages
     }
     

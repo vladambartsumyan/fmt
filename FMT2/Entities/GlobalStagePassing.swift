@@ -18,9 +18,15 @@ class GlobalStagePassing: Object {
     dynamic var index = 0
     dynamic var inGame = true
     dynamic var _type = 0 
+    dynamic var mistakeCount = 3
     
     var type: StageType {
-        get { return StageType(rawValue: _type)! }
+        get { 
+            if _type == StageType.training.rawValue {
+                return currentStagePassing?.currentExercisePassing != nil ? currentStagePassing!.currentExercisePassing!.exercise!.type : .training 
+            }
+            return StageType(rawValue: _type)! 
+        }
         set { _type = newValue.rawValue }
     }
     
@@ -48,7 +54,7 @@ class GlobalStagePassing: Object {
     }
     
     func mistake() -> MistakeResult {
-        let result: MistakeResult = mistakeCountInExam % 3 == 2 ? .soMuch : .normal
+        let result: MistakeResult = mistakeCountInExam == mistakeCount - 1 ? .soMuch : .normal
         currentStagePassing?.mistake()
         return result
     }

@@ -25,6 +25,9 @@ class GlobalStage: Object {
         for stage in self.stages {
             globalStagePassing.stagesPassing.append(stage.createStagePassing())
         }
+        if type == .training {
+            globalStagePassing.mistakeCount = 0
+        }
         return globalStagePassing
     }
     
@@ -42,7 +45,6 @@ class GlobalStage: Object {
                 }
             }
         }
-        
         
         let stage = Stage.create(type: .training, mode: .exam, numberOfExercises: possibleExercises.count, possibleExercises: possibleExercises)
         let training = create(stages: [stage], type: .training)
