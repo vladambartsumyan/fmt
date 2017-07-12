@@ -28,6 +28,10 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var multiplicationWidth: NSLayoutConstraint!
     @IBOutlet weak var resultWidth: NSLayoutConstraint!
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureExerciseSize()

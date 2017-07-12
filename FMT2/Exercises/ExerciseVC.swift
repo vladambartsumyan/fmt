@@ -49,6 +49,10 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     
     var newGameWasPressed = false
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()

@@ -20,6 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        if let rootVC = window?.rootViewController {
+            if rootVC.needsToTimeAccumulation {
+                if let rootGameVC = rootVC as? IsGameVC {
+                    rootGameVC.globalStagePassing.updateElapsedTime()
+                }
+            }
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

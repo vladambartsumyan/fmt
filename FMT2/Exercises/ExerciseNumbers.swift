@@ -31,6 +31,10 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     var globalStagePassing: GlobalStagePassing!
     var mode: StageMode!
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()

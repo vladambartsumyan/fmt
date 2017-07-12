@@ -14,6 +14,10 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var newGameButton: TopButton!
     @IBOutlet weak var progressBar: ProgressBar!
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTopBar()

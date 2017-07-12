@@ -32,6 +32,10 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var resultWidth: NSLayoutConstraint!
     @IBOutlet weak var resultWidth2: NSLayoutConstraint!
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureExerciseSize()
