@@ -32,6 +32,10 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var resultWidth: NSLayoutConstraint!
     @IBOutlet weak var resultWidth2: NSLayoutConstraint!
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureExerciseSize()
@@ -41,14 +45,19 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
         perform(#selector(nextScreen), with: nil, afterDelay: 3)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
         fadeIn()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        globalStagePassing.updateElapsedTime()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     func configureExerciseSize() {
@@ -70,6 +79,7 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
     }
     
     func nextScreen() {
+        globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         vc.mode = .afterTenTutorial

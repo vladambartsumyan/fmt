@@ -26,6 +26,10 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     
     var newGameWasPressed = false
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()
@@ -43,6 +47,10 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     func configureImages() {
@@ -99,6 +107,7 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
+        self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
     
@@ -127,6 +136,7 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     }
     
     @IBAction func continueButtonTouchUpInside(_ sender: TextButton) {
+        globalStagePassing.updateElapsedTime()
         self.view.isUserInteractionEnabled = false
         let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
         vc.globalStagePassing = globalStagePassing

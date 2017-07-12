@@ -14,6 +14,10 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var newGameButton: TopButton!
     @IBOutlet weak var progressBar: ProgressBar!
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTopBar()
@@ -29,6 +33,10 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
         fadeIn()
         globalStagePassing.addElapsedTime()
         perform(#selector(nextVC), with: nil, afterDelay: 3)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     func configureTopBar() {
@@ -50,6 +58,7 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     }
     
     func nextVC() {
+        globalStagePassing.updateElapsedTime()
         let vc = PermutationExampleVC(nibName: "PermutationExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         fadeOut {

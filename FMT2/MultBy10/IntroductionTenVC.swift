@@ -14,6 +14,10 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var newGameButton: TopButton!
     @IBOutlet weak var progressBar: ProgressBar!
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTopBar()
@@ -29,6 +33,10 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
         globalStagePassing.addElapsedTime()
         fadeIn()
         perform(#selector(nextVC), with: nil, afterDelay: 3)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        globalStagePassing.updateElapsedTime()
     }
     
     func configureTopBar() {
@@ -50,6 +58,7 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     }
     
     func nextVC() {
+        globalStagePassing.updateElapsedTime()
         let vc = MultByTenExampleVC(nibName: "MultByTenExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         fadeOut {

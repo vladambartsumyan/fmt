@@ -6,22 +6,29 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
+
         registerLocalNotification(application: application)
         firstLaunch()
         setStartScreen()
-        
+
         return true
     }
-    
+
     func applicationWillResignActive(_ application: UIApplication) {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         resetNotification()
+        if let rootVC = window?.rootViewController {
+            if rootVC.needsToTimeAccumulation {
+                if let rootGameVC = rootVC as? IsGameVC {
+                    rootGameVC.globalStagePassing.updateElapsedTime()
+                }
+            }
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -38,21 +45,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = StartScreenVC(nibName: "StartScreenVC", bundle: nil)
         self.window?.makeKeyAndVisible()
     }
-    
+
     func firstLaunch() {
         let launchedBefore = UserDefaults.standard.bool(forKey: UserDefaultsKey.launchedBefore.rawValue)
         if !launchedBefore  {
             setUserDefaults()
         }
     }
-    
+
     func setUserDefaults() {
         Game.current.initOnDevice()
         UserDefaults.standard.set(Date().timeIntervalSince1970.hashValue, forKey: UserDefaultsKey.dateHashed.rawValue)
         UserDefaults.standard.set(true, forKey: UserDefaultsKey.soundOn.rawValue)
         UserDefaults.standard.set(true, forKey: UserDefaultsKey.launchedBefore.rawValue)
     }
-    
+
     func registerLocalNotification(application: UIApplication) {
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {_ in})
@@ -61,10 +68,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerUserNotificationSettings(settings)
         }
     }
-    
+
     func setRootVCWithAnimation(_ viewController: UIViewController, animation: UIViewAnimationOptions) {
         let prevVC = self.window?.rootViewController
-        UIView.transition(with: window!, duration: 0.5, options: animation, animations: { 
+        UIView.transition(with: window!, duration: 0.5, options: animation, animations: {
             self.window?.rootViewController = viewController
         }, completion: { completed in
             for subview in self.window!.subviews {
@@ -72,12 +79,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     subview.removeFromSuperview()
                 }
             }
-            prevVC?.dismiss(animated: false, completion: { 
+            prevVC?.dismiss(animated: false, completion: {
                 prevVC?.view.removeFromSuperview()
             })
         })
     }
-    
+
     func setRootVC(_ viewController: UIViewController) {
         let prevVC = self.window?.rootViewController
         self.window?.rootViewController = viewController
@@ -86,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 subview.removeFromSuperview()
             }
         }
-        prevVC?.dismiss(animated: false, completion: { 
+        prevVC?.dismiss(animated: false, completion: {
             prevVC?.view.removeFromSuperview()
         })
     }
@@ -96,40 +103,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Cancell all notifications
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-            
+
             // Content
             let content = UNMutableNotificationContent()
             content.title = "Notification.message"
             content.body = "Notification.action"
             content.sound = UNNotificationSound.default()
-            
+
             // Time-trigger
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: true)
-            
+
             // Request
             let identifier = "DailyNotification"
             let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-            
+
             // Registration
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         } else {
             // Cancell all notifications
             UIApplication.shared.cancelAllLocalNotifications()
-            
+
             // Content
             let notification = UILocalNotification()
             notification.alertBody = NSLocalizedString("Notification.message", comment: "")
             notification.alertAction = NSLocalizedString("Notification.action", comment: "")
             notification.soundName = UILocalNotificationDefaultSoundName
-            
+
             // Time-trigger
             notification.fireDate = Date(timeIntervalSinceNow: 86400)
             notification.repeatInterval = .day
-            
+
             // Registration
             UIApplication.shared.scheduleLocalNotification(notification)
         }
     }
-    
-}
 
+}

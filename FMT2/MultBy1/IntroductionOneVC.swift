@@ -26,6 +26,10 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     
     var newGameWasPressed = false
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()
@@ -105,6 +109,7 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
+        self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
     
@@ -134,6 +139,7 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     }
     
     func nextVC() {
+        globalStagePassing.updateElapsedTime()
         let vc = MultByOneExampleVC(nibName: "MultByOneExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         fadeOut {

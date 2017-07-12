@@ -28,6 +28,10 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var multiplicationWidth: NSLayoutConstraint!
     @IBOutlet weak var resultWidth: NSLayoutConstraint!
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureExerciseSize()
@@ -45,6 +49,10 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
         globalStagePassing.addElapsedTime()
         fadeIn()
         perform(#selector(nextScreen), with: nil, afterDelay: 3)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     func configureExerciseSize() {
@@ -67,6 +75,7 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     }
     
     func nextScreen() {
+        globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         vc.mode = .afterOneTutorial

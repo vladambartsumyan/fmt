@@ -49,6 +49,10 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     
     var newGameWasPressed = false
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()
@@ -77,6 +81,10 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -98,6 +106,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
+        self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
     
@@ -240,9 +249,10 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             self.view.isUserInteractionEnabled = false
             rightAnswerAppearing { self.nextScreen() }
         } else {
-            let needPreview = !([StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10].contains(globalStagePassing.type))
-            let result = globalStagePassing.mistake()
             if mode == .exam {
+                globalStagePassing.updateElapsedTime()
+                let result = globalStagePassing.mistake()
+                let needPreview = !([StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10].contains(globalStagePassing.type))
                 if result == .normal {
                     if needPreview {
                         let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
@@ -266,6 +276,8 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                     vc.mode = examFailedMode
                     AppDelegate.current.setRootVC(vc)
                 }
+            } else {
+                _ = globalStagePassing.mistake()
             }
         }
     }
@@ -292,6 +304,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     }
     
     func nextScreen() {
+        globalStagePassing.updateElapsedTime()
         let specialLevel = ([StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10].contains(globalStagePassing.type))
         progressBar.setProgressWithAnimation(CGFloat(globalStagePassing.nextProgress))
         let result = globalStagePassing.rightAnswer()

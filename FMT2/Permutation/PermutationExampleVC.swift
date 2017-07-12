@@ -32,6 +32,10 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var resultWidth: NSLayoutConstraint!
     @IBOutlet weak var resultWidth2: NSLayoutConstraint!
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureExerciseSize()
@@ -49,6 +53,10 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
         fadeIn()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     func configureExerciseSize() {
@@ -70,6 +78,7 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
     }
     
     func nextScreen() {
+        globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         vc.mode = .afterPermutationTutorial
