@@ -31,6 +31,10 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
         perform(#selector(nextVC), with: nil, afterDelay: 3)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        globalStagePassing.updateElapsedTime()
+    }
+    
     func configureTopBar() {
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")

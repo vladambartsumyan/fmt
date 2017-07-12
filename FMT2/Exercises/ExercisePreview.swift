@@ -45,6 +45,11 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        globalStagePassing.updateElapsedTime()
+    }
+    
     func configureImages() {
         let fst = min(exercise.firstDigit, exercise.secondDigit)
         let snd = max(exercise.firstDigit, exercise.secondDigit)

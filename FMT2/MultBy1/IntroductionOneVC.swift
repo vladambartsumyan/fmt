@@ -43,6 +43,7 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        globalStagePassing.updateElapsedTime()
     }
     
     override func didReceiveMemoryWarning() {

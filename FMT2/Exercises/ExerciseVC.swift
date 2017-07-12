@@ -77,6 +77,11 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        globalStagePassing.updateElapsedTime()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

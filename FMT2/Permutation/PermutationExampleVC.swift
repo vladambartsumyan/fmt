@@ -51,6 +51,11 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
         fadeIn()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        globalStagePassing.updateElapsedTime()
+    }
+    
     func configureExerciseSize() {
         [firstDigitWidth, secondDigitWidth, resultWidth].forEach{$0?.constant = self.digitWidth}
         [equalityWidth, multiplicationWidth].forEach{$0?.constant = self.signWidth} 

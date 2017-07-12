@@ -41,14 +41,19 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
         perform(#selector(nextScreen), with: nil, afterDelay: 3)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
         fadeIn()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        globalStagePassing.updateElapsedTime()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     func configureExerciseSize() {
