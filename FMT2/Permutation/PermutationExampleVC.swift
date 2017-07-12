@@ -57,7 +57,6 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        globalStagePassing.updateElapsedTime()
     }
     
     func configureExerciseSize() {
@@ -79,6 +78,7 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
     }
     
     func nextScreen() {
+        globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         vc.mode = .afterPermutationTutorial

@@ -52,7 +52,6 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        globalStagePassing.updateElapsedTime()
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,6 +74,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
+        self.globalStagePassing.updateElapsedTime()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
         self.newGameWasPressed = true
         fadeOut {
@@ -175,6 +175,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     }
     
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
+        globalStagePassing.updateElapsedTime()
         if !sender.isWrongAnswer {
             self.view.isUserInteractionEnabled = false
             if !isSecondNumber && exercise.firstDigit != exercise.secondDigit && !skipSecondDigit {

@@ -37,7 +37,6 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        globalStagePassing.updateElapsedTime()
     }
     
     func configureTopBar() {
@@ -59,6 +58,7 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     }
     
     func nextVC() {
+        globalStagePassing.updateElapsedTime()
         let vc = PermutationExampleVC(nibName: "PermutationExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         fadeOut {

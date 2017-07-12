@@ -25,6 +25,10 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     
     var newGameWasPressed = false
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()
@@ -152,6 +156,7 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
+        self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
     
@@ -169,6 +174,7 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     }
     
     @IBAction func continueButtonTouchUpInside(_ sender: TextButton) {
+        globalStagePassing.updateElapsedTime()
         self.view.isUserInteractionEnabled = false
         Game.current.setColor(pencilToColor(pencil: selectedPencil!), forDigit: exercise.firstDigit)
         progressBar.setProgressWithAnimation(CGFloat(globalStagePassing.nextProgress))

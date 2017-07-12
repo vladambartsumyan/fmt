@@ -24,6 +24,10 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     
     var newGameWasPressed = false
     
+    override var needsToTimeAccumulation: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()
@@ -102,6 +106,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
+        self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
     
@@ -121,6 +126,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
         let isExam = self.mode == .exam
         if !sender.isWrongAnswer {
+            globalStagePassing.updateElapsedTime()
             if isExam {
                 progressBar.setProgressWithAnimation(CGFloat(globalStagePassing.nextProgress))
                 let result = globalStagePassing.rightAnswer()
@@ -155,20 +161,19 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
                 }
             }
         } else {
-            let result = globalStagePassing.mistake()
-            switch result {
-            case .normal:
-                if isExam {
+            if isExam {
+                globalStagePassing.updateElapsedTime()
+                let result = globalStagePassing.mistake()
+                switch result {
+                case .normal:
                     let vc = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)
                     vc.globalStagePassing = self.globalStagePassing
                     fadeOut {
                         AppDelegate.current.setRootVC(vc)
                     }
-                }
-                break
-            case .soMuch:
-                globalStagePassing.reset()
-                if isExam {
+                    break
+                case .soMuch:
+                    globalStagePassing.reset()
                     let inBetweenVC = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
                     inBetweenVC.mode = .introductionExamFailed
                     inBetweenVC.globalStagePassing = self.globalStagePassing       
@@ -177,9 +182,9 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
                     }
                     break
                 }
+            } else {
+                _ = globalStagePassing.mistake()
             }
-            
-            
         }
     }
 }

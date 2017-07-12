@@ -53,7 +53,6 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        globalStagePassing.updateElapsedTime()
     }
     
     func configureExerciseSize() {
@@ -76,6 +75,7 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     }
     
     func nextScreen() {
+        globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
         vc.mode = .afterOneTutorial
