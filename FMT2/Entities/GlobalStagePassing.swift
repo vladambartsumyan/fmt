@@ -78,14 +78,15 @@ class GlobalStagePassing: Object {
     }
     
     func reset() {
-        try! (try! Realm()).write {
+        let realm = try! Realm()
+        try! realm.write {
             index = 0
             for ind in 0..<stagesPassing.count {
-                if stagesPassing[ind].stage.mode == .exam {
-                    stagesPassing[ind] = stagesPassing[ind].stage.createStagePassing()
-                } else {
-                    stagesPassing[ind].index = 0
+                stagesPassing[ind] = stagesPassing[ind].stage.createStagePassing()
+                for exercisePassing in stagesPassing[ind].exercises {
+                    realm.add(exercisePassing)
                 }
+                realm.add(stagesPassing[ind])
             }
         }        
     }
