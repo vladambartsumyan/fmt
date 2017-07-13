@@ -61,13 +61,14 @@ class GeneralStatisticVC: UIViewController {
     func configureIntroductionStatistic() {
         // header
         var header = NSLocalizedString("Statistic.introduction.title", comment: "")
-//        header += " " + String(statistic.introductionPassedCount) + "/" + String(GameStage.introduction.levelsNumber)
+        let introductionProgress = Game.current.introductionLevelProgress
+        header += " " + String(introductionProgress.0) + "/" + String(introductionProgress.1)
         digitStatisticHeader.attributedText = createHeaderText(fromString: header)
         
         // progress bar
         digitStatisticProgressBar.proportionHeadToFrameHeight *= 33/54
         digitStatisticProgressBar.proportionBodyToHead *= 14/13
-        digitStatisticProgressBar.progress = statistic.introductionProgress
+        digitStatisticProgressBar.progress = CGFloat(introductionProgress.0) / CGFloat(introductionProgress.1)
         digitStatisticProgressBar.labelNeeded = true
         
         // mistakes
@@ -78,13 +79,15 @@ class GeneralStatisticVC: UIViewController {
     func configureExerciseStatistic() {
         // header
         var header = NSLocalizedString("Statistic.exercises.title", comment: "")
-//        header += " " + String(statistic.exercisePassedCount) + "/" + String(GameStage.exercise.levelsNumber)
+        let exercisesProgress = Game.current.exercisesProgress
+        header += " " + String(exercisesProgress.0) + "/" + String(exercisesProgress.1)
         exerciseStatisticHeader.attributedText = createHeaderText(fromString: header)
         
         // progress bar
         exerciseStatisticProgressBar.proportionHeadToFrameHeight *= 33/54
         exerciseStatisticProgressBar.proportionBodyToHead *= 14/13
-        exerciseStatisticProgressBar.progress = statistic.exerciseProgress
+        let exerciseProgress = statistic.exerciseProgress
+        exerciseStatisticProgressBar.progress = CGFloat(exerciseProgress.0) / CGFloat(exerciseProgress.1)
         exerciseStatisticProgressBar.labelNeeded = true
         
         // elapsed time
@@ -103,15 +106,15 @@ class GeneralStatisticVC: UIViewController {
         
         // elapsed time
         bonusStatisticElapsedTimeLabel.text = NSLocalizedString("Statistic.bonus.elapsedTime", comment: "")
-        bonusStatisticElapsedTime.text = statistic.bonusElapsedTime.toTimeStringHMS
+        bonusStatisticElapsedTime.text = statistic.examElapsedTime.toTimeStringHMS
         
         // right answer count
         bonusStatisticRightAnswersLabel.text = NSLocalizedString("Statistic.bonus.rightAnswers", comment: "")
-        bonusStatisticRightAnswerCount.text = String(statistic.bonusPassedCount)
+        bonusStatisticRightAnswerCount.text = String(statistic.examPassedCount)
         
         // mistakes
         bonusStatisticMistakeLabel.text = NSLocalizedString("Statistic.bonus.mistakes", comment: "")
-        bonusStatisticMistakeCount.text = String(statistic.bonusMistakeCount)
+        bonusStatisticMistakeCount.text = String(statistic.examMistakeCount)
     }
     
     func configureMoreButton() {

@@ -13,18 +13,40 @@ class Game {
     }
     
     var globalStagesPassing: [GlobalStagePassing] {
+        return (try! Realm()).objects(GlobalStagePassing.self).map{$0}
+    }
+    
+    var stagesPassing: [StagePassing] {
+        return (try! Realm()).objects(StagePassing.self).map{$0}
+    }
+    
+    var globalStagesPassingSorted: [GlobalStagePassing] {
         return (try! Realm()).objects(GlobalStagePassing.self).sorted(by: {$0.0.globalStage.type.rawValue < $0.1.globalStage.type.rawValue})
     }
     
     var currentExercise: ExercisePassing? {
-        guard let curentGlobalStagePassing = globalStagesPassing.first else {
+        guard let curentGlobalStagePassing = globalStagesPassingSorted.first else {
             return nil
         }
         return curentGlobalStagePassing.currentStagePassing?.currentExercisePassing
     }
     
     var currentGlobalStagePassing: GlobalStagePassing {
-        return self.globalStagesPassing.filter{ !$0.isPassed }.first!
+        return self.globalStagesPassingSorted.filter{ !$0.isPassed }.first!
+    }
+    
+    var introductionLevelProgress: (Int, Int) {
+        let globalStagePassing = (try! Realm()).objects(GlobalStagePassing.self).filter{ $0.type == .introduction }.first!
+        let stagePassing = globalStagePassing.stagesPassing.filter{$0.stage.mode == .simple}.first!
+        return (stagePassing.index, stagePassing.exercises.count)
+    }
+    
+    var exercisesProgress: (Int, Int) {
+        let exercisesGlobalStagesPassing = (try! Realm()).objects(GlobalStagePassing.self).filter{ $0.type != .introduction }
+        let exercisesStagesPassing = exercisesGlobalStagesPassing.flatMap{ $0.stagesPassing }.filter{ $0.stage.mode == .simple }
+        let passedCount = exercisesStagesPassing.reduce(0){ $0.0 + $0.1.index }
+        let totalCount = exercisesStagesPassing.reduce(0){ $0.0 + $0.1.exercises.count }
+        return (passedCount, totalCount)
     }
     
     func initOnDevice() {

@@ -3,82 +3,71 @@ import RealmSwift
 
 class Statistic {
     
-//    var introductionLevels = (try! Realm()).objects(Level.self).filter("stage == 0")
-//    var exerciseLevels = (try! Realm()).objects(Level.self).filter("stage == 1")
-//    var bonusLevels = (try! Realm()).objects(Level.self).filter("stage > 1")
+    let globalStagesPassing = Game.current.globalStagesPassing
+    let allStagesPassing = Game.current.stagesPassing
+
+    var introductionSimpleStagesPassing: [StagePassing]!
+    var exercisesSimpleStagesPassing: [StagePassing]!
+    var examStagesPassing: [StagePassing]!
     
-    var introductionProgress: CGFloat {
-//        let floatPassedIntroductionLevelCount = CGFloat(introductionPassedCount)
-//        let floatIntroductionLevelNumber = CGFloat(GameStage.introduction.levelsNumber)
-        //        return floatPassedIntroductionLevelCount / floatIntroductionLevelNumber
-        return 1
+    func updateIntroductionSimpleStagesPassingIfNeeded() {
+        if introductionSimpleStagesPassing == nil {
+            introductionSimpleStagesPassing = allStagesPassing.filter{$0.stage.type == .introduction && $0.stage.mode == .simple}
+        }
+    }
+    
+    func updateExercisesSimpleStagesPassingIfNeeded() {
+        if exercisesSimpleStagesPassing == nil {
+            exercisesSimpleStagesPassing = allStagesPassing.filter{$0.stage.type != .introduction && $0.stage.mode == .simple}
+        }
+    }
+    
+    func updateExamStagesPassingIfNeeded() {
+        if examStagesPassing == nil {
+            examStagesPassing = allStagesPassing.filter{$0.stage.mode == .exam}
+        }
+    }
+    
+    var introductionProgress: (Int, Int) {
+        let currentIntroductionStagePassing = globalStagesPassing.filter{$0.type == .introduction}.flatMap{$0.stagesPassing.filter{$0.stage.mode == .simple}}.first!
+        return (currentIntroductionStagePassing.index, currentIntroductionStagePassing.exercises.count)
     }
     
     var introductionMistakeCount: Int {
-//        var res = 0
-//        for level in introductionLevels {
-//            res += level.mistakes.count
-//        }
-        //        return res
-        return 1
+        updateIntroductionSimpleStagesPassingIfNeeded()
+        return introductionSimpleStagesPassing.flatMap{$0.exercises}.reduce(0){$0.0 + $0.1.errors.count}
     }
     
-    var introductionPassedCount: Int {
-        //        return introductionLevels.filter("passed == true").count
-        return 1
-    }
-    
-    var exerciseProgress: CGFloat {
-//        let floatPassedExerciseLevelCount = CGFloat(exerciseLevels.filter("passed == true").count)
-//        let floatExerciseLevelNumber = CGFloat(GameStage.exercise.levelsNumber)
-        //        return floatPassedExerciseLevelCount / floatExerciseLevelNumber
-        return 1
+    var exerciseProgress: (Int, Int) {
+        let currentExercisesSimpleStagesPassing = globalStagesPassing.flatMap{$0.stagesPassing}.filter{$0.stage.type != .introduction && $0.stage.mode == .simple}
+        let passedCount = currentExercisesSimpleStagesPassing.reduce(0){$0.0 + $0.1.index}
+        let totalCount = currentExercisesSimpleStagesPassing.reduce(0){$0.0 + $0.1.exercises.count}
+        return (passedCount, totalCount)
     }
     
     var exerciseElapsedTime: TimeInterval {
-//        var res = 0.0
-//        for level in exerciseLevels {
-//            res += level.seconds
-//        }
-        //        return res
-        return 1
+        updateExercisesSimpleStagesPassingIfNeeded()
+        return exercisesSimpleStagesPassing.flatMap{$0.exercises}.flatMap{$0.elapsedTime}.map{$0.seconds}.reduce(0.0){$0.0 + $0.1}
     }
     
     var exerciseMistakeCount: Int {
-//        var res = 0
-//        for level in exerciseLevels {
-//            res += level.mistakes.count
-//        }
-        //        return res
-        return 1
+        updateExercisesSimpleStagesPassingIfNeeded()
+        return exercisesSimpleStagesPassing.flatMap{$0.exercises}.flatMap{$0.errors.count}.reduce(0){$0.0 + $0.1}
     }
     
-    var exercisePassedCount: Int {
-        //        return exerciseLevels.filter("passed == true").count
-        return 1
+    var examElapsedTime: TimeInterval {
+        updateExamStagesPassingIfNeeded()
+        return examStagesPassing.flatMap{$0.exercises}.flatMap{$0.elapsedTime}.map{$0.seconds}.reduce(0.0){$0.0 + $0.1}
     }
     
-    var bonusElapsedTime: TimeInterval {
-//        var res = 0.0
-//        for level in bonusLevels {
-//            res += level.seconds
-//        }
-//        return res
-        return 1
+    var examPassedCount: Int {
+        updateExamStagesPassingIfNeeded()
+        return examStagesPassing.reduce(0){$0.0 + $0.1.index}
     }
     
-    var bonusPassedCount: Int {
-//        return bonusLevels.filter("passed == true").count
-        return 1
-    }
-    
-    var bonusMistakeCount: Int {
-//        var res = 0
-//        for level in bonusLevels {
-//            res += level.mistakes.count
-//        }
-//        return res
-        return 1
+    var examMistakeCount: Int {
+        updateExamStagesPassingIfNeeded()
+        return examStagesPassing.flatMap{$0.exercises}.flatMap{$0.errors.count}.reduce(0){$0.0 + $0.1}
     }
     
     static var byDays: [GraphStatistic] {
