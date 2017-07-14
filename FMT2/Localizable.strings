@@ -19,6 +19,7 @@
 "InBetween.message.afterPermutationTutorial" = "А теперь давай решать примеры";
 "InBetween.message.permutationExamFailed" = "Ты делаешь ошибки, давай изучим примеры заново";
 "InBetween.message.permutationExamPassed" = "Молодец! Теперь ты знаешь таблицу умножения";
+"InBetween.message.trainingPassed" = "Молодец! Ты завершил тренировку";
 
 "Number.Introduction.Question.0" = "На какую цифру похожа шляпа?";
 "Number.Introduction.Question.1" = "На какую цифру похоже зеркало?";

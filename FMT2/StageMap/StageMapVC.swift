@@ -2,9 +2,9 @@ import UIKit
 import RealmSwift
 
 class StageMapVC: FadeInOutVC {
-    
+
     @IBOutlet weak var menuButton: TopButton!
-    
+
     @IBOutlet weak var button0: MapButton!
     @IBOutlet weak var button1: MapButton!
     @IBOutlet weak var button2: MapButton!
@@ -18,31 +18,31 @@ class StageMapVC: FadeInOutVC {
     @IBOutlet weak var button10: MapButton!
     @IBOutlet weak var button11: MapButton!
     @IBOutlet weak var button12: MapButton!
-    
+
     @IBOutlet weak var map: UIView!
-    
+
     @IBOutlet weak var statistic: UILabel!
-    
+
     @IBOutlet weak var scrollView: UIScrollView!
 
     var mapButtons: [MapButton] = []
-    
+
     var curGlobalStagePassing: GlobalStagePassing!
-    
+
     var globalStages: Results<GlobalStagePassing>!
     var token: NotificationToken!
-    
+
     @IBOutlet weak var trainingButton: TextButton!
     var proportion: CGFloat = UIScreen.main.bounds.width / 414
-    
+
     @IBOutlet weak var gradientBottomBorder: UIView!
     @IBOutlet weak var gradientUpBorder: UIView!
-    
+
     var lines: [CAShapeLayer] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.mapButtons.append(button0)
         self.mapButtons.append(button1)
         self.mapButtons.append(button2)
@@ -56,7 +56,7 @@ class StageMapVC: FadeInOutVC {
         self.mapButtons.append(button10)
         self.mapButtons.append(button11)
         self.mapButtons.append(button12)
-        
+
         configureTrainingButton()
         curGlobalStagePassing = Game.current.currentGlobalStagePassing
         globalStages = (try! Realm()).objects(GlobalStagePassing.self).sorted(byKeyPath: "_type")
@@ -67,65 +67,71 @@ class StageMapVC: FadeInOutVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fadeIn()
         drawLine()
         addGradientToBottomBorder()
         addGradientToUpBorder()
-        
+
     }
-    
+
     func configureStatistic() {
-        let passedCount = mapButtons.filter{$0.mode == .passed}.count
+        let passedCount = mapButtons.filter {
+            $0.mode == .passed
+        }.count
         let totalCount = mapButtons.count
         let text = NSLocalizedString("StageMap.statistic", comment: "") + ": \(passedCount)/\(totalCount)"
-        
+
         self.statistic.attributedText = NSAttributedString(
-            string : text, 
-            attributes : [
-                NSFontAttributeName : UIFont(name: "Lato-Black", size: 22 * proportion)!,
-                NSStrokeWidthAttributeName : -2.0,
-                NSStrokeColorAttributeName : UIColor.black,
-                NSForegroundColorAttributeName : UIColor.white
-            ]
+                string: text,
+                attributes: [
+                        NSFontAttributeName: UIFont(name: "Lato-Black", size: 22 * proportion)!,
+                        NSStrokeWidthAttributeName: -2.0,
+                        NSStrokeColorAttributeName: UIColor.black,
+                        NSForegroundColorAttributeName: UIColor.white
+                ]
         )
     }
-    
+
     func updateButtons() {
         for ind in 0..<globalStages.count {
             configureButton(mapButtons[ind], withGlobalStagePassing: globalStages[ind])
         }
-        mapButtons.filter{$0.mode == .locked}.forEach{$0.isUserInteractionEnabled = false}
+        mapButtons.filter {
+            $0.mode == .locked
+        }.forEach {
+            $0.isUserInteractionEnabled = false
+        }
     }
-    
+
     func configureTrainingButton() {
         trainingButton.setTitle(titleText: NSLocalizedString("StageMap.trainingButton.title", comment: ""))
     }
-    
+
     func addGradientToUpBorder() {
         let gradient = CAGradientLayer()
-        
+
         gradient.frame = gradientUpBorder.bounds
         gradient.colors = [UIColor(red255: 237, green: 244, blue: 254).cgColor, UIColor(red255: 239, green: 246, blue: 254).withAlphaComponent(0).cgColor]
         gradient.startPoint = CGPoint(x: 0.5, y: 0)
         gradient.endPoint = CGPoint(x: 0.5, y: 1)
-        
+
         gradientUpBorder.layer.insertSublayer(gradient, at: 0)
     }
-    
+
     func addGradientToBottomBorder() {
         let gradient = CAGradientLayer()
-        
+
         gradient.frame = gradientBottomBorder.bounds
         gradient.colors = [UIColor.white.cgColor, UIColor.white.withAlphaComponent(0).cgColor]
         gradient.startPoint = CGPoint(x: 0.5, y: 1)
         gradient.endPoint = CGPoint(x: 0.5, y: 0)
-        
+
         gradientBottomBorder.layer.insertSublayer(gradient, at: 0)
     }
-    
+
     func configureButton(_ button: MapButton, withGlobalStagePassing stage: GlobalStagePassing) {
         let mode = stageToButtonMode(stage: stage)
         switch stage.type {
@@ -172,7 +178,7 @@ class StageMapVC: FadeInOutVC {
             fatalError("Training stage is unexpected")
         }
     }
-    
+
     func stageToButtonMode(stage: GlobalStagePassing) -> MapButton.MapButtonMode {
         if stage == curGlobalStagePassing {
             return .current
@@ -182,11 +188,11 @@ class StageMapVC: FadeInOutVC {
         }
         return .locked
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     func loadGlobalStage(_ globalStagePassing: GlobalStagePassing) {
         let type = StageType(rawValue: globalStagePassing._type)!
         switch type {
@@ -273,7 +279,7 @@ class StageMapVC: FadeInOutVC {
             break
         }
     }
-    
+
     @IBAction func buttonPressed(_ sender: MapButton) {
         let index = mapButtons.index(of: sender)!
         let stage = globalStages[index]
@@ -286,14 +292,16 @@ class StageMapVC: FadeInOutVC {
             loadGlobalStage(globalStagePassing)
         }
     }
-    
+
     func drawLine() {
-        lines.forEach{$0.removeFromSuperlayer()}
+        lines.forEach {
+            $0.removeFromSuperlayer()
+        }
         lines.removeAll()
-        
+
         let r = button0.frame.width / 2
         var points: [CGPoint] = []
-        
+
         points.append(button0.convert(pointOnCircle(withRadius: r, angle: 90, shift: 8), to: map))
         points.append(button1.convert(pointOnCircle(withRadius: r, angle: 190, shift: 0), to: map))
         points.append(button1.convert(pointOnCircle(withRadius: r, angle: 10, shift: 10), to: map))
@@ -318,7 +326,7 @@ class StageMapVC: FadeInOutVC {
         points.append(button11.convert(pointOnCircle(withRadius: r, angle: -18, shift: 0), to: map))
         points.append(button11.convert(pointOnCircle(withRadius: r, angle: 176, shift: 10), to: map))
         points.append(button12.convert(pointOnCircle(withRadius: r, angle: -70, shift: 0), to: map))
-        
+
         var controlPoints: [CGPoint] = []
         controlPoints.append(CGPoint(x: points[0].x, y: (points[1].y + points[0].y) / 2.0))
         controlPoints.append(CGPoint(x: (points[2].x + points[3].x) / 2, y: (points[2].y + points[3].y) / 2.0 - 5))
@@ -332,12 +340,12 @@ class StageMapVC: FadeInOutVC {
         controlPoints.append(CGPoint(x: (points[18].x + points[19].x) / 2, y: (points[18].y + points[19].y) / 2.0 - 5))
         controlPoints.append(CGPoint(x: (points[20].x + points[21].x) / 2, y: (points[20].y + points[21].y) / 2.0))
         controlPoints.append(CGPoint(x: points[23].x, y: (points[22].y + points[23].y) / 2.0))
-        
+
         for ind in 0..<controlPoints.count {
             let reached = mapButtons[ind].mode == .passed
-            addDashedLineOnMap(fromPoint: points[ind * 2], toPoint: points[ind * 2 + 1], reached: reached,  withControlPoint: controlPoints[ind])
+            addDashedLineOnMap(fromPoint: points[ind * 2], toPoint: points[ind * 2 + 1], reached: reached, withControlPoint: controlPoints[ind])
         }
-        
+
     }
 
     func addDashedLineOnMap(fromPoint a: CGPoint, toPoint b: CGPoint, reached: Bool, withControlPoint c1: CGPoint, andControlPoint c2: CGPoint? = nil) {
@@ -346,8 +354,8 @@ class StageMapVC: FadeInOutVC {
         let path = UIBezierPath()
         path.move(to: a)
         c2 != nil ?
-            path.addCurve(to: b, controlPoint1: c1, controlPoint2: c2!) :
-            path.addQuadCurve(to: b, controlPoint: c1)
+                path.addCurve(to: b, controlPoint1: c1, controlPoint2: c2!) :
+                path.addQuadCurve(to: b, controlPoint: c1)
 
         let layer = CAShapeLayer()
         layer.lineWidth = 7 * proportion
@@ -358,24 +366,24 @@ class StageMapVC: FadeInOutVC {
         layer.lineDashPattern = [0.0, NSNumber(value: Double(16 * proportion))]
         layer.path = path.cgPath
         self.map.layer.sublayers != nil ?
-            self.map.layer.sublayers!.insert(layer, at: 0) :
-            self.map.layer.addSublayer(layer)
+                self.map.layer.sublayers!.insert(layer, at: 0) :
+                self.map.layer.addSublayer(layer)
         lines.append(layer)
     }
-    
+
     func pointOnCircle(withRadius radius: CGFloat, angle: CGFloat, shift: CGFloat) -> CGPoint {
         let shift = shift * proportion
         let radians = angle * CGFloat.pi / 180
         let center = CGPoint(x: radius, y: radius)
         return CGPoint(x: center.x + (radius + shift) * cos(radians), y: center.y + (radius + shift) * sin(radians))
     }
-    
+
     @IBAction func menuButtonTouched(_ sender: TopButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
-    
+
     override func fadeOut(_ handler: ((()) -> ())?) {
         super.fadeOut(handler)
         UIView.animate(withDuration: 0.3) {
@@ -383,9 +391,10 @@ class StageMapVC: FadeInOutVC {
             self.gradientBottomBorder.alpha = 0.0
         }
     }
-    
+
     @IBAction func trainingButtonTouched(_ sender: TextButton) {
         let trainingGlobalStagePassing = GlobalStage.createTrainingGlobalStage().createGlobalStagePassing()
+        trainingGlobalStagePassing.saveStages()
 
         let specialLevels = [StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10]
         let firstExerciseIsSpecial = specialLevels.contains(trainingGlobalStagePassing.type)
@@ -402,11 +411,11 @@ class StageMapVC: FadeInOutVC {
             AppDelegate.current.setRootVC(vc as! UIViewController)
         }
     }
-    
+
     override func getFadeInArray() -> [[UIView]] {
         return [[menuButton, statistic], [scrollView], [trainingButton]]
     }
-    
+
     override func getFadeOutArray() -> [[UIView]] {
         return [[menuButton, statistic], [scrollView], [trainingButton]]
     }

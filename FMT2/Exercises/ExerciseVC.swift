@@ -6,19 +6,19 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var menuButton: TopButton!
     @IBOutlet weak var newGameButton: TopButton!
     @IBOutlet weak var progressBar: ProgressBar!
-    
+
     // Images
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var result: UIImageView!
-    
+
     // Variants
     @IBOutlet weak var firstVariant: VariantButton!
     @IBOutlet weak var secondVariant: VariantButton!
     @IBOutlet weak var thirdVariant: VariantButton!
     @IBOutlet weak var fourthVariant: VariantButton!
-    
+
     // Exercise
     @IBOutlet weak var fst1: UIImageView!
     @IBOutlet weak var fst2: UIImageView!
@@ -29,14 +29,14 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var res1: UIImageView!
     @IBOutlet weak var res2: UIImageView!
     @IBOutlet weak var question: UIImageView!
-    
+
     let digitWidth = 40.0 * UIScreen.main.bounds.width / 414.0
     let signWidth = 30.0 * UIScreen.main.bounds.width / 414.0
-    
+
     var exercise: Exercise!
     var globalStagePassing: GlobalStagePassing!
     var mode: StageMode!
-    
+
     @IBOutlet weak var fst2width: NSLayoutConstraint!
     @IBOutlet weak var fst1width: NSLayoutConstraint!
     @IBOutlet weak var snd2width: NSLayoutConstraint!
@@ -46,13 +46,13 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var mulWidth: NSLayoutConstraint!
     @IBOutlet weak var eqWidth: NSLayoutConstraint!
     @IBOutlet weak var questionWidth: NSLayoutConstraint!
-    
+
     var newGameWasPressed = false
-    
+
     override var needsToTimeAccumulation: Bool {
         return true
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLevel()
@@ -80,15 +80,15 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             })
         }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     func configureLevel() {
         if globalStagePassing == nil {
             globalStagePassing = Game.current.currentGlobalStagePassing
@@ -96,20 +96,20 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         self.exercise = globalStagePassing.currentStagePassing!.currentExercisePassing!.exercise
         self.mode = globalStagePassing.currentStagePassing!.stage.mode
     }
-    
+
     func configureTopBar() {
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
     }
-    
+
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
         self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
-    
+
     @IBAction func newGameTouchUpInside(_ sender: LeapingButton) {
         let alert = AlertMaker.newGameAlert {
             self.view.isUserInteractionEnabled = false
@@ -120,42 +120,42 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                 AppDelegate.current.setRootVC(vc)
             }
         }
-        self.present(alert, animated: true, completion: nil)      
+        self.present(alert, animated: true, completion: nil)
     }
-    
+
     override func getFadeInArray() -> [[UIView]] {
-        return [[fst1, fst2, snd1, snd2, question, equality, mult], 
+        return [[fst1, fst2, snd1, snd2, question, equality, mult],
                 [firstVariant, secondVariant, thirdVariant, fourthVariant]]
     }
-    
+
     override func getFadeOutArray() -> [[UIView]] {
         if newGameWasPressed {
-            return [[background, firstDigit, secondDigit, result], 
-                    [fst1, fst2, snd1, snd2, question, equality, mult, res1, res2], 
+            return [[background, firstDigit, secondDigit, result],
+                    [fst1, fst2, snd1, snd2, question, equality, mult, res1, res2],
                     [firstVariant, secondVariant, thirdVariant, fourthVariant]]
         }
-        return [[background, firstDigit, secondDigit, result], 
-                [fst1, fst2, snd1, snd2, question, equality, mult, res1, res2], 
+        return [[background, firstDigit, secondDigit, result],
+                [fst1, fst2, snd1, snd2, question, equality, mult, res1, res2],
                 [firstVariant, secondVariant, thirdVariant, fourthVariant]]
     }
-    
+
     func configureImages() {
         if globalStagePassing.type == .multiplicationBy0 {
             let mult = max(exercise.firstDigit, exercise.secondDigit)
             let multColor = Game.current.getColor(forDigit: mult)
             firstDigit.image = UIImage.init(named: "\(mult)\(multColor.rawValue)")
-            
+
             let zeroColor = Game.current.getColor(forDigit: 0)
             secondDigit.image = UIImage.init(named: "\(0)\(zeroColor.rawValue)")
             secondDigit.alpha = 0.0
-            
+
             result.image = mode == .exam ? nil : UIImage.init(named: "0")
             result.alpha = 0.0
-            
+
             background.image = nil
             return
         }
-        
+
         let fst = min(exercise.firstDigit, exercise.secondDigit)
         let snd = max(exercise.firstDigit, exercise.secondDigit)
         let reverseImage = ReverseImageOrder.check(firstDigit: fst, secondDigit: snd)
@@ -182,7 +182,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         secondDigit.image = UIImage.init(named: s + s2 + c2)
         result.image = self.mode == .exam ? nil : UIImage.init(named: s + "result")
     }
-    
+
     func configureVariantPanel() {
         let result = exercise.firstDigit * exercise.secondDigit
         var allVariants: [Int] = []
@@ -204,7 +204,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             button.setTitle(titleText: "\(variant)")
         }
     }
-    
+
     func configureExercise() {
         mulWidth.constant = signWidth
         eqWidth.constant = signWidth
@@ -212,9 +212,9 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         snd1width.constant = digitWidth
         res1width.constant = digitWidth
         questionWidth.constant = digitWidth
-        
+
         let res = exercise.firstDigit * exercise.secondDigit
-        
+
         if exercise.firstDigit >= 10 {
             fst2width.constant = digitWidth
             fst1.image = UIImage(named: "\(Int(exercise.firstDigit / 10))exercise")
@@ -223,7 +223,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             fst2width.constant = 0.0
             fst1.image = UIImage(named: "\(exercise.firstDigit)exercise")
         }
-        
+
         if exercise.secondDigit >= 10 {
             snd2width.constant = digitWidth
             snd1.image = UIImage(named: "\(Int(exercise.secondDigit / 10))exercise")
@@ -232,7 +232,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             snd2width.constant = 0.0
             snd1.image = UIImage(named: "\(exercise.secondDigit)exercise")
         }
-        
+
         if res >= 10 {
             res2width.constant = digitWidth
             res1.image = UIImage(named: "\(Int(res / 10))exercise")
@@ -241,13 +241,15 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             res2width.constant = 0.0
             res1.image = UIImage(named: "\(res)exercise")
         }
-        
+
     }
-    
+
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
         if !sender.isWrongAnswer {
             self.view.isUserInteractionEnabled = false
-            rightAnswerAppearing { self.nextScreen() }
+            rightAnswerAppearing {
+                self.nextScreen()
+            }
         } else {
             if mode == .exam {
                 globalStagePassing.updateElapsedTime()
@@ -267,7 +269,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                         fadeOut {
                             AppDelegate.current.setRootVC(vc)
                         }
-                    } 
+                    }
                 }
                 if result == .soMuch {
                     globalStagePassing.reset()
@@ -281,7 +283,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             }
         }
     }
-    
+
     func rightAnswerAppearing(_ handler: @escaping (()) -> ()) {
         var t = CGAffineTransform.identity
         t = t.translatedBy(x: 0.0, y: 40.0)
@@ -292,7 +294,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         res2.isHidden = false
         res1.transform = t
         res2.transform = t
-        UIView.animate(withDuration: 0.2, animations: { 
+        UIView.animate(withDuration: 0.2, animations: {
             self.res1.transform = CGAffineTransform.identity
             self.res2.transform = CGAffineTransform.identity
             self.question.alpha = 0.0
@@ -302,7 +304,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             handler()
         }
     }
-    
+
     func nextScreen() {
         globalStagePassing.updateElapsedTime()
         progressBar.setProgressWithAnimation(CGFloat(globalStagePassing.nextProgress))
@@ -312,7 +314,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         if let typeOfNextStage = globalStagePassing.typeOfNextExercise {
             nextExerciseIsSpecial = specialLevels.contains(typeOfNextStage)
         }
-        
+
         globalStagePassing.rightAnswer()
         switch result {
         case .normal:
@@ -329,8 +331,8 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                 fadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
-            } 
-            break    
+            }
+            break
         case .endOfStage:
             let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
             vc.globalStagePassing = globalStagePassing
@@ -352,7 +354,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             break
         }
     }
-    
+
     var beforeExamMode: InBetweenMode {
         let type = globalStagePassing.type
         switch type {
@@ -362,14 +364,17 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             return .beforeMultByZeroExam
         case .multiplicationBy1:
             return .beforeMultByOneExam
-        case .multiplicationBy10: 
+        case .multiplicationBy10:
             return .beforeMultByTenExam
         default:
             return .beforeExam
         }
     }
-    
+
     var afterExamMode: InBetweenMode {
+        if globalStagePassing._type == StageType.training.rawValue {
+            return .trainingPassed
+        }
         let type = globalStagePassing.type
         switch type {
         case .introduction:
@@ -386,7 +391,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             return .examPassed
         }
     }
-    
+
     var examFailedMode: InBetweenMode {
         let type = globalStagePassing.type
         switch type {
