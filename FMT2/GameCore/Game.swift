@@ -155,7 +155,7 @@ class Game {
             realm.delete(realm.objects(StagePassing.self))
             realm.delete(realm.objects(GlobalStagePassing.self))
         }
-        ServerTaskManager.pushBack(ServerTask.startGame())
+        ServerTaskManager.pushBack(.startGame())
     }
     
     func createGame() {
@@ -180,7 +180,7 @@ class Game {
     
     func setColor(_ color: Color, forDigit digit: Int) {
         let realm = try! Realm()
-        ServerTaskManager.pushBack(ServerTask.setColorForDigit(color: color, digit: digit))
+        ServerTaskManager.pushBack(.setColorForDigit(color: color, digit: digit))
         let digitObject = realm.object(ofType: DigitColor.self, forPrimaryKey: digit)!
         try! realm.write {
             digitObject.color = color

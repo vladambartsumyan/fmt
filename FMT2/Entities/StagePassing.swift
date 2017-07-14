@@ -29,12 +29,6 @@ class StagePassing: Object {
         }
     }
     
-    func rightAnswer() {
-        try! (try! Realm()).write {
-            index += 1
-        }
-    }
-    
     func save() {
         let realm = try! Realm()
         try! realm.write {

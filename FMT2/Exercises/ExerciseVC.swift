@@ -337,6 +337,9 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
             vc.globalStagePassing = globalStagePassing
             vc.mode = afterExamMode
+            if globalStagePassing.type == .permutation {
+                ServerTaskManager.pushBack(.exerciseFinished())
+            }
             fadeOut {
                 AppDelegate.current.setRootVC(vc)
             }
@@ -371,6 +374,8 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             return .multByOneExamPassed
         case .multiplicationBy10:
             return .multByTenExamPassed
+        case .permutation:
+            return .permutationExamPassed
         default:
             return .examPassed
         }

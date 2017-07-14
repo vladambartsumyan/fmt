@@ -7,6 +7,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var serverTaskManager = ServerTaskManager()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
 
@@ -14,13 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         firstLaunch()
         setStartScreen()
 
+        UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
+        
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
+    
+    func sendUsingTime() {
+        let timeMark = UserDefaults.standard.value(forKey: UserDefaultsKey.timeMark.rawValue) as! Date
+        ServerTaskManager.pushBack(.timeForDay(dateTimeStart: timeMark, dateTimeStop: Date()))
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
+        sendUsingTime()
         resetNotification()
         if let rootVC = window?.rootViewController {
             if rootVC.needsToTimeAccumulation {
@@ -30,14 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
+        serverTaskManager.setNeedsLoading(true)
+        UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
+        if let rootVC = window?.rootViewController {
+            if rootVC.needsToTimeAccumulation {
+                if let rootGameVC = rootVC as? IsGameVC {
+                    rootGameVC.globalStagePassing.addElapsedTime()
+                }
+            }
+        }
     }
 
     func setStartScreen() {
@@ -48,7 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func firstLaunch() {
         let launchedBefore = UserDefaults.standard.bool(forKey: UserDefaultsKey.launchedBefore.rawValue)
-        if !launchedBefore  {
+        if !launchedBefore {
+            ServerTaskManager.pushBack(.registerDevice())
             setUserDefaults()
         }
     }

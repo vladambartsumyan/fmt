@@ -55,20 +55,60 @@ class GlobalStagePassing: Object {
     
     func mistake() -> MistakeResult {
         let result: MistakeResult = mistakeCountInExam == mistakeCount - 1 ? .soMuch : .normal
-        currentStagePassing?.mistake()
+        if inGame || currentStagePassing!.stage.mode == .exam {
+            currentStagePassing?.mistake()
+        }
         return result
     }
     
+    func sendStatistic() {
+        if inGame || currentStagePassing!.stage.mode == .exam { 
+            
+            let stage = currentStagePassing!.stage
+            let curExercisePassing = currentStagePassing!.currentExercisePassing!
+            
+            if stage!.mode == .simple && stage!.type == .introduction {
+                ServerTaskManager.pushBack(.introductionStatistic(
+                    countError: curExercisePassing.errors.count, 
+                    digit: curExercisePassing.exercise.firstDigit)
+                )
+            }
+            if stage!.mode == .simple && stage!.type != .introduction {
+                ServerTaskManager.pushBack(.exerciseStatistic(
+                    countError: curExercisePassing.errors.count, 
+                    firstDigit: curExercisePassing.exercise.firstDigit, 
+                    secondDigit: curExercisePassing.exercise.secondDigit, 
+                    time: curExercisePassing.elapsedTime.reduce(0.0){$0.0 + $0.1.seconds})
+                )
+            }
+            if stage!.mode == .exam {
+                ServerTaskManager.pushBack(.bonusStatistic(
+                    countError: curExercisePassing.errors.count, 
+                    firstDigit: curExercisePassing.exercise.firstDigit, 
+                    secondDigit: curExercisePassing.exercise.secondDigit, 
+                    time: curExercisePassing.elapsedTime.reduce(0.0){$0.0 + $0.1.seconds})
+                )           
+            }
+        }
+    }
+    
     func rightAnswer() -> RightAnswerResult {
+        sendStatistic()
         if currentStagePassing!.index == currentStagePassing!.exercises.count - 1 {
             let result: RightAnswerResult = index == stagesPassing.count - 1 ? .endOfGlobalStage : .endOfStage 
-            currentStagePassing?.rightAnswer()
             try! (try! Realm()).write {
+                currentStagePassing!.currentExercisePassing!.isPassed = true
+                currentStagePassing!.currentExercisePassing!.passedAt = Date()
+                currentStagePassing!.index += 1
                 index += 1
             }
             return result
         } else {
-            currentStagePassing?.rightAnswer()
+            try! (try! Realm()).write {
+                currentStagePassing!.currentExercisePassing!.isPassed = true
+                currentStagePassing!.currentExercisePassing!.passedAt = Date()
+                currentStagePassing!.index += 1
+            }
             return .normal
         }
     }
@@ -81,38 +121,59 @@ class GlobalStagePassing: Object {
         let realm = try! Realm()
         try! realm.write {
             index = 0
-            for ind in 0..<stagesPassing.count {
-                stagesPassing[ind] = stagesPassing[ind].stage.createStagePassing()
-                for exercisePassing in stagesPassing[ind].exercises {
-                    realm.add(exercisePassing)
+            if !inGame {
+                for ind in 0..<stagesPassing.count {
+                    if stagesPassing[ind].stage.mode == .exam {
+                        stagesPassing[ind] = stagesPassing[ind].stage.createStagePassing()
+                        for exercisePassing in stagesPassing[ind].exercises {
+                            realm.add(exercisePassing)
+                        }
+                        realm.add(stagesPassing[ind])
+                    } else {
+                        stagesPassing[ind].index = 0
+                    }
                 }
-                realm.add(stagesPassing[ind])
+            } else {
+                for ind in 0..<stagesPassing.count {
+                    stagesPassing[ind] = stagesPassing[ind].stage.createStagePassing()
+                    for exercisePassing in stagesPassing[ind].exercises {
+                        realm.add(exercisePassing)
+                    }
+                    realm.add(stagesPassing[ind])
+                }
             }
-        }        
+        }          
     }
     
     func addElapsedTime() {
-        let realm = try! Realm()
-        try! realm.write {
-            let elapsedTime = ElapsedTime()
-            realm.add(elapsedTime)
-            currentStagePassing!.currentExercisePassing?.elapsedTime.append(elapsedTime)
+        if inGame || currentStagePassing!.stage.mode == .exam {
+            let realm = try! Realm()
+            try! realm.write {
+                let elapsedTime = ElapsedTime()
+                realm.add(elapsedTime)
+                currentStagePassing!.currentExercisePassing?.elapsedTime.append(elapsedTime)
+            }
         }
     }
     
     func updateElapsedTime() {
-        let realm = try! Realm()
-        try! realm.write {
-            let elapsedTime = currentStagePassing!.currentExercisePassing!.elapsedTime.last!
-            let now = Date()
-            elapsedTime.seconds += now.timeIntervalSince(elapsedTime.createdAt)
-            elapsedTime.createdAt = now
+        if inGame || currentStagePassing!.stage.mode == .exam {
+            let realm = try! Realm()
+            try! realm.write {
+                if let elapsedTime = currentStagePassing!.currentExercisePassing!.elapsedTime.last {
+                    let now = Date()
+                    elapsedTime.seconds += now.timeIntervalSince(elapsedTime.createdAt)
+                    elapsedTime.createdAt = now
+                }
+            }
         }
     }
     
     func saveStages() {
         for stagePassing in stagesPassing {
-            stagePassing.save()
+            if stagePassing.stage.mode == .exam {
+                stagePassing.save() 
+            }
         }
     }
 }

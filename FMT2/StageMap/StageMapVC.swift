@@ -66,7 +66,6 @@ class StageMapVC: FadeInOutVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        layoutAllViews(inView: self.view)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -283,6 +282,7 @@ class StageMapVC: FadeInOutVC {
         } else {
             let globalStagePassing = globalStages[index].globalStage.createGlobalStagePassing()
             globalStagePassing.saveStages()
+            globalStagePassing.inGame = false
             loadGlobalStage(globalStagePassing)
         }
     }
@@ -291,33 +291,33 @@ class StageMapVC: FadeInOutVC {
         lines.forEach{$0.removeFromSuperlayer()}
         lines.removeAll()
         
-        let d = button0.frame.width
+        let r = button0.frame.width / 2
         var points: [CGPoint] = []
         
-        points.append(button0.convert(pointOnCircle(withRadius: d/2, angle: 90, shift: 8), to: map))
-        points.append(button1.convert(pointOnCircle(withRadius: d/2, angle: 190, shift: 0), to: map))
-        points.append(button1.convert(pointOnCircle(withRadius: d/2, angle: 10, shift: 10), to: map))
-        points.append(button2.convert(pointOnCircle(withRadius: d/2, angle: 190, shift: 0), to: map))
-        points.append(button2.convert(pointOnCircle(withRadius: d/2, angle: 105, shift: 8), to: map))
-        points.append(button3.convert(pointOnCircle(withRadius: d/2, angle: -10, shift: 0), to: map))
-        points.append(button3.convert(pointOnCircle(withRadius: d/2, angle: 165, shift: 10), to: map))
-        points.append(button4.convert(pointOnCircle(withRadius: d/2, angle: -10, shift: 0), to: map))
-        points.append(button4.convert(pointOnCircle(withRadius: d/2, angle: 65, shift: 10), to: map))
-        points.append(button5.convert(pointOnCircle(withRadius: d/2, angle: -165, shift: 0), to: map))
-        points.append(button5.convert(pointOnCircle(withRadius: d/2, angle: 7, shift: 10), to: map))
-        points.append(button6.convert(pointOnCircle(withRadius: d/2, angle: -120, shift: 0), to: map))
-        points.append(button6.convert(pointOnCircle(withRadius: d/2, angle: 145, shift: 10), to: map))
-        points.append(button7.convert(pointOnCircle(withRadius: d/2, angle: -18, shift: 0), to: map))
-        points.append(button7.convert(pointOnCircle(withRadius: d/2, angle: 178, shift: 10), to: map))
-        points.append(button8.convert(pointOnCircle(withRadius: d/2, angle: -30, shift: 0), to: map))
-        points.append(button8.convert(pointOnCircle(withRadius: d/2, angle: 65, shift: 10), to: map))
-        points.append(button9.convert(pointOnCircle(withRadius: d/2, angle: -165, shift: 0), to: map))
-        points.append(button9.convert(pointOnCircle(withRadius: d/2, angle: 7, shift: 10), to: map))
-        points.append(button10.convert(pointOnCircle(withRadius: d/2, angle: -120, shift: 0), to: map))
-        points.append(button10.convert(pointOnCircle(withRadius: d/2, angle: 145, shift: 10), to: map))
-        points.append(button11.convert(pointOnCircle(withRadius: d/2, angle: -18, shift: 0), to: map))
-        points.append(button11.convert(pointOnCircle(withRadius: d/2, angle: 176, shift: 10), to: map))
-        points.append(button12.convert(pointOnCircle(withRadius: d/2, angle: -70, shift: 0), to: map))
+        points.append(button0.convert(pointOnCircle(withRadius: r, angle: 90, shift: 8), to: map))
+        points.append(button1.convert(pointOnCircle(withRadius: r, angle: 190, shift: 0), to: map))
+        points.append(button1.convert(pointOnCircle(withRadius: r, angle: 10, shift: 10), to: map))
+        points.append(button2.convert(pointOnCircle(withRadius: r, angle: 190, shift: 0), to: map))
+        points.append(button2.convert(pointOnCircle(withRadius: r, angle: 105, shift: 8), to: map))
+        points.append(button3.convert(pointOnCircle(withRadius: r, angle: -10, shift: 0), to: map))
+        points.append(button3.convert(pointOnCircle(withRadius: r, angle: 165, shift: 10), to: map))
+        points.append(button4.convert(pointOnCircle(withRadius: r, angle: -10, shift: 0), to: map))
+        points.append(button4.convert(pointOnCircle(withRadius: r, angle: 65, shift: 10), to: map))
+        points.append(button5.convert(pointOnCircle(withRadius: r, angle: -165, shift: 0), to: map))
+        points.append(button5.convert(pointOnCircle(withRadius: r, angle: 7, shift: 10), to: map))
+        points.append(button6.convert(pointOnCircle(withRadius: r, angle: -120, shift: 0), to: map))
+        points.append(button6.convert(pointOnCircle(withRadius: r, angle: 145, shift: 10), to: map))
+        points.append(button7.convert(pointOnCircle(withRadius: r, angle: -18, shift: 0), to: map))
+        points.append(button7.convert(pointOnCircle(withRadius: r, angle: 178, shift: 10), to: map))
+        points.append(button8.convert(pointOnCircle(withRadius: r, angle: -30, shift: 0), to: map))
+        points.append(button8.convert(pointOnCircle(withRadius: r, angle: 65, shift: 10), to: map))
+        points.append(button9.convert(pointOnCircle(withRadius: r, angle: -165, shift: 0), to: map))
+        points.append(button9.convert(pointOnCircle(withRadius: r, angle: 7, shift: 10), to: map))
+        points.append(button10.convert(pointOnCircle(withRadius: r, angle: -120, shift: 0), to: map))
+        points.append(button10.convert(pointOnCircle(withRadius: r, angle: 145, shift: 10), to: map))
+        points.append(button11.convert(pointOnCircle(withRadius: r, angle: -18, shift: 0), to: map))
+        points.append(button11.convert(pointOnCircle(withRadius: r, angle: 176, shift: 10), to: map))
+        points.append(button12.convert(pointOnCircle(withRadius: r, angle: -70, shift: 0), to: map))
         
         var controlPoints: [CGPoint] = []
         controlPoints.append(CGPoint(x: points[0].x, y: (points[1].y + points[0].y) / 2.0))

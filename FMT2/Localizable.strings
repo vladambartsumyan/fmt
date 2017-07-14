@@ -18,6 +18,7 @@
 "InBetween.message.examFailed" = "Ты делаешь ошибки, давай изучим примеры заново";
 "InBetween.message.afterPermutationTutorial" = "А теперь давай решать примеры";
 "InBetween.message.permutationExamFailed" = "Ты делаешь ошибки, давай изучим примеры заново";
+"InBetween.message.permutationExamPassed" = "Молодец! Теперь ты знаешь таблицу умножения";
 
 "Number.Introduction.Question.0" = "На какую цифру похожа шляпа?";
 "Number.Introduction.Question.1" = "На какую цифру похоже зеркало?";
@@ -98,7 +99,7 @@
 "Statistic.exercises.title" = "Примеры:";
 "Statistic.exercises.elapsedTime" = "Времени затрачено:";
 "Statistic.exercises.mistakes" = "Ошибок:";
-"Statistic.bonus.title" = "Тренажёр";
+"Statistic.bonus.title" = "Экзамен";
 "Statistic.bonus.elapsedTime" = "Времени затрачено:";
 "Statistic.bonus.rightAnswers" = "Правильных ответов:";
 "Statistic.bonus.mistakes" = "Ошибок:";

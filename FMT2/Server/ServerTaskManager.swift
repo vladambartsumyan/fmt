@@ -77,16 +77,24 @@ class ServerTaskManager {
             case .success(let response):
                 self.log(response)
                 guard 200 <= response.statusCode && response.statusCode < 300 else {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 15.0, execute: self.sendNext)
+                    self.resendIfNeeded()
                     return
                 }
                 ServerTaskManager.dropFront()
                 self.sendNext()
                 break
             case .failure(_):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 15.0, execute: self.sendNext)
+                self.resendIfNeeded()
                 break
             }
+        }
+    }
+    
+    func resendIfNeeded() {
+        if UIApplication.shared.applicationState != .background {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 15.0, execute: self.sendNext)
+        } else {
+            inWork = false
         }
     }
     

@@ -27,7 +27,6 @@ class MoreStatisticVC: UIViewController, SMSegmentViewDelegate, UICollectionView
     var segment2: SMSegment!
     
     var selectedIndex: Int = 0
-    
     var numberOfColumnForPage: Int = 6
     
     private let timeCellReuseID = "timeCellReuseID"
@@ -263,7 +262,7 @@ class MoreStatisticVC: UIViewController, SMSegmentViewDelegate, UICollectionView
         SoundHelper.playDefault()
         selectedIndex = index
         graph.setContentOffset(CGPoint.init(x: 0, y: 0), animated: false)
-        self.statisticByDays = Statistic.byDays // rand()
+        self.statisticByDays = Statistic.byDays
         graph.reloadData()
         configureColorsForSegmentView(index: index)
         

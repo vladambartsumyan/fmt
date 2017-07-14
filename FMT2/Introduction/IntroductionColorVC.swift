@@ -182,6 +182,7 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
         var vc: UIViewController!
         switch result {
         case .endOfGlobalStage:
+            ServerTaskManager.pushBack(.introductionFinished())
             let stageMapVC = StageMapVC(nibName: "StageMapVC", bundle: nil)     
             vc = stageMapVC
             break

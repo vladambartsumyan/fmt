@@ -71,79 +71,60 @@ class Statistic {
     }
     
     static var byDays: [GraphStatistic] {
-//        let oneDay: TimeInterval = 86400
-//        
-//        let realm = try! Realm()
-//        let allLevels: [Level] = realm.objects(Level.self).reversed()
-//        let allElapsedTimes: [ElapsedTime] = realm.objects(ElapsedTime.self).sorted(byKeyPath: "updatedAt").reversed()
-//        let allMistakes: [Mistake] = realm.objects(Mistake.self).sorted(byKeyPath: "created").reversed()
-//        
-//        if allLevels.count == 0 {
-//            return []
-//        }
-//        
-//        var result: [GraphStatistic] = []
-//        
-//        var maxTime: TimeInterval = 0
-//        var maxMistakesOrRightAnswers = 0
-//        
-//        let startDate = Date()
-//        var date = startDate
-//        let newGameDate = allLevels.last!.startedAt
-//
-//        while !date.beforeDay(date: newGameDate) {
-//            result.append(GraphStatistic())
-//            result.last!.date = date
-//            date = date.addingTimeInterval(-oneDay)
-//        }
-//        
-//        var indMistakes = 0
-//        date = startDate
-//        
-//        for day in result {
-//            while indMistakes < allMistakes.count && day.date.equalDayTo(date: allMistakes[indMistakes].created) {
-//                day.mistakes += 1
-//                indMistakes += 1
-//            }
-//        }
-//        
-//        var indElapsedTimes = 0
-//        for day in result {
-//            while indElapsedTimes < allElapsedTimes.count && day.date.equalDayTo(date: allElapsedTimes[indElapsedTimes].created) {
-//                day.seconds += allElapsedTimes[indElapsedTimes].seconds
-//                indElapsedTimes += 1
-//            }
-//        }
-//        
-//        var indLevel = 0
-//        for day in result {
-//            while indLevel < allLevels.count && day.date.equalDayTo(date: allLevels[indLevel].passedAt) {
-//                if allLevels[indLevel].passed {
-//                    day.rightAnswers += 1
-//                }
-//                indLevel += 1
-//            }
-//        }
-//        
-//        for day in result {
-//            if day.mistakes > maxMistakesOrRightAnswers {
-//                maxMistakesOrRightAnswers = day.mistakes
-//            }
-//            if day.rightAnswers > maxMistakesOrRightAnswers {
-//                maxMistakesOrRightAnswers = day.rightAnswers
-//            }
-//            if day.seconds > maxTime {
-//                maxTime = day.seconds
-//            }
-//        }
-//        
-//        for day in result {
-//            day.percentForMistakes = maxMistakesOrRightAnswers == 0 ? 1.0 : Double(day.mistakes) / Double(maxMistakesOrRightAnswers)
-//            day.percentForRightAnswers = maxMistakesOrRightAnswers == 0 ? 1.0 : Double(day.rightAnswers) / Double(maxMistakesOrRightAnswers)
-//            day.percentForSeconds = maxTime == 0 ? 1.0 : Double(day.seconds) / Double(maxTime)
-//        }
-//        
-//        return result
-        return []
+        let oneDay: TimeInterval = 86400
+        
+        let realm = try! Realm()
+        var result: [GraphStatistic] = []
+    
+        var maxTime: TimeInterval = 0
+        var maxMistakesOrRightAnswers = 0
+        
+        var curDate = Date()
+        
+        let allExamExercises = realm.objects(StagePassing.self).filter{$0.stage.mode == .exam}.flatMap{$0.exercises}
+        let allRightAnswers = allExamExercises.filter{$0.isPassed && !$0.passedAt.afterDay(date: curDate)}.map{$0.passedAt}.sorted(by: {$0.0 > $0.1})
+        var indRA = 0
+        let allMisatakes = allExamExercises.flatMap{$0.errors}.filter{!$0.date.afterDay(date: curDate)}.sorted(by: {$0.0.date > $0.1.date})
+        var indM = 0
+        let allElapsedTime = allExamExercises.flatMap{$0.elapsedTime}.filter{!$0.createdAt.afterDay(date: curDate)}.sorted(by: {$0.0.createdAt > $0.1.createdAt})
+        var indET = 0
+
+        while indRA < allRightAnswers.count || indM < allMisatakes.count || indET < allElapsedTime.count {
+            result.append(GraphStatistic())
+            result.last!.date = curDate
+            while indRA < allRightAnswers.count && allRightAnswers[indRA].equalDayTo(date: curDate) {
+                result.last!.rightAnswers += 1
+                indRA += 1
+            }
+            while indM < allMisatakes.count && allMisatakes[indM].date.equalDayTo(date: curDate) {
+                result.last!.mistakes += 1
+                indM += 1
+            }
+            while indET < allElapsedTime.count && allElapsedTime[indET].createdAt.equalDayTo(date: curDate) {
+                result.last!.seconds += allElapsedTime[indET].seconds
+                indET += 1
+            }
+            curDate.addTimeInterval(-oneDay)
+        }
+        
+        for day in result {
+            if day.mistakes > maxMistakesOrRightAnswers {
+                maxMistakesOrRightAnswers = day.mistakes
+            }
+            if day.rightAnswers > maxMistakesOrRightAnswers {
+                maxMistakesOrRightAnswers = day.rightAnswers
+            }
+            if day.seconds > maxTime {
+                maxTime = day.seconds
+            }
+        }
+        
+        for day in result {
+            day.percentForMistakes = maxMistakesOrRightAnswers == 0 ? 1.0 : Double(day.mistakes) / Double(maxMistakesOrRightAnswers)
+            day.percentForRightAnswers = maxMistakesOrRightAnswers == 0 ? 1.0 : Double(day.rightAnswers) / Double(maxMistakesOrRightAnswers)
+            day.percentForSeconds = maxTime == 0 ? 1.0 : Double(day.seconds) / Double(maxTime)
+        }
+        
+        return result
     }
 }

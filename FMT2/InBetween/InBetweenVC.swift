@@ -55,7 +55,7 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
             let vc = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)
             vc.globalStagePassing = self.globalStagePassing
             return vc
-        case .introductionExamPassed, .multByZeroExamPassed, .multByOneExamPassed, .multByTenExamPassed, .examPassed:
+        case .introductionExamPassed, .multByZeroExamPassed, .multByOneExamPassed, .multByTenExamPassed, .examPassed, .permutationExamPassed:
             let vc = StageMapVC(nibName: "StageMapVC", bundle: nil)
             return vc
         case .afterZeroTutorial, .afterOneTutorial, .afterTenTutorial: 
@@ -91,7 +91,7 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
         case .permutationExamFailed:
             let vc = IntroductionPermutationVC(nibName: "IntroductionPermutationVC", bundle: nil)
             vc.globalStagePassing = globalStagePassing
-            return vc
+            return vc  
         }
     }
 
@@ -124,5 +124,6 @@ enum InBetweenMode: String {
     case examPassed
     case examFailed
     case afterPermutationTutorial
+    case permutationExamPassed
     case permutationExamFailed
 }
