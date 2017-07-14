@@ -178,22 +178,23 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
         self.view.isUserInteractionEnabled = false
         Game.current.setColor(pencilToColor(pencil: selectedPencil!), forDigit: exercise.firstDigit)
         progressBar.setProgressWithAnimation(CGFloat(globalStagePassing.nextProgress))
-        let result = globalStagePassing.rightAnswer()
+        let result = globalStagePassing.rightAnswerResult
+        globalStagePassing.rightAnswer()
         var vc: UIViewController!
         switch result {
         case .endOfGlobalStage:
             ServerTaskManager.pushBack(.introductionFinished())
-            let stageMapVC = StageMapVC(nibName: "StageMapVC", bundle: nil)     
+            let stageMapVC = StageMapVC(nibName: "StageMapVC", bundle: nil)
             vc = stageMapVC
             break
         case .endOfStage:
-            let inBetweenVC = InBetweenVC(nibName: "InBetweenVC", bundle: nil)   
+            let inBetweenVC = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
             inBetweenVC.mode = .beforeIntroductionExam
-            inBetweenVC.globalStagePassing = self.globalStagePassing       
+            inBetweenVC.globalStagePassing = self.globalStagePassing
             vc = inBetweenVC
             break
         case .normal:
-            let introductionDigitVC = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)        
+            let introductionDigitVC = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)
             introductionDigitVC.globalStagePassing = self.globalStagePassing
             vc = introductionDigitVC
             break

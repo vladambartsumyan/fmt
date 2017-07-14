@@ -9,7 +9,7 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     private var spacing: [CGFloat]!
 
     private let menuCellReuseId = "menuCellReuseId"
-    
+
     // LIFECYCLE
 
     override func viewDidLoad() {
@@ -39,25 +39,25 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         if (Game.current.newGame) {
             menuDataSource = [
                     [
-                        MenuItem.init(buttonColor: .green, title: newGameTitle, iconName: "ContinueButton", action: self.startNewGame),
-                        MenuItem.init(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds)
+                            MenuItem.init(buttonColor: .green, title: newGameTitle, iconName: "ContinueButton", action: self.startNewGame),
+                            MenuItem.init(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds)
                     ],
                     [
-                        MenuItem.init(buttonColor: .orange, title: statisticTitle, iconName: "ParentLockButton", action: self.statistic),
-                        MenuItem.init(buttonColor: .orange, title: feedbackTitle, iconName: "EmailButton", action: self.feedback)
+                            MenuItem.init(buttonColor: .orange, title: statisticTitle, iconName: "ParentLockButton", action: self.statistic),
+                            MenuItem.init(buttonColor: .orange, title: feedbackTitle, iconName: "EmailButton", action: self.feedback)
                     ]
             ]
         } else {
             menuDataSource = [
-                [
-                    MenuItem.init(buttonColor: .green, title: continueTitle, iconName: "ContinueButton", action: self.continueGame),
-                    MenuItem.init(buttonColor: .green, title: newGameTitle, iconName: "NewGameButton", action: self.startNewGame),
-                    MenuItem.init(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds)
-                ],
-                [
-                    MenuItem.init(buttonColor: .orange, title: statisticTitle, iconName: "ParentLockButton", action: self.statistic),
-                    MenuItem.init(buttonColor: .orange, title: feedbackTitle, iconName: "EmailButton", action: self.feedback)
-                ]
+                    [
+                            MenuItem.init(buttonColor: .green, title: continueTitle, iconName: "ContinueButton", action: self.continueGame),
+                            MenuItem.init(buttonColor: .green, title: newGameTitle, iconName: "NewGameButton", action: self.startNewGame),
+                            MenuItem.init(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds)
+                    ],
+                    [
+                            MenuItem.init(buttonColor: .orange, title: statisticTitle, iconName: "ParentLockButton", action: self.statistic),
+                            MenuItem.init(buttonColor: .orange, title: feedbackTitle, iconName: "EmailButton", action: self.feedback)
+                    ]
             ]
         }
     }
@@ -69,16 +69,16 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             newGameTransition()
         } else {
             self.present(
-                AlertMaker.newGameAlert {
-                    self.view.isUserInteractionEnabled = false 
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: self.newGameTransition) 
-                }, 
-                animated: true, 
-                completion: nil
-            ) 
+                    AlertMaker.newGameAlert {
+                        self.view.isUserInteractionEnabled = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: self.newGameTransition)
+                    },
+                    animated: true,
+                    completion: nil
+            )
         }
     }
-    
+
     func newGameTransition() {
         Game.current.reset()
         let vc = TutorialVC(nibName: "TutorialVC", bundle: nil)
@@ -108,40 +108,40 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func openMailApp() {
-        
+
         let toEmail = "test@leko.in"
         let subject = "[Веселая таблица умножения] Обратная связь.".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        
+
         let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        
+
         let version = "version: \(versionNumber)"
-        
+
         let vendorID = UIDevice.current.identifierForVendor!
         let startDate = UserDefaults.standard.integer(forKey: "dateHash")
         let device = "device: \(vendorID)\(startDate)"
-        
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy HH:mm:ss"
         dateFormatter.locale = Locale.init(identifier: "ru")
         let curDate = "date: " + dateFormatter.string(from: Date())
-        
+
         let message = "Напишите нам ваши пожелания или расскажите о проблеме – нам это очень важно. Спасибо!"
-        
+
         let newStringLiteral = "\n"
-        
+
         let spacing = newStringLiteral + newStringLiteral
-        
+
         let body = [message, spacing, version, device, curDate]
-            .joined(separator: newStringLiteral)
-            .appending("\n\n\n")
-            .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        
+                .joined(separator: newStringLiteral)
+                .appending("\n\n\n")
+                .addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+
         let urlString = "mailto:\(toEmail)?subject=\(subject)&body=\(body)"
-        if let url = URL(string:urlString) {
+        if let url = URL(string: urlString) {
             UIApplication.shared.openURL(url)
         }
     }
-    
+
     // COLLECTION VIEW
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -163,14 +163,14 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: menu.bounds.width, height: 65/670 * menu.bounds.height)
+        return CGSize.init(width: menu.bounds.width, height: 65 / 670 * menu.bounds.height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.init(width: menu.bounds.width, height: section == 0 ? 136/670 * menu.bounds.height : 67/670 * menu.bounds.height)
+        return CGSize.init(width: menu.bounds.width, height: section == 0 ? 136 / 670 * menu.bounds.height : 67 / 670 * menu.bounds.height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 18/670 * menu.bounds.height
+        return 18 / 670 * menu.bounds.height
     }
 }

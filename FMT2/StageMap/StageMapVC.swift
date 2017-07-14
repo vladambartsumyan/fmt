@@ -339,16 +339,16 @@ class StageMapVC: FadeInOutVC {
         }
         
     }
-    
+
     func addDashedLineOnMap(fromPoint a: CGPoint, toPoint b: CGPoint, reached: Bool, withControlPoint c1: CGPoint, andControlPoint c2: CGPoint? = nil) {
         let color = reached ? UIColor.init(red255: 164, green: 237, blue: 255).cgColor : UIColor.init(red255: 225, green: 225, blue: 225).cgColor
-        
+
         let path = UIBezierPath()
         path.move(to: a)
         c2 != nil ?
             path.addCurve(to: b, controlPoint1: c1, controlPoint2: c2!) :
             path.addQuadCurve(to: b, controlPoint: c1)
-        
+
         let layer = CAShapeLayer()
         layer.lineWidth = 7 * proportion
         layer.strokeColor = color
@@ -386,11 +386,20 @@ class StageMapVC: FadeInOutVC {
     
     @IBAction func trainingButtonTouched(_ sender: TextButton) {
         let trainingGlobalStagePassing = GlobalStage.createTrainingGlobalStage().createGlobalStagePassing()
-        let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
+
+        let specialLevels = [StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10]
+        let firstExerciseIsSpecial = specialLevels.contains(trainingGlobalStagePassing.type)
+
+        let vc: IsGameVC!
+        if !firstExerciseIsSpecial {
+            vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
+        } else {
+            vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
+            (vc as! ExerciseNumbers).skipSecondDigit = true
+        }
         vc.globalStagePassing = trainingGlobalStagePassing
-        vc.skipSecondDigit = true
         fadeOut {
-            AppDelegate.current.setRootVC(vc)
+            AppDelegate.current.setRootVC(vc as! UIViewController)
         }
     }
     

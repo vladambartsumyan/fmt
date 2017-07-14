@@ -305,12 +305,18 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     
     func nextScreen() {
         globalStagePassing.updateElapsedTime()
-        let specialLevel = ([StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10].contains(globalStagePassing.type))
         progressBar.setProgressWithAnimation(CGFloat(globalStagePassing.nextProgress))
-        let result = globalStagePassing.rightAnswer()
+        let result = globalStagePassing.rightAnswerResult
+        let specialLevels = [StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10]
+        var nextExerciseIsSpecial: Bool = false
+        if let typeOfNextStage = globalStagePassing.typeOfNextExercise {
+            nextExerciseIsSpecial = specialLevels.contains(typeOfNextStage)
+        }
+        
+        globalStagePassing.rightAnswer()
         switch result {
         case .normal:
-            if !specialLevel {
+            if !nextExerciseIsSpecial {
                 let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 fadeOut {

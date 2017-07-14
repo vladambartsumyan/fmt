@@ -30,6 +30,10 @@ class GlobalStagePassing: Object {
         set { _type = newValue.rawValue }
     }
     
+    var typeOfNextExercise: StageType? {
+        return nextExercisePassing?.exercise.type
+    }
+    
     var isPassed: Bool {
         return index >= stagesPassing.count
     }
@@ -92,24 +96,44 @@ class GlobalStagePassing: Object {
         }
     }
     
-    func rightAnswer() -> RightAnswerResult {
+    func rightAnswer() {
         sendStatistic()
         if currentStagePassing!.index == currentStagePassing!.exercises.count - 1 {
-            let result: RightAnswerResult = index == stagesPassing.count - 1 ? .endOfGlobalStage : .endOfStage 
             try! (try! Realm()).write {
                 currentStagePassing!.currentExercisePassing!.isPassed = true
                 currentStagePassing!.currentExercisePassing!.passedAt = Date()
                 currentStagePassing!.index += 1
                 index += 1
             }
-            return result
         } else {
             try! (try! Realm()).write {
                 currentStagePassing!.currentExercisePassing!.isPassed = true
                 currentStagePassing!.currentExercisePassing!.passedAt = Date()
                 currentStagePassing!.index += 1
             }
+        }
+    }
+    
+    var rightAnswerResult: RightAnswerResult {
+        if currentStagePassing!.index == currentStagePassing!.exercises.count - 1 {
+            return index == stagesPassing.count - 1 ? .endOfGlobalStage : .endOfStage 
+        } else {
             return .normal
+        }
+    }
+    
+    var nextExercisePassing: ExercisePassing? {
+//        return index + 1 < self.stagesPassing.count ? self.stagesPassing[index + 1] : nil
+        let nextExerciseIndex = currentStagePassing!.index + 1
+        if nextExerciseIndex < currentStagePassing!.exercises.count {
+            return currentStagePassing!.exercises[nextExerciseIndex]
+        } else {
+            let nextStageIndex = index + 1
+            if nextStageIndex < stagesPassing.count {
+                return stagesPassing[nextStageIndex].exercises[0]
+            } else {
+                return nil
+            }
         }
     }
     

@@ -129,7 +129,8 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
             globalStagePassing.updateElapsedTime()
             if isExam {
                 progressBar.setProgressWithAnimation(CGFloat(globalStagePassing.nextProgress))
-                let result = globalStagePassing.rightAnswer()
+                let result = globalStagePassing.rightAnswerResult
+                globalStagePassing.rightAnswer()
                 var vc: UIViewController!
                 switch result {
                 case .endOfGlobalStage:
