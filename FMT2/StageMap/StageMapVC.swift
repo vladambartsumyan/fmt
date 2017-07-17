@@ -27,7 +27,7 @@ class StageMapVC: FadeInOutVC {
 
     var mapButtons: [MapButton] = []
 
-    var curGlobalStagePassing: GlobalStagePassing!
+    var curGlobalStagePassing: GlobalStagePassing? = nil
 
     var globalStages: Results<GlobalStagePassing>!
     var token: NotificationToken!
@@ -180,9 +180,12 @@ class StageMapVC: FadeInOutVC {
     }
 
     func stageToButtonMode(stage: GlobalStagePassing) -> MapButton.MapButtonMode {
-        if stage == curGlobalStagePassing {
-            return .current
+        if let curGlobalStagePassing = curGlobalStagePassing {
+            if stage == curGlobalStagePassing {
+                return .current
+            }
         }
+        
         if stage.isPassed {
             return .passed
         }
@@ -283,8 +286,8 @@ class StageMapVC: FadeInOutVC {
     @IBAction func buttonPressed(_ sender: MapButton) {
         let index = mapButtons.index(of: sender)!
         let stage = globalStages[index]
-        if stage == curGlobalStagePassing {
-            loadGlobalStage(curGlobalStagePassing)
+        if curGlobalStagePassing != nil && stage == curGlobalStagePassing {
+            loadGlobalStage(curGlobalStagePassing!)
         } else {
             let globalStagePassing = globalStages[index].globalStage.createGlobalStagePassing()
             globalStagePassing.saveStages()

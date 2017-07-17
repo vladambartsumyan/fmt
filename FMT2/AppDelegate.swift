@@ -12,6 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
 
+        SoundHelper.prepareButtonSounds()
+
         registerLocalNotification(application: application)
         firstLaunch()
         setStartScreen()
@@ -111,7 +113,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func resetNotification() {
         if #available(iOS 10, *) {
-            // Cancell all notifications
+            // Cancel all notifications
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             UNUserNotificationCenter.current().removeAllDeliveredNotifications()
 

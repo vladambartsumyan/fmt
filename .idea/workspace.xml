@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60d28b3c-bdf9-4857-b88a-f00d8050c335" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/GameCore/Game.swift" afterPath="$PROJECT_DIR$/FMT2/GameCore/Game.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/MultBy0/IntroductionZeroVC.swift" afterPath="$PROJECT_DIR$/FMT2/MultBy0/IntroductionZeroVC.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/MultBy1/IntroductionOneVC.swift" afterPath="$PROJECT_DIR$/FMT2/MultBy1/IntroductionOneVC.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/MultBy1/MultByOneExampleVC.swift" afterPath="$PROJECT_DIR$/FMT2/MultBy1/MultByOneExampleVC.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/MultBy10/MultByTenExampleVC.swift" afterPath="$PROJECT_DIR$/FMT2/MultBy10/MultByTenExampleVC.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/Permutation/PermutationExampleVC.swift" afterPath="$PROJECT_DIR$/FMT2/Permutation/PermutationExampleVC.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/FMT2.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/AppDelegate.swift" afterPath="$PROJECT_DIR$/FMT2/AppDelegate.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift" afterPath="$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift" afterPath="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,38 +24,40 @@
       <file leaf-file-name="StageMapVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6300">
-              <caret line="421" column="1" lean-forward="false" selection-start-line="421" selection-start-column="1" selection-end-line="421" selection-end-column="1" />
+            <state relative-caret-position="562">
+              <caret line="369" column="32" lean-forward="false" selection-start-line="369" selection-start-column="32" selection-end-line="369" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Localizable.strings" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FMT2/Localizable.strings">
+      <file leaf-file-name="SoundHelper.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="309">
+              <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppDelegate.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FMT2/AppDelegate.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExerciseVC.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FMT2/Exercises/ExerciseVC.swift">
+      <file leaf-file-name="LeapingButton.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FMT2/CustomUI/ Buttons/LeapingButton.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5655">
-              <caret line="377" column="34" lean-forward="false" selection-start-line="377" selection-start-column="34" selection-end-line="377" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InBetweenVC.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FMT2/InBetween/InBetweenVC.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="65" />
+            <state relative-caret-position="338">
+              <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -69,6 +70,7 @@
       <find>preview</find>
       <find>training</find>
       <find>&quot;InBetween.message.</find>
+      <find>cur</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -88,8 +90,11 @@
         <option value="$PROJECT_DIR$/FMT2/Entities/GlobalStagePassing.swift" />
         <option value="$PROJECT_DIR$/FMT2/InBetween/InBetweenVC.swift" />
         <option value="$PROJECT_DIR$/FMT2/Exercises/ExerciseVC.swift" />
-        <option value="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift" />
         <option value="$PROJECT_DIR$/FMT2/Localizable.strings" />
+        <option value="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift" />
+        <option value="$PROJECT_DIR$/FMT2/CustomUI/ Buttons/LeapingButton.swift" />
+        <option value="$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift" />
+        <option value="$PROJECT_DIR$/FMT2/AppDelegate.swift" />
       </list>
     </option>
   </component>
@@ -153,7 +158,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="CocoaPods" />
-    <property name="SearchEverywhereHistoryKey" value="branch&#9;ACTION&#9;Tfs.Branch&#10;File&#9;ACTION&#9;GotoFile" />
+    <property name="SearchEverywhereHistoryKey" value="memo &#9;null&#9;null&#10;memo&#9;null&#9;null&#10;branch&#9;ACTION&#9;Tfs.Branch&#10;File&#9;ACTION&#9;GotoFile" />
     <property name="FullScreen" value="true" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
   </component>
@@ -218,7 +223,9 @@
       <method />
     </configuration>
     <configuration default="false" name="FMT2" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FMT2" TARGET_NAME="FMT2" CONFIG_NAME="Debug" SCHEME_NAME="FMT2" RUN_TARGET_PROJECT_NAME="FMT2" RUN_TARGET_NAME="FMT2" MAKE_ACTIVE="TRUE">
-      <envs />
+      <envs>
+        <env name="OS_ACTIVITY_MODE" value="${DEBUG_ACTIVITY_MODE}" />
+      </envs>
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
       </EXTENSION>
@@ -245,7 +252,10 @@
       <workItem from="1500036876427" duration="4655000" />
       <workItem from="1500042011777" duration="2038000" />
       <workItem from="1500045051402" duration="1516000" />
-      <workItem from="1500275999118" duration="52000" />
+      <workItem from="1500275999118" duration="364000" />
+      <workItem from="1500277094431" duration="210000" />
+      <workItem from="1500277308592" duration="62000" />
+      <workItem from="1500277382360" duration="2529000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed problems with training mode">
       <created>1500042244404</created>
@@ -265,7 +275,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8867000" />
+    <option name="totallyTimeSpent" value="11980000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -278,20 +288,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2304" height="1296" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24222514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24222514" sideWeight="0.4963119" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.317292" sideWeight="0.49846694" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.225938" sideWeight="0.5015331" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57340944" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.225938" sideWeight="0.49846694" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.225938" sideWeight="0.49846694" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24222514" sideWeight="0.5036881" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34339315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.317292" sideWeight="0.49846694" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -350,6 +361,22 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3615">
+          <caret line="242" column="33" lean-forward="true" selection-start-line="242" selection-start-column="33" selection-end-line="242" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6315">
           <caret line="421" column="1" lean-forward="false" selection-start-line="421" selection-start-column="1" selection-end-line="421" selection-end-column="1" />
           <folding />
@@ -360,7 +387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5655">
           <caret line="377" column="34" lean-forward="false" selection-start-line="377" selection-start-column="34" selection-end-line="377" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -368,7 +394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -376,7 +401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -392,7 +416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5580">
           <caret line="372" column="34" lean-forward="false" selection-start-line="372" selection-start-column="34" selection-end-line="372" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -400,7 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -408,7 +430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="73" lean-forward="true" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -416,7 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5220">
           <caret line="348" column="20" lean-forward="true" selection-start-line="348" selection-start-column="20" selection-end-line="348" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -575,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FMT2/AppDelegate.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pods/RealmSwift/RealmSwift/Object.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
@@ -593,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -608,7 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -616,15 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5655">
           <caret line="377" column="34" lean-forward="false" selection-start-line="377" selection-start-column="34" selection-end-line="377" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6300">
-          <caret line="421" column="1" lean-forward="false" selection-start-line="421" selection-start-column="1" selection-end-line="421" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -632,6 +634,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="369" column="32" lean-forward="false" selection-start-line="369" selection-start-column="32" selection-end-line="369" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/CustomUI/ Buttons/LeapingButton.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding />
         </state>
       </provider>

@@ -47,18 +47,52 @@ class SoundHelper {
     static func playWrongAnswer() {
         play(withURL: wrongAnswerSoundURL)
     }
+
+    static func prepareDefault() {
+        prepare(withURL: defaultSoundURL)
+    }
+
+    static func prepareRightAnswer() {
+        prepare(withURL: rightAnswerSoundURL)
+    }
+
+    static func prepareWrongAnswer() {
+        prepare(withURL: wrongAnswerSoundURL)
+    }
+
+    static func prepareButtonSounds() {
+        [
+                prepareDefault,
+                prepareRightAnswer,
+                prepareWrongAnswer
+        ].forEach{$0()}
+    }
+
     
     static private func play(withURL url: URL) {
         guard UserDefaults.standard.bool(forKey: "soundOn") else {
             return
         }
         do {
-            clickPlayer = try AVAudioPlayer(contentsOf:url)
-            clickPlayer?.prepareToPlay()
-            clickPlayer?.play()
+            self.clickPlayer = try AVAudioPlayer(contentsOf:url)
+            self.clickPlayer?.prepareToPlay()
+            self.clickPlayer?.play()
         } catch {
             print("Cannot play the file")
         }
-    }
+    }    
     
+    static private func prepare(withURL url: URL) {
+        guard UserDefaults.standard.bool(forKey: "soundOn") else {
+            return
+        }
+        DispatchQueue.global(qos: .userInteractive).async { 
+            do {
+                self.clickPlayer = try AVAudioPlayer(contentsOf:url)
+                self.clickPlayer?.prepareToPlay()
+            } catch {
+                print("Cannot play the file")
+            }
+        }
+    }
 }
