@@ -28,8 +28,10 @@
                 <outlet property="button9" destination="Mht-1t-X22" id="0fi-za-JPm"/>
                 <outlet property="gradientBottomBorder" destination="zV3-iK-8Bu" id="Qw4-px-k1q"/>
                 <outlet property="gradientUpBorder" destination="2Li-bd-jcq" id="07q-HQ-OjE"/>
+                <outlet property="heightOfBottomPanel" destination="f50-ir-wQF" id="cl2-AI-AGo"/>
                 <outlet property="map" destination="RnN-hS-y8k" id="AIs-Lz-svE"/>
                 <outlet property="menuButton" destination="Axv-Ah-2vL" id="rpJ-Tn-Ka7"/>
+                <outlet property="proportionOfBottomPanel" destination="s2F-ip-HHH" id="irx-zR-KJO"/>
                 <outlet property="scrollView" destination="eYX-OY-VOl" id="7VL-GK-xr1"/>
                 <outlet property="statistic" destination="PHe-EZ-UNW" id="r74-y0-Tq3"/>
                 <outlet property="trainingButton" destination="4HB-3D-9dv" id="dLE-Rq-9DL"/>

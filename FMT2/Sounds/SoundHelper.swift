@@ -86,13 +86,11 @@ class SoundHelper {
         guard UserDefaults.standard.bool(forKey: "soundOn") else {
             return
         }
-        DispatchQueue.global(qos: .userInteractive).async { 
-            do {
-                self.clickPlayer = try AVAudioPlayer(contentsOf:url)
-                self.clickPlayer?.prepareToPlay()
-            } catch {
-                print("Cannot play the file")
-            }
+        do {
+            self.clickPlayer = try AVAudioPlayer(contentsOf:url)
+            self.clickPlayer?.prepareToPlay()
+        } catch {
+            print("Cannot play the file")
         }
     }
 }

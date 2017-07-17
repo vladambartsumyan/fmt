@@ -39,6 +39,9 @@ class StageMapVC: FadeInOutVC {
     @IBOutlet weak var gradientUpBorder: UIView!
 
     var lines: [CAShapeLayer] = []
+    
+    @IBOutlet weak var heightOfBottomPanel: NSLayoutConstraint!
+    @IBOutlet weak var proportionOfBottomPanel: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +60,10 @@ class StageMapVC: FadeInOutVC {
         self.mapButtons.append(button11)
         self.mapButtons.append(button12)
 
-        configureTrainingButton()
+        
         curGlobalStagePassing = Game.current.currentGlobalStagePassing
         globalStages = (try! Realm()).objects(GlobalStagePassing.self).sorted(byKeyPath: "_type")
+        configureTrainingButton()
         self.updateButtons()
         configureStatistic()
     }
@@ -107,6 +111,14 @@ class StageMapVC: FadeInOutVC {
     }
 
     func configureTrainingButton() {
+        let needsTrainingButton = curGlobalStagePassing == nil || curGlobalStagePassing!.type.rawValue > StageType.multiplicationBy0.rawValue
+        if needsTrainingButton {
+            heightOfBottomPanel.priority = 900
+            proportionOfBottomPanel.priority = 1000
+        } else {
+            heightOfBottomPanel.priority = 1000
+            proportionOfBottomPanel.priority = 900
+        }
         trainingButton.setTitle(titleText: NSLocalizedString("StageMap.trainingButton.title", comment: ""))
     }
 

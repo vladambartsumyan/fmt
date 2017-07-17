@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60d28b3c-bdf9-4857-b88a-f00d8050c335" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/FMT2.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/AppDelegate.swift" afterPath="$PROJECT_DIR$/FMT2/AppDelegate.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift" afterPath="$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift" afterPath="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.xib" afterPath="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FMT2.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/FMT2.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,52 +17,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_7_Plus_10.3_x86_64_1" />
   <component name="FavoritesManager">
     <favorites_list name="FMT2" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StageMapVC.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="369" column="32" lean-forward="false" selection-start-line="369" selection-start-column="32" selection-end-line="369" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SoundHelper.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppDelegate.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FMT2/AppDelegate.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LeapingButton.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FMT2/CustomUI/ Buttons/LeapingButton.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -91,10 +44,10 @@
         <option value="$PROJECT_DIR$/FMT2/InBetween/InBetweenVC.swift" />
         <option value="$PROJECT_DIR$/FMT2/Exercises/ExerciseVC.swift" />
         <option value="$PROJECT_DIR$/FMT2/Localizable.strings" />
-        <option value="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift" />
         <option value="$PROJECT_DIR$/FMT2/CustomUI/ Buttons/LeapingButton.swift" />
         <option value="$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift" />
         <option value="$PROJECT_DIR$/FMT2/AppDelegate.swift" />
+        <option value="$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift" />
       </list>
     </option>
   </component>
@@ -275,7 +228,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11980000" />
+    <option name="totallyTimeSpent" value="12140000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -291,16 +244,16 @@
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24222514" sideWeight="0.4963119" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24222514" sideWeight="0.49673736" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.317292" sideWeight="0.49846694" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.225938" sideWeight="0.5015331" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57340944" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.225938" sideWeight="0.49846694" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.225938" sideWeight="0.49846694" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24222514" sideWeight="0.5036881" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24222514" sideWeight="0.50326264" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34339315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -359,11 +312,96 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/FMT2/Entities/GlobalStagePassing.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/InBetween/InBetweenVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="65" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/Exercises/ExerciseVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5655">
+          <caret line="377" column="34" lean-forward="false" selection-start-line="377" selection-start-column="34" selection-end-line="377" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/Localizable.strings">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="366" column="32" lean-forward="false" selection-start-line="366" selection-start-column="32" selection-end-line="366" selection-end-column="32" />
+          <folding>
+            <marker date="1500281160000" expanded="true" signature="62:18196" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10581:10849" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10871:15130" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="15283:16193" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16289:16550" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16610:16815" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16869:17057" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17122:17931" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17982:18062" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="18114:18194" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/CustomUI/ Buttons/LeapingButton.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="49" column="4" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+            <marker date="1500281160000" expanded="true" signature="57:2888" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1500281160000" expanded="true" signature="62:18196" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10581:10849" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10871:15130" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="15283:16193" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16289:16550" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16610:16815" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16869:17057" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17122:17931" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17982:18062" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="18114:18194" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -371,7 +409,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3615">
           <caret line="242" column="33" lean-forward="true" selection-start-line="242" selection-start-column="33" selection-end-line="242" selection-end-column="33" />
-          <folding />
+          <folding>
+            <marker date="1500281160000" expanded="true" signature="62:18196" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10581:10849" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10871:15130" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="15283:16193" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16289:16550" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16610:16815" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16869:17057" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17122:17931" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17982:18062" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="18114:18194" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -379,7 +428,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6315">
           <caret line="421" column="1" lean-forward="false" selection-start-line="421" selection-start-column="1" selection-end-line="421" selection-end-column="1" />
-          <folding />
+          <folding>
+            <marker date="1500281160000" expanded="true" signature="62:18196" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10581:10849" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10871:15130" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="15283:16193" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16289:16550" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16610:16815" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16869:17057" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17122:17931" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17982:18062" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="18114:18194" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -408,7 +468,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6180">
           <caret line="412" column="1" lean-forward="true" selection-start-line="412" selection-start-column="1" selection-end-line="412" selection-end-column="1" />
-          <folding />
+          <folding>
+            <marker date="1500281160000" expanded="true" signature="62:18196" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10581:10849" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10871:15130" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="15283:16193" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16289:16550" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16610:16815" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16869:17057" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17122:17931" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17982:18062" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="18114:18194" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -451,7 +522,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5295">
           <caret line="353" column="33" lean-forward="false" selection-start-line="353" selection-start-column="33" selection-end-line="353" selection-end-column="33" />
-          <folding />
+          <folding>
+            <marker date="1500281160000" expanded="true" signature="62:18196" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10581:10849" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10871:15130" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="15283:16193" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16289:16550" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16610:16815" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16869:17057" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17122:17931" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17982:18062" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="18114:18194" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -637,14 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="369" column="32" lean-forward="false" selection-start-line="369" selection-start-column="32" selection-end-line="369" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FMT2/CustomUI/ Buttons/LeapingButton.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -655,19 +729,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FMT2/Sounds/SoundHelper.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+        <state relative-caret-position="414">
+          <caret line="70" column="4" lean-forward="false" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+            <marker date="1500281160000" expanded="true" signature="57:2888" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FMT2/AppDelegate.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state relative-caret-position="720">
+          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FMT2/StageMap/StageMapVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5520">
+          <caret line="369" column="32" lean-forward="false" selection-start-line="369" selection-start-column="32" selection-end-line="369" selection-end-column="32" />
+          <folding>
+            <marker date="1500281160000" expanded="true" signature="62:18196" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10581:10849" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="10871:15130" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="15283:16193" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16289:16550" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16610:16815" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="16869:17057" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17122:17931" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="17982:18062" ph="{...}" />
+            <marker date="1500281160000" expanded="true" signature="18114:18194" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
