@@ -37,7 +37,7 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
         configureExerciseSize()
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
-        progressBar.progress = CGFloat(Game.current.currentGlobalStagePassing.progress)
+        progressBar.progress = CGFloat(globalStagePassing.progress)
     }
 
     override func didReceiveMemoryWarning() {

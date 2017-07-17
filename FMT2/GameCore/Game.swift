@@ -31,8 +31,8 @@ class Game {
         return curentGlobalStagePassing.currentStagePassing?.currentExercisePassing
     }
     
-    var currentGlobalStagePassing: GlobalStagePassing {
-        return self.globalStagesPassingSorted.filter{ !$0.isPassed }.first!
+    var currentGlobalStagePassing: GlobalStagePassing? {
+        return self.globalStagesPassingSorted.filter{ !$0.isPassed }.first
     }
     
     var introductionLevelProgress: (Int, Int) {
