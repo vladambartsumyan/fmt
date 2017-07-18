@@ -43,6 +43,7 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
         perform(#selector(nextScreen), with: nil, afterDelay: 3)
+        configureImage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,6 +59,11 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func configureImage() {
+        let gooseColor = Game.current.getColor(forDigit: 2)
+        self.firstDigit.image = UIImage.init(named: "x2102" + gooseColor.rawValue)
     }
     
     func configureExerciseSize() {

@@ -22,6 +22,7 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
         super.viewDidLoad()
         configureTopBar()
         configureText()
+        configureImage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +38,11 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         globalStagePassing.updateElapsedTime()
+    }
+    
+    func configureImage() {
+        let gooseColor = Game.current.getColor(forDigit: 2)
+        self.firstDigit.image = UIImage.init(named: "x2102" + gooseColor.rawValue)
     }
     
     func configureTopBar() {
