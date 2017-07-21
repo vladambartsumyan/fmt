@@ -121,7 +121,6 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
             result.image = nil
             return
         }
-        
         let fst = min(exercise.firstDigit, exercise.secondDigit)
         let snd = max(exercise.firstDigit, exercise.secondDigit)
         let reverseImage = ReverseImageOrder.check(firstDigit: fst, secondDigit: snd)
@@ -133,7 +132,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
         if !reverseImage {
             s1 = "\(fst)"
             s2 = "\(snd)"
-            s = "x" + s1 + s2
+            s = globalStagePassing.type == .multiplicationBy1 ? "x" + s2 + s1 : "x" + s1 + s2
             c1 = Game.current.getColor(forDigit: fst).rawValue
             c2 = Game.current.getColor(forDigit: snd).rawValue
         } else {

@@ -128,6 +128,7 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
         if !sender.isWrongAnswer {
+            self.view.isUserInteractionEnabled = false
             digitGuessed = true
             fadeOut(array: [[digitImageView], [question], [variantButton1, variantButton2, variantButton3, variantButton4]]) {
                 self.question.transform = .identity
