@@ -30,9 +30,12 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fadeIn()
+        fadeIn {
+            let tutorialName = StageType.permutation.string + "tutorial"
+            SoundHelper.shared.playVoice(name: tutorialName)
+            self.perform(#selector(self.nextVC), with: nil, afterDelay: 5)
+        }
         globalStagePassing.addElapsedTime()
-        perform(#selector(nextVC), with: nil, afterDelay: 3)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

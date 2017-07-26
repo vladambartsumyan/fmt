@@ -296,16 +296,18 @@ class StageMapVC: FadeInOutVC {
     }
 
     @IBAction func buttonPressed(_ sender: MapButton) {
+        self.view.isUserInteractionEnabled = false
         let index = mapButtons.index(of: sender)!
         let stage = globalStages[index]
         SoundHelper.shared.playVoice(name: stage.type.string)
+        let duration = UserDefaults.standard.bool(forKey: "soundOn") ? SoundHelper.shared.duration(stage.type.string) : 0
         if curGlobalStagePassing != nil && stage == curGlobalStagePassing {
-            loadGlobalStage(curGlobalStagePassing!)
+            self.perform(#selector(self.loadGlobalStage), with: curGlobalStagePassing!, afterDelay: duration)
         } else {
             let globalStagePassing = globalStages[index].globalStage.createGlobalStagePassing()
             globalStagePassing.saveStages()
             globalStagePassing.inGame = false
-            loadGlobalStage(globalStagePassing)
+            self.perform(#selector(self.loadGlobalStage), with: globalStagePassing, afterDelay: duration)
         }
     }
 

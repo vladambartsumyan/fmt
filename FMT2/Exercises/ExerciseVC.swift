@@ -65,7 +65,9 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
+        fadeIn {
+            SoundHelper.shared.playVoice(name: "x\(self.exercise.firstDigit)\(self.exercise.secondDigit)-1")
+        }
         if self.globalStagePassing.type == .multiplicationBy0 {
             self.secondDigit.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)
             self.result.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)
@@ -105,6 +107,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
 
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
+        SoundHelper.shared.stopVoice()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
         self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
@@ -245,13 +248,15 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     }
 
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
+        let duration = sender.voiceDuration
         if !sender.isWrongAnswer {
             self.view.isUserInteractionEnabled = false
             rightAnswerAppearing {
-                self.nextScreen()
+                self.nextScreen(duration)
             }
         } else {
             if mode == .exam {
+                view.isUserInteractionEnabled = false
                 globalStagePassing.updateElapsedTime()
                 let result = globalStagePassing.mistake()
                 let needPreview = !([StageType.multiplicationBy0, .multiplicationBy1, .multiplicationBy10].contains(globalStagePassing.type))
@@ -259,16 +264,12 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                     if needPreview {
                         let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
                         vc.globalStagePassing = globalStagePassing
-                        fadeOut {
-                            AppDelegate.current.setRootVC(vc)
-                        }
+                        perform(#selector(nextVC), with: vc, afterDelay: duration)
                     } else {
                         let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
                         vc.globalStagePassing = globalStagePassing
                         vc.skipSecondDigit = true
-                        fadeOut {
-                            AppDelegate.current.setRootVC(vc)
-                        }
+                        perform(#selector(nextVC), with: vc, afterDelay: duration)
                     }
                 }
                 if result == .soMuch {
@@ -276,7 +277,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                     let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
                     vc.globalStagePassing = globalStagePassing
                     vc.mode = examFailedMode
-                    AppDelegate.current.setRootVC(vc)
+                    perform(#selector(nextVC), with: vc, afterDelay: duration)
                 }
             } else {
                 _ = globalStagePassing.mistake()
@@ -305,7 +306,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         }
     }
 
-    func nextScreen() {
+    func nextScreen(_ duration: Double) {
         globalStagePassing.updateElapsedTime()
         progressBar.setProgressWithAnimation(CGFloat(globalStagePassing.nextProgress))
         let result = globalStagePassing.rightAnswerResult
@@ -314,32 +315,25 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         if let typeOfNextStage = globalStagePassing.typeOfNextExercise {
             nextExerciseIsSpecial = specialLevels.contains(typeOfNextStage)
         }
-
         globalStagePassing.rightAnswer()
         switch result {
         case .normal:
             if !nextExerciseIsSpecial {
                 let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                fadeOut {
-                    AppDelegate.current.setRootVC(vc)
-                }
+                perform(#selector(nextVC), with: vc, afterDelay: duration)
             } else {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 vc.skipSecondDigit = true
-                fadeOut {
-                    AppDelegate.current.setRootVC(vc)
-                }
+                perform(#selector(nextVC), with: vc, afterDelay: duration)
             }
             break
         case .endOfStage:
             let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
             vc.globalStagePassing = globalStagePassing
             vc.mode = beforeExamMode
-            fadeOut {
-                AppDelegate.current.setRootVC(vc)
-            }
+            perform(#selector(nextVC), with: vc, afterDelay: duration)
             break
         case .endOfGlobalStage:
             let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
@@ -348,9 +342,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             if globalStagePassing.type == .permutation {
                 ServerTaskManager.pushBack(.exerciseFinished())
             }
-            fadeOut {
-                AppDelegate.current.setRootVC(vc)
-            }
+            perform(#selector(nextVC), with: vc, afterDelay: duration)
             break
         }
     }
@@ -407,6 +399,12 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             return .permutationExamFailed
         default:
             return .examFailed
+        }
+    }
+    
+    func nextVC(viewController: UIViewController) {
+        fadeOut {
+            AppDelegate.current.setRootVC(viewController)
         }
     }
 }

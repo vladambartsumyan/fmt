@@ -42,14 +42,18 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
-        perform(#selector(nextScreen), with: nil, afterDelay: 3)
         configureImage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
+        fadeIn {
+            let exampleName = StageType.multiplicationBy10.string + "example"
+            let exampleDuration = SoundHelper.shared.duration(exampleName)
+            SoundHelper.shared.playVoice(name: exampleName)
+            self.perform(#selector(self.nextScreen), with: nil, afterDelay: exampleDuration)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

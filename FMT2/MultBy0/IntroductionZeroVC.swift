@@ -43,8 +43,12 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
         fadeIn {
-            SoundHelper.shared.playVoice(name: "multiplicationBy0begin")
+            self.whatIsNumberHat()
         }
+    }
+    
+    func whatIsNumberHat() {
+        SoundHelper.shared.playVoice(name: "multiplicationBy0begin")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -111,6 +115,7 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
+        SoundHelper.shared.stopVoice()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
         self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
@@ -137,17 +142,24 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
                 self.question.transform = .identity
                 self.question.text = NSLocalizedString("Tutorial.zero.text", comment: "")
                 self.fadeInView(self.question)
-                self.perform(#selector(self.nextVC), with: nil, afterDelay: 4)
+                let tutorial1Duration = SoundHelper.shared.duration(self.globalStagePassing.type.string + "tutorial1")
+                let tutorial2Duration = SoundHelper.shared.duration(self.globalStagePassing.type.string + "tutorial2")
                 
+                self.perform(#selector(self.play), with: self.globalStagePassing.type.string + "tutorial1", afterDelay: 0)
+                self.perform(#selector(self.play), with: self.globalStagePassing.type.string + "tutorial2", afterDelay: tutorial1Duration)
+                self.perform(#selector(self.nextVC), with: nil, afterDelay: tutorial1Duration + tutorial2Duration)
             }
         }
     }
     
+    func play(name: String) {
+        SoundHelper.shared.playVoice(name: name)
+    }
+    
     func nextVC() {
         globalStagePassing.updateElapsedTime()
-        let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
+        let vc = MultByZeroExampleVC(nibName: "MultByZeroExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
-        vc.mode = .afterZeroTutorial
         fadeOut {
             AppDelegate.current.setRootVC(vc)
         }

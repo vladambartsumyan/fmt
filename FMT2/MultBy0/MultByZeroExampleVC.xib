@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MultByOneExampleVC" customModule="FMT2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MultByZeroExampleVC" customModule="FMT2" customModuleProvider="target">
             <connections>
                 <outlet property="answerFirstDigit" destination="dnc-QD-gdI" id="T2n-z7-vBO"/>
                 <outlet property="background" destination="ap5-P5-sqi" id="N3Y-xn-ei2"/>
@@ -75,7 +75,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGP-BG-P3U">
                             <rect key="frame" x="82" y="0.0" width="36" height="48"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1exercise" translatesAutoresizingMaskIntoConstraints="NO" id="Ddj-Ca-NNx">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0exercise" translatesAutoresizingMaskIntoConstraints="NO" id="Ddj-Ca-NNx">
                                     <rect key="frame" x="0.0" y="0.0" width="40" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="TSL-DK-0T2"/>
@@ -103,7 +103,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuO-c7-PFx">
                             <rect key="frame" x="164" y="0.0" width="36" height="48"/>
                             <subviews>
-                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2exercise" translatesAutoresizingMaskIntoConstraints="NO" id="dnc-QD-gdI">
+                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0exercise" translatesAutoresizingMaskIntoConstraints="NO" id="dnc-QD-gdI">
                                     <rect key="frame" x="0.0" y="0.0" width="40" height="48"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="dnc-QD-gdI" secondAttribute="height" multiplier="70:83" id="5mM-kU-C1K"/>
@@ -214,7 +214,7 @@
                     <rect key="frame" x="0.0" y="702" width="414" height="34"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x21background" translatesAutoresizingMaskIntoConstraints="NO" id="ap5-P5-sqi" userLabel="BackgroundImage">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x23background" translatesAutoresizingMaskIntoConstraints="NO" id="ap5-P5-sqi" userLabel="BackgroundImage">
                     <rect key="frame" x="45" y="152" width="323" height="323"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x212green" translatesAutoresizingMaskIntoConstraints="NO" id="zNd-dE-Xsh">
@@ -273,15 +273,14 @@
     </objects>
     <resources>
         <image name="0exercise" width="72" height="96"/>
-        <image name="1exercise" width="66" height="92"/>
         <image name="2exercise" width="67" height="94"/>
         <image name="4exercise" width="76" height="92"/>
         <image name="8exercise" width="70" height="96"/>
         <image name="=exercise" width="68" height="51"/>
         <image name="Background" width="750" height="1334"/>
         <image name="x212green" width="366" height="350"/>
-        <image name="x21background" width="366" height="350"/>
         <image name="x21result" width="366" height="350"/>
+        <image name="x23background" width="479" height="422"/>
         <image name="xexercise" width="70" height="68"/>
     </resources>
 </document>

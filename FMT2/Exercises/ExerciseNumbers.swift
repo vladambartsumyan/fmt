@@ -47,7 +47,10 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
+        fadeIn {
+            let digit = self.isSecondNumber ? self.exercise.secondDigit : self.exercise.firstDigit
+            SoundHelper.shared.playVoice(name: "\(digit)isnumber")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,12 +77,11 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
+        SoundHelper.shared.stopVoice()
         self.globalStagePassing.updateElapsedTime()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
         self.newGameWasPressed = true
-        fadeOut {
-            AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
-        }
+        AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
     }
     
     @IBAction func newGameTouchUpInside(_ sender: LeapingButton) {
@@ -174,6 +176,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     }
     
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
+        let duration = sender.voiceDuration
         globalStagePassing.updateElapsedTime()
         if !sender.isWrongAnswer {
             self.view.isUserInteractionEnabled = false
@@ -181,16 +184,18 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 vc.isSecondNumber = true
-                fadeOut {
-                    AppDelegate.current.setRootVC(vc)
-                }
+                perform(#selector(nextScreen), with: vc, afterDelay: duration)
             } else {
                 let vc = ExerciseVC(nibName: "ExerciseVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                fadeOut {
-                    AppDelegate.current.setRootVC(vc)
-                }
+                perform(#selector(nextScreen), with: vc, afterDelay: duration)
             }
+        }
+    }
+    
+    func nextScreen(viewController: UIViewController) {
+        fadeOut {
+            AppDelegate.current.setRootVC(viewController)
         }
     }
 }

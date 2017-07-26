@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650217771F288CC10067D08B /* MultByZeroExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650217751F288CC10067D08B /* MultByZeroExampleVC.swift */; };
+		650217781F288CC10067D08B /* MultByZeroExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650217761F288CC10067D08B /* MultByZeroExampleVC.xib */; };
 		650EF2941F03D2C20047C30C /* DigitColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EF2931F03D2C20047C30C /* DigitColor.swift */; };
 		650EF2961F03D5160047C30C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EF2951F03D5160047C30C /* Color.swift */; };
 		650EF2981F03E6F40047C30C /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EF2971F03E6F40047C30C /* Stage.swift */; };
@@ -304,15 +306,15 @@
 		65665E5F1F278D54006705A2 /* whatnumberis4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E4B1F278D54006705A2 /* whatnumberis4.mp3 */; };
 		65665E601F278D54006705A2 /* whatnumberis6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E4C1F278D54006705A2 /* whatnumberis6.mp3 */; };
 		65665E611F278D54006705A2 /* whatnumberis3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E4D1F278D54006705A2 /* whatnumberis3.mp3 */; };
-		65665E6C1F278D81006705A2 /* 8isdigit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E631F278D81006705A2 /* 8isdigit.mp3 */; };
-		65665E6D1F278D81006705A2 /* 5isdigit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E641F278D81006705A2 /* 5isdigit.mp3 */; };
-		65665E6E1F278D81006705A2 /* 7isdigit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E651F278D81006705A2 /* 7isdigit.mp3 */; };
-		65665E6F1F278D81006705A2 /* 9isdigit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E661F278D81006705A2 /* 9isdigit.mp3 */; };
-		65665E701F278D81006705A2 /* 2isdigit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E671F278D81006705A2 /* 2isdigit.mp3 */; };
-		65665E711F278D81006705A2 /* 0isdigit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E681F278D81006705A2 /* 0isdigit.mp3 */; };
-		65665E721F278D81006705A2 /* 4isdigit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E691F278D81006705A2 /* 4isdigit.mp3 */; };
-		65665E731F278D81006705A2 /* 6isdigit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E6A1F278D81006705A2 /* 6isdigit.mp3 */; };
-		65665E741F278D81006705A2 /* 3isdigit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E6B1F278D81006705A2 /* 3isdigit.mp3 */; };
+		65665E6C1F278D81006705A2 /* 8isnumber.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E631F278D81006705A2 /* 8isnumber.mp3 */; };
+		65665E6D1F278D81006705A2 /* 5isnumber.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E641F278D81006705A2 /* 5isnumber.mp3 */; };
+		65665E6E1F278D81006705A2 /* 7isnumber.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E651F278D81006705A2 /* 7isnumber.mp3 */; };
+		65665E6F1F278D81006705A2 /* 9isnumber.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E661F278D81006705A2 /* 9isnumber.mp3 */; };
+		65665E701F278D81006705A2 /* 2isnumber.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E671F278D81006705A2 /* 2isnumber.mp3 */; };
+		65665E711F278D81006705A2 /* 0isnumber.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E681F278D81006705A2 /* 0isnumber.mp3 */; };
+		65665E721F278D81006705A2 /* 4isnumber.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E691F278D81006705A2 /* 4isnumber.mp3 */; };
+		65665E731F278D81006705A2 /* 6isnumber.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E6A1F278D81006705A2 /* 6isnumber.mp3 */; };
+		65665E741F278D81006705A2 /* 3isnumber.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E6B1F278D81006705A2 /* 3isnumber.mp3 */; };
 		65665E841F278DA0006705A2 /* exercises.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E761F278DA0006705A2 /* exercises.mp3 */; };
 		65665E851F278DA0006705A2 /* introduction.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E771F278DA0006705A2 /* introduction.mp3 */; };
 		65665E861F278DA0006705A2 /* multiplicationBy0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65665E781F278DA0006705A2 /* multiplicationBy0.mp3 */; };
@@ -366,6 +368,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		650217751F288CC10067D08B /* MultByZeroExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultByZeroExampleVC.swift; path = MultBy0/MultByZeroExampleVC.swift; sourceTree = "<group>"; };
+		650217761F288CC10067D08B /* MultByZeroExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultByZeroExampleVC.xib; path = MultBy0/MultByZeroExampleVC.xib; sourceTree = "<group>"; };
 		650EF2931F03D2C20047C30C /* DigitColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DigitColor.swift; path = Entities/DigitColor.swift; sourceTree = "<group>"; };
 		650EF2951F03D5160047C30C /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Entities/Color.swift; sourceTree = "<group>"; };
 		650EF2971F03E6F40047C30C /* Stage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stage.swift; path = Entities/Stage.swift; sourceTree = "<group>"; };
@@ -663,15 +667,15 @@
 		65665E4B1F278D54006705A2 /* whatnumberis4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = whatnumberis4.mp3; path = Sounds/Resource/introduction/whatnumberis4.mp3; sourceTree = "<group>"; };
 		65665E4C1F278D54006705A2 /* whatnumberis6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = whatnumberis6.mp3; path = Sounds/Resource/introduction/whatnumberis6.mp3; sourceTree = "<group>"; };
 		65665E4D1F278D54006705A2 /* whatnumberis3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = whatnumberis3.mp3; path = Sounds/Resource/introduction/whatnumberis3.mp3; sourceTree = "<group>"; };
-		65665E631F278D81006705A2 /* 8isdigit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 8isdigit.mp3; path = Sounds/Resource/isdigit/8isdigit.mp3; sourceTree = "<group>"; };
-		65665E641F278D81006705A2 /* 5isdigit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 5isdigit.mp3; path = Sounds/Resource/isdigit/5isdigit.mp3; sourceTree = "<group>"; };
-		65665E651F278D81006705A2 /* 7isdigit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 7isdigit.mp3; path = Sounds/Resource/isdigit/7isdigit.mp3; sourceTree = "<group>"; };
-		65665E661F278D81006705A2 /* 9isdigit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 9isdigit.mp3; path = Sounds/Resource/isdigit/9isdigit.mp3; sourceTree = "<group>"; };
-		65665E671F278D81006705A2 /* 2isdigit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 2isdigit.mp3; path = Sounds/Resource/isdigit/2isdigit.mp3; sourceTree = "<group>"; };
-		65665E681F278D81006705A2 /* 0isdigit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0isdigit.mp3; path = Sounds/Resource/isdigit/0isdigit.mp3; sourceTree = "<group>"; };
-		65665E691F278D81006705A2 /* 4isdigit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 4isdigit.mp3; path = Sounds/Resource/isdigit/4isdigit.mp3; sourceTree = "<group>"; };
-		65665E6A1F278D81006705A2 /* 6isdigit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 6isdigit.mp3; path = Sounds/Resource/isdigit/6isdigit.mp3; sourceTree = "<group>"; };
-		65665E6B1F278D81006705A2 /* 3isdigit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 3isdigit.mp3; path = Sounds/Resource/isdigit/3isdigit.mp3; sourceTree = "<group>"; };
+		65665E631F278D81006705A2 /* 8isnumber.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 8isnumber.mp3; path = Sounds/Resource/isdigit/8isnumber.mp3; sourceTree = "<group>"; };
+		65665E641F278D81006705A2 /* 5isnumber.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 5isnumber.mp3; path = Sounds/Resource/isdigit/5isnumber.mp3; sourceTree = "<group>"; };
+		65665E651F278D81006705A2 /* 7isnumber.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 7isnumber.mp3; path = Sounds/Resource/isdigit/7isnumber.mp3; sourceTree = "<group>"; };
+		65665E661F278D81006705A2 /* 9isnumber.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 9isnumber.mp3; path = Sounds/Resource/isdigit/9isnumber.mp3; sourceTree = "<group>"; };
+		65665E671F278D81006705A2 /* 2isnumber.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 2isnumber.mp3; path = Sounds/Resource/isdigit/2isnumber.mp3; sourceTree = "<group>"; };
+		65665E681F278D81006705A2 /* 0isnumber.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0isnumber.mp3; path = Sounds/Resource/isdigit/0isnumber.mp3; sourceTree = "<group>"; };
+		65665E691F278D81006705A2 /* 4isnumber.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 4isnumber.mp3; path = Sounds/Resource/isdigit/4isnumber.mp3; sourceTree = "<group>"; };
+		65665E6A1F278D81006705A2 /* 6isnumber.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 6isnumber.mp3; path = Sounds/Resource/isdigit/6isnumber.mp3; sourceTree = "<group>"; };
+		65665E6B1F278D81006705A2 /* 3isnumber.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 3isnumber.mp3; path = Sounds/Resource/isdigit/3isnumber.mp3; sourceTree = "<group>"; };
 		65665E761F278DA0006705A2 /* exercises.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = exercises.mp3; path = Sounds/Resource/levels/exercises.mp3; sourceTree = "<group>"; };
 		65665E771F278DA0006705A2 /* introduction.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = introduction.mp3; path = Sounds/Resource/levels/introduction.mp3; sourceTree = "<group>"; };
 		65665E781F278DA0006705A2 /* multiplicationBy0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = multiplicationBy0.mp3; path = Sounds/Resource/levels/multiplicationBy0.mp3; sourceTree = "<group>"; };
@@ -844,7 +848,7 @@
 				65665CF81F278D06006705A2 /* answers */,
 				65665E391F278D3A006705A2 /* exercises */,
 				65665E621F278D5C006705A2 /* inroduction */,
-				65665E751F278D87006705A2 /* isdigit */,
+				65665E751F278D87006705A2 /* isnumber */,
 				65665E921F278DAF006705A2 /* levels */,
 				65665E9B1F278DCF006705A2 /* multiplicationBy0 */,
 				65665EA01F278DEF006705A2 /* multiplicationBy1 */,
@@ -1210,20 +1214,20 @@
 			name = inroduction;
 			sourceTree = "<group>";
 		};
-		65665E751F278D87006705A2 /* isdigit */ = {
+		65665E751F278D87006705A2 /* isnumber */ = {
 			isa = PBXGroup;
 			children = (
-				65665E631F278D81006705A2 /* 8isdigit.mp3 */,
-				65665E641F278D81006705A2 /* 5isdigit.mp3 */,
-				65665E651F278D81006705A2 /* 7isdigit.mp3 */,
-				65665E661F278D81006705A2 /* 9isdigit.mp3 */,
-				65665E671F278D81006705A2 /* 2isdigit.mp3 */,
-				65665E681F278D81006705A2 /* 0isdigit.mp3 */,
-				65665E691F278D81006705A2 /* 4isdigit.mp3 */,
-				65665E6A1F278D81006705A2 /* 6isdigit.mp3 */,
-				65665E6B1F278D81006705A2 /* 3isdigit.mp3 */,
+				65665E631F278D81006705A2 /* 8isnumber.mp3 */,
+				65665E641F278D81006705A2 /* 5isnumber.mp3 */,
+				65665E651F278D81006705A2 /* 7isnumber.mp3 */,
+				65665E661F278D81006705A2 /* 9isnumber.mp3 */,
+				65665E671F278D81006705A2 /* 2isnumber.mp3 */,
+				65665E681F278D81006705A2 /* 0isnumber.mp3 */,
+				65665E691F278D81006705A2 /* 4isnumber.mp3 */,
+				65665E6A1F278D81006705A2 /* 6isnumber.mp3 */,
+				65665E6B1F278D81006705A2 /* 3isnumber.mp3 */,
 			);
-			name = isdigit;
+			name = isnumber;
 			sourceTree = "<group>";
 		};
 		65665E921F278DAF006705A2 /* levels */ = {
@@ -1387,6 +1391,8 @@
 			children = (
 				65DE92661F0A2DAA009DDB77 /* IntroductionZeroVC.swift */,
 				65DE92671F0A2DAA009DDB77 /* IntroductionZeroVC.xib */,
+				650217751F288CC10067D08B /* MultByZeroExampleVC.swift */,
+				650217761F288CC10067D08B /* MultByZeroExampleVC.xib */,
 			);
 			name = MultBy0;
 			sourceTree = "<group>";
@@ -1493,7 +1499,7 @@
 				65665DEC1F278D32006705A2 /* x57-1.mp3 in Resources */,
 				65665DB71F278D32006705A2 /* x33-2.mp3 in Resources */,
 				65665E1D1F278D32006705A2 /* x86-1.mp3 in Resources */,
-				65665E6D1F278D81006705A2 /* 5isdigit.mp3 in Resources */,
+				65665E6D1F278D81006705A2 /* 5isnumber.mp3 in Resources */,
 				65665E011F278D32006705A2 /* x68-1.mp3 in Resources */,
 				65665CF51F278CFC006705A2 /* wrong1.mp3 in Resources */,
 				650EF3101F04E6AD0047C30C /* Lato-Medium.ttf in Resources */,
@@ -1551,7 +1557,7 @@
 				65665E371F278D32006705A2 /* x810-1.mp3 in Resources */,
 				650EF30B1F04E6AD0047C30C /* Lato-Heavy.ttf in Resources */,
 				65665DC51F278D32006705A2 /* x38-1.mp3 in Resources */,
-				65665E711F278D81006705A2 /* 0isdigit.mp3 in Resources */,
+				65665E711F278D81006705A2 /* 0isnumber.mp3 in Resources */,
 				65665DC21F278D32006705A2 /* x37-1.mp3 in Resources */,
 				65665D9D1F278D32006705A2 /* x22-3.mp3 in Resources */,
 				65665DE41F278D32006705A2 /* x53-1.mp3 in Resources */,
@@ -1561,7 +1567,7 @@
 				65665E321F278D32006705A2 /* x310-1.mp3 in Resources */,
 				65665DFA1F278D32006705A2 /* x65-1.mp3 in Resources */,
 				65665E0B1F278D32006705A2 /* x74-1.mp3 in Resources */,
-				65665E6F1F278D81006705A2 /* 9isdigit.mp3 in Resources */,
+				65665E6F1F278D81006705A2 /* 9isnumber.mp3 in Resources */,
 				65665DCB1F278D32006705A2 /* x40-1.mp3 in Resources */,
 				65665EAF1F278E5E006705A2 /* examfailed.mp3 in Resources */,
 				65DE92691F0A2DAA009DDB77 /* IntroductionZeroVC.xib in Resources */,
@@ -1582,7 +1588,7 @@
 				650EF3081F04E6AD0047C30C /* Lato-BoldItalic.ttf in Resources */,
 				65665DB91F278D32006705A2 /* x34-1.mp3 in Resources */,
 				65665EA31F278E08006705A2 /* multiplicationBy10example.mp3 in Resources */,
-				65665E6C1F278D81006705A2 /* 8isdigit.mp3 in Resources */,
+				65665E6C1F278D81006705A2 /* 8isnumber.mp3 in Resources */,
 				65665DF11F278D32006705A2 /* x58-3.mp3 in Resources */,
 				65665E141F278D32006705A2 /* x79-1.mp3 in Resources */,
 				65665DA51F278D32006705A2 /* x25-2.mp3 in Resources */,
@@ -1632,7 +1638,7 @@
 				65665E0F1F278D32006705A2 /* x77-2.mp3 in Resources */,
 				656BCDF01F0A715C00F81798 /* IntroductionOneVC.xib in Resources */,
 				65665DE01F278D32006705A2 /* x49-3.mp3 in Resources */,
-				65665E721F278D81006705A2 /* 4isdigit.mp3 in Resources */,
+				65665E721F278D81006705A2 /* 4isnumber.mp3 in Resources */,
 				65665DD21F278D32006705A2 /* x45-1.mp3 in Resources */,
 				65665DA61F278D32006705A2 /* x25-3.mp3 in Resources */,
 				65665D9F1F278D32006705A2 /* x23-2.mp3 in Resources */,
@@ -1645,6 +1651,7 @@
 				65665DBA1F278D32006705A2 /* x34-2.mp3 in Resources */,
 				650EF2D41F04E4710047C30C /* ProgressBar.xib in Resources */,
 				65665DE71F278D32006705A2 /* x55-2.mp3 in Resources */,
+				650217781F288CC10067D08B /* MultByZeroExampleVC.xib in Resources */,
 				65665DB41F278D32006705A2 /* x31-1.mp3 in Resources */,
 				65665EB91F278EA6006705A2 /* tutorial1.mp3 in Resources */,
 				65665CF61F278CFC006705A2 /* wrong2.mp3 in Resources */,
@@ -1667,7 +1674,7 @@
 				650EF2CE1F04E4450047C30C /* TopButton.xib in Resources */,
 				65665E231F278D32006705A2 /* x89-2.mp3 in Resources */,
 				65665E0E1F278D32006705A2 /* x77-1.mp3 in Resources */,
-				65665E741F278D81006705A2 /* 3isdigit.mp3 in Resources */,
+				65665E741F278D81006705A2 /* 3isnumber.mp3 in Resources */,
 				65665EAD1F278E5E006705A2 /* beforeexam.mp3 in Resources */,
 				65665E191F278D32006705A2 /* x82-1.mp3 in Resources */,
 				65665E341F278D32006705A2 /* x510-1.mp3 in Resources */,
@@ -1680,7 +1687,7 @@
 				650EF2EF1F04E6110047C30C /* Green.mp3 in Resources */,
 				65665E561F278D54006705A2 /* whatcoloris4.mp3 in Resources */,
 				65665DD11F278D32006705A2 /* x44-3.mp3 in Resources */,
-				65665E731F278D81006705A2 /* 6isdigit.mp3 in Resources */,
+				65665E731F278D81006705A2 /* 6isnumber.mp3 in Resources */,
 				650EF3151F04E6AD0047C30C /* Lato-Thin.ttf in Resources */,
 				65665E311F278D32006705A2 /* x210-1.mp3 in Resources */,
 				65665E4F1F278D54006705A2 /* introductionend.mp3 in Resources */,
@@ -1707,7 +1714,7 @@
 				65665E091F278D32006705A2 /* x72-1.mp3 in Resources */,
 				65665E9F1F278DE8006705A2 /* multiplicationBy1tutorial.mp3 in Resources */,
 				65665DD91F278D32006705A2 /* x47-2.mp3 in Resources */,
-				65665E701F278D81006705A2 /* 2isdigit.mp3 in Resources */,
+				65665E701F278D81006705A2 /* 2isnumber.mp3 in Resources */,
 				65665DBC1F278D32006705A2 /* x35-1.mp3 in Resources */,
 				65665DC01F278D32006705A2 /* x36-2.mp3 in Resources */,
 				65665DCD1F278D32006705A2 /* x42-1.mp3 in Resources */,
@@ -1751,7 +1758,7 @@
 				65665DAD1F278D32006705A2 /* x28-1.mp3 in Resources */,
 				65665E571F278D54006705A2 /* whatcoloris6.mp3 in Resources */,
 				65665DE31F278D32006705A2 /* x52-1.mp3 in Resources */,
-				65665E6E1F278D81006705A2 /* 7isdigit.mp3 in Resources */,
+				65665E6E1F278D81006705A2 /* 7isnumber.mp3 in Resources */,
 				656222B61F0538EB00B6C64B /* MoreStatisticVC.xib in Resources */,
 				65665E601F278D54006705A2 /* whatnumberis6.mp3 in Resources */,
 				65665DC71F278D32006705A2 /* x38-3.mp3 in Resources */,
@@ -1862,6 +1869,7 @@
 				650EF2E41F04E58C0047C30C /* UIColor+init.swift in Sources */,
 				650EF2CB1F04E4450047C30C /* TextButton.swift in Sources */,
 				653481AA1F0BD4350094A9CB /* MultByTenExampleVC.swift in Sources */,
+				650217771F288CC10067D08B /* MultByZeroExampleVC.swift in Sources */,
 				65104DB51F0510A400547F35 /* StageMapVC.swift in Sources */,
 				65104DBF1F0511C300547F35 /* IntroductionColorVC.swift in Sources */,
 				650EF2CF1F04E4450047C30C /* VariantButton.swift in Sources */,

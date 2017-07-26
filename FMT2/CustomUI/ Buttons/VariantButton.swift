@@ -4,7 +4,8 @@ import QuartzCore
 class VariantButton: LeapingButton {
 
     var isWrongAnswer: Bool = true
-    
+    var rand = 0
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -34,7 +35,6 @@ class VariantButton: LeapingButton {
     }
 
     override func touchUp() {
-        
         super.touchUp()
         if isWrongAnswer {
             UIView.transition(with: self.body, duration: 0.2, options: .transitionCrossDissolve, animations: {
@@ -59,12 +59,16 @@ class VariantButton: LeapingButton {
     }
     
     func playRightVoice() {
-        let rand = Int.random(min: 0, max: 2)
+        rand = Int.random(min: 0, max: 2)
         SoundHelper.shared.playVoice(name: "right\(rand)")
     }
     
     func playWrongVoice() {
-        let rand = Int.random(min: 0, max: 3)
+        rand = Int.random(min: 0, max: 3)
         SoundHelper.shared.playVoice(name: "wrong\(rand)")
+    }
+    
+    var voiceDuration: Double {
+        return UserDefaults.standard.bool(forKey: "soundOn") ? SoundHelper.shared.duration(isWrongAnswer ? "wrong\(rand)" : "right\(rand)") : 0
     }
 }

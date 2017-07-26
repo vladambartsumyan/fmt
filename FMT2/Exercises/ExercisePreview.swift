@@ -19,6 +19,8 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     // Button
     @IBOutlet weak var continueButton: TextButton!
     
+    var timer: Timer? = nil
+    
     // Level
     var exercise: Exercise!
     var globalStagePassing: GlobalStagePassing!
@@ -42,7 +44,13 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
+        fadeIn {
+            
+            let preview1Name = self.globalStagePassing.type == .permutation ? "x\(self.exercise.secondDigit)\(self.exercise.firstDigit)-2" : "x\(self.exercise.firstDigit)\(self.exercise.secondDigit)-2"
+            let duration1 = SoundHelper.shared.duration(preview1Name)
+            self.perform(#selector(self.play), with: preview1Name, afterDelay: 0)
+            self.timer = Timer.scheduledTimer(timeInterval: duration1, target: self, selector: #selector(self.playPreview2), userInfo: nil, repeats: false)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,6 +59,9 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        SoundHelper.shared.stopVoice()
+        timer?.invalidate()
+        timer = nil
     }
     
     func configureImages() {
@@ -106,6 +117,7 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
+        SoundHelper.shared.stopVoice()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
         self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
@@ -147,5 +159,14 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     
     func reverseImage(firstDigit: Int, secondDigit: Int) -> Bool {
         return [(4, 7), (7, 4)].reduce(false){ $0.0 || ($0.1.0 == firstDigit && $0.1.1 == secondDigit) }
+    }
+    
+    func play(name: String) {
+        SoundHelper.shared.playVoice(name: name)
+    }
+    
+    func playPreview2() {
+        let preview2Name = self.globalStagePassing.type == .permutation ? "x\(self.exercise.secondDigit)\(self.exercise.firstDigit)-3" : "x\(self.exercise.firstDigit)\(self.exercise.secondDigit)-3"
+        play(name: preview2Name)
     }
 }

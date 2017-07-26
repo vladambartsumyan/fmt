@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
         
+        SoundHelper.shared.playBackgroundMusic()
+        
         return true
     }
     
@@ -29,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+        SoundHelper.shared.pauseBackgroundMusic()
+        SoundHelper.shared.stopVoice()
         sendUsingTime()
         resetNotification()
         if let rootVC = window?.rootViewController {
@@ -41,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
+        SoundHelper.shared.resumeBackgroundMusic()
         serverTaskManager.setNeedsLoading(true)
         UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
         if let rootVC = window?.rootViewController {

@@ -42,7 +42,6 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
-        perform(#selector(nextScreen), with: nil, afterDelay: 3)
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +51,11 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
+        fadeIn {
+            let tutorialName = StageType.permutation.string + "tutorial"
+            let tutorialDuration = SoundHelper.shared.duration(tutorialName)
+            self.perform(#selector(self.nextScreen), with: nil, afterDelay: tutorialDuration - 5)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

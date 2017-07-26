@@ -1,7 +1,7 @@
 import UIKit
 
-class MultByOneExampleVC: FadeInOutVC, IsGameVC {
-
+class MultByZeroExampleVC: FadeInOutVC, IsGameVC {
+    
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
@@ -40,7 +40,7 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
         progressBar.progress = CGFloat(globalStagePassing.progress)
         configureImage()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -49,9 +49,11 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
         fadeIn {
-            let exampleName = StageType.multiplicationBy1.string + "example"
-            let duration = SoundHelper.shared.duration(exampleName)
-            SoundHelper.shared.playVoice(name: exampleName)
+            let fileName = self.globalStagePassing.type.string + "example"
+            let duration = SoundHelper.shared.duration(fileName)
+            
+            SoundHelper.shared.playVoice(name: fileName)
+            self.perform(#selector(self.showHat), with: nil, afterDelay: duration / 2)
             self.perform(#selector(self.nextScreen), with: nil, afterDelay: duration)
         }
     }
@@ -62,7 +64,16 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     
     func configureImage() {
         let gooseColor = Game.current.getColor(forDigit: 2)
-        self.firstDigit.image = UIImage.init(named: "x212" + gooseColor.rawValue)
+        self.firstDigit.image = UIImage.init(named: "2" + gooseColor.rawValue)
+        
+        let zeroColor = Game.current.getColor(forDigit: 0)
+        secondDigit.image = UIImage.init(named: "\(0)\(zeroColor.rawValue)")
+        secondDigit.alpha = 0.0
+        
+        result.image = UIImage.init(named: "0")
+        result.alpha = 0.0
+        
+        background.image = nil
     }
     
     func configureExerciseSize() {
@@ -72,14 +83,14 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     
     override func getFadeInArray() -> [[UIView]] {
         return [
-            [background, firstDigit, secondDigit, result], 
+            [firstDigit], 
             [firstDigitEx, secondDigitEx, answerFirstDigit, multiplicationEx, equalityEx]
         ]
     }
     
     override func getFadeOutArray() -> [[UIView]] {
         return [
-            [background, firstDigit, secondDigit, result], 
+            [background, secondDigit, result], 
             [firstDigitEx, secondDigitEx, answerFirstDigit, multiplicationEx, equalityEx]
         ]
     }
@@ -88,9 +99,27 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
         globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
-        vc.mode = .afterOneTutorial
+        vc.mode = .afterZeroTutorial
         fadeOut {
             AppDelegate.current.setRootVC(vc)
         }
+    }
+    
+    func showHat() {
+        self.secondDigit.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)
+        self.result.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)
+        UIView.animate(withDuration: 0.8) {
+            self.secondDigit.transform = .identity
+            self.secondDigit.alpha = 1.0
+            self.result.transform = .identity
+            self.result.alpha = 1.0
+        }
+        UIView.animate(withDuration: 0.3, delay: 0.5, animations: {
+            self.firstDigit.alpha = 0.0
+        })
+    }
+    
+    func play(name: String) {
+        SoundHelper.shared.playVoice(name: name)
     }
 }

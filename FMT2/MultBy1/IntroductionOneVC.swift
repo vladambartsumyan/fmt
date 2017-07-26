@@ -108,6 +108,7 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
         self.view.isUserInteractionEnabled = false
+        SoundHelper.shared.stopVoice()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
         self.globalStagePassing.updateElapsedTime()
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
@@ -134,9 +135,18 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
                 self.question.transform = .identity
                 self.question.text = NSLocalizedString("Tutorial.one.text", comment: "")
                 self.fadeInView(self.question)
-                self.perform(#selector(self.nextVC), with: nil, afterDelay: 4)
+                
+                let nameTutorial = StageType.multiplicationBy1.string + "tutorial"
+                let durationTutorial = SoundHelper.shared.duration(nameTutorial)
+                
+                SoundHelper.shared.playVoice(name: nameTutorial)
+                self.perform(#selector(self.nextVC), with: nil, afterDelay: durationTutorial)
             }
         }
+    }
+    
+    func play(name: String) {
+        SoundHelper.shared.playVoice(name: name)
     }
     
     func nextVC() {

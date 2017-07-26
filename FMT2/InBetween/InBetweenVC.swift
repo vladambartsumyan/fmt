@@ -22,27 +22,27 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(dismissSelf), userInfo: nil, repeats: false)
         fadeIn {
-            switch self.mode! {
-            case .beforeExam, .beforeMultByOneExam, .beforeMultByTenExam, .beforeMultByZeroExam, .beforeIntroductionExam:
-                SoundHelper.shared.playVoice(name: "beforeexam")
-                break
-            case .examFailed, .multByOneExamFailed, .permutationExamFailed, .multByTenExamFailed, .multByZeroExamFailed, .introductionExamFailed:
-                SoundHelper.shared.playVoice(name: "examfailed")
-                break
-            case .examPassed, .multByOneExamPassed, .multByTenExamPassed, .multByZeroExamPassed, .introductionExamPassed:
-                SoundHelper.shared.playVoice(name: "exampassed")
-                break
-            case .permutationExamPassed:
-                SoundHelper.shared.playVoice(name: "endgame")
-                break
-            case .trainingPassed:
-                SoundHelper.shared.playVoice(name: "endgame")
-                break
-            default:
-                break
-            }
+            let duration = SoundHelper.shared.duration(self.fileName)
+            self.timer = Timer.scheduledTimer(timeInterval: duration, target: self, selector: #selector(self.dismissSelf), userInfo: nil, repeats: false)
+            SoundHelper.shared.playVoice(name: self.fileName)
+        }
+    }
+    
+    var fileName: String {
+        switch self.mode! {
+        case .beforeExam, .beforeMultByOneExam, .beforeMultByTenExam, .beforeMultByZeroExam, .beforeIntroductionExam:
+            return "beforeexam"
+        case .examFailed, .multByOneExamFailed, .permutationExamFailed, .multByTenExamFailed, .multByZeroExamFailed, .introductionExamFailed:
+            return "examfailed"
+        case .examPassed, .multByOneExamPassed, .multByTenExamPassed, .multByZeroExamPassed, .introductionExamPassed:
+            return "exampassed"
+        case .permutationExamPassed:
+            return "endgame"
+        case .trainingPassed:
+            return "endgame"
+        case .afterZeroTutorial, .afterOneTutorial, .afterTenTutorial, .afterPermutationTutorial:
+            return "exercises"
         }
     }
 

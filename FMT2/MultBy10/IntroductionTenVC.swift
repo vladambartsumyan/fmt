@@ -32,8 +32,12 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
-        perform(#selector(nextVC), with: nil, afterDelay: 3)
+        fadeIn {
+            let tutorialName = StageType.multiplicationBy10.string + "tutorial"
+            let tutorialDuration = SoundHelper.shared.duration(tutorialName)
+            self.play(name: tutorialName)
+            self.perform(#selector(self.nextVC), with: nil, afterDelay: tutorialDuration)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,6 +65,10 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     
     override func getFadeOutArray() -> [[UIView]] {
         return [[textLabel]]
+    }
+    
+    func play(name: String) {
+        SoundHelper.shared.playVoice(name: name)
     }
     
     func nextVC() {

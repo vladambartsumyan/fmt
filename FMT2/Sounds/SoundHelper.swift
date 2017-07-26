@@ -19,7 +19,7 @@ class SoundHelper {
             audioPlayer = try AVAudioPlayer(contentsOf:backgroundMusicURL)
             audioPlayer!.numberOfLoops = -1
             audioPlayer!.prepareToPlay()
-            audioPlayer?.volume = 0.4
+            audioPlayer?.volume = 0.2
             if UserDefaults.standard.bool(forKey: "soundOn") {
                 audioPlayer!.play()
             }
