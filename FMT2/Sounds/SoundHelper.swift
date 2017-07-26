@@ -7,9 +7,11 @@ class SoundHelper {
     private let backgroundMusicURL = URL(fileURLWithPath: Bundle.main.path(forResource: "Background Loop", ofType: "mp3")!)
     static private let defaultSoundURL = URL(fileURLWithPath: Bundle.main.path(forResource: "Default", ofType: "mp3")!)
     static private let rightAnswerSoundURL = URL(fileURLWithPath: Bundle.main.path(forResource: "Green", ofType: "mp3")!)
-    static private let wrongAnswerSoundURL = URL(fileURLWithPath: Bundle.main.path(forResource: "Wrong", ofType: "mp3")!)
+    static private let wrongAnswerSoundURL = URL(fileURLWithPath: Bundle.main.path(forResource: "Wrong", ofType: "mp3")!)   
     
     var audioPlayer: AVAudioPlayer?
+    
+    var voicePlayer: AVAudioPlayer?
     
     static var clickPlayer: AVAudioPlayer?
     func playBackgroundMusic() {
@@ -62,12 +64,11 @@ class SoundHelper {
 
     static func prepareButtonSounds() {
         [
-                prepareDefault,
-                prepareRightAnswer,
-                prepareWrongAnswer
+            prepareDefault,
+            prepareRightAnswer,
+            prepareWrongAnswer
         ].forEach{$0()}
     }
-
     
     static private func play(withURL url: URL) {
         guard UserDefaults.standard.bool(forKey: "soundOn") else {
@@ -92,5 +93,24 @@ class SoundHelper {
         } catch {
             print("Cannot play the file")
         }
+    }
+    
+    func playVoice(name: String) {
+        guard UserDefaults.standard.bool(forKey: "soundOn") else {
+            return
+        }
+        let url = URL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: "mp3")!)
+        voicePlayer = try? AVAudioPlayer(contentsOf: url)
+        voicePlayer?.prepareToPlay()
+        voicePlayer?.play()
+    }
+    
+    func duration(_ soundName: String) -> Double {
+        let url = URL(fileURLWithPath: Bundle.main.path(forResource: soundName, ofType: "mp3")!)
+        return CMTimeGetSeconds(AVURLAsset(url: url).duration)
+    }
+    
+    func stopVoice() {
+        voicePlayer?.stop()
     }
 }

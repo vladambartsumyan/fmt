@@ -119,8 +119,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // Content
             let content = UNMutableNotificationContent()
-            content.title = "Notification.message"
-            content.body = "Notification.action"
+            content.title = NSLocalizedString("Notification.message", comment: "") 
+            content.body = NSLocalizedString("Notification.action", comment: "")
             content.sound = UNNotificationSound.default()
 
             // Time-trigger

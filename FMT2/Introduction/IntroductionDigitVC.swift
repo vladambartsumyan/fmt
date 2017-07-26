@@ -40,11 +40,14 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
+        fadeIn {
+            SoundHelper.shared.playVoice(name: "whatnumberis\(self.exercise.firstDigit)")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        SoundHelper.shared.stopVoice()
     }
     
     override func didReceiveMemoryWarning() {

@@ -41,11 +41,14 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
+        fadeIn {
+            SoundHelper.shared.playVoice(name: "whatcoloris\(self.exercise.firstDigit)")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        SoundHelper.shared.stopVoice()
     }
     
     override func didReceiveMemoryWarning() {

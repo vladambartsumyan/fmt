@@ -214,7 +214,7 @@ class StageMapVC: FadeInOutVC {
         case .introduction:
             let vc = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)
             vc.globalStagePassing = globalStagePassing
-            fadeOut {
+            simpleFadeOut {
                 AppDelegate.current.setRootVC(vc)
             }
             break
@@ -223,14 +223,14 @@ class StageMapVC: FadeInOutVC {
             if needTutorial {
                 let vc = IntroductionZeroVC(nibName: "IntroductionZeroVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                fadeOut {
+                simpleFadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             } else {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 vc.skipSecondDigit = true
-                fadeOut {
+                simpleFadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             }
@@ -240,14 +240,14 @@ class StageMapVC: FadeInOutVC {
             if needTutorial {
                 let vc = IntroductionOneVC(nibName: "IntroductionOneVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                fadeOut {
+                simpleFadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             } else {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 vc.skipSecondDigit = true
-                fadeOut {
+                simpleFadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             }
@@ -257,14 +257,14 @@ class StageMapVC: FadeInOutVC {
             if needTutorial {
                 let vc = IntroductionTenVC(nibName: "IntroductionTenVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                fadeOut {
+                simpleFadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             } else {
                 let vc = ExerciseNumbers(nibName: "ExerciseNumbers", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 vc.skipSecondDigit = true
-                fadeOut {
+                simpleFadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             }
@@ -274,13 +274,13 @@ class StageMapVC: FadeInOutVC {
             if needTutorial {
                 let vc = IntroductionPermutationVC(nibName: "IntroductionPermutationVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                fadeOut {
+                simpleFadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             } else {
                 let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
-                fadeOut {
+                simpleFadeOut {
                     AppDelegate.current.setRootVC(vc)
                 }
             }
@@ -288,7 +288,7 @@ class StageMapVC: FadeInOutVC {
         default:
             let vc = ExercisePreview(nibName: "ExercisePreview", bundle: nil)
             vc.globalStagePassing = globalStagePassing
-            fadeOut {
+            simpleFadeOut {
                 AppDelegate.current.setRootVC(vc)
             }
             break
@@ -298,6 +298,7 @@ class StageMapVC: FadeInOutVC {
     @IBAction func buttonPressed(_ sender: MapButton) {
         let index = mapButtons.index(of: sender)!
         let stage = globalStages[index]
+        SoundHelper.shared.playVoice(name: stage.type.string)
         if curGlobalStagePassing != nil && stage == curGlobalStagePassing {
             loadGlobalStage(curGlobalStagePassing!)
         } else {
@@ -397,14 +398,6 @@ class StageMapVC: FadeInOutVC {
         self.view.isUserInteractionEnabled = false
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromLeft)
-    }
-
-    override func fadeOut(_ handler: ((()) -> ())?) {
-        super.fadeOut(handler)
-        UIView.animate(withDuration: 0.3) {
-            self.gradientUpBorder.alpha = 0.0
-            self.gradientBottomBorder.alpha = 0.0
-        }
     }
 
     @IBAction func trainingButtonTouched(_ sender: TextButton) {

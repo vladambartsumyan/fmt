@@ -83,6 +83,27 @@ class FadeInOutVC: UIViewController {
         }
     }
     
+    
+    func simpleFadeOut(_ handler: ((()) -> ())?) {
+        let array = getFadeOutArray()
+        var delay: TimeInterval = 0
+        for ind in stride(from: array.count - 1, to: -1, by: -1) {
+            UIView.animate(withDuration: 0.2, delay: delay, animations: {
+                for view in array[ind] {
+                    view.alpha = 0
+                }
+            }, completion: { (completed) in
+                if ind == 0 {
+                    handler?()
+                }
+            })
+            delay += 0.2
+        }
+        if array.count == 0 {
+            handler?()
+        }
+    }
+    
     func getFadeInArray() -> [[UIView]] {
         return []
     }

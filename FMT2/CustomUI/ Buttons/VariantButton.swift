@@ -55,5 +55,16 @@ class VariantButton: LeapingButton {
     
     override func playSound() {
         isWrongAnswer ? SoundHelper.playWrongAnswer() : SoundHelper.playRightAnswer()
+        isWrongAnswer ? playWrongVoice() : playRightVoice()
+    }
+    
+    func playRightVoice() {
+        let rand = Int.random(min: 0, max: 2)
+        SoundHelper.shared.playVoice(name: "right\(rand)")
+    }
+    
+    func playWrongVoice() {
+        let rand = Int.random(min: 0, max: 3)
+        SoundHelper.shared.playVoice(name: "wrong\(rand)")
     }
 }

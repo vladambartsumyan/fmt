@@ -123,7 +123,6 @@ class GlobalStagePassing: Object {
     }
     
     var nextExercisePassing: ExercisePassing? {
-//        return index + 1 < self.stagesPassing.count ? self.stagesPassing[index + 1] : nil
         let nextExerciseIndex = currentStagePassing!.index + 1
         if nextExerciseIndex < currentStagePassing!.exercises.count {
             return currentStagePassing!.exercises[nextExerciseIndex]

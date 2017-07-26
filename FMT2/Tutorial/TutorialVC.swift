@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 class TutorialVC: FadeInOutVC {
 
@@ -13,6 +14,10 @@ class TutorialVC: FadeInOutVC {
     @IBOutlet weak var questionMark: UIImageView!
     @IBOutlet weak var answerFirstDigit: UIImageView!
     
+    let durationOfIntro = SoundHelper.shared.duration("intro")
+    let durationOfTutorial1 = SoundHelper.shared.duration("tutorial1")
+    let durationOfTutorial2 = SoundHelper.shared.duration("tutorial2")
+    
     var images: [UIView] = []
     var exercise: [UIView] = []
     
@@ -24,18 +29,34 @@ class TutorialVC: FadeInOutVC {
         }
         images = [background, firstDigit, secondDigit]
         exercise = [firstOperand, multMark, secondOperand, equalMark, questionMark]
-        presentation()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        presentation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        SoundHelper.shared.stopVoice()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     func presentation() {
-        perform(#selector(showImages), with: nil, afterDelay: 1)
-        perform(#selector(showResult), with: nil, afterDelay: 1.5)
-        perform(#selector(showExercise), with: nil, afterDelay: 2)
-        perform(#selector(showAnswer), with: nil, afterDelay: 2.5)
+        perform(#selector(showImages), with: nil, afterDelay: 1.5)
+        perform(#selector(showResult), with: nil, afterDelay: 1.5 + durationOfIntro + durationOfTutorial1 - 3)
+        perform(#selector(showExercise), with: nil, afterDelay: 1.5 + durationOfIntro + durationOfTutorial1)
+        perform(#selector(showAnswer), with: nil, afterDelay: 2.5 + durationOfIntro + durationOfTutorial1 + durationOfTutorial2 - 3)
+        perform(#selector(nextScreen), with: nil, afterDelay: durationOfIntro + durationOfTutorial1 + durationOfTutorial2 + 4)
+        
+        perform(#selector(play), with: "intro", afterDelay: 1.5)
+        perform(#selector(play), with: "tutorial1", afterDelay: 2.5 + durationOfIntro)
+        perform(#selector(play), with: "tutorial2", afterDelay: 4 + durationOfIntro + durationOfTutorial1)
+    }
+    
+    func play(_ name: String) {
+        SoundHelper.shared.playVoice(name: name)
     }
     
     func showImages() {
@@ -77,9 +98,7 @@ class TutorialVC: FadeInOutVC {
             self.answerFirstDigit.transform = CGAffineTransform.identity
             self.questionMark.alpha = 0.0
             self.answerFirstDigit.alpha = 1.0
-        }) { (_) in
-            self.nextScreen()
-        }
+        })
     }
     
     override func getFadeOutArray() -> [[UIView]] {

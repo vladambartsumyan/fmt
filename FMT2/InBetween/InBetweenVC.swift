@@ -23,7 +23,27 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(dismissSelf), userInfo: nil, repeats: false)
-        self.fadeIn()
+        fadeIn {
+            switch self.mode! {
+            case .beforeExam, .beforeMultByOneExam, .beforeMultByTenExam, .beforeMultByZeroExam, .beforeIntroductionExam:
+                SoundHelper.shared.playVoice(name: "beforeexam")
+                break
+            case .examFailed, .multByOneExamFailed, .permutationExamFailed, .multByTenExamFailed, .multByZeroExamFailed, .introductionExamFailed:
+                SoundHelper.shared.playVoice(name: "examfailed")
+                break
+            case .examPassed, .multByOneExamPassed, .multByTenExamPassed, .multByZeroExamPassed, .introductionExamPassed:
+                SoundHelper.shared.playVoice(name: "exampassed")
+                break
+            case .permutationExamPassed:
+                SoundHelper.shared.playVoice(name: "endgame")
+                break
+            case .trainingPassed:
+                SoundHelper.shared.playVoice(name: "endgame")
+                break
+            default:
+                break
+            }
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {

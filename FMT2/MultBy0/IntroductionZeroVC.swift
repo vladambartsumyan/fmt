@@ -42,7 +42,9 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
+        fadeIn {
+            SoundHelper.shared.playVoice(name: "multiplicationBy0begin")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -136,6 +138,7 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
                 self.question.text = NSLocalizedString("Tutorial.zero.text", comment: "")
                 self.fadeInView(self.question)
                 self.perform(#selector(self.nextVC), with: nil, afterDelay: 4)
+                
             }
         }
     }
