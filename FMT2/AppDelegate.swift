@@ -110,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if subview.isKind(of: NSClassFromString("UITransitionView")!) {
                 subview.removeFromSuperview()
             }
-        }
+        }       
         prevVC?.dismiss(animated: false, completion: {
             prevVC?.view.removeFromSuperview()
         })

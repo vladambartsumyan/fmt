@@ -78,9 +78,15 @@ class StageMapVC: FadeInOutVC {
         drawLine()
         addGradientToBottomBorder()
         addGradientToUpBorder()
-
+        scrollToCurrent()
     }
 
+    func scrollToCurrent() {
+        let curButton: MapButton = mapButtons.filter{$0.mode == MapButton.MapButtonMode.current}.first ?? button12!
+        let buttonRect = curButton.frame
+        self.scrollView.scrollRectToVisible(buttonRect, animated: true)
+    }
+    
     func configureStatistic() {
         let passedCount = mapButtons.filter {
             $0.mode == .passed
