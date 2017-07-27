@@ -42,7 +42,9 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
-        fadeIn()
+        fadeIn {
+            SoundHelper.shared.playVoice(name: StageType.multiplicationBy1.string + "begin")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

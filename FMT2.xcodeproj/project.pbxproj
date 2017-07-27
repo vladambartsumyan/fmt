@@ -91,6 +91,7 @@
 		653481AB1F0BD4350094A9CB /* MultByTenExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653481A91F0BD4350094A9CB /* MultByTenExampleVC.xib */; };
 		6541A9AE1F05527B005A1D94 /* UIWindow+RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541A9AD1F05527B005A1D94 /* UIWindow+RootVC.swift */; };
 		6548535E1F0FD69100DFEA0A /* UIViewController+TimeAccumulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548535D1F0FD69100DFEA0A /* UIViewController+TimeAccumulation.swift */; };
+		65516E451F29F12400026289 /* multiplicationBy1begin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65516E441F29F12400026289 /* multiplicationBy1begin.mp3 */; };
 		656222A71F0537BB00B6C64B /* MenuButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656222A21F0537BB00B6C64B /* MenuButtonCell.swift */; };
 		656222A81F0537BB00B6C64B /* MenuButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656222A31F0537BB00B6C64B /* MenuButtonCell.xib */; };
 		656222A91F0537BB00B6C64B /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656222A41F0537BB00B6C64B /* MenuItem.swift */; };
@@ -452,6 +453,7 @@
 		653481A91F0BD4350094A9CB /* MultByTenExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultByTenExampleVC.xib; path = MultBy10/MultByTenExampleVC.xib; sourceTree = "<group>"; };
 		6541A9AD1F05527B005A1D94 /* UIWindow+RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+RootVC.swift"; path = "Common/UIWindow+RootVC.swift"; sourceTree = "<group>"; };
 		6548535D1F0FD69100DFEA0A /* UIViewController+TimeAccumulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+TimeAccumulation.swift"; path = "Common/UIViewController+TimeAccumulation.swift"; sourceTree = "<group>"; };
+		65516E441F29F12400026289 /* multiplicationBy1begin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = multiplicationBy1begin.mp3; path = Sounds/Resource/multiplicationBy1/multiplicationBy1begin.mp3; sourceTree = "<group>"; };
 		656222A21F0537BB00B6C64B /* MenuButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuButtonCell.swift; path = Menu/MenuButtonCell.swift; sourceTree = "<group>"; };
 		656222A31F0537BB00B6C64B /* MenuButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuButtonCell.xib; path = Menu/MenuButtonCell.xib; sourceTree = "<group>"; };
 		656222A41F0537BB00B6C64B /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItem.swift; path = Menu/MenuItem.swift; sourceTree = "<group>"; };
@@ -1265,6 +1267,7 @@
 		65665EA01F278DEF006705A2 /* multiplicationBy1 */ = {
 			isa = PBXGroup;
 			children = (
+				65516E441F29F12400026289 /* multiplicationBy1begin.mp3 */,
 				65665E9C1F278DE8006705A2 /* multiplicationBy1example.mp3 */,
 				65665E9D1F278DE8006705A2 /* multiplicationBy1tutorial.mp3 */,
 			);
@@ -1499,6 +1502,7 @@
 				65665DEC1F278D32006705A2 /* x57-1.mp3 in Resources */,
 				65665DB71F278D32006705A2 /* x33-2.mp3 in Resources */,
 				65665E1D1F278D32006705A2 /* x86-1.mp3 in Resources */,
+				65516E451F29F12400026289 /* multiplicationBy1begin.mp3 in Resources */,
 				65665E6D1F278D81006705A2 /* 5isnumber.mp3 in Resources */,
 				65665E011F278D32006705A2 /* x68-1.mp3 in Resources */,
 				65665CF51F278CFC006705A2 /* wrong1.mp3 in Resources */,
