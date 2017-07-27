@@ -83,8 +83,17 @@ class StageMapVC: FadeInOutVC {
 
     func scrollToCurrent() {
         let curButton: MapButton = mapButtons.filter{$0.mode == MapButton.MapButtonMode.current}.first ?? button12!
-        let buttonRect = curButton.frame
-        self.scrollView.scrollRectToVisible(buttonRect, animated: true)
+        let yOfCurButton = curButton.center.y
+        var contentOffset = yOfCurButton - scrollView.frame.height / 2
+        let minContentOffset: CGFloat = 0.0
+        let maxContentOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
+        if contentOffset < minContentOffset {
+            contentOffset = minContentOffset
+        }
+        if contentOffset > maxContentOffset {
+            contentOffset = maxContentOffset
+        }
+        scrollView.setContentOffset(CGPoint(x: 0, y: contentOffset), animated: false)
     }
     
     func configureStatistic() {
@@ -423,7 +432,7 @@ class StageMapVC: FadeInOutVC {
             (vc as! ExerciseNumbers).skipSecondDigit = true
         }
         vc.globalStagePassing = trainingGlobalStagePassing
-        fadeOut {
+        simpleFadeOut {
             AppDelegate.current.setRootVC(vc as! UIViewController)
         }
     }

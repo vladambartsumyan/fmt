@@ -45,7 +45,6 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
         fadeIn {
-            
             let preview1Name = self.globalStagePassing.type == .permutation ? "x\(self.exercise.secondDigit)\(self.exercise.firstDigit)-2" : "x\(self.exercise.firstDigit)\(self.exercise.secondDigit)-2"
             let duration1 = SoundHelper.shared.duration(preview1Name)
             self.perform(#selector(self.play), with: preview1Name, afterDelay: 0)
@@ -112,7 +111,11 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     func configureTopBar() {
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
-        progressBar.progress = CGFloat(globalStagePassing.progress)
+        if globalStagePassing._type == StageType.training.rawValue {
+            progressBar.alpha = 0
+        } else {
+            progressBar.progress = CGFloat(globalStagePassing.progress)
+        }
     }
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {

@@ -72,7 +72,11 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     func configureTopBar() {
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
-        progressBar.progress = CGFloat(globalStagePassing.progress)
+        if globalStagePassing._type == StageType.training.rawValue {
+            progressBar.alpha = 0
+        } else {
+            progressBar.progress = CGFloat(globalStagePassing.progress)
+        }
     }
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {

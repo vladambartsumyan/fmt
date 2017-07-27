@@ -98,6 +98,18 @@ class GlobalStagePassing: Object {
     
     func rightAnswer() {
         sendStatistic()
+        if self._type == StageType.training.rawValue {
+            let possibleExercises = Array(currentStagePassing!.stage.possibleExercises)
+            let exercise = possibleExercises.randomElem()!
+            let realm = try! Realm()
+            try! realm.write {
+                let exercisePassing = exercise.createExercisePassing()
+                realm.add(exercisePassing)
+                self.stagesPassing.first!.exercises.append(exercisePassing)
+                currentStagePassing!.index += 1
+            }
+            return
+        }
         if currentStagePassing!.index == currentStagePassing!.exercises.count - 1 {
             try! (try! Realm()).write {
                 currentStagePassing!.currentExercisePassing!.isPassed = true
@@ -105,16 +117,20 @@ class GlobalStagePassing: Object {
                 currentStagePassing!.index += 1
                 index += 1
             }
-        } else {
-            try! (try! Realm()).write {
-                currentStagePassing!.currentExercisePassing!.isPassed = true
-                currentStagePassing!.currentExercisePassing!.passedAt = Date()
-                currentStagePassing!.index += 1
-            }
+            return
+        }
+        try! (try! Realm()).write {
+            currentStagePassing!.currentExercisePassing!.isPassed = true
+            currentStagePassing!.currentExercisePassing!.passedAt = Date()
+            currentStagePassing!.index += 1
         }
     }
     
     var rightAnswerResult: RightAnswerResult {
+        if self._type == StageType.training.rawValue {
+            return .normal
+        }
+        
         if currentStagePassing!.index == currentStagePassing!.exercises.count - 1 {
             return index == stagesPassing.count - 1 ? .endOfGlobalStage : .endOfStage 
         } else {
