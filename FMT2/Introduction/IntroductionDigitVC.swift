@@ -92,7 +92,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     func configureImage() {
         let color = globalStagePassing.currentStagePassing!.stage.mode == .exam ? Game.current.getColor(forDigit: exercise.firstDigit) : .clear
         animalImageView.image = UIImage.init(named: "\(exercise.firstDigit)\(color.rawValue)")
-        digitImageView.image = UIImage.init(named: "\(exercise.firstDigit)")
+        digitImageView.image = mode == .exam ? nil : UIImage.init(named: "\(exercise.firstDigit)")
     }
     
     override func getFadeInArray() -> [[UIView]] {
