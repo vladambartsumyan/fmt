@@ -129,8 +129,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             content.sound = UNNotificationSound.default()
 
             // Time-trigger
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: true)
-
+            let matchingComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: Date().addingTimeInterval(-1))
+            let trigger = UNCalendarNotificationTrigger(dateMatching: matchingComponents, repeats: true)
+            
             // Request
             let identifier = "DailyNotification"
             let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)

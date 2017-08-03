@@ -1,5 +1,6 @@
 import Foundation
 import AVFoundation
+import NotificationCenter
 
 class SoundHelper {
     static let shared = SoundHelper()
@@ -11,11 +12,15 @@ class SoundHelper {
     
     var audioPlayer: AVAudioPlayer?
     
-    var voicePlayer: AVAudioPlayer?
+    static var voicePlayer: AVAudioPlayer?
     
     static var clickPlayer: AVAudioPlayer?
+    
     func playBackgroundMusic() {
+        NotificationCenter.default.addObserver(self, selector: #selector(interruptHandler(notification:)), name: NSNotification.Name.AVAudioSessionInterruption, object: AVAudioSession.sharedInstance())
         do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true, with: .notifyOthersOnDeactivation)
             audioPlayer = try AVAudioPlayer(contentsOf:backgroundMusicURL)
             audioPlayer!.numberOfLoops = -1
             audioPlayer!.prepareToPlay()
@@ -36,6 +41,21 @@ class SoundHelper {
         if UserDefaults.standard.bool(forKey: "soundOn") {
             audioPlayer?.play()
         }
+    }
+    
+    @objc func interruptHandler(notification: NSNotification) {
+        if notification.name == NSNotification.Name.AVAudioSessionInterruption {
+            guard let interruptionType = notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt else { return }
+            if interruptionType != AVAudioSessionInterruptionType.began.rawValue {
+                audioPlayer!.play()
+            } else {
+                audioPlayer!.pause()
+            }
+        }
+    }
+    
+    @objc func resumeAfterInterrupt(timer: Timer) {
+        audioPlayer!.play()
     }
     
     static func playDefault() {
@@ -100,9 +120,9 @@ class SoundHelper {
             return
         }
         let url = URL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: "mp3")!)
-        voicePlayer = try? AVAudioPlayer(contentsOf: url)
-        voicePlayer?.prepareToPlay()
-        voicePlayer?.play()
+        SoundHelper.voicePlayer = try? AVAudioPlayer(contentsOf: url)
+        SoundHelper.voicePlayer?.prepareToPlay()
+        SoundHelper.voicePlayer?.play()
     }
     
     func duration(_ soundName: String) -> Double {
@@ -111,6 +131,8 @@ class SoundHelper {
     }
     
     func stopVoice() {
-        voicePlayer?.stop()
+        SoundHelper.voicePlayer?.stop()
     }
+    
+    
 }

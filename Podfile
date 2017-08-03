@@ -3,7 +3,6 @@ use_frameworks!
 
 target 'FMT2’ do
     pod 'RealmSwift'
-    pod 'Realm'
     pod 'Moya'
     pod 'SMSegmentView', '~> 1.1'
 end

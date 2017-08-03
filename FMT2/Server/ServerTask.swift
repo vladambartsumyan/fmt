@@ -39,8 +39,8 @@ class ServerTask: Object, TargetType {
         }
     }
 
-//    public var baseURL: URL { return URL(string: "https://api.multiplication.dev.leko.team/api")! }
-    public var baseURL: URL { return URL(string: "http://127.0.0.1:8000")! }
+    public var baseURL: URL { return URL(string: "https://api.multiplication.dev.leko.team/api")! }
+//    public var baseURL: URL { return URL(string: "http://127.0.0.1:8000")! }
 
     static let apiKey = "56vBS1O2wUT5F520"
 
