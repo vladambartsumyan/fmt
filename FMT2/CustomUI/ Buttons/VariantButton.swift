@@ -1,5 +1,6 @@
 import UIKit
 import QuartzCore
+import SVGKit
 
 class VariantButton: LeapingButton {
 
@@ -17,6 +18,7 @@ class VariantButton: LeapingButton {
         self.view.center = self.center - self.frame.origin
         setTitleSize()
         self.addSubview(self.view)
+        self.body.image = SVGKImage.init(named: "variantButton").uiImage
     }
 
     func setTitle(titleText title: String) {
@@ -38,17 +40,17 @@ class VariantButton: LeapingButton {
         super.touchUp()
         if isWrongAnswer {
             UIView.transition(with: self.body, duration: 0.2, options: .transitionCrossDissolve, animations: {
-                self.body.image = #imageLiteral(resourceName: "WrongVariantButton")
+                self.body.image = SVGKImage.init(named: "wrongVariantButton").uiImage
             }, completion: { (completed) in
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                     UIView.transition(with: self.body, duration: 0.2, options: .transitionCrossDissolve, animations: {
-                        self.body.image = #imageLiteral(resourceName: "VariantButton")
+                        self.body.image = SVGKImage.init(named: "variantButton").uiImage
                     })
                 }
             })
         } else {
             UIView.transition(with: self.body, duration: 0.2, options: .transitionCrossDissolve, animations: { 
-                self.body.image = #imageLiteral(resourceName: "RightVariantButton")
+                self.body.image = SVGKImage.init(named: "rightVariantButton").uiImage
             }, completion: nil)
         }
     }

@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 class MultByOneExampleVC: FadeInOutVC, IsGameVC {
 
@@ -62,7 +63,7 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     
     func configureImage() {
         let gooseColor = Game.current.getColor(forDigit: 2)
-        self.firstDigit.image = UIImage.init(named: "x212" + gooseColor.rawValue)
+        self.firstDigit.image = SVGKImage.init(named: "x212" + gooseColor.rawValue).uiImage
     }
     
     func configureExerciseSize() {

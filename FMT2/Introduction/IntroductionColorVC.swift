@@ -1,5 +1,5 @@
 import UIKit
-
+import SVGKit
 class IntroductionColorVC: FadeInOutVC, IsGameVC {
     
     var exercise: Exercise!
@@ -66,7 +66,7 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
-        image.image = UIImage.init(named: "\(exercise.firstDigit)clear")
+        image.image = SVGKImage(named: "\(exercise.firstDigit)clear").uiImage
     }
     
     func configureContinueButton() {
@@ -106,7 +106,7 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     
     func animateSetImage(withName name: String) {
         UIView.transition(with: image, duration: 0.2, options: .transitionCrossDissolve, animations: {
-            self.image.image = UIImage.init(named: name)
+            self.image.image = SVGKImage(named: name).uiImage
         }, completion: nil)
     }
     

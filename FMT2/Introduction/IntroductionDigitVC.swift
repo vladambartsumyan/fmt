@@ -1,5 +1,5 @@
 import UIKit
-
+import SVGKit
 class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     
     @IBOutlet weak var question: UILabel!
@@ -91,8 +91,8 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     
     func configureImage() {
         let color = globalStagePassing.currentStagePassing!.stage.mode == .exam ? Game.current.getColor(forDigit: exercise.firstDigit) : .clear
-        animalImageView.image = UIImage.init(named: "\(exercise.firstDigit)\(color.rawValue)")
-        digitImageView.image = mode == .exam ? nil : UIImage.init(named: "\(exercise.firstDigit)")
+        animalImageView.image = SVGKImage(named: "\(exercise.firstDigit)\(color.rawValue)").uiImage
+        digitImageView.image = mode == .exam ? nil : SVGKImage(named: "\(exercise.firstDigit)").uiImage
     }
     
     override func getFadeInArray() -> [[UIView]] {

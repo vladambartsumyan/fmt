@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 enum MenuButtonColor {
     case green
@@ -14,9 +15,9 @@ extension MenuButtonColor {
     var bodyImage: UIImage {
         switch self {
         case .green:
-            return #imageLiteral(resourceName: "GreenButton")
+            return SVGKImage(named: "greenButton").uiImage
         case .orange:
-            return #imageLiteral(resourceName: "OrangeButton")
+            return SVGKImage(named: "orangeButton").uiImage
         }
     }
 }

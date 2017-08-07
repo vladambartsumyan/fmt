@@ -1,5 +1,5 @@
 import UIKit
-
+import SVGKit
 class MenuButton: LeapingButton {
 
     override init(frame: CGRect) {
@@ -20,7 +20,7 @@ class MenuButton: LeapingButton {
     }
 
     func setIcon(withName name: String) {
-        self.icon.image = UIImage.init(named: name)
+        self.icon.image = SVGKImage.init(named: name).uiImage
     }
 
     func setTitle(titleText title: String) {

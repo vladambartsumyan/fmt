@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 class StartScreenVC: FadeInOutVC {
     
@@ -15,6 +16,8 @@ class StartScreenVC: FadeInOutVC {
     
     override func viewDidLoad() {
         self.needsFadeIn = false
+        self.image.image = SVGKImage(named: "start").uiImage
+        background.image = SVGKImage(named: "background").uiImage
         super.viewDidLoad()
         configureText()
         configureButton()

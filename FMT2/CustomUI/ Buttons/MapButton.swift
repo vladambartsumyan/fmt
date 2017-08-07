@@ -1,5 +1,5 @@
 import UIKit
-
+import SVGKit
 class MapButton: LeapingButton {
 
     private var _mode: MapButtonMode = .locked
@@ -29,7 +29,7 @@ class MapButton: LeapingButton {
     
     func setIcon(withName name: String) {
         setTitle(titleText: "")
-        self.icon.image = UIImage.init(named: name)
+        self.icon.image = SVGKImage(named: name).uiImage
     }
     
     func setTitle(titleText title: String) {

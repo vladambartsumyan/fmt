@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 class TopButton: LeapingButton {
 
@@ -12,9 +13,10 @@ class TopButton: LeapingButton {
         self.view.frame = self.frame
         self.view.center = self.center - self.frame.origin
         self.addSubview(self.view)
+        self.body.image = SVGKImage.init(named: "menuButton").uiImage
     }
 
     func setIcon(withName name: String) {
-        self.icon.image = UIImage.init(named: name)
+        self.icon.image = SVGKImage.init(named: name).uiImage
     }
 }

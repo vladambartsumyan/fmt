@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 class IntroductionTenVC: FadeInOutVC, IsGameVC {
     
@@ -46,7 +47,7 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     
     func configureImage() {
         let gooseColor = Game.current.getColor(forDigit: 2)
-        self.firstDigit.image = UIImage.init(named: "x2102" + gooseColor.rawValue)
+        self.firstDigit.image = SVGKImage.init(named: "x2102" + gooseColor.rawValue).uiImage
     }
     
     func configureTopBar() {

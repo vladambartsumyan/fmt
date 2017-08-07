@@ -1,9 +1,11 @@
 import UIKit
 import RealmSwift
+import SVGKit
 
 class StageMapVC: FadeInOutVC {
 
     @IBOutlet weak var menuButton: TopButton!
+    @IBOutlet weak var background: UIImageView!
 
     @IBOutlet weak var button0: MapButton!
     @IBOutlet weak var button1: MapButton!
@@ -60,6 +62,8 @@ class StageMapVC: FadeInOutVC {
         self.mapButtons.append(button11)
         self.mapButtons.append(button12)
 
+        background.image = SVGKImage(named: "background").uiImage
+        menuButton.setIcon(withName: "MenuIcon")
         
         curGlobalStagePassing = Game.current.currentGlobalStagePassing
         globalStages = (try! Realm()).objects(GlobalStagePassing.self).sorted(byKeyPath: "_type")

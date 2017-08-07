@@ -1,5 +1,5 @@
 import UIKit
-
+import SVGKit
 
 class TextButton: LeapingButton {
 
@@ -14,6 +14,7 @@ class TextButton: LeapingButton {
         self.view.center = self.center - self.frame.origin
         setTitleSize()
         self.addSubview(self.view)
+        self.body.image = SVGKImage(named: "greenButton").uiImage
     }
 
     func setTitle(titleText title: String) {

@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 class ExerciseVC: FadeInOutVC, IsGameVC {
 
@@ -150,13 +151,13 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         if globalStagePassing.type == .multiplicationBy0 {
             let mult = max(exercise.firstDigit, exercise.secondDigit)
             let multColor = Game.current.getColor(forDigit: mult)
-            firstDigit.image = UIImage.init(named: "\(mult)\(multColor.rawValue)")
+            firstDigit.image = SVGKImage(named: "\(mult)\(multColor.rawValue)").uiImage
 
             let zeroColor = Game.current.getColor(forDigit: 0)
-            secondDigit.image = UIImage.init(named: "\(0)\(zeroColor.rawValue)")
+            secondDigit.image = SVGKImage(named: "\(0)\(zeroColor.rawValue)").uiImage
             secondDigit.alpha = 0.0
 
-            result.image = mode == .exam ? nil : UIImage.init(named: "0")
+            result.image = mode == .exam ? nil : SVGKImage(named: "0").uiImage
             result.alpha = 0.0
 
             background.image = nil
@@ -184,10 +185,10 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             c1 = Game.current.getColor(forDigit: snd).rawValue
             c2 = Game.current.getColor(forDigit: fst).rawValue
         }
-        background.image = UIImage.init(named: s + "background")
-        firstDigit.image = UIImage.init(named: s + s1 + c1)
-        secondDigit.image = UIImage.init(named: s + s2 + c2)
-        result.image = self.mode == .exam ? nil : UIImage.init(named: s + "result")
+        background.image = SVGKImage(named: s + "background").uiImage
+        firstDigit.image = SVGKImage(named: s + s1 + c1).uiImage
+        secondDigit.image = SVGKImage(named: s + s2 + c2).uiImage
+        result.image = self.mode == .exam ? nil : SVGKImage(named: s + "result").uiImage
     }
 
     func configureVariantPanel() {
@@ -224,29 +225,29 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
 
         if exercise.firstDigit >= 10 {
             fst2width.constant = digitWidth
-            fst1.image = UIImage(named: "\(Int(exercise.firstDigit / 10))exercise")
-            fst2.image = UIImage(named: "\(exercise.firstDigit % 10)exercise")
+            fst1.image = SVGKImage(named: "\(Int(exercise.firstDigit / 10))exercise").uiImage
+            fst2.image = SVGKImage(named: "\(exercise.firstDigit % 10)exercise").uiImage
         } else {
             fst2width.constant = 0.0
-            fst1.image = UIImage(named: "\(exercise.firstDigit)exercise")
+            fst1.image = SVGKImage(named: "\(exercise.firstDigit)exercise").uiImage
         }
 
         if exercise.secondDigit >= 10 {
             snd2width.constant = digitWidth
-            snd1.image = UIImage(named: "\(Int(exercise.secondDigit / 10))exercise")
-            snd2.image = UIImage(named: "\(exercise.secondDigit % 10)exercise")
+            snd1.image = SVGKImage(named: "\(Int(exercise.secondDigit / 10))exercise").uiImage
+            snd2.image = SVGKImage(named: "\(exercise.secondDigit % 10)exercise").uiImage
         } else {
             snd2width.constant = 0.0
-            snd1.image = UIImage(named: "\(exercise.secondDigit)exercise")
+            snd1.image = SVGKImage(named: "\(exercise.secondDigit)exercise").uiImage
         }
 
         if res >= 10 {
             res2width.constant = digitWidth
-            res1.image = UIImage(named: "\(Int(res / 10))exercise")
-            res2.image = UIImage(named: "\(res % 10)exercise")
+            res1.image = SVGKImage(named: "\(Int(res / 10))exercise").uiImage
+            res2.image = SVGKImage(named: "\(res % 10)exercise").uiImage
         } else {
             res2width.constant = 0.0
-            res1.image = UIImage(named: "\(res)exercise")
+            res1.image = SVGKImage(named: "\(res)exercise").uiImage
         }
 
     }

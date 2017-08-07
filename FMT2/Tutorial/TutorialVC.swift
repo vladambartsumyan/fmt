@@ -1,9 +1,11 @@
 import UIKit
 import AVFoundation
+import SVGKit
 
 class TutorialVC: FadeInOutVC {
-
+    
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var resultImage: UIImageView!
@@ -23,11 +25,12 @@ class TutorialVC: FadeInOutVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureImages()
         Game.current.createGame()
-        [background, firstDigit, secondDigit, resultImage, firstOperand, multMark, secondOperand, equalMark, questionMark, answerFirstDigit].forEach {
+        [backgroundImage, firstDigit, secondDigit, resultImage, firstOperand, multMark, secondOperand, equalMark, questionMark, answerFirstDigit].forEach {
             $0?.alpha = 0
         }
-        images = [background, firstDigit, secondDigit]
+        images = [backgroundImage, firstDigit, secondDigit]
         exercise = [firstOperand, multMark, secondOperand, equalMark, questionMark]
     }
 
@@ -41,6 +44,20 @@ class TutorialVC: FadeInOutVC {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func configureImages() {
+        background.image = SVGKImage(named: "background").uiImage
+        backgroundImage.image = SVGKImage(named: "x23background").uiImage
+        firstDigit.image = SVGKImage(named: "x232brown").uiImage
+        secondDigit.image = SVGKImage(named: "x233gray").uiImage
+        resultImage.image = SVGKImage(named: "x23result").uiImage
+        firstOperand.image = UIImage(named: "2exercise")
+        multMark.image = UIImage(named: "xexercise")
+        secondOperand.image = UIImage(named: "3exercise")
+        equalMark.image = UIImage(named: "=exercise")
+        questionMark.image = UIImage(named: "?exercise")
+        answerFirstDigit.image = UIImage(named: "6exercise")
     }
     
     func presentation() {

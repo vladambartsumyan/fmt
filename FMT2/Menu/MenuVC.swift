@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -10,10 +11,13 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     private let menuCellReuseId = "menuCellReuseId"
 
+    @IBOutlet weak var background: UIImageView!
+    
     // LIFECYCLE
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        background.image = SVGKImage(named: "background").uiImage
         configureMenuDataSource()
         configureCollectionView()
     }

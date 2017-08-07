@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InBetweenVC" customModule="FMT2" customModuleProvider="target">
             <connections>
+                <outlet property="background" destination="jzE-Qi-CcF" id="zWx-KS-hn4"/>
                 <outlet property="bubble" destination="eQo-0I-HLV" id="2pV-Wi-WV9"/>
                 <outlet property="gooseImage" destination="Owc-Dh-8Md" id="zyD-cE-UoD"/>
                 <outlet property="message" destination="qjr-mY-pvv" id="3oz-Jj-aop"/>
@@ -33,19 +34,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clearInBetween" translatesAutoresizingMaskIntoConstraints="NO" id="Owc-Dh-8Md">
-                    <rect key="frame" x="95.666666666666657" y="283" width="192.33333333333334" height="306.66666666666663"/>
+                    <rect key="frame" x="96" y="283" width="192" height="307"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Owc-Dh-8Md" secondAttribute="height" multiplier="226:361" id="qCi-p6-DrT"/>
                     </constraints>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BubbleLeftInBetween" translatesAutoresizingMaskIntoConstraints="NO" id="eQo-0I-HLV">
-                    <rect key="frame" x="81" y="81" width="277.33333333333331" height="187.66666666666669"/>
+                    <rect key="frame" x="81" y="81" width="277" height="188"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="eQo-0I-HLV" secondAttribute="height" multiplier="214:145" id="vGS-Uv-NqD"/>
                     </constraints>
                 </imageView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Молодец! А теперь давай решать примеры!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="qjr-mY-pvv">
-                    <rect key="frame" x="122" y="128.66666666666666" width="193.66666666666669" height="75.666666666666686"/>
+                    <rect key="frame" x="122" y="129" width="194" height="76"/>
                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="21"/>
                     <color key="textColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>

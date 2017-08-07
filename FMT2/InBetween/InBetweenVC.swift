@@ -1,10 +1,12 @@
 import UIKit
+import SVGKit
 
 class InBetweenVC: FadeInOutVC, IsGameVC{
 
     @IBOutlet weak var bubble: UIImageView!
 
     @IBOutlet weak var gooseImage: UIImageView!
+    @IBOutlet weak var background: UIImageView!
 
     private var timer: Timer!
 
@@ -55,8 +57,10 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
     }
 
     func configureImage() {
+        bubble.image = SVGKImage(named: "bubbleLeftInBetween").uiImage
+        background.image = SVGKImage(named: "background").uiImage
         let color = Game.current.getColor(forDigit: 2)
-        gooseImage.image = UIImage.init(named: "\(color.rawValue)InBetween")
+        gooseImage.image = SVGKImage(named: "\(color.rawValue)InBetween").uiImage
     }
     
     func configureMessage() {

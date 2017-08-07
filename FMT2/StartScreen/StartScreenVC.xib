@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,9 +16,9 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartScreenVC" customModule="FMT" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartScreenVC" customModule="FMT2" customModuleProvider="target">
             <connections>
-                <outlet property="background" destination="bSl-BT-F2C" id="44o-tG-BbV"/>
+                <outlet property="background" destination="bSl-BT-F2C" id="pvO-8f-Te0"/>
                 <outlet property="button" destination="QeL-gj-upO" id="u9A-2B-NnW"/>
                 <outlet property="image" destination="azw-Pc-xx6" id="4hF-m6-Ybq"/>
                 <outlet property="text" destination="xiu-iq-aKu" id="RzJ-ee-8ky"/>
@@ -30,7 +30,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="bSl-BT-F2C">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bSl-BT-F2C">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcZ-DL-NDh">
@@ -49,12 +49,12 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Веселая таблица умножения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiu-iq-aKu">
-                    <rect key="frame" x="32" y="412" width="350" height="103.33333333333337"/>
+                    <rect key="frame" x="32" y="412" width="350" height="104"/>
                     <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="43"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-gj-upO" customClass="TextButton" customModule="FMT" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-gj-upO" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
                     <rect key="frame" x="53" y="611" width="308" height="70"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -83,7 +83,7 @@
                         <constraint firstAttribute="width" secondItem="xHA-sy-nVB" secondAttribute="height" multiplier="84:88" id="ORC-2t-iUN"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start" translatesAutoresizingMaskIntoConstraints="NO" id="azw-Pc-xx6">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="azw-Pc-xx6">
                     <rect key="frame" x="48" y="70" width="318" height="311"/>
                 </imageView>
             </subviews>
@@ -133,8 +133,4 @@
             <point key="canvasLocation" x="33" y="53"/>
         </view>
     </objects>
-    <resources>
-        <image name="Background" width="750" height="1334"/>
-        <image name="start" width="579" height="561"/>
-    </resources>
 </document>

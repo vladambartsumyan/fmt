@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 class ExerciseNumbers: FadeInOutVC, IsGameVC {
 
@@ -121,7 +122,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
         if globalStagePassing.type == .multiplicationBy0 {
             let mult = max(exercise.firstDigit, exercise.secondDigit)
             let multColor = Game.current.getColor(forDigit: mult)
-            firstDigit.image = UIImage.init(named: "\(mult)\(multColor.rawValue)")
+            firstDigit.image = SVGKImage(named: "\(mult)\(multColor.rawValue)").uiImage
             background.image = nil
             secondDigit.image = nil
             result.image = nil
@@ -148,10 +149,10 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
             c1 = Game.current.getColor(forDigit: snd).rawValue
             c2 = Game.current.getColor(forDigit: fst).rawValue
         }
-        background.image = UIImage.init(named: s + "background")
-        firstDigit.image = UIImage.init(named: s + s1 + c1)
-        secondDigit.image = UIImage.init(named: s + s2 + c2)
-        result.image = self.mode == .exam ? nil : UIImage.init(named: s + "result")
+        background.image = SVGKImage(named: s + "background").uiImage
+        firstDigit.image = SVGKImage(named: s + s1 + c1).uiImage
+        secondDigit.image = SVGKImage(named: s + s2 + c2).uiImage
+        result.image = self.mode == .exam ? nil : SVGKImage(named: s + "result").uiImage
     }
     
     func configureText() {

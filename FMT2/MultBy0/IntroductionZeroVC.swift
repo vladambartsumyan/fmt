@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     
@@ -96,8 +97,8 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     
     func configureImage() {
         let color = Game.current.getColor(forDigit: 0)
-        animalImageView.image = UIImage.init(named: "0\(color.rawValue)")
-        digitImageView.image = UIImage.init(named: "0")
+        animalImageView.image = SVGKImage.init(named: "0\(color.rawValue)").uiImage
+        digitImageView.image = SVGKImage.init(named: "0").uiImage
     }
     
     override func getFadeInArray() -> [[UIView]] {

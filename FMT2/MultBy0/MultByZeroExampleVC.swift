@@ -1,4 +1,5 @@
 import UIKit
+import SVGKit
 
 class MultByZeroExampleVC: FadeInOutVC, IsGameVC {
     
@@ -64,13 +65,13 @@ class MultByZeroExampleVC: FadeInOutVC, IsGameVC {
     
     func configureImage() {
         let gooseColor = Game.current.getColor(forDigit: 2)
-        self.firstDigit.image = UIImage.init(named: "2" + gooseColor.rawValue)
+        self.firstDigit.image = SVGKImage.init(named: "2" + gooseColor.rawValue).uiImage
         
         let zeroColor = Game.current.getColor(forDigit: 0)
-        secondDigit.image = UIImage.init(named: "\(0)\(zeroColor.rawValue)")
+        secondDigit.image = SVGKImage.init(named: "\(0)\(zeroColor.rawValue)").uiImage
         secondDigit.alpha = 0.0
         
-        result.image = UIImage.init(named: "0")
+        result.image = SVGKImage.init(named: "0").uiImage
         result.alpha = 0.0
         
         background.image = nil

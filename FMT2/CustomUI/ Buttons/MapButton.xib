@@ -42,14 +42,14 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrM-WL-rbj">
-                    <rect key="frame" x="36" y="17" width="29" height="61"/>
+                    <rect key="frame" x="36" y="17.5" width="29" height="61"/>
                     <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="50"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.0" alpha="0.300506161971831" colorSpace="calibratedWhite"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjz-x0-4nK">
-                    <rect key="frame" x="35" y="18" width="30" height="60"/>
+                    <rect key="frame" x="35" y="17.5" width="30" height="60"/>
                     <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="50"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -57,7 +57,7 @@
                     <size key="shadowOffset" width="-1" height="0.0"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N67-GS-DAu">
-                    <rect key="frame" x="36" y="17" width="29" height="61"/>
+                    <rect key="frame" x="36" y="17.5" width="29" height="61"/>
                     <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="50"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lot-97-Kru">
-                    <rect key="frame" x="35" y="18" width="30" height="60"/>
+                    <rect key="frame" x="35" y="17.5" width="30" height="60"/>
                     <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="50"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
