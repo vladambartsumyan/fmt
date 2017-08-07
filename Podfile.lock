@@ -1,5 +1,11 @@
 PODS:
   - Alamofire (4.4.0)
+  - CocoaLumberjack (3.2.0):
+    - CocoaLumberjack/Default (= 3.2.0)
+    - CocoaLumberjack/Extensions (= 3.2.0)
+  - CocoaLumberjack/Default (3.2.0)
+  - CocoaLumberjack/Extensions (3.2.0):
+    - CocoaLumberjack/Default
   - Moya (8.0.4):
     - Moya/Core (= 8.0.4)
   - Moya/Core (8.0.4):
@@ -12,20 +18,35 @@ PODS:
     - Realm (= 2.7.0)
   - Result (3.2.2)
   - SMSegmentView (1.1)
+  - SVGKit (2.0.1):
+    - CocoaLumberjack (~> 3.x)
 
 DEPENDENCIES:
   - Moya
   - RealmSwift
   - SMSegmentView (~> 1.1)
+  - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `2.x`)
+
+EXTERNAL SOURCES:
+  SVGKit:
+    :branch: 2.x
+    :git: https://github.com/SVGKit/SVGKit.git
+
+CHECKOUT OPTIONS:
+  SVGKit:
+    :commit: 8949b61e7ae25529678e34a548288cc838061674
+    :git: https://github.com/SVGKit/SVGKit.git
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
   Moya: a08bc060c7a44eee27447b239ed33a189b641e2b
   Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
   RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   Result: 4edd39003fdccf281d418ee1b006571f70123250
   SMSegmentView: a99862f36ea73478558ae665c209cb80c0d4f059
+  SVGKit: 4055d9e809b5db8633755979cfb3b02dc5a8c20d
 
-PODFILE CHECKSUM: 3af3dd57eeeb1307df4fa424255806bf1708226a
+PODFILE CHECKSUM: 5c508ce606ba6e4221d6f5b8609c88a3629007ca
 
 COCOAPODS: 1.2.0
