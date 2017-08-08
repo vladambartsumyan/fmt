@@ -10,6 +10,7 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var variantButton3: VariantButton!
     @IBOutlet weak var variantButton4: VariantButton!
     
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var menuButton: TopButton!
     @IBOutlet weak var newGameButton: TopButton!
     @IBOutlet weak var progressBar: ProgressBar!
@@ -96,8 +97,9 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
+        background.image = SVGKImage(named: "background").uiImage
         let color = Game.current.getColor(forDigit: 0)
-        animalImageView.image = SVGKImage.init(named: "0\(color.rawValue)").uiImage
+        animalImageView.image = UIImage(named: "0\(color.rawValue)")
         digitImageView.image = SVGKImage.init(named: "0").uiImage
     }
     

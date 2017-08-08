@@ -1,7 +1,9 @@
 import UIKit
+import SVGKit
 
 class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     
+    @IBOutlet weak var background: UIImageView!
     var globalStagePassing: GlobalStagePassing!
     
     @IBOutlet weak var textLabel: UILabel!
@@ -9,7 +11,7 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var result: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
-    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var menuButton: TopButton!
     @IBOutlet weak var newGameButton: TopButton!
     @IBOutlet weak var progressBar: ProgressBar!
@@ -22,6 +24,7 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
         super.viewDidLoad()
         configureTopBar()
         configureText()
+        background.image = SVGKImage(named: "background").uiImage
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,7 +56,7 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
     }
     
     override func getFadeInArray() -> [[UIView]] {
-        return [[result, secondDigit, firstDigit, background], [textLabel]]
+        return [[result, secondDigit, firstDigit, backgroundImage], [textLabel]]
     }
     
     override func getFadeOutArray() -> [[UIView]] {

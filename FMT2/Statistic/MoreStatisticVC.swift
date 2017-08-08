@@ -1,10 +1,11 @@
 import UIKit
 import SMSegmentView
-
+import SVGKit
 class MoreStatisticVC: UIViewController, SMSegmentViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var segmentView: UIView!
     
+    @IBOutlet weak var background: UIImageView!
     var statisticByDays: [GraphStatistic]! = Statistic.byDays
     
     private let borderWidth: CGFloat = 2
@@ -47,6 +48,7 @@ class MoreStatisticVC: UIViewController, SMSegmentViewDelegate, UICollectionView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        background.image = SVGKImage(named: "background").uiImage
         configureTopBar()
         configureGraph()
     }

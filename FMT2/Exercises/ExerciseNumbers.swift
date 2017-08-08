@@ -10,6 +10,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     
     // Images
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var result: UIImageView!
@@ -107,13 +108,13 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
         if needPreview {
             return [[textLabel], [firstVariant, secondVariant, thirdVariant, fourthVariant]]
         } else {
-            return [[background, firstDigit, secondDigit, result], [textLabel], [firstVariant, secondVariant, thirdVariant, fourthVariant]]
+            return [[backgroundImage, firstDigit, secondDigit, result], [textLabel], [firstVariant, secondVariant, thirdVariant, fourthVariant]]
         }
     }
     
     override func getFadeOutArray() -> [[UIView]] {
         if newGameWasPressed {
-           return [[background, firstDigit, secondDigit, result], [textLabel], [firstVariant, secondVariant, thirdVariant, fourthVariant]]
+           return [[backgroundImage, firstDigit, secondDigit, result], [textLabel], [firstVariant, secondVariant, thirdVariant, fourthVariant]]
         }
         return [[textLabel], [firstVariant, secondVariant, thirdVariant, fourthVariant]]
     }
@@ -122,8 +123,8 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
         if globalStagePassing.type == .multiplicationBy0 {
             let mult = max(exercise.firstDigit, exercise.secondDigit)
             let multColor = Game.current.getColor(forDigit: mult)
-            firstDigit.image = SVGKImage(named: "\(mult)\(multColor.rawValue)").uiImage
-            background.image = nil
+            firstDigit.image = UIImage(named: "\(mult)\(multColor.rawValue)")
+            backgroundImage.image = nil
             secondDigit.image = nil
             result.image = nil
             return
@@ -149,7 +150,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
             c1 = Game.current.getColor(forDigit: snd).rawValue
             c2 = Game.current.getColor(forDigit: fst).rawValue
         }
-        background.image = SVGKImage(named: s + "background").uiImage
+        backgroundImage.image = SVGKImage(named: s + "background").uiImage
         firstDigit.image = SVGKImage(named: s + s1 + c1).uiImage
         secondDigit.image = SVGKImage(named: s + s2 + c2).uiImage
         result.image = self.mode == .exam ? nil : SVGKImage(named: s + "result").uiImage

@@ -1,8 +1,11 @@
 import UIKit
+import SVGKit
 
 class GeneralStatisticVC: UIViewController {
     
     let statistic = Statistic()
+    
+    @IBOutlet weak var background: UIImageView!
     
     // Top Bar
     @IBOutlet weak var dismissButton: TopButton!
@@ -39,6 +42,7 @@ class GeneralStatisticVC: UIViewController {
         configureTopBar()
         configureStatistic()
         configureMoreButton()
+        background.image = SVGKImage(named: "background").uiImage
     }
 
     override func didReceiveMemoryWarning() {

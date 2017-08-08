@@ -19,6 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntroductionZeroVC" customModule="FMT2" customModuleProvider="target">
             <connections>
                 <outlet property="animalImageView" destination="vBM-qI-7eE" id="Yx9-rO-1oY"/>
+                <outlet property="background" destination="vCC-3r-FWF" id="mZd-KS-Wc7"/>
                 <outlet property="digitImageView" destination="8Ze-aP-UEt" id="5Hd-FJ-hly"/>
                 <outlet property="menuButton" destination="xlQ-VH-nsy" id="DwB-0d-JP4"/>
                 <outlet property="newGameButton" destination="5Bw-kv-wwF" id="LoT-tw-XHy"/>
@@ -36,13 +37,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="vCC-3r-FWF">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vCC-3r-FWF">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2clear" translatesAutoresizingMaskIntoConstraints="NO" id="vBM-qI-7eE">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vBM-qI-7eE">
                     <rect key="frame" x="62.5" y="110" width="195.5" height="195.5"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="8Ze-aP-UEt">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ze-aP-UEt">
                     <rect key="frame" x="62.5" y="110" width="195.5" height="195.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8Ze-aP-UEt" secondAttribute="height" id="ruq-p5-20j"/>
@@ -186,9 +187,4 @@
             <point key="canvasLocation" x="-76" y="-131"/>
         </view>
     </objects>
-    <resources>
-        <image name="2" width="189" height="330"/>
-        <image name="2clear" width="189" height="330"/>
-        <image name="Background" width="750" height="1334"/>
-    </resources>
 </document>

@@ -4,6 +4,7 @@ import SVGKit
 class MultByOneExampleVC: FadeInOutVC, IsGameVC {
 
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var result: UIImageView!
@@ -62,6 +63,7 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
+        background.image = SVGKImage(named: "background").uiImage
         let gooseColor = Game.current.getColor(forDigit: 2)
         self.firstDigit.image = SVGKImage.init(named: "x212" + gooseColor.rawValue).uiImage
     }
@@ -73,14 +75,14 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     
     override func getFadeInArray() -> [[UIView]] {
         return [
-            [background, firstDigit, secondDigit, result], 
+            [backgroundImage, firstDigit, secondDigit, result], 
             [firstDigitEx, secondDigitEx, answerFirstDigit, multiplicationEx, equalityEx]
         ]
     }
     
     override func getFadeOutArray() -> [[UIView]] {
         return [
-            [background, firstDigit, secondDigit, result], 
+            [backgroundImage, firstDigit, secondDigit, result], 
             [firstDigitEx, secondDigitEx, answerFirstDigit, multiplicationEx, equalityEx]
         ]
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,8 +16,9 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralStatisticVC" customModule="FMT" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeneralStatisticVC" customModule="FMT2" customModuleProvider="target">
             <connections>
+                <outlet property="background" destination="BDO-4X-LXh" id="yVE-5g-y5P"/>
                 <outlet property="bonusStatisticElapsedTime" destination="XZ1-na-akc" id="iqb-yL-6RO"/>
                 <outlet property="bonusStatisticElapsedTimeLabel" destination="Kyx-Za-ZSc" id="Nrp-OG-REQ"/>
                 <outlet property="bonusStatisticHeader" destination="shN-Au-rtp" id="erb-hU-Och"/>
@@ -45,13 +46,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="BDO-4X-LXh">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BDO-4X-LXh">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7m-4L-If5" userLabel="Top Bar">
                     <rect key="frame" x="0.0" y="35" width="414" height="51"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkj-1u-Pyi" customClass="TopButton" customModule="FMT" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkj-1u-Pyi" customClass="TopButton" customModule="FMT2" customModuleProvider="target">
                             <rect key="frame" x="21" y="0.0" width="51" height="51"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -86,7 +87,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-xU-eCJ" customClass="ProgressBar" customModule="FMT" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-xU-eCJ" customClass="ProgressBar" customModule="FMT2" customModuleProvider="target">
                             <rect key="frame" x="22" y="31.666666666666671" width="370" height="60.666666666666671"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
@@ -205,7 +206,7 @@
                                 <constraint firstItem="cgl-aA-7is" firstAttribute="leading" secondItem="cF2-hB-TzG" secondAttribute="leading" id="gNt-co-Ue5"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5x-4V-CQb" customClass="ProgressBar" customModule="FMT" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5x-4V-CQb" customClass="ProgressBar" customModule="FMT2" customModuleProvider="target">
                             <rect key="frame" x="22" y="31.666666666666686" width="370" height="60.666666666666629"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
@@ -335,7 +336,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="kWV-Rp-MwQ" firstAttribute="top" secondItem="k0R-bK-8hS" secondAttribute="bottom" id="0K7-gE-FI0"/>
                                 <constraint firstItem="heQ-hb-LDD" firstAttribute="top" secondItem="i9u-dC-2qb" secondAttribute="top" id="2ps-15-bqo"/>
@@ -378,9 +379,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujQ-6d-GaW" userLabel="Button panel">
                     <rect key="frame" x="0.0" y="633" width="414" height="68"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZK-n0-qF8" customClass="TextButton" customModule="FMT" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZK-n0-qF8" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
                             <rect key="frame" x="55" y="0.0" width="304" height="68"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="QZK-n0-qF8" secondAttribute="height" multiplier="272:61" id="Are-AX-v83"/>
                             </constraints>
@@ -433,7 +434,4 @@
             <point key="canvasLocation" x="33" y="53"/>
         </view>
     </objects>
-    <resources>
-        <image name="Background" width="750" height="1334"/>
-    </resources>
 </document>

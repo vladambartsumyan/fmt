@@ -7,10 +7,11 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     
     @IBOutlet weak var textLabel: UILabel!
     
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var result: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
-    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var menuButton: TopButton!
     @IBOutlet weak var newGameButton: TopButton!
     @IBOutlet weak var progressBar: ProgressBar!
@@ -46,6 +47,7 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
+        background.image = SVGKImage(named: "background").uiImage
         let gooseColor = Game.current.getColor(forDigit: 2)
         self.firstDigit.image = SVGKImage.init(named: "x2102" + gooseColor.rawValue).uiImage
     }
@@ -61,7 +63,7 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
     }
 
     override func getFadeInArray() -> [[UIView]] {
-        return [[result, secondDigit, firstDigit, background], [textLabel]]
+        return [[result, secondDigit, firstDigit, backgroundImage], [textLabel]]
     }
     
     override func getFadeOutArray() -> [[UIView]] {

@@ -18,7 +18,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExercisePreview" customModule="FMT2" customModuleProvider="target">
             <connections>
-                <outlet property="background" destination="4qC-g5-0M7" id="9MR-pF-Vip"/>
+                <outlet property="background" destination="ikx-2H-RrZ" id="eZj-bL-Jaz"/>
+                <outlet property="backgroundImage" destination="4qC-g5-0M7" id="DkZ-vu-J5c"/>
                 <outlet property="continueButton" destination="0dp-7x-sZp" id="beV-6S-zsY"/>
                 <outlet property="firstDigit" destination="51e-8V-lBf" id="N7M-h3-ldX"/>
                 <outlet property="menuButton" destination="iow-8u-YFa" id="7Pr-mC-sll"/>
@@ -35,7 +36,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ikx-2H-RrZ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ikx-2H-RrZ">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2za-T5-yGC" userLabel="TopBar">
@@ -104,19 +105,19 @@
                     <rect key="frame" x="0.0" y="620.66666666666652" width="414" height="16.333333333333371"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x23background" translatesAutoresizingMaskIntoConstraints="NO" id="4qC-g5-0M7" userLabel="BackgroundImage">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4qC-g5-0M7" userLabel="BackgroundImage">
                     <rect key="frame" x="46" y="151.66666666666669" width="323" height="323.33333333333337"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="4qC-g5-0M7" secondAttribute="height" multiplier="1:1" id="D2d-tc-ORi"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x233blue" translatesAutoresizingMaskIntoConstraints="NO" id="51e-8V-lBf" userLabel="FirstDigit">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="51e-8V-lBf" userLabel="FirstDigit">
                     <rect key="frame" x="46" y="151.66666666666669" width="323" height="323.33333333333337"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x232green" translatesAutoresizingMaskIntoConstraints="NO" id="T4U-iH-pXw" userLabel="SecondDigit">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T4U-iH-pXw" userLabel="SecondDigit">
                     <rect key="frame" x="46" y="151.66666666666669" width="323" height="323.33333333333337"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x23result" translatesAutoresizingMaskIntoConstraints="NO" id="yUZ-EA-j4v" userLabel="Result">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yUZ-EA-j4v" userLabel="Result">
                     <rect key="frame" x="46" y="151.66666666666669" width="323" height="323.33333333333337"/>
                 </imageView>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IY-6D-0qv">
@@ -172,11 +173,4 @@
             <point key="canvasLocation" x="34" y="52"/>
         </view>
     </objects>
-    <resources>
-        <image name="Background" width="750" height="1334"/>
-        <image name="x232green" width="479" height="422"/>
-        <image name="x233blue" width="479" height="422"/>
-        <image name="x23background" width="479" height="422"/>
-        <image name="x23result" width="479" height="422"/>
-    </resources>
 </document>

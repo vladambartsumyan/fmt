@@ -4,6 +4,7 @@ import SVGKit
 class IntroductionOneVC: FadeInOutVC, IsGameVC {
     
     @IBOutlet weak var question: UILabel!
+    @IBOutlet weak var background: UIImageView!
     
     @IBOutlet weak var variantButton1: VariantButton!
     @IBOutlet weak var variantButton2: VariantButton!
@@ -91,6 +92,7 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
+        background.image = SVGKImage(named: "background").uiImage
         let color = Game.current.getColor(forDigit: 1)
         animalImageView.image = SVGKImage(named: "1\(color.rawValue)").uiImage
         digitImageView.image = SVGKImage.init(named: "1").uiImage

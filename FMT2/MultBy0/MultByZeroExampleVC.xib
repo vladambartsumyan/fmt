@@ -14,7 +14,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MultByZeroExampleVC" customModule="FMT2" customModuleProvider="target">
             <connections>
                 <outlet property="answerFirstDigit" destination="dnc-QD-gdI" id="T2n-z7-vBO"/>
-                <outlet property="background" destination="ap5-P5-sqi" id="N3Y-xn-ei2"/>
+                <outlet property="background" destination="SPu-pO-gAu" id="Yhj-Wh-cNU"/>
+                <outlet property="backgroundImage" destination="ap5-P5-sqi" id="7en-KP-gsz"/>
                 <outlet property="equalityEx" destination="Imz-LM-IOn" id="R7T-cv-gc5"/>
                 <outlet property="equalityWidth" destination="6Fs-uz-nXC" id="hbT-If-vpC"/>
                 <outlet property="firstDigit" destination="zNd-dE-Xsh" id="87X-VT-wO1"/>
@@ -38,7 +39,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="SPu-pO-gAu">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SPu-pO-gAu">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQZ-4z-dQV" userLabel="Exercise">
@@ -61,7 +62,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Tnc-Mr-azZ" secondAttribute="trailing" id="0Ga-9V-KQn"/>
                                 <constraint firstAttribute="bottom" secondItem="Tnc-Mr-azZ" secondAttribute="bottom" id="6Oz-mb-6WA"/>
@@ -89,7 +90,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="Ddj-Ca-NNx" firstAttribute="top" secondItem="aGP-BG-P3U" secondAttribute="top" id="15z-vG-Wit"/>
                                 <constraint firstAttribute="bottom" secondItem="Ddj-Ca-NNx" secondAttribute="bottom" id="K7P-EE-JHg"/>
@@ -117,7 +118,7 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="a0X-FH-Ryb" secondAttribute="trailing" id="0bD-qM-gdq"/>
                                 <constraint firstItem="dnc-QD-gdI" firstAttribute="leading" secondItem="PuO-c7-PFx" secondAttribute="leading" id="1ua-9L-1rn"/>
@@ -142,7 +143,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="dnc-QD-gdI" firstAttribute="bottom" secondItem="Imz-LM-IOn" secondAttribute="bottom" id="4Sh-kI-7h5"/>
                         <constraint firstAttribute="bottom" secondItem="PuO-c7-PFx" secondAttribute="bottom" id="5a5-Bg-1Tc"/>
@@ -214,16 +215,16 @@
                     <rect key="frame" x="0.0" y="702" width="414" height="34"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x23background" translatesAutoresizingMaskIntoConstraints="NO" id="ap5-P5-sqi" userLabel="BackgroundImage">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ap5-P5-sqi" userLabel="BackgroundImage">
                     <rect key="frame" x="45" y="152" width="323" height="323"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x212green" translatesAutoresizingMaskIntoConstraints="NO" id="zNd-dE-Xsh">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zNd-dE-Xsh">
                     <rect key="frame" x="45" y="152" width="323" height="323"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R59-HR-owU">
                     <rect key="frame" x="45" y="152" width="323" height="323"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x21result" translatesAutoresizingMaskIntoConstraints="NO" id="vN6-5U-18p">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vN6-5U-18p">
                     <rect key="frame" x="45" y="152" width="323" height="323"/>
                 </imageView>
             </subviews>
@@ -277,10 +278,6 @@
         <image name="4exercise" width="76" height="92"/>
         <image name="8exercise" width="70" height="96"/>
         <image name="=exercise" width="68" height="51"/>
-        <image name="Background" width="750" height="1334"/>
-        <image name="x212green" width="366" height="350"/>
-        <image name="x21result" width="366" height="350"/>
-        <image name="x23background" width="479" height="422"/>
         <image name="xexercise" width="70" height="68"/>
     </resources>
 </document>

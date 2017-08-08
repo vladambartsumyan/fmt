@@ -44,7 +44,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="3ND-14-rZm">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ND-14-rZm">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1Z-lF-lc5" userLabel="Bottom panel">
@@ -52,7 +52,7 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4HB-3D-9dv" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
                             <rect key="frame" x="52.5" y="15" width="270" height="60.5"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="4HB-3D-9dv" secondAttribute="height" multiplier="1085:243" id="um4-pI-7ft"/>
                             </constraints>
@@ -507,7 +507,4 @@
             <point key="canvasLocation" x="63" y="104"/>
         </view>
     </objects>
-    <resources>
-        <image name="Background" width="750" height="1334"/>
-    </resources>
 </document>

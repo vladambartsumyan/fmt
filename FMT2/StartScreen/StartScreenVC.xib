@@ -56,7 +56,7 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-gj-upO" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
                     <rect key="frame" x="53" y="611" width="308" height="70"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="QeL-gj-upO" secondAttribute="height" multiplier="457:104" id="ZqM-Qr-KdI"/>
                     </constraints>

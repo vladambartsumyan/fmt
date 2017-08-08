@@ -120,7 +120,7 @@ class TutorialVC: FadeInOutVC {
     
     override func getFadeOutArray() -> [[UIView]] {
         return [
-            [background, firstDigit, secondDigit, resultImage],
+            [backgroundImage, firstDigit, secondDigit, resultImage],
             [firstOperand, multMark, secondOperand, equalMark, questionMark, answerFirstDigit]
         ]
     }

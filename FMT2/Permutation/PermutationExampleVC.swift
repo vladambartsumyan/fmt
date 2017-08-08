@@ -1,8 +1,10 @@
 import UIKit
+import SVGKit
 
 class PermutationExampleVC: FadeInOutVC, IsGameVC {
     
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var result: UIImageView!
@@ -42,6 +44,7 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
+        background.image = SVGKImage(named: "background").uiImage
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,7 +78,7 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
     
     override func getFadeOutArray() -> [[UIView]] {
         return [
-            [background, firstDigit, secondDigit, result], 
+            [backgroundImage, firstDigit, secondDigit, result], 
             [firstDigitEx, secondDigitEx, secondDigitEx2, answerFirstDigit, answerSecondDigit, multiplicationEx, equalityEx]
         ]
     }

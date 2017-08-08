@@ -9,6 +9,7 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     
     // Images
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var result: UIImageView!
@@ -64,6 +65,7 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     }
     
     func configureImages() {
+        background.image = SVGKImage(named: "background").uiImage
         let fst = min(exercise.firstDigit, exercise.secondDigit)
         let snd = max(exercise.firstDigit, exercise.secondDigit)
         let reverseImage = ReverseImageOrder.check(firstDigit: fst, secondDigit: snd)
@@ -85,7 +87,7 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
             c1 = Game.current.getColor(forDigit: snd).rawValue
             c2 = Game.current.getColor(forDigit: fst).rawValue
         }
-        background.image = SVGKImage(named: s + "background").uiImage
+        backgroundImage.image = SVGKImage(named: s + "background").uiImage
         firstDigit.image = SVGKImage(named: s + s1 + c1).uiImage
         secondDigit.image = SVGKImage(named: s + s2 + c2).uiImage
         result.image = self.mode == .exam ? nil : SVGKImage(named: s + "result").uiImage
@@ -140,12 +142,12 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     }
     
     override func getFadeInArray() -> [[UIView]] {
-        return [[background, firstDigit, secondDigit, result], [textLabel], [continueButton]]
+        return [[backgroundImage, firstDigit, secondDigit, result], [textLabel], [continueButton]]
     }
     
     override func getFadeOutArray() -> [[UIView]] {
         if newGameWasPressed {
-            return [[background, firstDigit, secondDigit, result], [textLabel], [continueButton]]
+            return [[backgroundImage, firstDigit, secondDigit, result], [textLabel], [continueButton]]
         }
         return [[textLabel], [continueButton]]
     }

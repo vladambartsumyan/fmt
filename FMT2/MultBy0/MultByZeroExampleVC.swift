@@ -4,6 +4,7 @@ import SVGKit
 class MultByZeroExampleVC: FadeInOutVC, IsGameVC {
     
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var result: UIImageView!
@@ -64,17 +65,18 @@ class MultByZeroExampleVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
+        background.image = SVGKImage(named: "background").uiImage
         let gooseColor = Game.current.getColor(forDigit: 2)
-        self.firstDigit.image = SVGKImage.init(named: "2" + gooseColor.rawValue).uiImage
+        self.firstDigit.image = UIImage(named: "2" + gooseColor.rawValue)
         
         let zeroColor = Game.current.getColor(forDigit: 0)
-        secondDigit.image = SVGKImage.init(named: "\(0)\(zeroColor.rawValue)").uiImage
+        secondDigit.image = UIImage(named: "\(0)\(zeroColor.rawValue)")
         secondDigit.alpha = 0.0
         
         result.image = SVGKImage.init(named: "0").uiImage
         result.alpha = 0.0
         
-        background.image = nil
+        backgroundImage.image = nil
     }
     
     func configureExerciseSize() {
@@ -91,7 +93,7 @@ class MultByZeroExampleVC: FadeInOutVC, IsGameVC {
     
     override func getFadeOutArray() -> [[UIView]] {
         return [
-            [background, secondDigit, result], 
+            [backgroundImage, secondDigit, result], 
             [firstDigitEx, secondDigitEx, answerFirstDigit, multiplicationEx, equalityEx]
         ]
     }

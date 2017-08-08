@@ -3,6 +3,7 @@ import SVGKit
 class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     
     @IBOutlet weak var question: UILabel!
+    @IBOutlet weak var background: UIImageView!
     
     @IBOutlet weak var variantButton1: VariantButton!
     @IBOutlet weak var variantButton2: VariantButton!
@@ -90,6 +91,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
+        background.image = SVGKImage(named: "background").uiImage
         let color = globalStagePassing.currentStagePassing!.stage.mode == .exam ? Game.current.getColor(forDigit: exercise.firstDigit) : .clear
         animalImageView.image = SVGKImage(named: "\(exercise.firstDigit)\(color.rawValue)").uiImage
         digitImageView.image = mode == .exam ? nil : SVGKImage(named: "\(exercise.firstDigit)").uiImage

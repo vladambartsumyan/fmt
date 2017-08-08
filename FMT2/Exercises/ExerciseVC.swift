@@ -10,6 +10,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
 
     // Images
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var firstDigit: UIImageView!
     @IBOutlet weak var secondDigit: UIImageView!
     @IBOutlet weak var result: UIImageView!
@@ -138,29 +139,30 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
 
     override func getFadeOutArray() -> [[UIView]] {
         if newGameWasPressed {
-            return [[background, firstDigit, secondDigit, result],
+            return [[backgroundImage, firstDigit, secondDigit, result],
                     [fst1, fst2, snd1, snd2, question, equality, mult, res1, res2],
                     [firstVariant, secondVariant, thirdVariant, fourthVariant]]
         }
-        return [[background, firstDigit, secondDigit, result],
+        return [[backgroundImage, firstDigit, secondDigit, result],
                 [fst1, fst2, snd1, snd2, question, equality, mult, res1, res2],
                 [firstVariant, secondVariant, thirdVariant, fourthVariant]]
     }
 
     func configureImages() {
+        background.image = SVGKImage(named: "background").uiImage
         if globalStagePassing.type == .multiplicationBy0 {
             let mult = max(exercise.firstDigit, exercise.secondDigit)
             let multColor = Game.current.getColor(forDigit: mult)
-            firstDigit.image = SVGKImage(named: "\(mult)\(multColor.rawValue)").uiImage
+            firstDigit.image = UIImage(named: "\(mult)\(multColor.rawValue)")
 
             let zeroColor = Game.current.getColor(forDigit: 0)
-            secondDigit.image = SVGKImage(named: "\(0)\(zeroColor.rawValue)").uiImage
+            secondDigit.image = UIImage(named: "\(0)\(zeroColor.rawValue)")
             secondDigit.alpha = 0.0
 
             result.image = mode == .exam ? nil : SVGKImage(named: "0").uiImage
             result.alpha = 0.0
 
-            background.image = nil
+            backgroundImage.image = nil
             return
         }
 
@@ -185,7 +187,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             c1 = Game.current.getColor(forDigit: snd).rawValue
             c2 = Game.current.getColor(forDigit: fst).rawValue
         }
-        background.image = SVGKImage(named: s + "background").uiImage
+        backgroundImage.image = SVGKImage(named: s + "background").uiImage
         firstDigit.image = SVGKImage(named: s + s1 + c1).uiImage
         secondDigit.image = SVGKImage(named: s + s2 + c2).uiImage
         result.image = self.mode == .exam ? nil : SVGKImage(named: s + "result").uiImage

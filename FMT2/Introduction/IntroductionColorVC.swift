@@ -5,6 +5,13 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     var exercise: Exercise!
     
     var globalStagePassing: GlobalStagePassing!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var brownPencil: UIImageView!
+    @IBOutlet weak var greenPencil: UIImageView!
+    @IBOutlet weak var grayPencil: UIImageView!
+    @IBOutlet weak var purplePencil: UIImageView!
+    @IBOutlet weak var bluePencil: UIImageView!
+    @IBOutlet weak var yellowPencil: UIImageView!
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var label: UILabel!
@@ -24,6 +31,8 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     var selectedPencil: UIImageView? = nil
     
     var newGameWasPressed = false
+    
+    var colors: [String : UIImage] = [:]
     
     override var needsToTimeAccumulation: Bool {
         return true
@@ -66,6 +75,13 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     }
     
     func configureImage() {
+        background.image = SVGKImage(named: "background").uiImage
+        brownPencil.image = SVGKImage(named: "brown").uiImage
+        greenPencil.image = SVGKImage(named: "green").uiImage
+        purplePencil.image = SVGKImage(named: "purple").uiImage
+        bluePencil.image = SVGKImage(named: "blue").uiImage
+        yellowPencil.image = SVGKImage(named: "yellow").uiImage
+        grayPencil.image = SVGKImage(named: "gray").uiImage
         image.image = SVGKImage(named: "\(exercise.firstDigit)clear").uiImage
     }
     
