@@ -208,7 +208,6 @@
 		653C46081F38A50F00407C46 /* x45background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 653C430A1F38A50B00407C46 /* x45background.svg */; };
 		653C46091F38A50F00407C46 /* x45preview.svg in Resources */ = {isa = PBXBuildFile; fileRef = 653C430B1F38A50B00407C46 /* x45preview.svg */; };
 		653C460A1F38A50F00407C46 /* x45result.svg in Resources */ = {isa = PBXBuildFile; fileRef = 653C430C1F38A50B00407C46 /* x45result.svg */; };
-		653C460B1F38A50F00407C46 /* x46backround.svg in Resources */ = {isa = PBXBuildFile; fileRef = 653C430D1F38A50B00407C46 /* x46backround.svg */; };
 		653C460C1F38A50F00407C46 /* x46preview.svg in Resources */ = {isa = PBXBuildFile; fileRef = 653C430E1F38A50B00407C46 /* x46preview.svg */; };
 		653C460D1F38A50F00407C46 /* x46result.svg in Resources */ = {isa = PBXBuildFile; fileRef = 653C430F1F38A50B00407C46 /* x46result.svg */; };
 		653C460E1F38A50F00407C46 /* x47background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 653C43101F38A50B00407C46 /* x47background.svg */; };
@@ -788,6 +787,7 @@
 		653C484D1F38A50F00407C46 /* yellowInBetween.svg in Resources */ = {isa = PBXBuildFile; fileRef = 653C454F1F38A50F00407C46 /* yellowInBetween.svg */; };
 		6541A9AE1F05527B005A1D94 /* UIWindow+RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6541A9AD1F05527B005A1D94 /* UIWindow+RootVC.swift */; };
 		6548535E1F0FD69100DFEA0A /* UIViewController+TimeAccumulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548535D1F0FD69100DFEA0A /* UIViewController+TimeAccumulation.swift */; };
+		654E50871F39FFB3009AE7E0 /* x46background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 654E50861F39FFB3009AE7E0 /* x46background.svg */; };
 		65516E451F29F12400026289 /* multiplicationBy1begin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65516E441F29F12400026289 /* multiplicationBy1begin.mp3 */; };
 		656222A71F0537BB00B6C64B /* MenuButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656222A21F0537BB00B6C64B /* MenuButtonCell.swift */; };
 		656222A81F0537BB00B6C64B /* MenuButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656222A31F0537BB00B6C64B /* MenuButtonCell.xib */; };
@@ -1266,7 +1266,6 @@
 		653C430A1F38A50B00407C46 /* x45background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = x45background.svg; path = Resource/images/x45background.svg; sourceTree = "<group>"; };
 		653C430B1F38A50B00407C46 /* x45preview.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = x45preview.svg; path = Resource/images/x45preview.svg; sourceTree = "<group>"; };
 		653C430C1F38A50B00407C46 /* x45result.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = x45result.svg; path = Resource/images/x45result.svg; sourceTree = "<group>"; };
-		653C430D1F38A50B00407C46 /* x46backround.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = x46backround.svg; path = Resource/images/x46backround.svg; sourceTree = "<group>"; };
 		653C430E1F38A50B00407C46 /* x46preview.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = x46preview.svg; path = Resource/images/x46preview.svg; sourceTree = "<group>"; };
 		653C430F1F38A50B00407C46 /* x46result.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = x46result.svg; path = Resource/images/x46result.svg; sourceTree = "<group>"; };
 		653C43101F38A50B00407C46 /* x47background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = x47background.svg; path = Resource/images/x47background.svg; sourceTree = "<group>"; };
@@ -1846,6 +1845,7 @@
 		653C454F1F38A50F00407C46 /* yellowInBetween.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = yellowInBetween.svg; path = Resource/images/yellowInBetween.svg; sourceTree = "<group>"; };
 		6541A9AD1F05527B005A1D94 /* UIWindow+RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIWindow+RootVC.swift"; path = "Common/UIWindow+RootVC.swift"; sourceTree = "<group>"; };
 		6548535D1F0FD69100DFEA0A /* UIViewController+TimeAccumulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+TimeAccumulation.swift"; path = "Common/UIViewController+TimeAccumulation.swift"; sourceTree = "<group>"; };
+		654E50861F39FFB3009AE7E0 /* x46background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = x46background.svg; path = Resource/images/x46background.svg; sourceTree = "<group>"; };
 		65516E441F29F12400026289 /* multiplicationBy1begin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = multiplicationBy1begin.mp3; path = Sounds/Resource/multiplicationBy1/multiplicationBy1begin.mp3; sourceTree = "<group>"; };
 		656222A21F0537BB00B6C64B /* MenuButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuButtonCell.swift; path = Menu/MenuButtonCell.swift; sourceTree = "<group>"; };
 		656222A31F0537BB00B6C64B /* MenuButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuButtonCell.xib; path = Menu/MenuButtonCell.xib; sourceTree = "<group>"; };
@@ -2468,7 +2468,7 @@
 				653C430A1F38A50B00407C46 /* x45background.svg */,
 				653C430B1F38A50B00407C46 /* x45preview.svg */,
 				653C430C1F38A50B00407C46 /* x45result.svg */,
-				653C430D1F38A50B00407C46 /* x46backround.svg */,
+				654E50861F39FFB3009AE7E0 /* x46background.svg */,
 				653C430E1F38A50B00407C46 /* x46preview.svg */,
 				653C430F1F38A50B00407C46 /* x46result.svg */,
 				653C43101F38A50B00407C46 /* x47background.svg */,
@@ -3670,6 +3670,7 @@
 				653C47F81F38A50F00407C46 /* x818purple.svg in Resources */,
 				65665E2F1F278D32006705A2 /* x99-2.mp3 in Resources */,
 				65665DAE1F278D32006705A2 /* x28-2.mp3 in Resources */,
+				654E50871F39FFB3009AE7E0 /* x46background.svg in Resources */,
 				653C47CE1F38A50F00407C46 /* x717brown.svg in Resources */,
 				65665DD71F278D32006705A2 /* x46-3.mp3 in Resources */,
 				653C46371F38A50F00407C46 /* x69result.svg in Resources */,
@@ -4508,7 +4509,6 @@
 				65665DB51F278D32006705A2 /* x32-1.mp3 in Resources */,
 				653C42501F38A32E00407C46 /* Assets.xcassets in Resources */,
 				65665EBA1F278EA6006705A2 /* tutorial2.mp3 in Resources */,
-				653C460B1F38A50F00407C46 /* x46backround.svg in Resources */,
 				653C46301F38A50F00407C46 /* x67preview.svg in Resources */,
 				653C48071F38A50F00407C46 /* x899brown.svg in Resources */,
 				653C48351F38A50F00407C46 /* x6106gray.svg in Resources */,

@@ -199,22 +199,23 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
 
     func configureVariantPanel() {
         let result = exercise.firstDigit * exercise.secondDigit
-        var allVariants: [Int] = []
-        for varinat in max(result - 10, 0)...(result + 10) {
-            allVariants.append(varinat)
-        }
-        let variantButtons = [firstVariant!, secondVariant!, thirdVariant!, fourthVariant!]
+        var (variants, required) = exercise.allVariants
+        var variantButtons = [firstVariant!, secondVariant!, thirdVariant!, fourthVariant!]
+        
         let rightIndex = Int.random(min: 0, max: 3)
         let rightVariant = variantButtons[rightIndex]
         rightVariant.setTitle(titleText: "\(result)")
         rightVariant.isWrongAnswer = false
-        allVariants.remove(at: allVariants.index(of: result)!)
+        variantButtons.remove(at: rightIndex)
+        
+        let requiredIndex = Int.random(min: 0, max: 2)
+        let requiredVariant = variantButtons[requiredIndex]
+        requiredVariant.setTitle(titleText: "\(required)")
+        variantButtons.remove(at: requiredIndex)
+        
         for button in variantButtons {
-            if button == rightVariant {
-                continue
-            }
-            let variant = allVariants.randomElem()!
-            allVariants.remove(at: allVariants.index(of: variant)!)
+            let variant = variants.randomElem()!
+            variants.remove(at: variants.index(of: variant)!)
             button.setTitle(titleText: "\(variant)")
         }
     }

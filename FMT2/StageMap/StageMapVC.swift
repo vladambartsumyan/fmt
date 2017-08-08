@@ -125,7 +125,7 @@ class StageMapVC: FadeInOutVC {
         mapButtons.filter {
             $0.mode == .locked
         }.forEach {
-            $0.isEnabled = true
+            $0.isEnabled = false
         }
     }
 
