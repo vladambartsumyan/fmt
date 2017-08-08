@@ -66,8 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func firstLaunch() {
         let launchedBefore = UserDefaults.standard.bool(forKey: UserDefaultsKey.launchedBefore.rawValue)
         if !launchedBefore {
-            ServerTaskManager.pushBack(.registerDevice())
             setUserDefaults()
+            ServerTaskManager.pushBack(.registerDevice())
         }
     }
 

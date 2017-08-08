@@ -16,11 +16,11 @@ class StartScreenVC: FadeInOutVC {
     
     override func viewDidLoad() {
         self.needsFadeIn = false
-        self.image.image = SVGKImage(named: "start").uiImage
-        background.image = SVGKImage(named: "background").uiImage
         super.viewDidLoad()
         configureText()
         configureButton()
+        self.image.image = UIImage(named: "start")
+        background.image = SVGKImage(named: "background").uiImage
     }
     
     override func viewWillAppear(_ animated: Bool) {

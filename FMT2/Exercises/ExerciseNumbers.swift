@@ -120,6 +120,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     }
 
     func configureImages() {
+        background.image = SVGKImage(named: "background").uiImage
         if globalStagePassing.type == .multiplicationBy0 {
             let mult = max(exercise.firstDigit, exercise.secondDigit)
             let multColor = Game.current.getColor(forDigit: mult)
@@ -151,8 +152,12 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
             c2 = Game.current.getColor(forDigit: fst).rawValue
         }
         backgroundImage.image = SVGKImage(named: s + "background").uiImage
-        firstDigit.image = SVGKImage(named: s + s1 + c1).uiImage
-        secondDigit.image = SVGKImage(named: s + s2 + c2).uiImage
+        if globalStagePassing.type != .multiplicationBy1 {
+            firstDigit.image = SVGKImage(named: s + s1 + c1).uiImage
+        }
+        if globalStagePassing.type != .multiplicationBy10 {
+            secondDigit.image = SVGKImage(named: s + s2 + c2).uiImage
+        }
         result.image = self.mode == .exam ? nil : SVGKImage(named: s + "result").uiImage
     }
     

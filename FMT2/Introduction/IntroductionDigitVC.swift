@@ -93,8 +93,12 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     
     func configureImage() {
         background.image = SVGKImage(named: "background").uiImage
-        let color = globalStagePassing.currentStagePassing!.stage.mode == .exam ? Game.current.getColor(forDigit: exercise.firstDigit) : .clear
-        animalImageView.image = SVGKImage(named: "\(exercise.firstDigit)\(color.rawValue)").uiImage
+        if globalStagePassing.currentStagePassing!.stage.mode == .exam {
+            let color = Game.current.getColor(forDigit: exercise.firstDigit)
+            animalImageView.image = UIImage(named: "\(exercise.firstDigit)\(color.rawValue)")
+        } else {
+            animalImageView.image = SVGKImage(named: "\(exercise.firstDigit)" + "clear").uiImage
+        }        
         digitImageView.image = mode == .exam ? nil : SVGKImage(named: "\(exercise.firstDigit)").uiImage
     }
     

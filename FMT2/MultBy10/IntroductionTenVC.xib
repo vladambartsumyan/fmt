@@ -18,7 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntroductionTenVC" customModule="FMT2" customModuleProvider="target">
             <connections>
-                <outlet property="background" destination="4qC-g5-0M7" id="l6m-UI-X6U"/>
+                <outlet property="background" destination="ikx-2H-RrZ" id="J9Q-bw-Xm4"/>
                 <outlet property="backgroundImage" destination="4qC-g5-0M7" id="YqL-X1-5j0"/>
                 <outlet property="firstDigit" destination="51e-8V-lBf" id="zSL-o9-oQI"/>
                 <outlet property="menuButton" destination="iow-8u-YFa" id="aiG-Qc-O8E"/>
@@ -81,7 +81,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="При умножении любого числа на 10 нужно приписать к этому числу ноль" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="8C0-as-5Nn">
-                    <rect key="frame" x="47.5" y="384" width="225" height="130"/>
+                    <rect key="frame" x="47.5" y="384" width="225" height="126"/>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="27"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

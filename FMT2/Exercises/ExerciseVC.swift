@@ -188,8 +188,12 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             c2 = Game.current.getColor(forDigit: fst).rawValue
         }
         backgroundImage.image = SVGKImage(named: s + "background").uiImage
-        firstDigit.image = SVGKImage(named: s + s1 + c1).uiImage
-        secondDigit.image = SVGKImage(named: s + s2 + c2).uiImage
+        if globalStagePassing.type != .multiplicationBy1 {
+            firstDigit.image = SVGKImage(named: s + s1 + c1).uiImage
+        }
+        if globalStagePassing.type != .multiplicationBy10 {
+            secondDigit.image = SVGKImage(named: s + s2 + c2).uiImage
+        }
         result.image = self.mode == .exam ? nil : SVGKImage(named: s + "result").uiImage
     }
 
@@ -227,29 +231,29 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
 
         if exercise.firstDigit >= 10 {
             fst2width.constant = digitWidth
-            fst1.image = SVGKImage(named: "\(Int(exercise.firstDigit / 10))exercise").uiImage
-            fst2.image = SVGKImage(named: "\(exercise.firstDigit % 10)exercise").uiImage
+            fst1.image = UIImage(named: "\(Int(exercise.firstDigit / 10))exercise")
+            fst2.image = UIImage(named: "\(exercise.firstDigit % 10)exercise")
         } else {
             fst2width.constant = 0.0
-            fst1.image = SVGKImage(named: "\(exercise.firstDigit)exercise").uiImage
+            fst1.image = UIImage(named: "\(exercise.firstDigit)exercise")
         }
 
         if exercise.secondDigit >= 10 {
             snd2width.constant = digitWidth
-            snd1.image = SVGKImage(named: "\(Int(exercise.secondDigit / 10))exercise").uiImage
-            snd2.image = SVGKImage(named: "\(exercise.secondDigit % 10)exercise").uiImage
+            snd1.image = UIImage(named: "\(Int(exercise.secondDigit / 10))exercise")
+            snd2.image = UIImage(named: "\(exercise.secondDigit % 10)exercise")
         } else {
             snd2width.constant = 0.0
-            snd1.image = SVGKImage(named: "\(exercise.secondDigit)exercise").uiImage
+            snd1.image = UIImage(named: "\(exercise.secondDigit)exercise")
         }
 
         if res >= 10 {
             res2width.constant = digitWidth
-            res1.image = SVGKImage(named: "\(Int(res / 10))exercise").uiImage
-            res2.image = SVGKImage(named: "\(res % 10)exercise").uiImage
+            res1.image = UIImage(named: "\(Int(res / 10))exercise")
+            res2.image = UIImage(named: "\(res % 10)exercise")
         } else {
             res2width.constant = 0.0
-            res1.image = SVGKImage(named: "\(res)exercise").uiImage
+            res1.image = UIImage(named: "\(res)exercise")
         }
 
     }
