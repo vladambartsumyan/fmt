@@ -1051,6 +1051,7 @@
 		659277D71F03C4A7009BC04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659277D51F03C4A7009BC04E /* LaunchScreen.storyboard */; };
 		659277DF1F03C718009BC04E /* StageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277DE1F03C718009BC04E /* StageType.swift */; };
 		659277E21F03CFE7009BC04E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277E11F03CFE7009BC04E /* Exercise.swift */; };
+		65AB30591F3C7D99008B4A62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */; };
 		65D7DAD61F2618B000DEFF1C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65D7DAD81F2618B000DEFF1C /* Localizable.strings */; };
 		65DE92681F0A2DAA009DDB77 /* IntroductionZeroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE92661F0A2DAA009DDB77 /* IntroductionZeroVC.swift */; };
 		65DE92691F0A2DAA009DDB77 /* IntroductionZeroVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65DE92671F0A2DAA009DDB77 /* IntroductionZeroVC.xib */; };
@@ -2111,6 +2112,8 @@
 		659277D81F03C4A7009BC04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		659277DE1F03C718009BC04E /* StageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StageType.swift; path = Entities/StageType.swift; sourceTree = "<group>"; };
 		659277E11F03CFE7009BC04E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Entities/Exercise.swift; sourceTree = "<group>"; };
+		65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65AB305A1F3C7EA1008B4A62 /* FMT2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMT2-Bridging-Header.h"; sourceTree = "<group>"; };
 		65D7DADA1F2619D000DEFF1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65D7DADB1F2619D600DEFF1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65DE92661F0A2DAA009DDB77 /* IntroductionZeroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroductionZeroVC.swift; path = MultBy0/IntroductionZeroVC.swift; sourceTree = "<group>"; };
@@ -3440,8 +3443,10 @@
 		659277CB1F03C4A7009BC04E /* FMT2 */ = {
 			isa = PBXGroup;
 			children = (
+				65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */,
 				653C424F1F38A32E00407C46 /* Assets.xcassets */,
 				659277CC1F03C4A7009BC04E /* AppDelegate.swift */,
+				65AB305A1F3C7EA1008B4A62 /* FMT2-Bridging-Header.h */,
 				659277D51F03C4A7009BC04E /* LaunchScreen.storyboard */,
 				659277D81F03C4A7009BC04E /* Info.plist */,
 				65D7DAD81F2618B000DEFF1C /* Localizable.strings */,
@@ -4088,6 +4093,7 @@
 				653C46A41F38A50F00407C46 /* x288blue.svg in Resources */,
 				653C48301F38A50F00407C46 /* x5105green.svg in Resources */,
 				65665DAF1F278D32006705A2 /* x28-3.mp3 in Resources */,
+				65AB30591F3C7D99008B4A62 /* GoogleService-Info.plist in Resources */,
 				656BCDF41F0A75B200F81798 /* MultByOneExampleVC.xib in Resources */,
 				653C466C1F38A50F00407C46 /* x233purple.svg in Resources */,
 				65665D9A1F278D32006705A2 /* x21-1.mp3 in Resources */,
@@ -4835,6 +4841,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c3f9d477-4dbe-4f6f-a032-072a9d07263a";
 				PROVISIONING_PROFILE_SPECIFIER = LEKO.TEAM;
+				SWIFT_OBJC_BRIDGING_HEADER = "FMT2/FMT2-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -4853,6 +4860,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c3f9d477-4dbe-4f6f-a032-072a9d07263a";
 				PROVISIONING_PROFILE_SPECIFIER = LEKO.TEAM;
+				SWIFT_OBJC_BRIDGING_HEADER = "FMT2/FMT2-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

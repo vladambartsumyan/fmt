@@ -6,6 +6,7 @@ target 'FMT2’ do
     pod 'Moya'
     pod 'SMSegmentView', '~> 1.1'
     pod 'SVGKit', :git => 'https://github.com/SVGKit/SVGKit.git', :branch => '2.x'
+    pod 'Google/Analytics'
 end
 
 post_install do |installer|
