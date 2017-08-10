@@ -25,7 +25,7 @@ class SoundHelper {
             audioPlayer!.numberOfLoops = -1
             audioPlayer!.prepareToPlay()
             audioPlayer?.volume = 0.2
-            if UserDefaults.standard.bool(forKey: "soundOn") {
+            if UserDefaults.standard.bool(forKey: UserDefaultsKey.soundOn.rawValue) {
                 audioPlayer!.play()
             }
         } catch {
@@ -38,7 +38,7 @@ class SoundHelper {
     }
     
     func resumeBackgroundMusic() {
-        if UserDefaults.standard.bool(forKey: "soundOn") {
+        if UserDefaults.standard.bool(forKey: UserDefaultsKey.soundOn.rawValue) {
             audioPlayer?.play()
         }
     }
@@ -91,7 +91,7 @@ class SoundHelper {
     }
     
     static private func play(withURL url: URL) {
-        guard UserDefaults.standard.bool(forKey: "soundOn") else {
+        guard UserDefaults.standard.bool(forKey: UserDefaultsKey.soundOn.rawValue) else {
             return
         }
         do {
@@ -104,7 +104,7 @@ class SoundHelper {
     }    
     
     static private func prepare(withURL url: URL) {
-        guard UserDefaults.standard.bool(forKey: "soundOn") else {
+        guard UserDefaults.standard.bool(forKey: UserDefaultsKey.soundOn.rawValue) else {
             return
         }
         do {
@@ -116,7 +116,7 @@ class SoundHelper {
     }
     
     func playVoice(name: String) {
-        guard UserDefaults.standard.bool(forKey: "soundOn") else {
+        guard UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) else {
             return
         }
         let url = URL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: "mp3")!)
@@ -133,6 +133,4 @@ class SoundHelper {
     func stopVoice() {
         SoundHelper.voicePlayer?.stop()
     }
-    
-    
 }

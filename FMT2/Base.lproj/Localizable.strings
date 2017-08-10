@@ -110,8 +110,10 @@
 
 "Menu.newGame" = "Начать заново";
 "Menu.continue" = "Продолжить";
-"Menu.offSound" = "Отключить звук";
+"Menu.offSound" = "Выключить звук";
 "Menu.onSound" = "Включить звук";
+"Menu.offVoice" = "Выключить учителя";
+"Menu.onVoice" = "Включить учителя";
 "Menu.feedback" = "Оставить отзыв";
 "Menu.statistic" = "Статистика";
 

@@ -71,6 +71,6 @@ class VariantButton: LeapingButton {
     }
     
     var voiceDuration: Double {
-        return UserDefaults.standard.bool(forKey: "soundOn") ? SoundHelper.shared.duration(isWrongAnswer ? "wrong\(rand)" : "right\(rand)") : 0
+        return UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(isWrongAnswer ? "wrong\(rand)" : "right\(rand)") : 0
     }
 }

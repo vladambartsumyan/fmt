@@ -35,8 +35,10 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     func configureMenuDataSource() {
         let newGameTitle = NSLocalizedString("Menu.newGame", comment: "")
-        let soundSwitchTitleKey = UserDefaults.standard.bool(forKey: "soundOn") ? "Menu.offSound" : "Menu.onSound"
+        let soundSwitchTitleKey = UserDefaults.standard.bool(forKey: UserDefaultsKey.soundOn.rawValue) ? "Menu.offSound" : "Menu.onSound"
         let soundSwitchTitle = NSLocalizedString(soundSwitchTitleKey, comment: "")
+        let voiceSwitchTitleKey = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? "Menu.offVoice" : "Menu.onVoice"
+        let voiceSwitchTitle = NSLocalizedString(voiceSwitchTitleKey, comment: "")
         let statisticTitle = NSLocalizedString("Menu.statistic", comment: "")
         let feedbackTitle = NSLocalizedString("Menu.feedback", comment: "")
         let continueTitle = NSLocalizedString("Menu.continue", comment: "")
@@ -56,7 +58,8 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                     [
                             MenuItem.init(buttonColor: .green, title: continueTitle, iconName: "ContinueButton", action: self.continueGame),
                             MenuItem.init(buttonColor: .green, title: newGameTitle, iconName: "NewGameButton", action: self.startNewGame),
-                            MenuItem.init(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds)
+                            MenuItem.init(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds),
+                            MenuItem.init(buttonColor: .green, title: voiceSwitchTitle, iconName: "VoiceButton", action: self.switchVoice)
                     ],
                     [
                             MenuItem.init(buttonColor: .orange, title: statisticTitle, iconName: "ParentLockButton", action: self.statistic),
@@ -95,9 +98,19 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func switchSounds() {
-        let key = "soundOn"
+        let key = UserDefaultsKey.soundOn.rawValue
         UserDefaults.standard.set(!UserDefaults.standard.bool(forKey: key), forKey: key)
         UserDefaults.standard.bool(forKey: key) ? SoundHelper.shared.resumeBackgroundMusic() : SoundHelper.shared.pauseBackgroundMusic()
+        configureMenuDataSource()
+        menu.reloadData()
+    }
+    
+    func switchVoice() {
+        let key = UserDefaultsKey.voiceOn.rawValue
+        UserDefaults.standard.set(!UserDefaults.standard.bool(forKey: key), forKey: key)
+        if !UserDefaults.standard.bool(forKey: key) {
+            SoundHelper.shared.stopVoice()
+        }
         configureMenuDataSource()
         menu.reloadData()
     }
@@ -171,7 +184,7 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.init(width: menu.bounds.width, height: section == 0 ? 136 / 670 * menu.bounds.height : 67 / 670 * menu.bounds.height)
+        return CGSize.init(width: menu.bounds.width, height: section == 0 ? 100 / 670 * menu.bounds.height : 67 / 670 * menu.bounds.height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

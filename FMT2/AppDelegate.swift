@@ -75,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Game.current.initOnDevice()
         UserDefaults.standard.set(Date().timeIntervalSince1970.hashValue, forKey: UserDefaultsKey.dateHashed.rawValue)
         UserDefaults.standard.set(true, forKey: UserDefaultsKey.soundOn.rawValue)
+        UserDefaults.standard.set(true, forKey: UserDefaultsKey.voiceOn.rawValue)
         UserDefaults.standard.set(true, forKey: UserDefaultsKey.launchedBefore.rawValue)
     }
 

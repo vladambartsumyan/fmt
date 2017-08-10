@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53B4D5491F3CB37000AFD5D7 /* VoiceButton.svg in Resources */ = {isa = PBXBuildFile; fileRef = 53B4D5481F3CB37000AFD5D7 /* VoiceButton.svg */; };
 		650217771F288CC10067D08B /* MultByZeroExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650217751F288CC10067D08B /* MultByZeroExampleVC.swift */; };
 		650217781F288CC10067D08B /* MultByZeroExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650217761F288CC10067D08B /* MultByZeroExampleVC.xib */; };
 		650EF2941F03D2C20047C30C /* DigitColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EF2931F03D2C20047C30C /* DigitColor.swift */; };
@@ -1066,6 +1067,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53B4D5481F3CB37000AFD5D7 /* VoiceButton.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = VoiceButton.svg; path = Resource/images/VoiceButton.svg; sourceTree = "<group>"; };
 		650217751F288CC10067D08B /* MultByZeroExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultByZeroExampleVC.swift; path = MultBy0/MultByZeroExampleVC.swift; sourceTree = "<group>"; };
 		650217761F288CC10067D08B /* MultByZeroExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultByZeroExampleVC.xib; path = MultBy0/MultByZeroExampleVC.xib; sourceTree = "<group>"; };
 		650EF2931F03D2C20047C30C /* DigitColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DigitColor.swift; path = Entities/DigitColor.swift; sourceTree = "<group>"; };
@@ -2353,6 +2355,7 @@
 		653C42511F38A4F900407C46 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				53B4D5481F3CB37000AFD5D7 /* VoiceButton.svg */,
 				653C42541F38A50B00407C46 /* 0.svg */,
 				653C42581F38A50B00407C46 /* 0clear.svg */,
 				653C425D1F38A50B00407C46 /* 1.svg */,
@@ -4261,6 +4264,7 @@
 				65665E561F278D54006705A2 /* whatcoloris4.mp3 in Resources */,
 				65665DD11F278D32006705A2 /* x44-3.mp3 in Resources */,
 				653C475F1F38A50F00407C46 /* x515purple.svg in Resources */,
+				53B4D5491F3CB37000AFD5D7 /* VoiceButton.svg in Resources */,
 				653C47F01F38A50F00407C46 /* x799yellow.svg in Resources */,
 				653C476D1F38A50F00407C46 /* x566blue.svg in Resources */,
 				653C46A71F38A50F00407C46 /* x288green.svg in Resources */,
