@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53B4D5491F3CB37000AFD5D7 /* VoiceButton.svg in Resources */ = {isa = PBXBuildFile; fileRef = 53B4D5481F3CB37000AFD5D7 /* VoiceButton.svg */; };
 		650217771F288CC10067D08B /* MultByZeroExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650217751F288CC10067D08B /* MultByZeroExampleVC.swift */; };
 		650217781F288CC10067D08B /* MultByZeroExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650217761F288CC10067D08B /* MultByZeroExampleVC.xib */; };
 		650EF2941F03D2C20047C30C /* DigitColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EF2931F03D2C20047C30C /* DigitColor.swift */; };
@@ -86,6 +85,7 @@
 		65104DD21F051AF300547F35 /* ExerciseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65104DCC1F051AF300547F35 /* ExerciseVC.xib */; };
 		652983F01F0E2C5D0003CE55 /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652983EE1F0E2C5D0003CE55 /* MapButton.swift */; };
 		652983F11F0E2C5D0003CE55 /* MapButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 652983EF1F0E2C5D0003CE55 /* MapButton.xib */; };
+		65325F581F3D928A00D46AF3 /* Voice.svg in Resources */ = {isa = PBXBuildFile; fileRef = 65325F571F3D928A00D46AF3 /* Voice.svg */; };
 		653481A61F0BD0800094A9CB /* IntroductionTenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653481A41F0BD0800094A9CB /* IntroductionTenVC.swift */; };
 		653481A71F0BD0800094A9CB /* IntroductionTenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653481A51F0BD0800094A9CB /* IntroductionTenVC.xib */; };
 		653481AA1F0BD4350094A9CB /* MultByTenExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653481A81F0BD4350094A9CB /* MultByTenExampleVC.swift */; };
@@ -1067,7 +1067,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		53B4D5481F3CB37000AFD5D7 /* VoiceButton.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = VoiceButton.svg; path = Resource/images/VoiceButton.svg; sourceTree = "<group>"; };
 		650217751F288CC10067D08B /* MultByZeroExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultByZeroExampleVC.swift; path = MultBy0/MultByZeroExampleVC.swift; sourceTree = "<group>"; };
 		650217761F288CC10067D08B /* MultByZeroExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultByZeroExampleVC.xib; path = MultBy0/MultByZeroExampleVC.xib; sourceTree = "<group>"; };
 		650EF2931F03D2C20047C30C /* DigitColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DigitColor.swift; path = Entities/DigitColor.swift; sourceTree = "<group>"; };
@@ -1146,6 +1145,7 @@
 		65104DCC1F051AF300547F35 /* ExerciseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExerciseVC.xib; path = Exercises/ExerciseVC.xib; sourceTree = "<group>"; };
 		652983EE1F0E2C5D0003CE55 /* MapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapButton.swift; path = "CustomUI/ Buttons/MapButton.swift"; sourceTree = "<group>"; };
 		652983EF1F0E2C5D0003CE55 /* MapButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapButton.xib; path = "CustomUI/ Buttons/MapButton.xib"; sourceTree = "<group>"; };
+		65325F571F3D928A00D46AF3 /* Voice.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Voice.svg; path = Resource/images/Voice.svg; sourceTree = "<group>"; };
 		653481A41F0BD0800094A9CB /* IntroductionTenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroductionTenVC.swift; path = MultBy10/IntroductionTenVC.swift; sourceTree = "<group>"; };
 		653481A51F0BD0800094A9CB /* IntroductionTenVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroductionTenVC.xib; path = MultBy10/IntroductionTenVC.xib; sourceTree = "<group>"; };
 		653481A81F0BD4350094A9CB /* MultByTenExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultByTenExampleVC.swift; path = MultBy10/MultByTenExampleVC.swift; sourceTree = "<group>"; };
@@ -2355,7 +2355,7 @@
 		653C42511F38A4F900407C46 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				53B4D5481F3CB37000AFD5D7 /* VoiceButton.svg */,
+				65325F571F3D928A00D46AF3 /* Voice.svg */,
 				653C42541F38A50B00407C46 /* 0.svg */,
 				653C42581F38A50B00407C46 /* 0clear.svg */,
 				653C425D1F38A50B00407C46 /* 1.svg */,
@@ -3802,6 +3802,7 @@
 				653C473E1F38A50F00407C46 /* x477purple.svg in Resources */,
 				653C474E1F38A50F00407C46 /* x494gray.svg in Resources */,
 				653C473F1F38A50F00407C46 /* x477yellow.svg in Resources */,
+				65325F581F3D928A00D46AF3 /* Voice.svg in Resources */,
 				653C46181F38A50F00407C46 /* x51preview.svg in Resources */,
 				656222D31F05390100B6C64B /* TimeRatingCell.xib in Resources */,
 				650EF3161F04E6AD0047C30C /* Lato-ThinItalic.ttf in Resources */,
@@ -4264,7 +4265,6 @@
 				65665E561F278D54006705A2 /* whatcoloris4.mp3 in Resources */,
 				65665DD11F278D32006705A2 /* x44-3.mp3 in Resources */,
 				653C475F1F38A50F00407C46 /* x515purple.svg in Resources */,
-				53B4D5491F3CB37000AFD5D7 /* VoiceButton.svg in Resources */,
 				653C47F01F38A50F00407C46 /* x799yellow.svg in Resources */,
 				653C476D1F38A50F00407C46 /* x566blue.svg in Resources */,
 				653C46A71F38A50F00407C46 /* x288green.svg in Resources */,

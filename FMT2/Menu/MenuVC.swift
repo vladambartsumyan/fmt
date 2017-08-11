@@ -59,7 +59,7 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                             MenuItem.init(buttonColor: .green, title: continueTitle, iconName: "ContinueButton", action: self.continueGame),
                             MenuItem.init(buttonColor: .green, title: newGameTitle, iconName: "NewGameButton", action: self.startNewGame),
                             MenuItem.init(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds),
-                            MenuItem.init(buttonColor: .green, title: voiceSwitchTitle, iconName: "VoiceButton", action: self.switchVoice)
+                            MenuItem.init(buttonColor: .green, title: voiceSwitchTitle, iconName: "Voice", action: self.switchVoice)
                     ],
                     [
                             MenuItem.init(buttonColor: .orange, title: statisticTitle, iconName: "ParentLockButton", action: self.statistic),

@@ -20,7 +20,7 @@ class MenuButton: LeapingButton {
     }
 
     func setIcon(withName name: String) {
-        self.icon.image = SVGKImage.init(named: name).uiImage
+        self.icon.image = SVGKImage(named: name).uiImage
     }
 
     func setTitle(titleText title: String) {

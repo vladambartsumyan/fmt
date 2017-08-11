@@ -26,21 +26,21 @@
 "Number.Introduction.Question.2" = "На какую цифру похож гусь?";
 "Number.Introduction.Question.3" = "На какую цифру похож воробей?";
 "Number.Introduction.Question.4" = "На какую цифру похожа мышь?";
-"Number.Introduction.Question.5" = "На какую цифру похож заяц?";
-"Number.Introduction.Question.6" = "На какую цифру похож баран?";
+"Number.Introduction.Question.5" = "На какую цифру похож зайчик?";
+"Number.Introduction.Question.6" = "На какую цифру похож барашек?";
 "Number.Introduction.Question.7" = "На какую цифру похож крокодил?";
 "Number.Introduction.Question.8" = "На какую цифру похож медведь?";
-"Number.Introduction.Question.9" = "На какую цифру похож слон?";
+"Number.Introduction.Question.9" = "На какую цифру похож слонёнок?";
 
-"Color.Introduction.Question.0" = "Каким цветом мы закрасим шляпу?";
-"Color.Introduction.Question.2" = "Каким цветом мы закрасим гуся?";
-"Color.Introduction.Question.3" = "Каким цветом мы закрасим воробья?";
-"Color.Introduction.Question.4" = "Каким цветом мы закрасим мышь?";
-"Color.Introduction.Question.5" = "Каким цветом мы закрасим зайца?";
-"Color.Introduction.Question.6" = "Каким цветом мы закрасим барана?";
-"Color.Introduction.Question.7" = "Каким цветом мы закрасим крокодила?";
-"Color.Introduction.Question.8" = "Каким цветом мы закрасим медведя?";
-"Color.Introduction.Question.9" = "Каким цветом мы закрасим слона?";
+"Color.Introduction.Question.0" = "Каким цветом ты раскрасишь шляпу?";
+"Color.Introduction.Question.2" = "Каким цветом ты раскрасишь гуся?";
+"Color.Introduction.Question.3" = "Каким цветом ты раскрасишь воробья?";
+"Color.Introduction.Question.4" = "Каким цветом ты раскрасишь мышь?";
+"Color.Introduction.Question.5" = "Каким цветом ты раскрасишь зайчика?";
+"Color.Introduction.Question.6" = "Каким цветом ты раскрасишь барашка?";
+"Color.Introduction.Question.7" = "Каким цветом ты раскрасишь крокодила?";
+"Color.Introduction.Question.8" = "Каким цветом ты раскрасишь медведя?";
+"Color.Introduction.Question.9" = "Каким цветом ты раскрасишь слонёнка?";
 
 "Button.next" = "Продолжить";
 
@@ -81,14 +81,14 @@
 "Preview.Exercise.Text.89" = "Медвежонок со слоненком балуются, выдавливают крем из тюбика…";
 "Preview.Exercise.Text.99" = "Слонята играют на музыкальных инструментах…";
 
-"Numbers.Exercise.Text.2" = "Гусь — это цифра…";
-"Numbers.Exercise.Text.3" = "Воробей — это цифра…";
-"Numbers.Exercise.Text.4" = "Мышь — это цифра…";
-"Numbers.Exercise.Text.5" = "Заяц — это цифра…";
-"Numbers.Exercise.Text.6" = "Баран — это цифра…";
-"Numbers.Exercise.Text.7" = "Крокодил — это цифра…";
-"Numbers.Exercise.Text.8" = "Медведь — это цифра…";
-"Numbers.Exercise.Text.9" = "Слон — это цифра…";
+"Numbers.Exercise.Text.2" = "Гусь это цифра…";
+"Numbers.Exercise.Text.3" = "Воробей это цифра…";
+"Numbers.Exercise.Text.4" = "Мышь это цифра…";
+"Numbers.Exercise.Text.5" = "Зайчик это цифра…";
+"Numbers.Exercise.Text.6" = "Барашек это цифра…";
+"Numbers.Exercise.Text.7" = "Крокодил это цифра…";
+"Numbers.Exercise.Text.8" = "Медведь это цифра…";
+"Numbers.Exercise.Text.9" = "Слонёнок это цифра…";
 
 "Alert.newGame.title" = "Хотите начать заново?";
 "Alert.newGame.message" = "Прогресс и статистика по приложению будут полностью обнулены";
@@ -130,3 +130,4 @@
 
 "StageMap.trainingButton.title" = "Тренировка";
 "StageMap.statistic" = "Пройдено уровней";
+
