@@ -22,10 +22,7 @@ class GlobalStagePassing: Object {
     
     var type: StageType {
         get { 
-            if _type == StageType.training.rawValue {
-                return currentStagePassing?.currentExercisePassing != nil ? currentStagePassing!.currentExercisePassing!.exercise!.type : .training 
-            }
-            return StageType(rawValue: _type)! 
+            return currentStagePassing?.currentExercisePassing != nil ? currentStagePassing!.currentExercisePassing!.exercise!.type : .training 
         }
         set { _type = newValue.rawValue }
     }

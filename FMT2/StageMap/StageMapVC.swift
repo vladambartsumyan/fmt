@@ -125,7 +125,7 @@ class StageMapVC: FadeInOutVC {
         mapButtons.filter {
             $0.mode == .locked
         }.forEach {
-            $0.isEnabled = false
+            $0.isEnabled = true
         }
     }
 
@@ -165,7 +165,7 @@ class StageMapVC: FadeInOutVC {
 
     func configureButton(_ button: MapButton, withGlobalStagePassing stage: GlobalStagePassing) {
         let mode = stageToButtonMode(stage: stage)
-        switch stage.type {
+        switch StageType(rawValue: stage._type)! {
         case .introduction:
             button.configureWithIcon(mode: mode, icon: .paw)
             break
@@ -228,7 +228,7 @@ class StageMapVC: FadeInOutVC {
     }
 
     func loadGlobalStage(_ globalStagePassing: GlobalStagePassing) {
-        let type = StageType(rawValue: globalStagePassing._type)!
+        let type = globalStagePassing.type
         switch type {
         case .introduction:
             let vc = IntroductionDigitVC(nibName: "IntroductionDigitVC", bundle: nil)

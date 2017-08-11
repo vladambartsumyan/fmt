@@ -33,9 +33,15 @@ class Stage: Object {
         let stagePassing = StagePassing()
         stagePassing.stage = self
         if mode == .exam {
-            var possibleExercisesCopy = Array(self.possibleExercises)
-            for _ in 0..<numberOfExercises {
-                let exercise = possibleExercisesCopy.eraseRandomElem()!
+            let possibleExercisesCopy = Array(self.possibleExercises)
+            var requiredExercises = Array(possibleExercisesCopy.dropLast(possibleExercisesCopy.count - numberOfExercises))
+            var additionalExercises = _type == StageType.permutation.rawValue ? [] : Array(possibleExercisesCopy.dropFirst(numberOfExercises))
+            for _ in 0..<requiredExercises.count {
+                let exercise = requiredExercises.eraseRandomElem()!
+                stagePassing.exercises.append(exercise.createExercisePassing())
+            }
+            for _ in 0..<additionalExercises.count {
+                let exercise = additionalExercises.eraseRandomElem()!
                 stagePassing.exercises.append(exercise.createExercisePassing())
             }
         }

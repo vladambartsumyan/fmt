@@ -119,6 +119,9 @@ class SoundHelper {
         guard UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) else {
             return
         }
+        guard UIApplication.shared.applicationState == .active else {
+            return
+        }
         let url = URL(fileURLWithPath: Bundle.main.path(forResource: name, ofType: "mp3")!)
         SoundHelper.voicePlayer = try? AVAudioPlayer(contentsOf: url)
         SoundHelper.voicePlayer?.prepareToPlay()

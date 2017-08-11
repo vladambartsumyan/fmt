@@ -22,9 +22,15 @@ class StagePassing: Object {
         if stage.mode == .exam {
             let realm = try! Realm()
             try! realm.write {
-                let exercisePassing = currentExercisePassing!
-                exercises.remove(objectAtIndex: index)
-                exercises.append(exercisePassing)
+                if index < stage.numberOfExercises {
+                    let exercisePassing = exercises[index]
+                    exercises.remove(objectAtIndex: index)
+                    exercises.insert(exercisePassing, at: stage.numberOfExercises - 1)
+                } else {
+                    let exercisePassing = exercises[index]
+                    exercises.remove(objectAtIndex: index)
+                    exercises.insert(exercisePassing, at: exercises.count)
+                }
             }
         }
     }

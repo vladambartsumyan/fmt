@@ -24,6 +24,7 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
         super.viewDidLoad()
         configureTopBar()
         configureText()
+        configureImages()
         background.image = SVGKImage(named: "background").uiImage
     }
     
@@ -49,6 +50,15 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
+    }
+    
+    func configureImages() {
+        backgroundImage.image = SVGKImage(named: "x23background").uiImage
+        let gooseColor = Game.current.getColor(forDigit: 2)
+        let sparrowColor = Game.current.getColor(forDigit: 3)
+        firstDigit.image = SVGKImage(named: "x232" + gooseColor.rawValue).uiImage
+        secondDigit.image = SVGKImage(named: "x233" + sparrowColor.rawValue).uiImage
+        result.image = SVGKImage(named: "x23result").uiImage
     }
     
     func configureText() {

@@ -15,6 +15,52 @@ class Exercise: Object {
         let exercise = Exercise()
         exercise.firstDigit = firstDigit
         exercise.secondDigit = secondDigit
+        let (min, max) = firstDigit < secondDigit ? (firstDigit, secondDigit) : (secondDigit, firstDigit)
+        if max == 10 {
+            exercise.type = .multiplicationBy10
+            return exercise
+        }
+        if firstDigit > secondDigit && ![-1, 0, 1].contains(secondDigit) {
+            exercise.type = .permutation
+            return exercise
+        }
+        switch min {
+        case -1:
+            exercise.type = .introduction
+            break
+        case 0:
+            exercise.type = .multiplicationBy0
+            break
+        case 1:
+            exercise.type = .multiplicationBy1
+            break
+        case 2:
+            exercise.type = .multiplicationBy2
+            break
+        case 3:
+            exercise.type = .multiplicationBy3
+            break
+        case 4:
+            exercise.type = .multiplicationBy4
+            break
+        case 5:
+            exercise.type = .multiplicationBy5
+            break
+        case 6:
+            exercise.type = .multiplicationBy6
+            break
+        case 7:
+            exercise.type = .multiplicationBy7
+            break
+        case 8:
+            exercise.type = .multiplicationBy8
+            break
+        case 9:
+            exercise.type = .multiplicationBy9
+            break
+        default:
+            break
+        }
         return exercise
     }
     
@@ -31,7 +77,7 @@ class Exercise: Object {
         }
         switch min {
         case 0: return ((1...9).filter{$0 != max}, required: max)
-        case 1: return ((2...9).filter{$0 != max + 1}, required: max + min)
+        case 1: return ((2...9).filter{![max + 1, max].contains($0)}, required: max + min)
         case 2:
             switch max {
             case 2: return ([2, 5, 6, 7, 8], required: 3)

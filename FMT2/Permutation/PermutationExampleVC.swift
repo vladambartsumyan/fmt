@@ -41,6 +41,7 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureExerciseSize()
+        configureImages()
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
@@ -74,6 +75,15 @@ class PermutationExampleVC: FadeInOutVC, IsGameVC {
         return [ 
             [firstDigitEx, secondDigitEx, secondDigitEx2, answerFirstDigit, answerSecondDigit, multiplicationEx, equalityEx]
         ]
+    }
+    
+    func configureImages() {
+        backgroundImage.image = SVGKImage(named: "x23background").uiImage
+        let gooseColor = Game.current.getColor(forDigit: 2)
+        let sparrowColor = Game.current.getColor(forDigit: 3)
+        firstDigit.image = SVGKImage(named: "x232" + gooseColor.rawValue).uiImage
+        secondDigit.image = SVGKImage(named: "x233" + sparrowColor.rawValue).uiImage
+        result.image = SVGKImage(named: "x23result").uiImage
     }
     
     override func getFadeOutArray() -> [[UIView]] {
