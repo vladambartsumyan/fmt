@@ -50,6 +50,8 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var questionWidth: NSLayoutConstraint!
 
     var newGameWasPressed = false
+    
+    var isFirstExercise = true
 
     override var needsToTimeAccumulation: Bool {
         return true
@@ -201,6 +203,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         let result = exercise.firstDigit * exercise.secondDigit
         var (variants, required) = exercise.allVariants
         var variantButtons = [firstVariant!, secondVariant!, thirdVariant!, fourthVariant!]
+        variantButtons.forEach{$0.resetBody()}
         
         let rightIndex = Int.random(min: 0, max: 3)
         let rightVariant = variantButtons[rightIndex]
@@ -229,23 +232,28 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         questionWidth.constant = digitWidth
 
         let res = exercise.firstDigit * exercise.secondDigit
-
+        
+        let (firstOperand, secondOperand) = globalStagePassing._type == StageType.permutation.rawValue && isFirstExercise ? 
+            (exercise.secondDigit, exercise.firstDigit) : 
+            (exercise.firstDigit, exercise.secondDigit)
+        
+        
         if exercise.firstDigit >= 10 {
             fst2width.constant = digitWidth
-            fst1.image = UIImage(named: "\(Int(exercise.firstDigit / 10))exercise")
-            fst2.image = UIImage(named: "\(exercise.firstDigit % 10)exercise")
+            fst1.image = UIImage(named: "\(Int(firstOperand / 10))exercise")
+            fst2.image = UIImage(named: "\(firstOperand % 10)exercise")
         } else {
             fst2width.constant = 0.0
-            fst1.image = UIImage(named: "\(exercise.firstDigit)exercise")
+            fst1.image = UIImage(named: "\(firstOperand)exercise")
         }
 
         if exercise.secondDigit >= 10 {
             snd2width.constant = digitWidth
-            snd1.image = UIImage(named: "\(Int(exercise.secondDigit / 10))exercise")
-            snd2.image = UIImage(named: "\(exercise.secondDigit % 10)exercise")
+            snd1.image = UIImage(named: "\(Int(secondOperand / 10))exercise")
+            snd2.image = UIImage(named: "\(secondOperand % 10)exercise")
         } else {
             snd2width.constant = 0.0
-            snd1.image = UIImage(named: "\(exercise.secondDigit)exercise")
+            snd1.image = UIImage(named: "\(secondOperand)exercise")
         }
 
         if res >= 10 {
@@ -261,10 +269,27 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
 
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
         let duration = sender.voiceDuration
+        let viewsOut: [[UIView]] = [[fst1, fst2, snd1, snd2, question, equality, mult, res1, res2], 
+                                 [firstVariant, secondVariant, thirdVariant, fourthVariant]]
+        let viewsIn: [[UIView]] = [[fst1, fst2, snd1, snd2, question, equality, mult], 
+                                   [firstVariant, secondVariant, thirdVariant, fourthVariant]]
         if !sender.isWrongAnswer {
             self.view.isUserInteractionEnabled = false
-            rightAnswerAppearing {
-                self.nextScreen(duration)
+            if globalStagePassing._type == StageType.permutation.rawValue && isFirstExercise {
+                self.isFirstExercise = false
+                rightAnswerAppearing {
+                    self.fadeOut(array: viewsOut) {
+                        self.configureVariantPanel()
+                        self.configureExercise()
+                        self.fadeIn(array: viewsIn) {
+                            self.view.isUserInteractionEnabled = true
+                        }
+                    }
+                }
+            } else {
+                rightAnswerAppearing {
+                    self.nextScreen(duration)
+                } 
             }
         } else {
             if mode == .exam {

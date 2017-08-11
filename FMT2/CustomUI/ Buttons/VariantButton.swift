@@ -55,6 +55,10 @@ class VariantButton: LeapingButton {
         }
     }
     
+    func resetBody() {
+        self.body.image = SVGKImage.init(named: "variantButton").uiImage
+    }
+    
     override func playSound() {
         isWrongAnswer ? SoundHelper.playWrongAnswer() : SoundHelper.playRightAnswer()
         isWrongAnswer ? playWrongVoice() : playRightVoice()

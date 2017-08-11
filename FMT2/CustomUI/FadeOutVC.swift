@@ -34,23 +34,7 @@ class FadeInOutVC: UIViewController {
     }
 
     func fadeIn(_ handler: ((()) -> ())? = nil) {
-        let viewsForAnimate = getFadeInArray()
-        var delay: TimeInterval = 0.2
-        for ind in 0..<viewsForAnimate.count {
-            UIView.animate(withDuration: 0.5, delay: delay, animations: {
-                for view in viewsForAnimate[ind] {
-                    view.alpha = 1.0
-                }
-            }) { _ in
-                if ind == 0 {
-                    handler?()
-                }
-            }
-            delay += 0.2
-        }
-        if viewsForAnimate.count == 0 {
-            handler?()
-        }
+        fadeIn(array: getFadeInArray(), handler)
     }
 
     func fadeOut(_ handler: ((()) -> ())?) {
@@ -79,6 +63,27 @@ class FadeInOutVC: UIViewController {
             delay += 0.2
         }
         if array.count == 0 {
+            handler?()
+        }
+    }
+    
+    func fadeIn(array: [[UIView]], _ handler: ((()) -> ())?) {
+        let viewsForAnimate = array
+        viewsForAnimate.flatMap{$0}.forEach{$0.transform = .identity}
+        var delay: TimeInterval = 0.2
+        for ind in 0..<viewsForAnimate.count {
+            UIView.animate(withDuration: 0.5, delay: delay, animations: {
+                for view in viewsForAnimate[ind] {
+                    view.alpha = 1.0
+                }
+            }) { _ in
+                if ind == 0 {
+                    handler?()
+                }
+            }
+            delay += 0.2
+        }
+        if viewsForAnimate.count == 0 {
             handler?()
         }
     }

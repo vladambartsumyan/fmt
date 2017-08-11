@@ -42,31 +42,18 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let statisticTitle = NSLocalizedString("Menu.statistic", comment: "")
         let feedbackTitle = NSLocalizedString("Menu.feedback", comment: "")
         let continueTitle = NSLocalizedString("Menu.continue", comment: "")
-        if (Game.current.newGame) {
-            menuDataSource = [
-                    [
-                            MenuItem.init(buttonColor: .green, title: newGameTitle, iconName: "ContinueButton", action: self.startNewGame),
-                            MenuItem.init(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds)
-                    ],
-                    [
-                            MenuItem.init(buttonColor: .orange, title: statisticTitle, iconName: "ParentLockButton", action: self.statistic),
-                            MenuItem.init(buttonColor: .orange, title: feedbackTitle, iconName: "EmailButton", action: self.feedback)
-                    ]
-            ]
-        } else {
-            menuDataSource = [
-                    [
-                            MenuItem.init(buttonColor: .green, title: continueTitle, iconName: "ContinueButton", action: self.continueGame),
-                            MenuItem.init(buttonColor: .green, title: newGameTitle, iconName: "NewGameButton", action: self.startNewGame),
-                            MenuItem.init(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds),
-                            MenuItem.init(buttonColor: .green, title: voiceSwitchTitle, iconName: "Voice", action: self.switchVoice)
-                    ],
-                    [
-                            MenuItem.init(buttonColor: .orange, title: statisticTitle, iconName: "ParentLockButton", action: self.statistic),
-                            MenuItem.init(buttonColor: .orange, title: feedbackTitle, iconName: "EmailButton", action: self.feedback)
-                    ]
-            ]
-        }
+        menuDataSource = [
+                [
+                        MenuItem(buttonColor: .green, title: continueTitle, iconName: "ContinueButton", action: self.continueGame),
+                        MenuItem(buttonColor: .green, title: newGameTitle, iconName: "NewGameButton", action: self.startNewGame),
+                        MenuItem(buttonColor: .green, title: soundSwitchTitle, iconName: "SongButton", action: self.switchSounds),
+                        MenuItem(buttonColor: .green, title: voiceSwitchTitle, iconName: "VoiceButton", action: self.switchVoice)
+                ],
+                [
+                        MenuItem(buttonColor: .orange, title: statisticTitle, iconName: "ParentLockButton", action: self.statistic),
+                        MenuItem(buttonColor: .orange, title: feedbackTitle, iconName: "EmailButton", action: self.feedback)
+                ]
+        ]
     }
 
     // ACTIONS
