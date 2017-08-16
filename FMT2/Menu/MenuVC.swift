@@ -21,6 +21,11 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         configureMenuDataSource()
         configureCollectionView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        trackScreen(screen: .menu)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

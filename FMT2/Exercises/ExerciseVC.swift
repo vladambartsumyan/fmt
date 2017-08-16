@@ -264,7 +264,6 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             res2width.constant = 0.0
             res1.image = UIImage(named: "\(res)exercise")
         }
-
     }
 
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {

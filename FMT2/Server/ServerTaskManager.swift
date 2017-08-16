@@ -99,21 +99,21 @@ class ServerTaskManager {
     }
     
     func log(_ response: Response) {
-        print("\nRequset: >>>>>>>>>>>>>>>>>>")
-        print(response.request!)
-        print(response.request!.allHTTPHeaderFields ?? "HEADERS EMPTY")
-        print("Method:")
-        print(response.request! .httpMethod!)
-        print("Body: ")
-        let body = String.init(data: response.request!.httpBody!, encoding: String.Encoding.utf8)!
-        print(body)
-        print("\nResponse: <<<<<<<<<<<<<<<<<")
-        do {
-            print(try response.mapString())
-            print(response.statusCode)
-        } catch {
-            print("FAIL")
-        }
+//        print("\nRequset: >>>>>>>>>>>>>>>>>>")
+//        print(response.request!)
+//        print(response.request!.allHTTPHeaderFields ?? "HEADERS EMPTY")
+//        print("Method:")
+//        print(response.request! .httpMethod!)
+//        print("Body: ")
+//        let body = String.init(data: response.request!.httpBody!, encoding: String.Encoding.utf8)!
+//        print(body)
+//        print("\nResponse: <<<<<<<<<<<<<<<<<")
+//        do {
+//            print(try response.mapString())
+//            print(response.statusCode)
+//        } catch {
+//            print("FAIL")
+//        }
     }
     
 }

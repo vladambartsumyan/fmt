@@ -6,4 +6,5 @@ enum UserDefaultsKey: String {
     case voiceOn
     case dateHashed
     case timeMark
+    case isFullVersion
 }

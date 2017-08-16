@@ -40,6 +40,7 @@ class TutorialVC: FadeInOutVC {
     
     override func viewWillAppear(_ animated: Bool) {
         SoundHelper.shared.stopVoice()
+        trackScreen(screen: .tutorial)
     }
     
     override func didReceiveMemoryWarning() {

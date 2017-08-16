@@ -55,6 +55,7 @@ class MoreStatisticVC: UIViewController, SMSegmentViewDelegate, UICollectionView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        trackScreen(screen: .statisticDetail)
     }
     
     override func viewDidLayoutSubviews() {

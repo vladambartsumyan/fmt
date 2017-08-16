@@ -69,5 +69,6 @@ class MapButton: LeapingButton {
     enum MapButtonIcon: String {
         case paw
         case star
+        case lock
     }
 }

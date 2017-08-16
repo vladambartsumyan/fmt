@@ -1,9 +1,15 @@
 import UIKit
 import RealmSwift
 import SVGKit
+import StoreKit
 
 class StageMapVC: FadeInOutVC {
 
+    let lockedFrom = 5
+    
+    var fullVersion: SKProduct? = nil
+    var productsRequests: SKProductsRequest!
+    
     @IBOutlet weak var menuButton: TopButton!
     @IBOutlet weak var background: UIImageView!
 
@@ -45,6 +51,8 @@ class StageMapVC: FadeInOutVC {
     @IBOutlet weak var heightOfBottomPanel: NSLayoutConstraint!
     @IBOutlet weak var proportionOfBottomPanel: NSLayoutConstraint!
 
+    let isFullVersion = UserDefaults.standard.bool(forKey: UserDefaultsKey.isFullVersion.rawValue)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,6 +82,7 @@ class StageMapVC: FadeInOutVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        trackScreen(screen: .stageMap)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -122,10 +131,10 @@ class StageMapVC: FadeInOutVC {
         for ind in 0..<globalStages.count {
             configureButton(mapButtons[ind], withGlobalStagePassing: globalStages[ind])
         }
-        mapButtons.filter {
+        (isFullVersion ? mapButtons : Array(mapButtons.dropLast(mapButtons.count - lockedFrom))).filter {
             $0.mode == .locked
         }.forEach {
-            $0.isEnabled = true
+            $0.isEnabled = false
         }
     }
 
@@ -164,6 +173,11 @@ class StageMapVC: FadeInOutVC {
     }
 
     func configureButton(_ button: MapButton, withGlobalStagePassing stage: GlobalStagePassing) {
+        guard isFullVersion || stage._type < StageType.multiplicationBy3.rawValue else {
+            button.configureWithIcon(mode: .locked, icon: .lock)
+            return
+        }
+                
         let mode = stageToButtonMode(stage: stage)
         switch StageType(rawValue: stage._type)! {
         case .introduction:
@@ -270,6 +284,7 @@ class StageMapVC: FadeInOutVC {
                     AppDelegate.current.setRootVC(vc)
                 }
             }
+            trackScreen(screen: .multBy1)
             break
         case .multiplicationBy10:
             let needTutorial = globalStagePassing.index == 0 && globalStagePassing.currentStagePassing!.index == 0
@@ -312,11 +327,51 @@ class StageMapVC: FadeInOutVC {
             }
             break
         }
+        trackScreen(screen: screenForType(type))
+    }
+    
+    func screenForType(_ type: StageType) -> TrackingScreen {
+        switch type {
+        case .introduction:
+            return .introduction
+        case .multiplicationBy0:
+            return .multBy0
+        case .multiplicationBy1:
+            return .multBy1
+        case .multiplicationBy2:
+            return .multBy2
+        case .multiplicationBy3:
+            return .multBy3
+        case .multiplicationBy4:
+            return .multBy4
+        case .multiplicationBy5:
+            return .multBy5
+        case .multiplicationBy6:
+            return .multBy6
+        case .multiplicationBy7:
+            return .multBy7
+        case .multiplicationBy8:
+            return .multBy8
+        case .multiplicationBy9:
+            return .multBy9
+        case .multiplicationBy10:
+            return .multBy10
+        case .permutation:
+            return .permutation
+        case .training:
+            return .training
+        }
     }
 
     @IBAction func buttonPressed(_ sender: MapButton) {
-        self.view.isUserInteractionEnabled = false
         let index = mapButtons.index(of: sender)!
+        
+        if !isFullVersion && index >= lockedFrom {
+            fetchProduct()
+            return
+        }
+        
+        self.view.isUserInteractionEnabled = false
         let stage = globalStages[index]
         SoundHelper.shared.playVoice(name: stage.type.string)
         let duration = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(stage.type.string) : 0
@@ -439,6 +494,7 @@ class StageMapVC: FadeInOutVC {
         simpleFadeOut {
             AppDelegate.current.setRootVC(vc as! UIViewController)
         }
+        trackScreen(screen: .training)
     }
 
     override func getFadeInArray() -> [[UIView]] {

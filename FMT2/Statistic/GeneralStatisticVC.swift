@@ -45,6 +45,11 @@ class GeneralStatisticVC: UIViewController {
         background.image = SVGKImage(named: "background").uiImage
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        trackScreen(screen: .statistic)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

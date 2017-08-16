@@ -12,6 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
+        registerGoogleAnalytics()
+        
         UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
         
         SoundHelper.prepareButtonSounds()
@@ -77,6 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(true, forKey: UserDefaultsKey.soundOn.rawValue)
         UserDefaults.standard.set(true, forKey: UserDefaultsKey.voiceOn.rawValue)
         UserDefaults.standard.set(true, forKey: UserDefaultsKey.launchedBefore.rawValue)
+        UserDefaults.standard.set(false, forKey: UserDefaultsKey.isFullVersion.rawValue)
     }
 
     func registerLocalNotification(application: UIApplication) {
@@ -117,6 +120,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
 
+    func registerGoogleAnalytics() {
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+        }
+        gai.trackUncaughtExceptions = true
+        gai.defaultTracker = gai.tracker(withTrackingId: "UA-103386897-2")
+        gai.logger.logLevel = .verbose
+    }
+    
     func resetNotification() {
         if #available(iOS 10, *) {
             // Cancel all notifications
