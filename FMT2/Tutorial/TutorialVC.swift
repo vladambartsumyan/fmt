@@ -25,6 +25,7 @@ class TutorialVC: FadeInOutVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureImages()
         Game.current.createGame()
         [backgroundImage, firstDigit, secondDigit, resultImage, firstOperand, multMark, secondOperand, equalMark, questionMark, answerFirstDigit].forEach {
@@ -35,12 +36,13 @@ class TutorialVC: FadeInOutVC {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        GAManager.track(action: .startNewGame, with: .game)
         presentation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         SoundHelper.shared.stopVoice()
-        trackScreen(screen: .tutorial)
+        GAManager.track(screen: .tutorial)
     }
     
     override func didReceiveMemoryWarning() {

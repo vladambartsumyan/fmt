@@ -83,6 +83,7 @@
 		65104DD01F051AF300547F35 /* ExercisePreview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65104DCA1F051AF300547F35 /* ExercisePreview.xib */; };
 		65104DD11F051AF300547F35 /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65104DCB1F051AF300547F35 /* ExerciseVC.swift */; };
 		65104DD21F051AF300547F35 /* ExerciseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65104DCC1F051AF300547F35 /* ExerciseVC.xib */; };
+		651619061F45C6A2004A4327 /* StageType+GAKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651619051F45C6A2004A4327 /* StageType+GAKey.swift */; };
 		652983F01F0E2C5D0003CE55 /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652983EE1F0E2C5D0003CE55 /* MapButton.swift */; };
 		652983F11F0E2C5D0003CE55 /* MapButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 652983EF1F0E2C5D0003CE55 /* MapButton.xib */; };
 		65325F5A1F3DEAD200D46AF3 /* VoiceButton.svg in Resources */ = {isa = PBXBuildFile; fileRef = 65325F591F3DEAD200D46AF3 /* VoiceButton.svg */; };
@@ -1054,7 +1055,7 @@
 		659277E21F03CFE7009BC04E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277E11F03CFE7009BC04E /* Exercise.swift */; };
 		659BA8CB1F42F50200451043 /* StageMapVC+InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BA8CA1F42F50200451043 /* StageMapVC+InAppPurchase.swift */; };
 		65AB30591F3C7D99008B4A62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */; };
-		65B7D0A41F4336CC00A371E4 /* UIViewController+GATracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7D0A31F4336CC00A371E4 /* UIViewController+GATracking.swift */; };
+		65B7D0A41F4336CC00A371E4 /* GAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7D0A31F4336CC00A371E4 /* GAManager.swift */; };
 		65C39D091F43176E006ADA59 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C39D081F43176E006ADA59 /* StoreKit.framework */; };
 		65CE78CD1F44482200D78A4C /* TrackingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE78CC1F44482200D78A4C /* TrackingScreen.swift */; };
 		65CE78CF1F44492100D78A4C /* TrackingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE78CE1F44492100D78A4C /* TrackingAction.swift */; };
@@ -1149,6 +1150,7 @@
 		65104DCA1F051AF300547F35 /* ExercisePreview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExercisePreview.xib; path = Exercises/ExercisePreview.xib; sourceTree = "<group>"; };
 		65104DCB1F051AF300547F35 /* ExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseVC.swift; path = Exercises/ExerciseVC.swift; sourceTree = "<group>"; };
 		65104DCC1F051AF300547F35 /* ExerciseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExerciseVC.xib; path = Exercises/ExerciseVC.xib; sourceTree = "<group>"; };
+		651619051F45C6A2004A4327 /* StageType+GAKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StageType+GAKey.swift"; path = "Common/StageType+GAKey.swift"; sourceTree = "<group>"; };
 		652983EE1F0E2C5D0003CE55 /* MapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapButton.swift; path = "CustomUI/ Buttons/MapButton.swift"; sourceTree = "<group>"; };
 		652983EF1F0E2C5D0003CE55 /* MapButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapButton.xib; path = "CustomUI/ Buttons/MapButton.xib"; sourceTree = "<group>"; };
 		65325F591F3DEAD200D46AF3 /* VoiceButton.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = VoiceButton.svg; path = Resource/images/VoiceButton.svg; sourceTree = "<group>"; };
@@ -2123,7 +2125,7 @@
 		659BA8CA1F42F50200451043 /* StageMapVC+InAppPurchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StageMapVC+InAppPurchase.swift"; path = "StageMap/StageMapVC+InAppPurchase.swift"; sourceTree = "<group>"; };
 		65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65AB305A1F3C7EA1008B4A62 /* FMT2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMT2-Bridging-Header.h"; sourceTree = "<group>"; };
-		65B7D0A31F4336CC00A371E4 /* UIViewController+GATracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+GATracking.swift"; sourceTree = "<group>"; };
+		65B7D0A31F4336CC00A371E4 /* GAManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAManager.swift; sourceTree = "<group>"; };
 		65C39D081F43176E006ADA59 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		65CE78CC1F44482200D78A4C /* TrackingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingScreen.swift; path = Common/TrackingScreen.swift; sourceTree = "<group>"; };
 		65CE78CE1F44492100D78A4C /* TrackingAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingAction.swift; path = Common/TrackingAction.swift; sourceTree = "<group>"; };
@@ -3512,9 +3514,10 @@
 		65CE78CB1F4447BE00D78A4C /* Google Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				65B7D0A31F4336CC00A371E4 /* UIViewController+GATracking.swift */,
+				65B7D0A31F4336CC00A371E4 /* GAManager.swift */,
 				65CE78CC1F44482200D78A4C /* TrackingScreen.swift */,
 				65CE78CE1F44492100D78A4C /* TrackingAction.swift */,
+				651619051F45C6A2004A4327 /* StageType+GAKey.swift */,
 			);
 			name = "Google Analytics";
 			sourceTree = "<group>";
@@ -4674,6 +4677,7 @@
 				650EF29E1F03F3740047C30C /* GameError.swift in Sources */,
 				656222C61F05390100B6C64B /* AnimateAndNoAnimate.swift in Sources */,
 				656222D21F05390100B6C64B /* TimeRatingCell.swift in Sources */,
+				651619061F45C6A2004A4327 /* StageType+GAKey.swift in Sources */,
 				650EF2E81F04E6070047C30C /* SoundHelper.swift in Sources */,
 				659277DF1F03C718009BC04E /* StageType.swift in Sources */,
 				65F6054B1F0CE1F6004421E5 /* PermutationExampleVC.swift in Sources */,
@@ -4696,7 +4700,7 @@
 				656222AD1F05380500B6C64B /* AlertMaker.swift in Sources */,
 				650EF2AB1F0409830047C30C /* ServerTask.swift in Sources */,
 				650EF2D31F04E4710047C30C /* ProgressBar.swift in Sources */,
-				65B7D0A41F4336CC00A371E4 /* UIViewController+GATracking.swift in Sources */,
+				65B7D0A41F4336CC00A371E4 /* GAManager.swift in Sources */,
 				650EF2D61F04E4790047C30C /* FadeOutVC.swift in Sources */,
 				656222B31F0538EB00B6C64B /* GeneralStatisticVC.swift in Sources */,
 				656BCDF31F0A75B200F81798 /* MultByOneExampleVC.swift in Sources */,

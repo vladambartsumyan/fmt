@@ -82,7 +82,7 @@ class StageMapVC: FadeInOutVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        trackScreen(screen: .stageMap)
+        GAManager.track(screen: .stageMap)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -139,7 +139,7 @@ class StageMapVC: FadeInOutVC {
     }
 
     func configureTrainingButton() {
-        let needsTrainingButton = curGlobalStagePassing == nil || curGlobalStagePassing!.type.rawValue > StageType.multiplicationBy0.rawValue
+        let needsTrainingButton = curGlobalStagePassing == nil || curGlobalStagePassing!._type > StageType.multiplicationBy0.rawValue
         if needsTrainingButton {
             heightOfBottomPanel.priority = 900
             proportionOfBottomPanel.priority = 1000
@@ -284,7 +284,7 @@ class StageMapVC: FadeInOutVC {
                     AppDelegate.current.setRootVC(vc)
                 }
             }
-            trackScreen(screen: .multBy1)
+            GAManager.track(screen: .multBy1)
             break
         case .multiplicationBy10:
             let needTutorial = globalStagePassing.index == 0 && globalStagePassing.currentStagePassing!.index == 0
@@ -327,7 +327,7 @@ class StageMapVC: FadeInOutVC {
             }
             break
         }
-        trackScreen(screen: screenForType(type))
+        GAManager.track(screen: screenForType(type))
     }
     
     func screenForType(_ type: StageType) -> TrackingScreen {
@@ -373,16 +373,24 @@ class StageMapVC: FadeInOutVC {
         
         self.view.isUserInteractionEnabled = false
         let stage = globalStages[index]
-        SoundHelper.shared.playVoice(name: stage.type.string)
         let duration = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(stage.type.string) : 0
         if curGlobalStagePassing != nil && stage == curGlobalStagePassing {
+            if curGlobalStagePassing!.index == -1 {
+                curGlobalStagePassing!.setZeroIndex()
+                GAManager.track(action: .levelStart(level: curGlobalStagePassing!.type), with: .game)
+            } else {
+                GAManager.track(action: .levelContinue(level: curGlobalStagePassing!.type), with: .game)
+            }
             self.perform(#selector(self.loadGlobalStage), with: curGlobalStagePassing!, afterDelay: duration)
         } else {
             let globalStagePassing = globalStages[index].globalStage.createGlobalStagePassing()
             globalStagePassing.saveStages()
             globalStagePassing.inGame = false
+            globalStagePassing.setZeroIndex()
+            GAManager.track(action: .levelUserRestart(level: globalStagePassing.type), with: .game)
             self.perform(#selector(self.loadGlobalStage), with: globalStagePassing, afterDelay: duration)
         }
+        SoundHelper.shared.playVoice(name: stage.type.string)
     }
 
     func drawLine() {
@@ -494,7 +502,8 @@ class StageMapVC: FadeInOutVC {
         simpleFadeOut {
             AppDelegate.current.setRootVC(vc as! UIViewController)
         }
-        trackScreen(screen: .training)
+        GAManager.track(screen: .training)
+        GAManager.track(action: .levelStart(level: .training), with: .game)
     }
 
     override func getFadeInArray() -> [[UIView]] {

@@ -47,7 +47,7 @@ class GeneralStatisticVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        trackScreen(screen: .statistic)
+        GAManager.track(screen: .statistic)
     }
     
     override func didReceiveMemoryWarning() {

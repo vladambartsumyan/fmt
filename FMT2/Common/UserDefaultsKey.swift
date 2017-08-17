@@ -7,4 +7,5 @@ enum UserDefaultsKey: String {
     case dateHashed
     case timeMark
     case isFullVersion
+    case backgroundDate
 }

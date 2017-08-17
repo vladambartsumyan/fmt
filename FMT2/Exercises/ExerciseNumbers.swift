@@ -82,6 +82,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     }
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
+        GAManager.track(action: .levelExit(level: StageType(rawValue: (globalStagePassing._type))!), with: .game)
         self.view.isUserInteractionEnabled = false
         SoundHelper.shared.stopVoice()
         self.globalStagePassing.updateElapsedTime()
@@ -189,6 +190,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
         let duration = sender.voiceDuration
         globalStagePassing.updateElapsedTime()
+        sendStatistic(isRightAnswer: !sender.isWrongAnswer)
         if !sender.isWrongAnswer {
             self.view.isUserInteractionEnabled = false
             if !isSecondNumber && exercise.firstDigit != exercise.secondDigit && !skipSecondDigit {
@@ -200,6 +202,61 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
                 let vc = ExerciseVC(nibName: "ExerciseVC", bundle: nil)
                 vc.globalStagePassing = globalStagePassing
                 perform(#selector(nextScreen), with: vc, afterDelay: duration)
+            }
+        } else {
+            GAManager.track(action: .levelDigitMistake(level: StageType(rawValue: globalStagePassing._type)!, firstDigit: exercise.firstDigit, secondDigit: exercise.secondDigit, digit: isSecondNumber ? exercise.secondDigit : exercise.firstDigit), with: .game)
+        }
+    }
+    
+    func sendStatistic(isRightAnswer: Bool) {
+        let isExam = globalStagePassing.currentStagePassing!.stage.mode == .exam
+        let level = StageType(rawValue: globalStagePassing._type)!
+        let firstDigit = exercise.firstDigit
+        let secondDigit = exercise.secondDigit
+        let digit = isSecondNumber ? exercise.secondDigit : exercise.firstDigit
+        if isRightAnswer {
+            if isExam {
+                GAManager.track(
+                    action: .levelExamDigitRightAnswer(
+                        level: level, 
+                        firstDigit: firstDigit, 
+                        secondDigit: secondDigit, 
+                        digit: digit
+                    ), 
+                    with: .game
+                )
+            } else {
+                GAManager.track(
+                    action: .levelDigitRightAnswer(
+                        level: level, 
+                        firstDigit: firstDigit, 
+                        secondDigit: secondDigit, 
+                        digit: digit
+                    ), 
+                    with: .game
+                )
+            }
+        } else {
+            if isExam {
+                GAManager.track(
+                    action: .levelExamDigitMistake(
+                        level: level, 
+                        firstDigit: firstDigit, 
+                        secondDigit: secondDigit, 
+                        digit: digit
+                    ), 
+                    with: .game
+                )
+            } else {
+                GAManager.track(
+                    action: .levelDigitMistake(
+                        level: level, 
+                        firstDigit: firstDigit, 
+                        secondDigit: secondDigit, 
+                        digit: digit
+                    ), 
+                    with: .game
+                )
             }
         }
     }

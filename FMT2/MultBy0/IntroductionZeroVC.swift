@@ -117,6 +117,7 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     }
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
+        GAManager.track(action: .levelExit(level: StageType(rawValue: (globalStagePassing._type))!), with: .game)
         self.view.isUserInteractionEnabled = false
         SoundHelper.shared.stopVoice()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)

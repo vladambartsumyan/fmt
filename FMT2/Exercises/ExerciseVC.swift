@@ -114,6 +114,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     }
 
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
+        GAManager.track(action: .levelExit(level: StageType(rawValue: (globalStagePassing._type))!), with: .game)
         self.view.isUserInteractionEnabled = false
         SoundHelper.shared.stopVoice()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
@@ -286,12 +287,18 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                     }
                 }
             } else {
+                if mode == .exam {
+                    GAManager.track(action: .levelExamExerciseRightAnswer(level: StageType(rawValue: globalStagePassing._type)!, firstDigit: exercise.firstDigit, secondDigit: exercise.secondDigit), with: .game)
+                } else {
+                    GAManager.track(action: .levelExerciseRightAnswer(level: StageType(rawValue: globalStagePassing._type)!, firstDigit: exercise.firstDigit, secondDigit: exercise.secondDigit), with: .game)
+                }
                 rightAnswerAppearing {
                     self.nextScreen(duration)
                 } 
             }
         } else {
             if mode == .exam {
+                GAManager.track(action: .levelExamExerciseMistake(level: StageType(rawValue: globalStagePassing._type)!, firstDigit: exercise.firstDigit, secondDigit: exercise.secondDigit), with: .game)
                 view.isUserInteractionEnabled = false
                 globalStagePassing.updateElapsedTime()
                 let result = globalStagePassing.mistake()
@@ -309,6 +316,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                     }
                 }
                 if result == .soMuch {
+                    GAManager.track(action: .levelRestart(level: StageType(rawValue: globalStagePassing._type)!), with: .game)
                     globalStagePassing.reset()
                     let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
                     vc.globalStagePassing = globalStagePassing
@@ -316,6 +324,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                     perform(#selector(nextVC), with: vc, afterDelay: duration)
                 }
             } else {
+                GAManager.track(action: .levelExerciseMistake(level: StageType(rawValue: globalStagePassing._type)!, firstDigit: exercise.firstDigit, secondDigit: exercise.secondDigit), with: .game)
                 _ = globalStagePassing.mistake()
             }
         }
@@ -366,12 +375,15 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
             }
             break
         case .endOfStage:
+            GAManager.track(action: .levelFinished(level: StageType(rawValue: globalStagePassing._type)!), with: .game)
+            GAManager.track(action: .levelExamStart(level: StageType(rawValue: globalStagePassing._type)!), with: .game)
             let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
             vc.globalStagePassing = globalStagePassing
             vc.mode = beforeExamMode
             perform(#selector(nextVC), with: vc, afterDelay: duration)
             break
         case .endOfGlobalStage:
+            GAManager.track(action: .levelExamFinished(level: StageType(rawValue: globalStagePassing._type)!), with: .game)
             let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
             vc.globalStagePassing = globalStagePassing
             vc.mode = afterExamMode

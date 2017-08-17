@@ -9,9 +9,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var serverTaskManager = ServerTaskManager()
     
+    var action: TrackingAction!
+    var fullDaysInBackground: Int? = nil
+    var timer: Timer? = nil
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
+
         registerGoogleAnalytics()
         
         UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
@@ -33,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+        UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.backgroundDate.rawValue)
+        GAManager.track(action: .applicationInBackground, with: .application)
         SoundHelper.shared.pauseBackgroundMusic()
         SoundHelper.shared.stopVoice()
         sendUsingTime()
@@ -47,6 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
+        cancelAllNotifications()
+        sendNumberOfSkippedNotificationWithTimer()
         SoundHelper.shared.resumeBackgroundMusic()
         serverTaskManager.setNeedsLoading(true)
         UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
@@ -57,6 +66,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+    }
+    
+    func sendNumberOfSkippedNotificationWithTimer() {        
+        guard let inBackgroundStartDate = UserDefaults.standard.value(forKey: UserDefaultsKey.backgroundDate.rawValue) as? Date else {
+            return
+        }
+        let curDate = Date()
+        let timeIntervalInBackground = curDate.timeIntervalSince(inBackgroundStartDate)
+        fullDaysInBackground = Int(timeIntervalInBackground / 86400)
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(sendApplicationInForeground), userInfo: nil, repeats: false)
+    }
+    
+    func sendApplicationInForeground() {
+        guard let fullDaysInBackgroundUnwrapped = fullDaysInBackground else {
+            return
+        }
+        fullDaysInBackground = nil
+        GAManager.track(action: .applicationInForeground(skippedNotifications: fullDaysInBackgroundUnwrapped), with: .application)
+        print("applicationIn \(fullDaysInBackgroundUnwrapped)")
+    }
+    
+    func sendPushClick() {
+        timer?.invalidate()
+        guard let fullDaysInBackgroundUnwrapped = fullDaysInBackground else {
+            return
+        }
+        fullDaysInBackground = nil
+        let numberOfSkippedNotification = fullDaysInBackgroundUnwrapped - 1
+        GAManager.track(action: .notificationClick(skippedNotifications: numberOfSkippedNotification), with: .application)
+        print("pushClick \(numberOfSkippedNotification)")
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        sendPushClick()
     }
 
     func setStartScreen() {
@@ -129,12 +172,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         gai.logger.logLevel = .verbose
     }
     
-    func resetNotification() {
+    func cancelAllNotifications() {
         if #available(iOS 10, *) {
-            // Cancel all notifications
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-
+        } else {
+            UIApplication.shared.cancelAllLocalNotifications()
+        }
+    }
+    
+    func resetNotification() {
+        // Cancell all notifications
+        cancelAllNotifications()
+        if #available(iOS 10, *) {
             // Content
             let content = UNMutableNotificationContent()
             content.title = NSLocalizedString("Notification.message", comment: "") 
@@ -152,9 +202,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Registration
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         } else {
-            // Cancell all notifications
-            UIApplication.shared.cancelAllLocalNotifications()
-
             // Content
             let notification = UILocalNotification()
             notification.alertBody = NSLocalizedString("Notification.message", comment: "")

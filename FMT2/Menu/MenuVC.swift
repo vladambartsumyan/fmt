@@ -24,7 +24,7 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        trackScreen(screen: .menu)
+        GAManager.track(screen: .menu)
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,18 +64,14 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     // ACTIONS
 
     func startNewGame() {
-        if Game.current.newGame {
-            newGameTransition()
-        } else {
-            self.present(
-                    AlertMaker.newGameAlert {
-                        self.view.isUserInteractionEnabled = false
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: self.newGameTransition)
-                    },
-                    animated: true,
-                    completion: nil
-            )
-        }
+        self.present(
+                AlertMaker.newGameAlert {
+                    self.view.isUserInteractionEnabled = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: self.newGameTransition)
+                },
+                animated: true,
+                completion: nil
+        )
     }
 
     func newGameTransition() {

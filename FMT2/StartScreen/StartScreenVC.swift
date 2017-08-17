@@ -25,7 +25,7 @@ class StartScreenVC: FadeInOutVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        trackScreen(screen: .startScreen)
+        GAManager.track(screen: .startScreen)
         prepareAnimation()
         animation()
     }

@@ -15,7 +15,7 @@ class GlobalStagePassing: Object {
     
     dynamic var globalStage: GlobalStage!
     let stagesPassing = List<StagePassing>()
-    dynamic var index = 0
+    dynamic var index = -1
     dynamic var inGame = true
     dynamic var _type = 0 
     dynamic var mistakeCount = 3
@@ -210,6 +210,13 @@ class GlobalStagePassing: Object {
             if stagePassing.stage.mode == .exam {
                 stagePassing.save() 
             }
+        }
+    }
+    
+    func setZeroIndex() {
+        let realm = try! Realm()
+        try! realm.write {
+            self.index = 0
         }
     }
 }

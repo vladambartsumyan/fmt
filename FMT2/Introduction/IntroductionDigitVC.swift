@@ -114,6 +114,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     }
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
+        GAManager.track(action: .levelExit(level: StageType(rawValue: (globalStagePassing._type))!), with: .game)
         self.view.isUserInteractionEnabled = false
         SoundHelper.shared.stopVoice()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
@@ -139,18 +140,22 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
         if !sender.isWrongAnswer {
             globalStagePassing.updateElapsedTime()
             if isExam {
+                GAManager.track(action: .introductionExamRightAnswer(digit: exercise.firstDigit), with: .game)
                 progressBar.setProgressWithAnimation(CGFloat(globalStagePassing.nextProgress))
                 let result = globalStagePassing.rightAnswerResult
                 globalStagePassing.rightAnswer()
                 var vc: UIViewController!
                 switch result {
                 case .endOfGlobalStage:
+                    GAManager.track(action: .levelExamFinished(level: .introduction), with: .game)
                     let inBetweenVC = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
                     inBetweenVC.globalStagePassing = globalStagePassing
                     inBetweenVC.mode = .introductionExamPassed
                     vc = inBetweenVC
                     break
                 case .endOfStage:
+                    GAManager.track(action: .levelFinished(level: .introduction), with: .game)
+                    GAManager.track(action: .levelExamStart(level: .introduction), with: .game)
                     let inBetweenVC = InBetweenVC(nibName: "InBetweenVC", bundle: nil)        
                     inBetweenVC.globalStagePassing = self.globalStagePassing  
                     inBetweenVC.mode = .beforeIntroductionExam
@@ -166,6 +171,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
                     AppDelegate.current.setRootVC(vc)
                 }
             } else {
+                GAManager.track(action: .introductionRightAnswer(digit: exercise.firstDigit), with: .game)
                 let vc = IntroductionColorVC(nibName: "IntroductionColorVC", bundle: nil)
                 vc.globalStagePassing = self.globalStagePassing
                 fadeOut {
@@ -175,6 +181,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
         } else {
             if isExam {
                 globalStagePassing.updateElapsedTime()
+                GAManager.track(action: .introductionExamMistake(digit: exercise.firstDigit), with: .game)
                 let result = globalStagePassing.mistake()
                 switch result {
                 case .normal:
@@ -185,6 +192,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
                     }
                     break
                 case .soMuch:
+                    GAManager.track(action: .levelRestart(level: .introduction), with: .game)
                     globalStagePassing.reset()
                     let inBetweenVC = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
                     inBetweenVC.mode = .introductionExamFailed
@@ -196,6 +204,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
                 }
             } else {
                 _ = globalStagePassing.mistake()
+                GAManager.track(action: .introductionMistake(digit: exercise.firstDigit), with: .game)
             }
         }
     }

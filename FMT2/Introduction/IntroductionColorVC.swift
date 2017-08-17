@@ -173,6 +173,7 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     }
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
+        GAManager.track(action: .levelExit(level: StageType(rawValue: (globalStagePassing._type))!), with: .game)
         self.view.isUserInteractionEnabled = false
         SoundHelper.shared.stopVoice()
         let vc = MenuVC(nibName: "MenuVC", bundle: nil)
@@ -194,6 +195,7 @@ class IntroductionColorVC: FadeInOutVC, IsGameVC {
     }
     
     @IBAction func continueButtonTouchUpInside(_ sender: TextButton) {
+        GAManager.track(action: .introductionColor(digit: exercise.firstDigit, color: pencilToColor(pencil: selectedPencil)), with: .game)
         globalStagePassing.updateElapsedTime()
         self.view.isUserInteractionEnabled = false
         Game.current.setColor(pencilToColor(pencil: selectedPencil!), forDigit: exercise.firstDigit)
