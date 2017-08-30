@@ -396,7 +396,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     }
 
     var beforeExamMode: InBetweenMode {
-        let type = globalStagePassing.type
+        let type = StageType(rawValue: globalStagePassing._type)!
         switch type {
         case .introduction:
             fatalError("Unexpected introduction level in ExerciseVC")
@@ -415,7 +415,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         if globalStagePassing._type == StageType.training.rawValue {
             return .trainingPassed
         }
-        let type = globalStagePassing.type
+        let type = StageType(rawValue: globalStagePassing._type)!
         switch type {
         case .introduction:
             fatalError("Unexpected introduction level in ExerciseVC")
@@ -433,7 +433,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     }
 
     var examFailedMode: InBetweenMode {
-        let type = globalStagePassing.type
+        let type = StageType(rawValue: globalStagePassing._type)!
         switch type {
         case .introduction:
             fatalError("Unexpected introduction level in ExerciseVC")

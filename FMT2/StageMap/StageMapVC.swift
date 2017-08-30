@@ -385,7 +385,7 @@ class StageMapVC: FadeInOutVC {
             } else {
                 GAManager.track(action: .levelContinue(level: curGlobalStagePassing!.type), with: .game)
             }
-            let duration = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(stage.type.string) : 0
+            let duration = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(StageType(rawValue: stage._type)!.string) : 0
             self.perform(#selector(self.loadGlobalStage), with: curGlobalStagePassing!, afterDelay: duration)
         } else {
             let globalStagePassing = globalStages[index].globalStage.createGlobalStagePassing()
@@ -393,10 +393,10 @@ class StageMapVC: FadeInOutVC {
             globalStagePassing.inGame = false
             globalStagePassing.setZeroIndex()
             GAManager.track(action: .levelUserRestart(level: globalStagePassing.type), with: .game)
-            let duration = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(stage.type.string) : 0
+            let duration = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(StageType(rawValue: stage._type)!.string) : 0
             self.perform(#selector(self.loadGlobalStage), with: globalStagePassing, afterDelay: duration)
         }
-        SoundHelper.shared.playVoice(name: stage.type.string)
+        SoundHelper.shared.playVoice(name: StageType(rawValue: stage._type)!.string)
     }
 
     func drawLine() {

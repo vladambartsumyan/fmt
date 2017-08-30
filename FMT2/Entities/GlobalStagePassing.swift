@@ -51,11 +51,26 @@ class GlobalStagePassing: Object {
         guard index < stagesPassing.count else {
             return nil
         }
+        guard index >= 0 else {
+            return stagesPassing[0]
+        }
         return stagesPassing[index]
     }
     
     func mistake() -> MistakeResult {
         let result: MistakeResult = mistakeCountInExam == mistakeCount - 1 ? .soMuch : .normal
+        if self._type == StageType.training.rawValue {
+            let possibleExercises = Array(currentStagePassing!.stage.possibleExercises)
+            let exercise = possibleExercises.randomElem()!
+            let realm = try! Realm()
+            try! realm.write {
+                let exercisePassing = exercise.createExercisePassing()
+                realm.add(exercisePassing)
+                self.stagesPassing.first!.exercises.append(exercisePassing)
+                currentStagePassing!.index += 1
+            }
+            return result
+        }
         if inGame || currentStagePassing!.stage.mode == .exam {
             currentStagePassing?.mistake()
         }

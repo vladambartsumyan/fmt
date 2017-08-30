@@ -34,9 +34,10 @@ class Stage: Object {
         stagePassing.stage = self
         if mode == .exam {
             let possibleExercisesCopy = Array(self.possibleExercises)
-            var requiredExercises = Array(possibleExercisesCopy.dropLast(possibleExercisesCopy.count - numberOfExercises))
-            var additionalExercises = _type == StageType.permutation.rawValue ? [] : Array(possibleExercisesCopy.dropFirst(numberOfExercises))
-            for _ in 0..<requiredExercises.count {
+            var requiredExercises = [StageType.permutation.rawValue, StageType.training.rawValue].contains(_type) ? possibleExercisesCopy : Array(possibleExercisesCopy.dropLast(possibleExercisesCopy.count - numberOfExercises))
+            var additionalExercises = [StageType.permutation.rawValue, StageType.training.rawValue].contains(_type) ? [] : Array(possibleExercisesCopy.dropFirst(numberOfExercises))
+            let reqCount = [StageType.permutation.rawValue, StageType.training.rawValue].contains(_type) ? numberOfExercises : requiredExercises.count
+            for _ in 0..<reqCount {
                 let exercise = requiredExercises.eraseRandomElem()!
                 stagePassing.exercises.append(exercise.createExercisePassing())
             }

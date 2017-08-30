@@ -36,7 +36,7 @@ class Game {
     }
     
     var introductionLevelProgress: (Int, Int) {
-        let globalStagePassing = (try! Realm()).objects(GlobalStagePassing.self).filter{ $0.type == .introduction }.first!
+        let globalStagePassing = (try! Realm()).objects(GlobalStagePassing.self).filter{ $0._type == StageType.introduction.rawValue }.first!
         let stagePassing = globalStagePassing.stagesPassing.filter{$0.stage.mode == .simple}.first!
         return (stagePassing.index, stagePassing.exercises.count)
     }

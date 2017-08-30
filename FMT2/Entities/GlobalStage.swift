@@ -34,7 +34,7 @@ class GlobalStage: Object {
     static func createTrainingGlobalStage() -> GlobalStage {
         var possibleExercises: [Exercise] = []
         let globalStagesPassing = Game.current.globalStagesPassing.filter {
-            $0.type != .introduction && $0.isPassed
+            $0._type != StageType.introduction.rawValue && $0.isPassed
         }
         for item in globalStagesPassing {
             let notExamStages: [Stage] = item.globalStage.stages.filter{$0.mode != .exam}

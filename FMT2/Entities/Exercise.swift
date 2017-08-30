@@ -105,7 +105,7 @@ class Exercise: Object {
             switch max {
             case 4: return ([7, 9, 10, 12, 15], required: 8)
             case 5: return ([15, 16, 18, 21, 27], required: 9)
-            case 6: return ([16, 18, 20, 21, 24], required: 10)
+            case 6: return ([16, 18, 20, 21, 28], required: 10)
             case 7: return ([16, 20, 21, 24, 27], required: 11)
             case 8: return ([20, 21, 24, 27, 28], required: 12)
             case 9: return ([15, 18, 27, 28, 32], required: 13)
