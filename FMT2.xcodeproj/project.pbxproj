@@ -1053,9 +1053,11 @@
 		659277D71F03C4A7009BC04E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659277D51F03C4A7009BC04E /* LaunchScreen.storyboard */; };
 		659277DF1F03C718009BC04E /* StageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277DE1F03C718009BC04E /* StageType.swift */; };
 		659277E21F03CFE7009BC04E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277E11F03CFE7009BC04E /* Exercise.swift */; };
-		659BA8CB1F42F50200451043 /* StageMapVC+InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BA8CA1F42F50200451043 /* StageMapVC+InAppPurchase.swift */; };
+		659BA8CB1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BA8CA1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift */; };
 		65AB30591F3C7D99008B4A62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */; };
 		65B7D0A41F4336CC00A371E4 /* GAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7D0A31F4336CC00A371E4 /* GAManager.swift */; };
+		65C02BFD1F55BDD500FCD327 /* PurchaseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C02BFB1F55BDD500FCD327 /* PurchaseAlert.swift */; };
+		65C02BFE1F55BDD500FCD327 /* PurchaseAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C02BFC1F55BDD500FCD327 /* PurchaseAlert.xib */; };
 		65C39D091F43176E006ADA59 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C39D081F43176E006ADA59 /* StoreKit.framework */; };
 		65CE78CD1F44482200D78A4C /* TrackingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE78CC1F44482200D78A4C /* TrackingScreen.swift */; };
 		65CE78CF1F44492100D78A4C /* TrackingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE78CE1F44492100D78A4C /* TrackingAction.swift */; };
@@ -1070,6 +1072,7 @@
 		65F6054F1F0CE35C004421E5 /* IntroductionPermutationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6054D1F0CE35C004421E5 /* IntroductionPermutationVC.swift */; };
 		65F605501F0CE35C004421E5 /* IntroductionPermutationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F6054E1F0CE35C004421E5 /* IntroductionPermutationVC.xib */; };
 		65FCFFA41F43044C0026C7C4 /* lockedlock.svg in Resources */ = {isa = PBXBuildFile; fileRef = 65FCFFA31F43044C0026C7C4 /* lockedlock.svg */; };
+		65FDE14C1F569C3A008888FC /* cross.svg in Resources */ = {isa = PBXBuildFile; fileRef = 65FDE14B1F569C3A008888FC /* cross.svg */; };
 		A6CB13A3330107AEFCBADA23 /* Pods_FMT2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECB2962FE3E71B7E2BB64BE /* Pods_FMT2.framework */; };
 /* End PBXBuildFile section */
 
@@ -2122,10 +2125,12 @@
 		659277D81F03C4A7009BC04E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		659277DE1F03C718009BC04E /* StageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StageType.swift; path = Entities/StageType.swift; sourceTree = "<group>"; };
 		659277E11F03CFE7009BC04E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Entities/Exercise.swift; sourceTree = "<group>"; };
-		659BA8CA1F42F50200451043 /* StageMapVC+InAppPurchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StageMapVC+InAppPurchase.swift"; path = "StageMap/StageMapVC+InAppPurchase.swift"; sourceTree = "<group>"; };
+		659BA8CA1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StageMapVC+SKProductRequestDelegate.swift"; path = "StageMap/StageMapVC+SKProductRequestDelegate.swift"; sourceTree = "<group>"; };
 		65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65AB305A1F3C7EA1008B4A62 /* FMT2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMT2-Bridging-Header.h"; sourceTree = "<group>"; };
 		65B7D0A31F4336CC00A371E4 /* GAManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAManager.swift; sourceTree = "<group>"; };
+		65C02BFB1F55BDD500FCD327 /* PurchaseAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PurchaseAlert.swift; path = StageMap/PurchaseAlert.swift; sourceTree = "<group>"; };
+		65C02BFC1F55BDD500FCD327 /* PurchaseAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PurchaseAlert.xib; path = StageMap/PurchaseAlert.xib; sourceTree = "<group>"; };
 		65C39D081F43176E006ADA59 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		65CE78CC1F44482200D78A4C /* TrackingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingScreen.swift; path = Common/TrackingScreen.swift; sourceTree = "<group>"; };
 		65CE78CE1F44492100D78A4C /* TrackingAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingAction.swift; path = Common/TrackingAction.swift; sourceTree = "<group>"; };
@@ -2141,6 +2146,7 @@
 		65F6054D1F0CE35C004421E5 /* IntroductionPermutationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroductionPermutationVC.swift; path = Permutation/IntroductionPermutationVC.swift; sourceTree = "<group>"; };
 		65F6054E1F0CE35C004421E5 /* IntroductionPermutationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroductionPermutationVC.xib; path = Permutation/IntroductionPermutationVC.xib; sourceTree = "<group>"; };
 		65FCFFA31F43044C0026C7C4 /* lockedlock.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lockedlock.svg; path = Resource/images/lockedlock.svg; sourceTree = "<group>"; };
+		65FDE14B1F569C3A008888FC /* cross.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = cross.svg; path = Resource/images/cross.svg; sourceTree = "<group>"; };
 		8A08864C89FD1F606BCB458B /* Pods-FMT2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMT2.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMT2/Pods-FMT2.release.xcconfig"; sourceTree = "<group>"; };
 		8EEB223F15EDE19A1172DD45 /* Pods-FMT2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMT2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMT2/Pods-FMT2.debug.xcconfig"; sourceTree = "<group>"; };
 		BECB2962FE3E71B7E2BB64BE /* Pods_FMT2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMT2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2316,10 +2322,12 @@
 			isa = PBXGroup;
 			children = (
 				65104DB31F0510A400547F35 /* StageMapVC.swift */,
-				659BA8CA1F42F50200451043 /* StageMapVC+InAppPurchase.swift */,
+				659BA8CA1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift */,
 				65104DB41F0510A400547F35 /* StageMapVC.xib */,
 				65DE92781F0A492F009DDB77 /* StageCell.swift */,
 				65DE92791F0A492F009DDB77 /* StageCell.xib */,
+				65C02BFB1F55BDD500FCD327 /* PurchaseAlert.swift */,
+				65C02BFC1F55BDD500FCD327 /* PurchaseAlert.xib */,
 			);
 			name = StageMap;
 			sourceTree = "<group>";
@@ -2371,6 +2379,7 @@
 		653C42511F38A4F900407C46 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				65FDE14B1F569C3A008888FC /* cross.svg */,
 				65FCFFA31F43044C0026C7C4 /* lockedlock.svg */,
 				65325F591F3DEAD200D46AF3 /* VoiceButton.svg */,
 				653C42541F38A50B00407C46 /* 0.svg */,
@@ -3597,7 +3606,7 @@
 				TargetAttributes = {
 					659277C81F03C4A7009BC04E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = AYP2U9QY37;
+						DevelopmentTeam = P6RBC95RL3;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
@@ -3888,6 +3897,7 @@
 				653C46601F38A50F00407C46 /* x222purple.svg in Resources */,
 				65665D9D1F278D32006705A2 /* x22-3.mp3 in Resources */,
 				65665DE41F278D32006705A2 /* x53-1.mp3 in Resources */,
+				65FDE14C1F569C3A008888FC /* cross.svg in Resources */,
 				65665DCF1F278D32006705A2 /* x44-1.mp3 in Resources */,
 				65665E901F278DA0006705A2 /* multiplicationBy10.mp3 in Resources */,
 				653C46BB1F38A50F00407C46 /* x313gray.svg in Resources */,
@@ -3987,6 +3997,7 @@
 				653C47711F38A50F00407C46 /* x566purple.svg in Resources */,
 				653C47D71F38A50F00407C46 /* x777purple.svg in Resources */,
 				653C47871F38A50F00407C46 /* x588gray.svg in Resources */,
+				65C02BFE1F55BDD500FCD327 /* PurchaseAlert.xib in Resources */,
 				653C472D1F38A50F00407C46 /* x464yellow.svg in Resources */,
 				653C47F71F38A50F00407C46 /* x818green.svg in Resources */,
 				653C46FF1F38A50F00407C46 /* x388purple.svg in Resources */,
@@ -4708,7 +4719,7 @@
 				650EF2AD1F0409830047C30C /* ServerTaskManager.swift in Sources */,
 				65DE927A1F0A492F009DDB77 /* StageCell.swift in Sources */,
 				659277CD1F03C4A7009BC04E /* AppDelegate.swift in Sources */,
-				659BA8CB1F42F50200451043 /* StageMapVC+InAppPurchase.swift in Sources */,
+				659BA8CB1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift in Sources */,
 				650EF2E11F04E58C0047C30C /* Date+DayCompare.swift in Sources */,
 				650EF2CA1F04E4450047C30C /* MenuButtonColors.swift in Sources */,
 				653481A61F0BD0800094A9CB /* IntroductionTenVC.swift in Sources */,
@@ -4730,6 +4741,7 @@
 				650EF2B91F04E3AF0047C30C /* IsGameVC.swift in Sources */,
 				650EF2CD1F04E4450047C30C /* TopButton.swift in Sources */,
 				65DE92681F0A2DAA009DDB77 /* IntroductionZeroVC.swift in Sources */,
+				65C02BFD1F55BDD500FCD327 /* PurchaseAlert.swift in Sources */,
 				65DE92731F0A3FE6009DDB77 /* ReverseImageOrder.swift in Sources */,
 				656222B51F0538EB00B6C64B /* MoreStatisticVC.swift in Sources */,
 				656BCDEF1F0A715C00F81798 /* IntroductionOneVC.swift in Sources */,
@@ -4877,15 +4889,15 @@
 			baseConfigurationReference = 8EEB223F15EDE19A1172DD45 /* Pods-FMT2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = AYP2U9QY37;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = P6RBC95RL3;
 				INFOPLIST_FILE = FMT2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = team.leko.fmt;
+				PRODUCT_BUNDLE_IDENTIFIER = leko.team.fmt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c1b30968-bb60-45d6-baa5-fc03c6fd71a3";
-				PROVISIONING_PROFILE_SPECIFIER = worksolutions;
+				PROVISIONING_PROFILE = "51649677-1a5b-4a1f-914f-e21ec7f55268";
+				PROVISIONING_PROFILE_SPECIFIER = "Leko Distribution Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "FMT2/FMT2-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -4896,15 +4908,15 @@
 			baseConfigurationReference = 8A08864C89FD1F606BCB458B /* Pods-FMT2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = AYP2U9QY37;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = P6RBC95RL3;
 				INFOPLIST_FILE = FMT2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = team.leko.fmt;
+				PRODUCT_BUNDLE_IDENTIFIER = leko.team.fmt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c1b30968-bb60-45d6-baa5-fc03c6fd71a3";
-				PROVISIONING_PROFILE_SPECIFIER = worksolutions;
+				PROVISIONING_PROFILE = "51649677-1a5b-4a1f-914f-e21ec7f55268";
+				PROVISIONING_PROFILE_SPECIFIER = "Leko Distribution Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "FMT2/FMT2-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

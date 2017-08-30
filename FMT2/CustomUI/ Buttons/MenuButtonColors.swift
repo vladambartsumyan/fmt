@@ -1,12 +1,12 @@
 import UIKit
 import SVGKit
 
-enum MenuButtonColor {
+enum ButtonColor {
     case green
     case orange
 }
 
-extension MenuButtonColor {
+extension ButtonColor {
 
     static let greenShadowColor = UIColor.init(red: 31/255, green: 134/255, blue: 46/255, alpha: 1.0)
 

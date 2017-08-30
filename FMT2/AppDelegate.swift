@@ -166,6 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func registerGoogleAnalytics() {
         guard let gai = GAI.sharedInstance() else {
             assert(false, "Google Analytics not configured correctly")
+            return
         }
         gai.trackUncaughtExceptions = true
         gai.defaultTracker = gai.tracker(withTrackingId: "UA-103386897-2")

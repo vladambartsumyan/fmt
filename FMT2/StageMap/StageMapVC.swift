@@ -51,7 +51,7 @@ class StageMapVC: FadeInOutVC {
     @IBOutlet weak var heightOfBottomPanel: NSLayoutConstraint!
     @IBOutlet weak var proportionOfBottomPanel: NSLayoutConstraint!
 
-    let isFullVersion = UserDefaults.standard.bool(forKey: UserDefaultsKey.isFullVersion.rawValue)
+    var isFullVersion = UserDefaults.standard.bool(forKey: UserDefaultsKey.isFullVersion.rawValue)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,7 +145,7 @@ class StageMapVC: FadeInOutVC {
             proportionOfBottomPanel.priority = 1000
         } else {
             heightOfBottomPanel.priority = 1000
-            proportionOfBottomPanel.priority = 900
+            proportionOfBottomPanel.priority = 900 
         }
         trainingButton.setTitle(titleText: NSLocalizedString("StageMap.trainingButton.title", comment: ""))
     }
@@ -367,13 +367,17 @@ class StageMapVC: FadeInOutVC {
         let index = mapButtons.index(of: sender)!
         
         if !isFullVersion && index >= lockedFrom {
-            fetchProduct()
+            let purchaseAlert = PurchaseAlert(nibName: "PurchaseAlert", bundle: nil)
+            purchaseAlert.buyAction = buyProduct
+            purchaseAlert.restoreAction = restoreProduct
+            purchaseAlert.modalPresentationStyle = .overCurrentContext
+            purchaseAlert.modalTransitionStyle = .crossDissolve
+            self.present(purchaseAlert, animated: true, completion: nil)
             return
         }
         
         self.view.isUserInteractionEnabled = false
         let stage = globalStages[index]
-        let duration = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(stage.type.string) : 0
         if curGlobalStagePassing != nil && stage == curGlobalStagePassing {
             if curGlobalStagePassing!.index == -1 {
                 curGlobalStagePassing!.setZeroIndex()
@@ -381,6 +385,7 @@ class StageMapVC: FadeInOutVC {
             } else {
                 GAManager.track(action: .levelContinue(level: curGlobalStagePassing!.type), with: .game)
             }
+            let duration = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(stage.type.string) : 0
             self.perform(#selector(self.loadGlobalStage), with: curGlobalStagePassing!, afterDelay: duration)
         } else {
             let globalStagePassing = globalStages[index].globalStage.createGlobalStagePassing()
@@ -388,6 +393,7 @@ class StageMapVC: FadeInOutVC {
             globalStagePassing.inGame = false
             globalStagePassing.setZeroIndex()
             GAManager.track(action: .levelUserRestart(level: globalStagePassing.type), with: .game)
+            let duration = UserDefaults.standard.bool(forKey: UserDefaultsKey.voiceOn.rawValue) ? SoundHelper.shared.duration(stage.type.string) : 0
             self.perform(#selector(self.loadGlobalStage), with: globalStagePassing, afterDelay: duration)
         }
         SoundHelper.shared.playVoice(name: stage.type.string)

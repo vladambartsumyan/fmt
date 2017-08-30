@@ -31,4 +31,8 @@ class TextButton: LeapingButton {
         self.titleLeft.font = UIFont.boldSystemFont(ofSize: 16 * UIScreen.main.bounds.height / 480)
         // where 480 is number of pixels in iPhone 4 height and 16 is size of font for iPhone 4
     }
+    
+    func setBodyColor(bodyColor: ButtonColor) {
+        self.body.image = bodyColor.bodyImage
+    }
 }

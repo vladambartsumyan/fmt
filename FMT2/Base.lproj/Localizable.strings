@@ -130,4 +130,8 @@
 
 "StageMap.trainingButton.title" = "Тренировка";
 "StageMap.statistic" = "Пройдено уровней";
+"StageMap.alert.productNotFound.title" = "Ошибка";
+"StageMap.alert.productNotFound.message" = "Продукт не найден";
+"StageMap.alert.cantMakePurchase.title" = "Ошибка";
+"StageMap.alert.cantMakePurchase.message" = "Покупка невозможна для данного устройства";
 

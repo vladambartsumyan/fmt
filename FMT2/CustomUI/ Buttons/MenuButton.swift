@@ -15,7 +15,7 @@ class MenuButton: LeapingButton {
         self.addSubview(self.view)
     }
 
-    func setBodyColor(bodyColor: MenuButtonColor) {
+    func setBodyColor(bodyColor: ButtonColor) {
         self.body.image = bodyColor.bodyImage
     }
 
