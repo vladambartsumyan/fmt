@@ -148,6 +148,8 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
                 SoundHelper.shared.playVoice(name: nameTutorial)
                 self.perform(#selector(self.nextVC), with: nil, afterDelay: durationTutorial)
             }
+        } else {
+            self.view.isUserInteractionEnabled = true
         }
     }
     
@@ -164,6 +166,9 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
         }
     }
     
+    @IBAction func touchUp(_ sender: Any) {
+        self.view.isUserInteractionEnabled = false
+    }
 }
 
 

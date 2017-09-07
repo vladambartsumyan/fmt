@@ -50,7 +50,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="При умножении любого числа на один будет то же число" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="OCn-VB-Gc7">
-                    <rect key="frame" x="31.5" y="383" width="256" height="97.5"/>
+                    <rect key="frame" x="31.5" y="383" width="256" height="94.5"/>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="27"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -107,6 +107,7 @@
                                 <constraint firstAttribute="width" secondItem="Iv8-vA-aYV" secondAttribute="height" id="8OS-Cp-E1i"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="iYt-Fn-4b0"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="yOV-ZS-m7H"/>
                             </connections>
                         </view>
@@ -117,6 +118,7 @@
                                 <constraint firstAttribute="width" secondItem="T4X-F9-N11" secondAttribute="height" id="07o-z9-EgW"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="8GT-Qa-aCf"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="taU-Ax-pAi"/>
                             </connections>
                         </view>
@@ -127,6 +129,7 @@
                                 <constraint firstAttribute="width" secondItem="bUf-lX-MUl" secondAttribute="height" id="9Yu-yv-vcM"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="fCS-yA-MFg"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="tvu-ba-TCZ"/>
                             </connections>
                         </view>
@@ -137,6 +140,7 @@
                                 <constraint firstAttribute="width" secondItem="sRp-1t-AaC" secondAttribute="height" id="IG5-r6-ahS"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="8h7-ER-ggH"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="hFc-3L-D8T"/>
                             </connections>
                         </view>

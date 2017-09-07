@@ -206,10 +206,15 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
                     break
                 }
             } else {
+                self.view.isUserInteractionEnabled = true
                 _ = globalStagePassing.mistake()
                 GAManager.track(action: .introductionMistake(digit: exercise.firstDigit), with: .game)
             }
         }
+    }
+    
+    @IBAction func touchUp(_ sender: LeapingButton) {
+        self.view.isUserInteractionEnabled = false
     }
 }
 

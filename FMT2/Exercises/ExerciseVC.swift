@@ -329,6 +329,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                 }
                 if result == .soMuch {
                     GAManager.track(action: .levelRestart(level: StageType(rawValue: globalStagePassing._type)!), with: .game)
+                    view.isUserInteractionEnabled = true
                     globalStagePassing.reset()
                     let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
                     vc.globalStagePassing = globalStagePassing
@@ -336,6 +337,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
                     perform(#selector(nextVC), with: vc, afterDelay: duration)
                 }
             } else {
+                self.view.isUserInteractionEnabled = true
                 GAManager.track(action: .levelExerciseMistake(level: StageType(rawValue: globalStagePassing._type)!, firstDigit: exercise.firstDigit, secondDigit: exercise.secondDigit), with: .game)
                 _ = globalStagePassing.mistake()
             }
@@ -466,5 +468,9 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         fadeOut {
             AppDelegate.current.setRootVC(viewController)
         }
+    }
+    
+    @IBAction func touchUp(_ sender: LeapingButton) {
+        self.view.isUserInteractionEnabled = false
     }
 }

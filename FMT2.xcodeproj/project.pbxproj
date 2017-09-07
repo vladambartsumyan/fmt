@@ -791,6 +791,7 @@
 		6548535E1F0FD69100DFEA0A /* UIViewController+TimeAccumulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548535D1F0FD69100DFEA0A /* UIViewController+TimeAccumulation.swift */; };
 		654E50871F39FFB3009AE7E0 /* x46background.svg in Resources */ = {isa = PBXBuildFile; fileRef = 654E50861F39FFB3009AE7E0 /* x46background.svg */; };
 		65516E451F29F12400026289 /* multiplicationBy1begin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65516E441F29F12400026289 /* multiplicationBy1begin.mp3 */; };
+		655708C01F616AD400BD76E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 655708BF1F616AD400BD76E1 /* GoogleService-Info.plist */; };
 		656222A71F0537BB00B6C64B /* MenuButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656222A21F0537BB00B6C64B /* MenuButtonCell.swift */; };
 		656222A81F0537BB00B6C64B /* MenuButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656222A31F0537BB00B6C64B /* MenuButtonCell.xib */; };
 		656222A91F0537BB00B6C64B /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656222A41F0537BB00B6C64B /* MenuItem.swift */; };
@@ -1054,7 +1055,6 @@
 		659277DF1F03C718009BC04E /* StageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277DE1F03C718009BC04E /* StageType.swift */; };
 		659277E21F03CFE7009BC04E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277E11F03CFE7009BC04E /* Exercise.swift */; };
 		659BA8CB1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BA8CA1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift */; };
-		65AB30591F3C7D99008B4A62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */; };
 		65B7D0A41F4336CC00A371E4 /* GAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7D0A31F4336CC00A371E4 /* GAManager.swift */; };
 		65C02BFD1F55BDD500FCD327 /* PurchaseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C02BFB1F55BDD500FCD327 /* PurchaseAlert.swift */; };
 		65C02BFE1F55BDD500FCD327 /* PurchaseAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C02BFC1F55BDD500FCD327 /* PurchaseAlert.xib */; };
@@ -1861,6 +1861,7 @@
 		6548535D1F0FD69100DFEA0A /* UIViewController+TimeAccumulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+TimeAccumulation.swift"; path = "Common/UIViewController+TimeAccumulation.swift"; sourceTree = "<group>"; };
 		654E50861F39FFB3009AE7E0 /* x46background.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = x46background.svg; path = Resource/images/x46background.svg; sourceTree = "<group>"; };
 		65516E441F29F12400026289 /* multiplicationBy1begin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = multiplicationBy1begin.mp3; path = Sounds/Resource/multiplicationBy1/multiplicationBy1begin.mp3; sourceTree = "<group>"; };
+		655708BF1F616AD400BD76E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		656222A21F0537BB00B6C64B /* MenuButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuButtonCell.swift; path = Menu/MenuButtonCell.swift; sourceTree = "<group>"; };
 		656222A31F0537BB00B6C64B /* MenuButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuButtonCell.xib; path = Menu/MenuButtonCell.xib; sourceTree = "<group>"; };
 		656222A41F0537BB00B6C64B /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItem.swift; path = Menu/MenuItem.swift; sourceTree = "<group>"; };
@@ -2126,7 +2127,6 @@
 		659277DE1F03C718009BC04E /* StageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StageType.swift; path = Entities/StageType.swift; sourceTree = "<group>"; };
 		659277E11F03CFE7009BC04E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Entities/Exercise.swift; sourceTree = "<group>"; };
 		659BA8CA1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StageMapVC+SKProductRequestDelegate.swift"; path = "StageMap/StageMapVC+SKProductRequestDelegate.swift"; sourceTree = "<group>"; };
-		65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65AB305A1F3C7EA1008B4A62 /* FMT2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMT2-Bridging-Header.h"; sourceTree = "<group>"; };
 		65B7D0A31F4336CC00A371E4 /* GAManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAManager.swift; sourceTree = "<group>"; };
 		65C02BFB1F55BDD500FCD327 /* PurchaseAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PurchaseAlert.swift; path = StageMap/PurchaseAlert.swift; sourceTree = "<group>"; };
@@ -3472,7 +3472,7 @@
 		659277CB1F03C4A7009BC04E /* FMT2 */ = {
 			isa = PBXGroup;
 			children = (
-				65AB30581F3C7D99008B4A62 /* GoogleService-Info.plist */,
+				655708BF1F616AD400BD76E1 /* GoogleService-Info.plist */,
 				653C424F1F38A32E00407C46 /* Assets.xcassets */,
 				659277CC1F03C4A7009BC04E /* AppDelegate.swift */,
 				65AB305A1F3C7EA1008B4A62 /* FMT2-Bridging-Header.h */,
@@ -4016,6 +4016,7 @@
 				653481A71F0BD0800094A9CB /* IntroductionTenVC.xib in Resources */,
 				653C463B1F38A50F00407C46 /* x77background.svg in Resources */,
 				653C46231F38A50F00407C46 /* x58background.svg in Resources */,
+				655708C01F616AD400BD76E1 /* GoogleService-Info.plist in Resources */,
 				65665E9E1F278DE8006705A2 /* multiplicationBy1example.mp3 in Resources */,
 				653C47201F38A50F00407C46 /* x454purple.svg in Resources */,
 				65665DC91F278D32006705A2 /* x39-2.mp3 in Resources */,
@@ -4144,7 +4145,6 @@
 				653C46A41F38A50F00407C46 /* x288blue.svg in Resources */,
 				653C48301F38A50F00407C46 /* x5105green.svg in Resources */,
 				65665DAF1F278D32006705A2 /* x28-3.mp3 in Resources */,
-				65AB30591F3C7D99008B4A62 /* GoogleService-Info.plist in Resources */,
 				656BCDF41F0A75B200F81798 /* MultByOneExampleVC.xib in Resources */,
 				653C466C1F38A50F00407C46 /* x233purple.svg in Resources */,
 				65665D9A1F278D32006705A2 /* x21-1.mp3 in Resources */,

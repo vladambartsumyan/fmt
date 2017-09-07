@@ -27,6 +27,7 @@ class LeapingButton: UIControl {
     }
 
     func touchUp() {
+        self.sendValueChanged()
         UIView.animate(withDuration: 0.1, animations: {
             self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         }) { _ in
@@ -82,6 +83,9 @@ class LeapingButton: UIControl {
         }
     }
     
+    func sendValueChanged() {
+        self.sendActions(for: .valueChanged)
+    }
 
     func sendTouchUpInside() {
         self.sendActions(for: .touchUpInside)

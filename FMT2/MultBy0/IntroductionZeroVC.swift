@@ -153,6 +153,8 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
                 self.perform(#selector(self.play), with: self.globalStagePassing.type.string + "tutorial2", afterDelay: tutorial1Duration)
                 self.perform(#selector(self.nextVC), with: nil, afterDelay: tutorial1Duration + tutorial2Duration)
             }
+        } else {
+            self.view.isUserInteractionEnabled = true
         }
     }
     
@@ -169,6 +171,10 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
         }
     }
 
+    @IBAction func touchUp(_ sender: Any) {
+        self.view.isUserInteractionEnabled = false
+    }
+    
 }
 
 

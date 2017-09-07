@@ -93,7 +93,7 @@ class Exercise: Object {
         case 3:
             switch max {
             case 3: return ([7, 8, 10, 12, 14], required: 6)
-            case 4: return ([7, 8, 9, 10, 14], required: 7)
+            case 4: return ([6, 8, 9, 10, 14], required: 7)
             case 5: return ([10, 12, 14, 16, 18], required: 8)
             case 6: return ([10, 12, 14, 15, 16], required: 9)
             case 7: return ([14, 15, 16, 18, 20], required: 10)

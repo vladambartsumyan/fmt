@@ -123,6 +123,7 @@
                                 <constraint firstAttribute="width" secondItem="9Df-is-vE4" secondAttribute="height" id="UAN-qa-DRM"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="7iT-2l-G9i"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="oRx-14-NfP"/>
                             </connections>
                         </view>
@@ -133,6 +134,7 @@
                                 <constraint firstAttribute="width" secondItem="96C-Sg-jkK" secondAttribute="height" id="Vxi-cD-rtw"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="xqp-qc-U8O"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="qG1-JV-yDT"/>
                             </connections>
                         </view>
@@ -143,6 +145,7 @@
                                 <constraint firstAttribute="width" secondItem="vNl-lC-U1J" secondAttribute="height" id="mvT-yJ-XSb"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="HEI-p5-TLq"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="ptc-7k-cUW"/>
                             </connections>
                         </view>
@@ -153,6 +156,7 @@
                                 <constraint firstAttribute="width" secondItem="mO9-zw-zil" secondAttribute="height" id="USt-uY-nI1"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="pQb-sf-P2o"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="B63-JR-hsD"/>
                             </connections>
                         </view>

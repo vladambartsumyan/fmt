@@ -204,6 +204,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
                 perform(#selector(nextScreen), with: vc, afterDelay: duration)
             }
         } else {
+            self.view.isUserInteractionEnabled = true
             GAManager.track(action: .levelDigitMistake(level: StageType(rawValue: globalStagePassing._type)!, firstDigit: exercise.firstDigit, secondDigit: exercise.secondDigit, digit: isSecondNumber ? exercise.secondDigit : exercise.firstDigit), with: .game)
         }
     }
@@ -265,5 +266,9 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
         fadeOut {
             AppDelegate.current.setRootVC(viewController)
         }
+    }
+    
+    @IBAction func touchUp(_ sender: Any) {
+        self.view.isUserInteractionEnabled = false
     }
 }

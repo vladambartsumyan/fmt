@@ -169,7 +169,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         gai.trackUncaughtExceptions = true
-        gai.defaultTracker = gai.tracker(withTrackingId: "UA-103386897-2")
+        gai.defaultTracker = gai.tracker(withTrackingId: "UA-103178212-1")
         gai.logger.logLevel = .verbose
     }
     

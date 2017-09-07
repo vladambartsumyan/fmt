@@ -107,6 +107,7 @@
                                 <constraint firstAttribute="width" secondItem="Iv8-vA-aYV" secondAttribute="height" id="8OS-Cp-E1i"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="QFx-ef-0WX"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="yOV-ZS-m7H"/>
                             </connections>
                         </view>
@@ -117,6 +118,7 @@
                                 <constraint firstAttribute="width" secondItem="T4X-F9-N11" secondAttribute="height" id="07o-z9-EgW"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="bIU-Xw-P7r"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="taU-Ax-pAi"/>
                             </connections>
                         </view>
@@ -127,6 +129,7 @@
                                 <constraint firstAttribute="width" secondItem="bUf-lX-MUl" secondAttribute="height" id="9Yu-yv-vcM"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="d6a-5L-Rca"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="tvu-ba-TCZ"/>
                             </connections>
                         </view>
@@ -137,6 +140,7 @@
                                 <constraint firstAttribute="width" secondItem="sRp-1t-AaC" secondAttribute="height" id="IG5-r6-ahS"/>
                             </constraints>
                             <connections>
+                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="3fG-zs-9hI"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="hFc-3L-D8T"/>
                             </connections>
                         </view>
