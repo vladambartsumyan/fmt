@@ -115,10 +115,12 @@ class GlobalStagePassing: Object {
             let exercise = possibleExercises.randomElem()!
             let realm = try! Realm()
             try! realm.write {
+                currentStagePassing!.currentExercisePassing!.isPassed = true
+                currentStagePassing!.currentExercisePassing!.passedAt = Date()
+                currentStagePassing!.index += 1
                 let exercisePassing = exercise.createExercisePassing()
                 realm.add(exercisePassing)
                 self.stagesPassing.first!.exercises.append(exercisePassing)
-                currentStagePassing!.index += 1
             }
             return
         }

@@ -20,6 +20,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var secondVariant: VariantButton!
     @IBOutlet weak var thirdVariant: VariantButton!
     @IBOutlet weak var fourthVariant: VariantButton!
+    var buttons: [VariantButton] = []
 
     // Exercise
     @IBOutlet weak var fst1: UIImageView!
@@ -59,6 +60,8 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        [firstVariant, secondVariant, thirdVariant, fourthVariant].forEach{$0?.isExclusiveTouch = true}
+        buttons = [firstVariant, secondVariant, thirdVariant, fourthVariant] 
         configureLevel()
         configureTopBar()
         configureImages()
@@ -70,7 +73,9 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         super.viewDidAppear(animated)
         globalStagePassing.addElapsedTime()
         fadeIn {
-            SoundHelper.shared.playVoice(name: "x\(self.exercise.firstDigit)\(self.exercise.secondDigit)-1")
+            self.globalStagePassing._type == StageType.permutation.rawValue ? 
+                SoundHelper.shared.playVoice(name: "x\(self.exercise.secondDigit)\(self.exercise.firstDigit)-1") :
+                SoundHelper.shared.playVoice(name: "x\(self.exercise.firstDigit)\(self.exercise.secondDigit)-1")
         }
         if self.globalStagePassing.type == .multiplicationBy0 {
             self.secondDigit.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)
@@ -215,12 +220,14 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         let requiredIndex = Int.random(min: 0, max: 2)
         let requiredVariant = variantButtons[requiredIndex]
         requiredVariant.setTitle(titleText: "\(required)")
+        requiredVariant.isWrongAnswer = true
         variantButtons.remove(at: requiredIndex)
         
         for button in variantButtons {
             let variant = variants.randomElem()!
             variants.remove(at: variants.index(of: variant)!)
             button.setTitle(titleText: "\(variant)")
+            button.isWrongAnswer = true
         }
     }
 
@@ -267,24 +274,29 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         }
     }
 
-    @IBAction func variantTouchUpInside(_ sender: VariantButton) {
-        let duration = sender.voiceDuration
+    func showSecondExercise() {
         let viewsOut: [[UIView]] = [[fst1, fst2, snd1, snd2, question, equality, mult, res1, res2], 
-                                 [firstVariant, secondVariant, thirdVariant, fourthVariant]]
+                                    [firstVariant, secondVariant, thirdVariant, fourthVariant]]
         let viewsIn: [[UIView]] = [[fst1, fst2, snd1, snd2, question, equality, mult], 
                                    [firstVariant, secondVariant, thirdVariant, fourthVariant]]
+        self.fadeOut(array: viewsOut) {
+            self.configureVariantPanel()
+            self.configureExercise()
+            self.fadeIn(array: viewsIn) {
+                SoundHelper.shared.playVoice(name: "x\(self.exercise.firstDigit)\(self.exercise.secondDigit)-1")
+                self.view.isUserInteractionEnabled = true
+            }
+        }
+    }
+    
+    @IBAction func variantTouchUpInside(_ sender: VariantButton) {
+        let duration = sender.voiceDuration
         if !sender.isWrongAnswer {
             self.view.isUserInteractionEnabled = false
             if globalStagePassing._type == StageType.permutation.rawValue && isFirstExercise {
                 self.isFirstExercise = false
                 rightAnswerAppearing {
-                    self.fadeOut(array: viewsOut) {
-                        self.configureVariantPanel()
-                        self.configureExercise()
-                        self.fadeIn(array: viewsIn) {
-                            self.view.isUserInteractionEnabled = true
-                        }
-                    }
+                    self.perform(#selector(self.showSecondExercise), with: nil, afterDelay: duration)
                 }
             } else {
                 if mode == .exam {

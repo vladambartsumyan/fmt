@@ -4,10 +4,10 @@ import SVGKit
 class StartScreenVC: FadeInOutVC {
     
     @IBOutlet weak var image: UIImageView!
-
-    @IBOutlet weak var text: UILabel!
     
     @IBOutlet weak var button: TextButton!
+    
+    @IBOutlet weak var titleImage: UIImageView!
     
     let isNewGame = Game.current.newGame
     
@@ -17,7 +17,6 @@ class StartScreenVC: FadeInOutVC {
     override func viewDidLoad() {
         self.needsFadeIn = false
         super.viewDidLoad()
-        configureText()
         configureButton()
         self.image.image = UIImage(named: "start")
         background.image = SVGKImage(named: "background").uiImage
@@ -33,7 +32,7 @@ class StartScreenVC: FadeInOutVC {
     func prepareAnimation() {
         self.view.layoutSubviews()
         self.frameForImage = image.frame
-        self.text.alpha = 0.0
+        self.titleImage.alpha = 0.0
         self.button.alpha = 0.0
         self.background.alpha = 0.0
     }
@@ -48,7 +47,7 @@ class StartScreenVC: FadeInOutVC {
             self.image.frame = self.frameForImage!
         }) { (completed) in
             UIView.animate(withDuration: 0.5, animations: {
-                self.text.alpha = 1.0
+                self.titleImage.alpha = 1.0
                 self.button.alpha = 1.0
                 self.background.alpha = 1.0
             })
@@ -57,14 +56,6 @@ class StartScreenVC: FadeInOutVC {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    func configureText() {
-        text.attributedText = createAttributedText(
-            fromString: NSLocalizedString("FunnyMultiTable", comment: ""), 
-            strokeColor: UIColor.init(white: 100/255, alpha: 1), 
-            sizeForIPhone7Plus: 43
-        )
     }
     
     func createAttributedText(fromString string: String, strokeColor: UIColor, sizeForIPhone7Plus size: CGFloat) -> NSAttributedString {
@@ -107,10 +98,10 @@ class StartScreenVC: FadeInOutVC {
     }
     
     override func getFadeInArray() -> [[UIView]] {
-        return [[image], [text], [button]]
+        return [[image], [titleImage], [button]]
     }
     
     override func getFadeOutArray() -> [[UIView]] {
-        return [[image], [text], [button]]
+        return [[image], [titleImage], [button]]
     }
 }

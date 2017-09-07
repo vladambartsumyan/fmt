@@ -32,6 +32,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        [variantButton1, variantButton2, variantButton3, variantButton4].forEach{$0?.isExclusiveTouch = true}
         configureLevel()
         configureQuestion()
         configureTopBar()
@@ -138,6 +139,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
         let isExam = self.mode == .exam
         if !sender.isWrongAnswer {
+            self.view.isUserInteractionEnabled = false
             globalStagePassing.updateElapsedTime()
             if isExam {
                 GAManager.track(action: .introductionExamRightAnswer(digit: exercise.firstDigit), with: .game)
@@ -180,6 +182,7 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
             }
         } else {
             if isExam {
+                self.view.isUserInteractionEnabled = false
                 globalStagePassing.updateElapsedTime()
                 GAManager.track(action: .introductionExamMistake(digit: exercise.firstDigit), with: .game)
                 let result = globalStagePassing.mistake()

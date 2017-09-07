@@ -42,7 +42,7 @@ class Game {
     }
     
     var exercisesProgress: (Int, Int) {
-        let exercisesGlobalStagesPassing = (try! Realm()).objects(GlobalStagePassing.self).filter{ $0.type != .introduction }
+        let exercisesGlobalStagesPassing = (try! Realm()).objects(GlobalStagePassing.self).filter{ $0._type != StageType.introduction.rawValue }
         let exercisesStagesPassing = exercisesGlobalStagesPassing.flatMap{ $0.stagesPassing }.filter{ $0.stage.mode == .simple }
         let passedCount = exercisesStagesPassing.reduce(0){ $0.0 + $0.1.index }
         let totalCount = exercisesStagesPassing.reduce(0){ $0.0 + $0.1.exercises.count }

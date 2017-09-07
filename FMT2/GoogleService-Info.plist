@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>TRACKING_ID</key>
-	<string>UA-103386897-2</string>
+	<string>UA-103178212-1</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>team.leko.fmt</string>
+	<string>leko.team.fmt</string>
 	<key>PROJECT_ID</key>
-	<string>leko-fmt</string>
+	<string>tablica-umnojeniya</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -21,6 +21,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<false/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:993924583332:ios:af79966f6585c35a</string>
+	<string>1:636837804151:ios:1f5ed7d52d439a1a</string>
 </dict>
 </plist>
