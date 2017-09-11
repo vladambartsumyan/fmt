@@ -47,7 +47,6 @@
 		650EF2E31F04E58C0047C30C /* Int+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EF2DC1F04E58C0047C30C /* Int+Random.swift */; };
 		650EF2E41F04E58C0047C30C /* UIColor+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EF2DD1F04E58C0047C30C /* UIColor+init.swift */; };
 		650EF2E81F04E6070047C30C /* SoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EF2E71F04E6070047C30C /* SoundHelper.swift */; };
-		650EF2ED1F04E6110047C30C /* Background Loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 650EF2E91F04E6110047C30C /* Background Loop.mp3 */; };
 		650EF2EE1F04E6110047C30C /* Default.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 650EF2EA1F04E6110047C30C /* Default.mp3 */; };
 		650EF2EF1F04E6110047C30C /* Green.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 650EF2EB1F04E6110047C30C /* Green.mp3 */; };
 		650EF2F01F04E6110047C30C /* Wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 650EF2EC1F04E6110047C30C /* Wrong.mp3 */; };
@@ -1055,6 +1054,7 @@
 		659277DF1F03C718009BC04E /* StageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277DE1F03C718009BC04E /* StageType.swift */; };
 		659277E21F03CFE7009BC04E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277E11F03CFE7009BC04E /* Exercise.swift */; };
 		659BA8CB1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BA8CA1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift */; };
+		65B283841F66DDF70043B3A8 /* Background Loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65B283831F66DDF70043B3A8 /* Background Loop.mp3 */; };
 		65B7D0A41F4336CC00A371E4 /* GAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7D0A31F4336CC00A371E4 /* GAManager.swift */; };
 		65C02BFD1F55BDD500FCD327 /* PurchaseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C02BFB1F55BDD500FCD327 /* PurchaseAlert.swift */; };
 		65C02BFE1F55BDD500FCD327 /* PurchaseAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C02BFC1F55BDD500FCD327 /* PurchaseAlert.xib */; };
@@ -1117,7 +1117,6 @@
 		650EF2DC1F04E58C0047C30C /* Int+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+Random.swift"; path = "Common/Int+Random.swift"; sourceTree = "<group>"; };
 		650EF2DD1F04E58C0047C30C /* UIColor+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+init.swift"; path = "Common/UIColor+init.swift"; sourceTree = "<group>"; };
 		650EF2E71F04E6070047C30C /* SoundHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundHelper.swift; path = Sounds/SoundHelper.swift; sourceTree = "<group>"; };
-		650EF2E91F04E6110047C30C /* Background Loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Background Loop.mp3"; path = "Sounds/Resource/Background Loop.mp3"; sourceTree = "<group>"; };
 		650EF2EA1F04E6110047C30C /* Default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Default.mp3; path = Sounds/Resource/Default.mp3; sourceTree = "<group>"; };
 		650EF2EB1F04E6110047C30C /* Green.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Green.mp3; path = Sounds/Resource/Green.mp3; sourceTree = "<group>"; };
 		650EF2EC1F04E6110047C30C /* Wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Wrong.mp3; path = Sounds/Resource/Wrong.mp3; sourceTree = "<group>"; };
@@ -2128,6 +2127,7 @@
 		659277E11F03CFE7009BC04E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Entities/Exercise.swift; sourceTree = "<group>"; };
 		659BA8CA1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StageMapVC+SKProductRequestDelegate.swift"; path = "StageMap/StageMapVC+SKProductRequestDelegate.swift"; sourceTree = "<group>"; };
 		65AB305A1F3C7EA1008B4A62 /* FMT2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMT2-Bridging-Header.h"; sourceTree = "<group>"; };
+		65B283831F66DDF70043B3A8 /* Background Loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Background Loop.mp3"; path = "../../../Downloads/Melody_New 2/Background Loop.mp3"; sourceTree = "<group>"; };
 		65B7D0A31F4336CC00A371E4 /* GAManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAManager.swift; sourceTree = "<group>"; };
 		65C02BFB1F55BDD500FCD327 /* PurchaseAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PurchaseAlert.swift; path = StageMap/PurchaseAlert.swift; sourceTree = "<group>"; };
 		65C02BFC1F55BDD500FCD327 /* PurchaseAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PurchaseAlert.xib; path = StageMap/PurchaseAlert.xib; sourceTree = "<group>"; };
@@ -2276,9 +2276,9 @@
 				65665EB11F278E75006705A2 /* other */,
 				65665EB41F278E90006705A2 /* permutation */,
 				65665EBB1F278EAB006705A2 /* tutorial */,
-				650EF2E91F04E6110047C30C /* Background Loop.mp3 */,
 				650EF2EA1F04E6110047C30C /* Default.mp3 */,
 				650EF2EB1F04E6110047C30C /* Green.mp3 */,
+				65B283831F66DDF70043B3A8 /* Background Loop.mp3 */,
 				650EF2EC1F04E6110047C30C /* Wrong.mp3 */,
 			);
 			name = Resource;
@@ -3701,6 +3701,7 @@
 				65665E2B1F278D32006705A2 /* x96-1.mp3 in Resources */,
 				653C47C21F38A50F00407C46 /* x696purple.svg in Resources */,
 				653C45CE1F38A50F00407C46 /* wrongVariantButton.svg in Resources */,
+				65B283841F66DDF70043B3A8 /* Background Loop.mp3 in Resources */,
 				653C45C31F38A50F00407C46 /* purpleInBetween.svg in Resources */,
 				653C460E1F38A50F00407C46 /* x47background.svg in Resources */,
 				653C46A81F38A50F00407C46 /* x288purple.svg in Resources */,
@@ -4137,7 +4138,6 @@
 				653C46121F38A50F00407C46 /* x48preview.svg in Resources */,
 				653C468C1F38A50F00407C46 /* x266blue.svg in Resources */,
 				653C47851F38A50F00407C46 /* x588blue.svg in Resources */,
-				650EF2ED1F04E6110047C30C /* Background Loop.mp3 in Resources */,
 				65665DEE1F278D32006705A2 /* x57-3.mp3 in Resources */,
 				653C47B41F38A50F00407C46 /* x686gray.svg in Resources */,
 				653C47961F38A50F00407C46 /* x599yellow.svg in Resources */,
