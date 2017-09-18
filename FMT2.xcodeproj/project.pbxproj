@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29E0E90E1F6D9FA10037DEFA /* Background Loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29E0E90D1F6D9FA10037DEFA /* Background Loop.mp3 */; };
 		650217771F288CC10067D08B /* MultByZeroExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650217751F288CC10067D08B /* MultByZeroExampleVC.swift */; };
 		650217781F288CC10067D08B /* MultByZeroExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650217761F288CC10067D08B /* MultByZeroExampleVC.xib */; };
 		650EF2941F03D2C20047C30C /* DigitColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EF2931F03D2C20047C30C /* DigitColor.swift */; };
@@ -1054,7 +1055,6 @@
 		659277DF1F03C718009BC04E /* StageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277DE1F03C718009BC04E /* StageType.swift */; };
 		659277E21F03CFE7009BC04E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659277E11F03CFE7009BC04E /* Exercise.swift */; };
 		659BA8CB1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659BA8CA1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift */; };
-		65B283841F66DDF70043B3A8 /* Background Loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65B283831F66DDF70043B3A8 /* Background Loop.mp3 */; };
 		65B7D0A41F4336CC00A371E4 /* GAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7D0A31F4336CC00A371E4 /* GAManager.swift */; };
 		65C02BFD1F55BDD500FCD327 /* PurchaseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C02BFB1F55BDD500FCD327 /* PurchaseAlert.swift */; };
 		65C02BFE1F55BDD500FCD327 /* PurchaseAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C02BFC1F55BDD500FCD327 /* PurchaseAlert.xib */; };
@@ -1077,6 +1077,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29E0E90D1F6D9FA10037DEFA /* Background Loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Background Loop.mp3"; path = "Sounds/Resource/Background Loop.mp3"; sourceTree = "<group>"; };
 		650217751F288CC10067D08B /* MultByZeroExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultByZeroExampleVC.swift; path = MultBy0/MultByZeroExampleVC.swift; sourceTree = "<group>"; };
 		650217761F288CC10067D08B /* MultByZeroExampleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultByZeroExampleVC.xib; path = MultBy0/MultByZeroExampleVC.xib; sourceTree = "<group>"; };
 		650EF2931F03D2C20047C30C /* DigitColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DigitColor.swift; path = Entities/DigitColor.swift; sourceTree = "<group>"; };
@@ -2127,7 +2128,6 @@
 		659277E11F03CFE7009BC04E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Entities/Exercise.swift; sourceTree = "<group>"; };
 		659BA8CA1F42F50200451043 /* StageMapVC+SKProductRequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StageMapVC+SKProductRequestDelegate.swift"; path = "StageMap/StageMapVC+SKProductRequestDelegate.swift"; sourceTree = "<group>"; };
 		65AB305A1F3C7EA1008B4A62 /* FMT2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMT2-Bridging-Header.h"; sourceTree = "<group>"; };
-		65B283831F66DDF70043B3A8 /* Background Loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Background Loop.mp3"; path = "../../../Downloads/Melody_New 2/Background Loop.mp3"; sourceTree = "<group>"; };
 		65B7D0A31F4336CC00A371E4 /* GAManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAManager.swift; sourceTree = "<group>"; };
 		65C02BFB1F55BDD500FCD327 /* PurchaseAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PurchaseAlert.swift; path = StageMap/PurchaseAlert.swift; sourceTree = "<group>"; };
 		65C02BFC1F55BDD500FCD327 /* PurchaseAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PurchaseAlert.xib; path = StageMap/PurchaseAlert.xib; sourceTree = "<group>"; };
@@ -2278,7 +2278,7 @@
 				65665EBB1F278EAB006705A2 /* tutorial */,
 				650EF2EA1F04E6110047C30C /* Default.mp3 */,
 				650EF2EB1F04E6110047C30C /* Green.mp3 */,
-				65B283831F66DDF70043B3A8 /* Background Loop.mp3 */,
+				29E0E90D1F6D9FA10037DEFA /* Background Loop.mp3 */,
 				650EF2EC1F04E6110047C30C /* Wrong.mp3 */,
 			);
 			name = Resource;
@@ -3650,6 +3650,7 @@
 				653C48161F38A50F00407C46 /* x999brown.svg in Resources */,
 				653C45AD1F38A50F00407C46 /* bubbleInBetween.svg in Resources */,
 				653C46041F38A50F00407C46 /* x41result.svg in Resources */,
+				29E0E90E1F6D9FA10037DEFA /* Background Loop.mp3 in Resources */,
 				653C45D61F38A50F00407C46 /* x23preview.svg in Resources */,
 				65665DF81F278D32006705A2 /* x63-1.mp3 in Resources */,
 				653C47641F38A50F00407C46 /* x555green.svg in Resources */,
@@ -3701,7 +3702,6 @@
 				65665E2B1F278D32006705A2 /* x96-1.mp3 in Resources */,
 				653C47C21F38A50F00407C46 /* x696purple.svg in Resources */,
 				653C45CE1F38A50F00407C46 /* wrongVariantButton.svg in Resources */,
-				65B283841F66DDF70043B3A8 /* Background Loop.mp3 in Resources */,
 				653C45C31F38A50F00407C46 /* purpleInBetween.svg in Resources */,
 				653C460E1F38A50F00407C46 /* x47background.svg in Resources */,
 				653C46A81F38A50F00407C46 /* x288purple.svg in Resources */,
