@@ -28,6 +28,7 @@ PODS:
   - Moya/Core (8.0.4):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - myTrackerSDK (1.6.3)
   - Realm (2.10.1):
     - Realm/Headers (= 2.10.1)
   - Realm/Headers (2.10.1)
@@ -41,6 +42,7 @@ PODS:
 DEPENDENCIES:
   - Google/Analytics
   - Moya
+  - myTrackerSDK
   - RealmSwift
   - SMSegmentView (~> 1.1)
   - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `2.x`)
@@ -65,12 +67,13 @@ SPEC CHECKSUMS:
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Moya: a08bc060c7a44eee27447b239ed33a189b641e2b
+  myTrackerSDK: d61125579b394f9dba64efd3add37ce9d1be1307
   Realm: fc7a317a5c2c9ba91f5f235ede4e2ea76e9eba0c
   RealmSwift: 505ed6c15942a2e76f5cfa78a8667cfa997ee75b
   Result: 4edd39003fdccf281d418ee1b006571f70123250
   SMSegmentView: a99862f36ea73478558ae665c209cb80c0d4f059
   SVGKit: 4055d9e809b5db8633755979cfb3b02dc5a8c20d
 
-PODFILE CHECKSUM: 3b55ef7e59204b624989365e6d313fa4d3316072
+PODFILE CHECKSUM: 52164ebc0c5de16fc6e3798679e9bceb503ff892
 
 COCOAPODS: 1.2.0

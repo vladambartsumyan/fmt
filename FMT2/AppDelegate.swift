@@ -1,6 +1,7 @@
 import UIKit
 import RealmSwift
 import UserNotifications
+import MyTrackerSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
 
         registerGoogleAnalytics()
+        registerMyTracker()
         
         UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
         
@@ -171,6 +173,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         gai.trackUncaughtExceptions = true
         gai.defaultTracker = gai.tracker(withTrackingId: "UA-103178212-1")
         gai.logger.logLevel = .verbose
+    }
+    
+    func registerMyTracker() {
+        MRMyTracker.createTracker("57895877048205058238")
+        MRMyTracker.setupTracker()
     }
     
     func cancelAllNotifications() {
