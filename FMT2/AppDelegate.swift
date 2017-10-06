@@ -176,7 +176,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func registerMyTracker() {
-        MRMyTracker.createTracker("57895877048205058238")
+        MRMyTracker.createTracker("22132836834420588905")
         MRMyTracker.setupTracker()
     }
     
