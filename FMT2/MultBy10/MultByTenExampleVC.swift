@@ -91,7 +91,7 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
         ]
     }
     
-    func nextScreen() {
+    @objc func nextScreen() {
         globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing

@@ -2,5 +2,5 @@ import Foundation
 import RealmSwift
 
 class GameError: Object {
-    dynamic var date = Date()
+    @objc dynamic var date = Date()
 }

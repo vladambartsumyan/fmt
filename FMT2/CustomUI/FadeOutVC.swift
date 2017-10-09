@@ -33,15 +33,15 @@ class FadeInOutVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    func fadeIn(_ handler: ((()) -> ())? = nil) {
+    func fadeIn(_ handler: (() -> ())? = nil) {
         fadeIn(array: getFadeInArray(), handler)
     }
 
-    func fadeOut(_ handler: ((()) -> ())?) {
+    func fadeOut(_ handler: (() -> ())?) {
         fadeOut(array: getFadeOutArray(), handler)
     }
     
-    func fadeOut(array: [[UIView]], _ handler: ((()) -> ())?) {
+    func fadeOut(array: [[UIView]], _ handler: (() -> ())?) {
         var delay: TimeInterval = 0
         for ind in stride(from: array.count - 1, to: -1, by: -1) {
             UIView.animate(withDuration: 0.2, delay: delay, animations: {
@@ -67,7 +67,7 @@ class FadeInOutVC: UIViewController {
         }
     }
     
-    func fadeIn(array: [[UIView]], _ handler: ((()) -> ())?) {
+    func fadeIn(array: [[UIView]], _ handler: (() -> ())?) {
         let viewsForAnimate = array
         viewsForAnimate.flatMap{$0}.forEach{$0.transform = .identity}
         var delay: TimeInterval = 0.2
@@ -89,7 +89,7 @@ class FadeInOutVC: UIViewController {
     }
     
     
-    func simpleFadeOut(_ handler: ((()) -> ())?) {
+    func simpleFadeOut(_ handler: (() -> ())?) {
         let array = getFadeOutArray()
         var delay: TimeInterval = 0
         for ind in stride(from: array.count - 1, to: -1, by: -1) {

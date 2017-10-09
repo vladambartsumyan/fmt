@@ -75,11 +75,11 @@ class TutorialVC: FadeInOutVC {
         perform(#selector(play), with: "tutorial2", afterDelay: 4 + durationOfIntro + durationOfTutorial1)
     }
     
-    func play(_ name: String) {
+    @objc func play(_ name: String) {
         SoundHelper.shared.playVoice(name: name)
     }
     
-    func showImages() {
+    @objc func showImages() {
         UIView.animate(withDuration: 0.5) {
             for view in self.images {
                 view.alpha = 1.0
@@ -87,7 +87,7 @@ class TutorialVC: FadeInOutVC {
         }
     }
     
-    func showResult() {
+    @objc func showResult() {
         resultImage.transform = CGAffineTransform.init(scaleX: 0.7, y: 0.7)
         UIView.animate(withDuration: 0.2, animations: {
             self.resultImage.alpha = 1
@@ -99,7 +99,7 @@ class TutorialVC: FadeInOutVC {
         })
     }
     
-    func showExercise() {
+    @objc func showExercise() {
         UIView.animate(withDuration: 0.5) {
             for view in self.exercise {
                 view.alpha = 1.0
@@ -107,7 +107,7 @@ class TutorialVC: FadeInOutVC {
         }
     }
     
-    func showAnswer() {
+    @objc func showAnswer() {
         var t = CGAffineTransform.identity
         t = t.translatedBy(x: 0.0, y: 40.0)
         t = t.scaledBy(x: 0.5, y: 1.0)
@@ -128,7 +128,7 @@ class TutorialVC: FadeInOutVC {
         ]
     }
     
-    func nextScreen() {
+    @objc func nextScreen() {
         fadeOut {
             let vc = StageMapVC(nibName: "StageMapVC", bundle: nil)
             AppDelegate.current.setRootVC(vc)

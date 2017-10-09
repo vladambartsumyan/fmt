@@ -2,7 +2,7 @@ import UIKit
 
 class AlertMaker: NSObject {
     
-    static func newGameAlert(withYesAction yesAction: ((()) -> ())?) -> UIAlertController {
+    static func newGameAlert(withYesAction yesAction: (() -> ())?) -> UIAlertController {
         
         let title = NSLocalizedString("Alert.newGame.title", comment: "")
         let message = NSLocalizedString("Alert.newGame.message", comment: "")

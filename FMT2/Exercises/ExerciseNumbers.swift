@@ -262,7 +262,7 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
         }
     }
     
-    func nextScreen(viewController: UIViewController) {
+    @objc func nextScreen(viewController: UIViewController) {
         fadeOut {
             AppDelegate.current.setRootVC(viewController)
         }

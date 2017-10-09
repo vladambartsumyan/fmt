@@ -132,11 +132,11 @@ class GeneralStatisticVC: UIViewController {
     
     func createHeaderText(fromString header: String) -> NSAttributedString {
         let attrStr = NSMutableAttributedString.init(string: header)
-        let attributes: [String : Any] = [
-            NSStrokeWidthAttributeName : -4,
-            NSStrokeColorAttributeName : UIColor.init(white: 100/255, alpha: 1.0),
-            NSFontAttributeName : UIFont.init(name: "Lato-Black", size: 30 * UIScreen.main.bounds.width / 414.0)!,
-            NSForegroundColorAttributeName : UIColor.white,
+        let attributes: [NSAttributedStringKey : Any] = [
+            .strokeWidth : -4,
+            .strokeColor : UIColor.init(white: 100/255, alpha: 1.0),
+            .font : UIFont.init(name: "Lato-Black", size: 30 * UIScreen.main.bounds.width / 414.0)!,
+            .foregroundColor : UIColor.white
         ]
         attrStr.addAttributes(attributes, range: NSRange.init(location: 0, length: header.characters.count))
         return attrStr

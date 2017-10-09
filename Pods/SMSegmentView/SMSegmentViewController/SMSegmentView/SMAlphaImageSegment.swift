@@ -17,26 +17,26 @@ public class SMAlphaImageSegment: SMBasicSegment {
         }
     }
     
-    public var margin: CGFloat = 5.0 {
+    @objc public var margin: CGFloat = 5.0 {
         didSet {
             self.resetContentFrame()
         }
     }
     
-    var vertical = false
+    @objc var vertical = false
     
-    public var animationDuration: TimeInterval = 0.5
-    public var selectedAlpha: CGFloat = 1.0
-    public var unselectedAlpha: CGFloat = 0.3
-    public var pressedAlpha: CGFloat = 0.65
+    @objc public var animationDuration: TimeInterval = 0.5
+    @objc public var selectedAlpha: CGFloat = 1.0
+    @objc public var unselectedAlpha: CGFloat = 0.3
+    @objc public var pressedAlpha: CGFloat = 0.65
     
     
-    internal(set) var imageView: UIImageView = UIImageView()
+    @objc internal(set) var imageView: UIImageView = UIImageView()
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public init(margin: CGFloat, selectedAlpha: CGFloat, unselectedAlpha: CGFloat, pressedAlpha: CGFloat, image: UIImage?) {
+    @objc public init(margin: CGFloat, selectedAlpha: CGFloat, unselectedAlpha: CGFloat, pressedAlpha: CGFloat, image: UIImage?) {
         
         self.margin = margin
         self.selectedAlpha = selectedAlpha
@@ -54,7 +54,7 @@ public class SMAlphaImageSegment: SMBasicSegment {
         //resetContentFrame(vertical)
     }
     
-    func setupUIElements() {
+    @objc func setupUIElements() {
         
         self.imageView.contentMode = .scaleAspectFit
         self.addSubview(self.imageView)
@@ -62,7 +62,7 @@ public class SMAlphaImageSegment: SMBasicSegment {
     
     
     // MARK: Update Frame
-    func resetContentFrame() {
+    @objc func resetContentFrame() {
         let margin = self.vertical ? (self.margin * 1.5) : self.margin;
         let imageViewFrame = CGRect.init(x: margin, y: margin, width: self.frame.size.width - margin*2, height: self.frame.size.height - margin*2)
         
@@ -81,7 +81,7 @@ public class SMAlphaImageSegment: SMBasicSegment {
         }
     }
     
-    func startAnimationToAlpha(alpha: CGFloat){
+    @objc func startAnimationToAlpha(alpha: CGFloat){
         UIView.animate(withDuration: self.animationDuration, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.1, options: [.curveEaseInOut, .beginFromCurrentState], animations: { () -> Void in
             self.imageView.alpha = alpha
             }, completion: nil)

@@ -1,6 +1,6 @@
 //
 //  MRMyTrackerAttribution.h
-//  myTrackerSDK 1.6.3
+//  myTrackerSDK 1.6.4
 //
 //  Created by Andrey Seredkin on 27.06.17.
 //  Copyright © 2017 MailRu Group. All rights reserved.

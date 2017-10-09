@@ -3,9 +3,9 @@ import RealmSwift
 
 class Stage: Object {
     
-    dynamic private var _type: Int = 0
-    dynamic private var _mode: Int = 0
-    dynamic var numberOfExercises: Int = 0 
+    @objc dynamic private var _type: Int = 0
+    @objc dynamic private var _mode: Int = 0
+    @objc dynamic var numberOfExercises: Int = 0 
     let possibleExercises = List<Exercise>()
     
     var type: StageType {

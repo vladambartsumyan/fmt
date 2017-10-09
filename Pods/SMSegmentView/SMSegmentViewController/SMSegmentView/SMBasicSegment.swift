@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 public class SMBasicSegment : UIView {
-    public internal(set) var index: Int = 0
-    public internal(set) weak var segmentView: SMBasicSegmentView?
+    @objc public internal(set) var index: Int = 0
+    @objc public internal(set) weak var segmentView: SMBasicSegmentView?
     
-    public private(set) var isSelected: Bool = false
+    @objc public private(set) var isSelected: Bool = false
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -24,7 +24,7 @@ public class SMBasicSegment : UIView {
     }
     
     // MARK: Selections
-    internal func setSelected(selected: Bool, inView view: SMBasicSegmentView) {
+    @objc internal func setSelected(selected: Bool, inView view: SMBasicSegmentView) {
         self.isSelected = selected
     }
     

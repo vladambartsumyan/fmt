@@ -251,11 +251,11 @@ class MoreStatisticVC: UIViewController, SMSegmentViewDelegate, UICollectionView
     
     func createAttributedText(fromString string: String, strokeColor: UIColor, sizeForIPhone7Plus size: CGFloat) -> NSAttributedString {
         let attrStr = NSMutableAttributedString.init(string: string)
-        let attributes: [String : Any] = [
-                NSStrokeWidthAttributeName : -4,
-                NSStrokeColorAttributeName : strokeColor,
-                NSFontAttributeName : UIFont.init(name: "Lato-Black", size: size * UIScreen.main.bounds.width / 414.0)!,
-                NSForegroundColorAttributeName : UIColor.white,
+        let attributes: [NSAttributedStringKey : Any] = [
+                .strokeWidth : -4,
+                .strokeColor : strokeColor,
+                .font : UIFont.init(name: "Lato-Black", size: size * UIScreen.main.bounds.width / 414.0)!,
+                .foregroundColor : UIColor.white
             ]
         attrStr.addAttributes(attributes, range: NSRange.init(location: 0, length: string.characters.count))
         return attrStr

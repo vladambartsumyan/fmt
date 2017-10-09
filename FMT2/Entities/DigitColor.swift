@@ -3,8 +3,8 @@ import RealmSwift
 
 class DigitColor: Object {
     
-    dynamic var value: Int = 0
-    dynamic private var _color: String = ""
+    @objc dynamic var value: Int = 0
+    @objc dynamic private var _color: String = ""
     
     var color: Color {
         get {

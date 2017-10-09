@@ -21,7 +21,7 @@ public protocol SMSegmentViewDelegate: class {
 }
 
 public class SMBasicSegmentView: UIView {
-    public var segments: [SMBasicSegment] = [] {
+    @objc public var segments: [SMBasicSegment] = [] {
         didSet {
             var i=0;
             for segment in segments {
@@ -36,8 +36,8 @@ public class SMBasicSegmentView: UIView {
     }
     public weak var delegate: SMSegmentViewDelegate?
     
-    public private(set) var indexOfSelectedSegment: Int = NSNotFound
-    var numberOfSegments: Int {get {
+    @objc public private(set) var indexOfSelectedSegment: Int = NSNotFound
+    @objc var numberOfSegments: Int {get {
         return segments.count
         }}
     
@@ -72,7 +72,7 @@ public class SMBasicSegmentView: UIView {
         setNeedsDisplay()
     }
     
-    public func updateFrameForSegments() {
+    @objc public func updateFrameForSegments() {
         if self.segments.count == 0 {
             return
         }
@@ -104,7 +104,7 @@ public class SMBasicSegmentView: UIView {
     }
     
     
-    public func drawSeparatorWithContext(context: CGContext) {
+    @objc public func drawSeparatorWithContext(context: CGContext) {
         context.saveGState()
         
         if self.segments.count > 1 {
@@ -147,7 +147,7 @@ public class SMBasicSegmentView: UIView {
     }
     
     // MARK: Actions
-    public func selectSegmentAtIndex(index: Int) {
+    @objc public func selectSegmentAtIndex(index: Int) {
         assert(index >= 0 && index < self.segments.count, "Index at \(index) is out of bounds")
         
         if self.indexOfSelectedSegment != NSNotFound {
@@ -160,7 +160,7 @@ public class SMBasicSegmentView: UIView {
         self.delegate?.segmentView(segmentView: self, didSelectSegmentAtIndex: index)
     }
     
-    public func deselectSegment() {
+    @objc public func deselectSegment() {
         if self.indexOfSelectedSegment != NSNotFound {
             let segment = self.segments[self.indexOfSelectedSegment]
             segment.setSelected(selected: false, inView: self)
@@ -168,7 +168,7 @@ public class SMBasicSegmentView: UIView {
         }
     }
     
-    public func addSegment(segment: SMBasicSegment){
+    @objc public func addSegment(segment: SMBasicSegment){
         segment.index = self.segments.count
         self.segments.append(segment)
         

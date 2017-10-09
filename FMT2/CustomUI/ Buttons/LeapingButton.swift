@@ -18,7 +18,7 @@ class LeapingButton: UIControl {
 
     private var originalOrigin: CGPoint!
 
-    func touchDown(_ handler: ((()) -> ())?) {
+    func touchDown(_ handler: (() -> ())?) {
         UIView.animate(withDuration: 0.1, animations: {
             self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         }) { _ in
@@ -35,7 +35,7 @@ class LeapingButton: UIControl {
         }
     }
 
-    func normalize(_ handler: ((()) -> ())?) {
+    func normalize(_ handler: (() -> ())?) {
         UIView.animate(withDuration: 0.1, animations: {
             self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }) { _ in

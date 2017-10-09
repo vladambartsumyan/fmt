@@ -2,9 +2,9 @@ import Foundation
 import RealmSwift
 
 class StagePassing: Object {
-    dynamic var stage: Stage!
+    @objc dynamic var stage: Stage!
     let exercises = List<ExercisePassing>()
-    dynamic var index = 0
+    @objc dynamic var index = 0
     
     var passed: Bool {
         return index >= exercises.count

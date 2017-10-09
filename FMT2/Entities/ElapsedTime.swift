@@ -2,6 +2,6 @@ import Foundation
 import RealmSwift
 
 class ElapsedTime: Object {
-    dynamic var createdAt = Date()
-    dynamic var seconds: Double = 0.0
+    @objc dynamic var createdAt = Date()
+    @objc dynamic var seconds: Double = 0.0
 }

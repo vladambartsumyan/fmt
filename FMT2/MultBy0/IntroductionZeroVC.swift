@@ -158,11 +158,11 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
         }
     }
     
-    func play(name: String) {
+    @objc func play(name: String) {
         SoundHelper.shared.playVoice(name: name)
     }
     
-    func nextVC() {
+    @objc func nextVC() {
         globalStagePassing.updateElapsedTime()
         let vc = MultByZeroExampleVC(nibName: "MultByZeroExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing

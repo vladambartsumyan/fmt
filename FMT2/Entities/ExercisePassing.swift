@@ -2,11 +2,11 @@ import Foundation
 import RealmSwift
 
 class ExercisePassing: Object {
-    dynamic var exercise: Exercise!
+    @objc dynamic var exercise: Exercise!
     let elapsedTime = List<ElapsedTime>()
     let errors = List<GameError>()   
-    dynamic var passedAt = Date()
-    dynamic var isPassed = false
+    @objc dynamic var passedAt = Date()
+    @objc dynamic var isPassed = false
     
     
     func mistake() {

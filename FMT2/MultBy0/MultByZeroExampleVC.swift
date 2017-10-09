@@ -98,7 +98,7 @@ class MultByZeroExampleVC: FadeInOutVC, IsGameVC {
         ]
     }
     
-    func nextScreen() {
+    @objc func nextScreen() {
         globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
@@ -108,7 +108,7 @@ class MultByZeroExampleVC: FadeInOutVC, IsGameVC {
         }
     }
     
-    func showHat() {
+    @objc func showHat() {
         self.secondDigit.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)
         self.result.transform = CGAffineTransform.init(translationX: 0, y: -self.secondDigit.frame.height)
         UIView.animate(withDuration: 0.8) {

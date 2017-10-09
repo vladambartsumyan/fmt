@@ -164,13 +164,13 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     }   
     
     func reverseImage(firstDigit: Int, secondDigit: Int) -> Bool {
-        return [(4, 7), (7, 4)].reduce(false){ $0.0 || ($0.1.0 == firstDigit && $0.1.1 == secondDigit) }
+        return [(4, 7), (7, 4)].reduce(false){ $0 || ($1.0 == firstDigit && $1.1 == secondDigit) }
     }
     
-    func play(name: String) {
+    @objc func play(name: String) {
         SoundHelper.shared.playVoice(name: name)
     }
-    
+    @objc  
     func playPreview2() {
         let preview2Name = self.globalStagePassing.type == .permutation ? "x\(self.exercise.secondDigit)\(self.exercise.firstDigit)-3" : "x\(self.exercise.firstDigit)\(self.exercise.secondDigit)-3"
         play(name: preview2Name)

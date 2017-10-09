@@ -2,7 +2,7 @@ import UIKit
 
 extension UIViewController {
     
-    var needsToTimeAccumulation: Bool {
+    @objc var needsToTimeAccumulation: Bool {
         return false
     }
     

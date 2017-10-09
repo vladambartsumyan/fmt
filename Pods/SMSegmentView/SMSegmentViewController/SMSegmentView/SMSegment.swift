@@ -16,21 +16,21 @@ public class SMSegment: SMBasicSegment {
         }
     }
     
-    public var verticalMargin: CGFloat = 5.0 {
+    @objc public var verticalMargin: CGFloat = 5.0 {
         didSet {
             self.resetContentFrame()
         }
     }
         
     // Segment Colour
-    public var onSelectionColour: UIColor = UIColor.darkGray {
+    @objc public var onSelectionColour: UIColor = UIColor.darkGray {
         didSet {
             if self.isSelected == true {
                 self.backgroundColor = self.onSelectionColour
             }
         }
     }
-    public var offSelectionColour: UIColor = UIColor.white {
+    @objc public var offSelectionColour: UIColor = UIColor.white {
         didSet {
             if self.isSelected == false {
                 self.backgroundColor = self.offSelectionColour
@@ -49,12 +49,12 @@ public class SMSegment: SMBasicSegment {
     }
     
     // Segment Title Text & Colour & Font
-    public var title: String? {
+    @objc public var title: String? {
         didSet {
             self.label.text = self.title
             
             if let titleText = self.label.text as NSString? {
-                self.labelWidth = titleText.boundingRect(with: CGSize(width: self.frame.size.width, height: self.frame.size.height), options:NSStringDrawingOptions.usesLineFragmentOrigin , attributes: [NSFontAttributeName: self.label.font], context: nil).size.width
+                self.labelWidth = titleText.boundingRect(with: CGSize(width: self.frame.size.width, height: self.frame.size.height), options:NSStringDrawingOptions.usesLineFragmentOrigin , attributes: [NSAttributedStringKey.font: self.label.font], context: nil).size.width
             }
             else {
                 self.labelWidth = 0.0
@@ -63,26 +63,26 @@ public class SMSegment: SMBasicSegment {
             self.resetContentFrame()
         }
     }
-    public var onSelectionTextColour: UIColor = UIColor.white {
+    @objc public var onSelectionTextColour: UIColor = UIColor.white {
         didSet {
             if self.isSelected == true {
                 self.label.textColor = self.onSelectionTextColour
             }
         }
     }
-    public var offSelectionTextColour: UIColor = UIColor.darkGray {
+    @objc public var offSelectionTextColour: UIColor = UIColor.darkGray {
         didSet {
             if self.isSelected == false {
                 self.label.textColor = self.offSelectionTextColour
             }
         }
     }
-    public var titleFont: UIFont = UIFont.systemFont(ofSize: 17.0) {
+    @objc public var titleFont: UIFont = UIFont.systemFont(ofSize: 17.0) {
         didSet {
             self.label.font = self.titleFont
             
             if let titleText = self.label.text as NSString? {
-                self.labelWidth = titleText.boundingRect(with: CGSize(width: self.frame.size.width + 1.0, height: self.frame.size.height), options:NSStringDrawingOptions.usesLineFragmentOrigin , attributes: [NSFontAttributeName: self.label.font], context: nil).size.width
+                self.labelWidth = titleText.boundingRect(with: CGSize(width: self.frame.size.width + 1.0, height: self.frame.size.height), options:NSStringDrawingOptions.usesLineFragmentOrigin , attributes: [NSAttributedStringKey.font: self.label.font], context: nil).size.width
             }
             else {
                 self.labelWidth = 0.0
@@ -93,7 +93,7 @@ public class SMSegment: SMBasicSegment {
     }
     
     // Segment Image
-    public var onSelectionImage: UIImage? {
+    @objc public var onSelectionImage: UIImage? {
         didSet {
             if self.onSelectionImage != nil {
                 self.resetContentFrame()
@@ -103,7 +103,7 @@ public class SMSegment: SMBasicSegment {
             }
         }
     }
-    public var offSelectionImage: UIImage? {
+    @objc public var offSelectionImage: UIImage? {
         didSet {
             if self.offSelectionImage != nil {
                 self.resetContentFrame()
@@ -123,7 +123,7 @@ public class SMSegment: SMBasicSegment {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public init(verticalMargin: CGFloat, onSelectionColour: UIColor, offSelectionColour: UIColor, onSelectionTextColour: UIColor, offSelectionTextColour: UIColor, titleFont: UIFont) {
+    @objc public init(verticalMargin: CGFloat, onSelectionColour: UIColor, offSelectionColour: UIColor, onSelectionTextColour: UIColor, offSelectionTextColour: UIColor, titleFont: UIFont) {
         
         self.verticalMargin = verticalMargin
         self.onSelectionColour = onSelectionColour
@@ -138,7 +138,7 @@ public class SMSegment: SMBasicSegment {
     
     
     
-    func setupUIElements() {
+    @objc func setupUIElements() {
         
         self.backgroundColor = self.offSelectionColour
         

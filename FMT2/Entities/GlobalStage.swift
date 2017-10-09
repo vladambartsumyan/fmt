@@ -1,7 +1,7 @@
 import RealmSwift
 
 class GlobalStage: Object {
-    dynamic private var _type: Int = 0
+    @objc dynamic private var _type: Int = 0
     let stages = List<Stage>()
     
     var type: StageType {

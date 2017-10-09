@@ -67,7 +67,7 @@ class InBetweenVC: FadeInOutVC, IsGameVC{
         self.message.text = NSLocalizedString("InBetween.message.\(mode.rawValue)", comment: "")
     }
     
-    func dismissSelf() {
+    @objc func dismissSelf() {
         self.fadeOut {
             AppDelegate.current.setRootVC(self.nextVC())
         }

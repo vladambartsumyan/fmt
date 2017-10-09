@@ -13,12 +13,12 @@ enum MistakeResult {
 
 class GlobalStagePassing: Object {
     
-    dynamic var globalStage: GlobalStage!
+    @objc dynamic var globalStage: GlobalStage!
     let stagesPassing = List<StagePassing>()
-    dynamic var index = -1
-    dynamic var inGame = true
-    dynamic var _type = 0 
-    dynamic var mistakeCount = 3
+    @objc dynamic var index = -1
+    @objc dynamic var inGame = true
+    @objc dynamic var _type = 0 
+    @objc dynamic var mistakeCount = 3
     
     var type: StageType {
         get { 
@@ -36,14 +36,14 @@ class GlobalStagePassing: Object {
     }
     
     var progress: Double {
-        let passedExercises = stagesPassing.reduce(0){$0.0 + $0.1.index}
-        let totalExercises = stagesPassing.reduce(0){$0.0 + $0.1.exercises.count}
+        let passedExercises = stagesPassing.reduce(0){$0 + $1.index}
+        let totalExercises = stagesPassing.reduce(0){$0 + $1.exercises.count}
         return Double(passedExercises) / Double(totalExercises)
     }
     
     var nextProgress: Double {
-        let passedExercises = stagesPassing.reduce(0){$0.0 + $0.1.index}
-        let totalExercises = stagesPassing.reduce(0){$0.0 + $0.1.exercises.count}
+        let passedExercises = stagesPassing.reduce(0){$0 + $1.index}
+        let totalExercises = stagesPassing.reduce(0){$0 + $1.exercises.count}
         return Double(passedExercises + 1) / Double(totalExercises)
     }
     
@@ -94,7 +94,7 @@ class GlobalStagePassing: Object {
                     countError: curExercisePassing.errors.count, 
                     firstDigit: curExercisePassing.exercise.firstDigit, 
                     secondDigit: curExercisePassing.exercise.secondDigit, 
-                    time: curExercisePassing.elapsedTime.reduce(0.0){$0.0 + $0.1.seconds})
+                    time: curExercisePassing.elapsedTime.reduce(0.0){$0 + $1.seconds})
                 )
             }
             if stage!.mode == .exam {
@@ -102,7 +102,7 @@ class GlobalStagePassing: Object {
                     countError: curExercisePassing.errors.count, 
                     firstDigit: curExercisePassing.exercise.firstDigit, 
                     secondDigit: curExercisePassing.exercise.secondDigit, 
-                    time: curExercisePassing.elapsedTime.reduce(0.0){$0.0 + $0.1.seconds})
+                    time: curExercisePassing.elapsedTime.reduce(0.0){$0 + $1.seconds})
                 )           
             }
         }
@@ -167,7 +167,7 @@ class GlobalStagePassing: Object {
     }
     
     var mistakeCountInExam: Int {
-        return stagesPassing.reduce(0){ $0.1.stage.mode == .exam ? $0.0 + $0.1.exercises.reduce(0){ $0.0 + $0.1.errors.count } : $0.0 }
+        return stagesPassing.reduce(0){ $1.stage.mode == .exam ? $0 + $1.exercises.reduce(0){ $0 + $1.errors.count } : $0 }
     }
     
     func reset() {

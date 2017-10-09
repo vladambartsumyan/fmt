@@ -73,7 +73,7 @@ class IntroductionPermutationVC: FadeInOutVC, IsGameVC {
         return [[textLabel]]
     }
     
-    func nextVC() {
+    @objc func nextVC() {
         globalStagePassing.updateElapsedTime()
         let vc = PermutationExampleVC(nibName: "PermutationExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing

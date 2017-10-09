@@ -274,7 +274,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         }
     }
 
-    func showSecondExercise() {
+    @objc func showSecondExercise() {
         let viewsOut: [[UIView]] = [[fst1, fst2, snd1, snd2, question, equality, mult, res1, res2], 
                                     [firstVariant, secondVariant, thirdVariant, fourthVariant]]
         let viewsIn: [[UIView]] = [[fst1, fst2, snd1, snd2, question, equality, mult], 
@@ -344,7 +344,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         }
     }
 
-    func rightAnswerAppearing(_ handler: @escaping (()) -> ()) {
+    func rightAnswerAppearing(_ handler: @escaping () -> ()) {
         var t = CGAffineTransform.identity
         t = t.translatedBy(x: 0.0, y: 40.0)
         t = t.scaledBy(x: 0.5, y: 1.0)
@@ -464,7 +464,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         }
     }
     
-    func nextVC(viewController: UIViewController) {
+    @objc func nextVC(viewController: UIViewController) {
         fadeOut {
             AppDelegate.current.setRootVC(viewController)
         }

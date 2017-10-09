@@ -119,10 +119,10 @@ class StageMapVC: FadeInOutVC {
         self.statistic.attributedText = NSAttributedString(
                 string: text,
                 attributes: [
-                        NSFontAttributeName: UIFont(name: "Lato-Black", size: 22 * proportion)!,
-                        NSStrokeWidthAttributeName: -2.0,
-                        NSStrokeColorAttributeName: UIColor.black,
-                        NSForegroundColorAttributeName: UIColor.white
+                        .font: UIFont(name: "Lato-Black", size: 22 * proportion)!,
+                        .strokeWidth: -2.0,
+                        .strokeColor: UIColor.black,
+                        .foregroundColor: UIColor.white
                 ]
         )
     }
@@ -141,11 +141,11 @@ class StageMapVC: FadeInOutVC {
     func configureTrainingButton() {
         let needsTrainingButton = curGlobalStagePassing == nil || curGlobalStagePassing!._type > StageType.multiplicationBy0.rawValue
         if needsTrainingButton {
-            heightOfBottomPanel.priority = 900
-            proportionOfBottomPanel.priority = 1000
+            heightOfBottomPanel.priority = UILayoutPriority(900)
+            proportionOfBottomPanel.priority = UILayoutPriority(1000)
         } else {
-            heightOfBottomPanel.priority = 1000
-            proportionOfBottomPanel.priority = 900 
+            heightOfBottomPanel.priority = UILayoutPriority(1000)
+            proportionOfBottomPanel.priority = UILayoutPriority(900) 
         }
         trainingButton.setTitle(titleText: NSLocalizedString("StageMap.trainingButton.title", comment: ""))
     }
@@ -241,7 +241,7 @@ class StageMapVC: FadeInOutVC {
         super.didReceiveMemoryWarning()
     }
 
-    func loadGlobalStage(_ globalStagePassing: GlobalStagePassing) {
+    @objc func loadGlobalStage(_ globalStagePassing: GlobalStagePassing) {
         let type = globalStagePassing.type
         switch type {
         case .introduction:

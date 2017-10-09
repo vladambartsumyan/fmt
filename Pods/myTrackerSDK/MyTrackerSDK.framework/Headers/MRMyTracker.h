@@ -1,6 +1,6 @@
 //
 //  MRMyTracker.h
-//  myTrackerSDK 1.6.3
+//  myTrackerSDK 1.6.4
 //
 //  Created by Timur Voloshin on 17.06.16.
 //  Copyright © 2016 Mail.ru Group. All rights reserved.

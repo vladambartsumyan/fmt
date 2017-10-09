@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(sendApplicationInForeground), userInfo: nil, repeats: false)
     }
     
-    func sendApplicationInForeground() {
+    @objc func sendApplicationInForeground() {
         guard let fullDaysInBackgroundUnwrapped = fullDaysInBackground else {
             return
         }
@@ -129,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func registerLocalNotification(application: UIApplication) {
         if #available(iOS 10, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {_ in})
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {_,_  in})
         } else {
             let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)

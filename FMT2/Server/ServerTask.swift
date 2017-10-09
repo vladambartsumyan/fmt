@@ -3,13 +3,18 @@ import RealmSwift
 import Moya
 
 class Parameter: Object {
-    dynamic var key: String = ""
-    dynamic var value: String = ""
+    @objc dynamic var key: String = ""
+    @objc dynamic var value: String = ""
 }
 
 class ServerTask: Object, TargetType {
-    dynamic var type: Int = 0
-    dynamic var createdAt: Date = Date()
+    
+    var headers: [String : String]? {
+        return nil
+    }
+    
+    @objc dynamic var type: Int = 0
+    @objc dynamic var createdAt: Date = Date()
     var parameterList = List<Parameter>()
 
     var serverTaskType: ServerTaskType {
@@ -89,7 +94,7 @@ class ServerTask: Object, TargetType {
     }
 
     public var task: Task {
-        return .request
+        return .requestPlain
     }
 
     public var sampleData: Data {

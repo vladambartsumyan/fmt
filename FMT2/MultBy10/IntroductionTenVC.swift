@@ -74,7 +74,7 @@ class IntroductionTenVC: FadeInOutVC, IsGameVC {
         SoundHelper.shared.playVoice(name: name)
     }
     
-    func nextVC() {
+    @objc func nextVC() {
         globalStagePassing.updateElapsedTime()
         let vc = MultByTenExampleVC(nibName: "MultByTenExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing

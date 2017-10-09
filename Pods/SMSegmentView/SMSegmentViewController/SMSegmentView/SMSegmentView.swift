@@ -89,7 +89,7 @@ public class SMSegmentView: SMBasicSegmentView {
         self.layer.masksToBounds = true
     }
     
-    public init(frame: CGRect, separatorColour: UIColor, separatorWidth: CGFloat, segmentProperties: Dictionary<String, AnyObject>?) {
+    @objc public init(frame: CGRect, separatorColour: UIColor, separatorWidth: CGFloat, segmentProperties: Dictionary<String, AnyObject>?) {
         
         super.init(frame: frame)
         
@@ -139,7 +139,7 @@ public class SMSegmentView: SMBasicSegmentView {
         self.layer.masksToBounds = true
     }
     
-    public func addSegmentWithTitle(title: String?, onSelectionImage: UIImage?, offSelectionImage: UIImage?) -> SMSegment {
+    @objc public func addSegmentWithTitle(title: String?, onSelectionImage: UIImage?, offSelectionImage: UIImage?) -> SMSegment {
         
         let segment = SMSegment(verticalMargin: self.segmentVerticalMargin, onSelectionColour: self.segmentOnSelectionColour, offSelectionColour: self.segmentOffSelectionColour, onSelectionTextColour: self.segmentOnSelectionTextColour, offSelectionTextColour: self.segmentOffSelectionTextColour, titleFont: self.segmentTitleFont)
         
