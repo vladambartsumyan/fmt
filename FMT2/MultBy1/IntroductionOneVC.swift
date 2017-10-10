@@ -18,6 +18,10 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var animalImageView: UIImageView!
     @IBOutlet weak var digitImageView: UIImageView!
     
+    @IBOutlet weak var skipButton: TextButton!
+    
+    var needTutorial = true
+    
     var digitGuessed = false
     
     var globalStagePassing: GlobalStagePassing!
@@ -39,6 +43,7 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
         configureTopBar()
         configureVariantPanel()
         configureImage()
+        configureSkipButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,17 +103,21 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
         digitImageView.image = SVGKImage.init(named: "1").uiImage
     }
     
+    func configureSkipButton() {
+        let title = NSLocalizedString("SkipButton.title", comment: "")
+        skipButton.setTitle(titleText: title)
+        skipButton.alpha = 0
+        skipButton.isEnabled = false
+    } 
+    
     override func getFadeInArray() -> [[UIView]] {
         return [[animalImageView, digitImageView], [question], [variantButton1, variantButton2, variantButton3, variantButton4]]
     }
     
     override func getFadeOutArray() -> [[UIView]] {
-        if newGameWasPressed {
-            return digitGuessed ? 
-                [[animalImageView, digitImageView], [question]] :
-                [[animalImageView, digitImageView], [question], [variantButton1, variantButton2, variantButton3, variantButton4]]
-        }
-        return [[animalImageView], [question]]
+        return needTutorial ?
+            [[animalImageView, digitImageView], [question]] :
+            [[animalImageView, digitImageView], [question], [skipButton]]
     }
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
@@ -136,12 +145,15 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
         if !sender.isWrongAnswer {
-            self.view.isUserInteractionEnabled = false
             digitGuessed = true
             fadeOut(array: [[digitImageView], [question], [variantButton1, variantButton2, variantButton3, variantButton4]]) {
+                
                 self.question.transform = .identity
                 self.question.text = NSLocalizedString("Tutorial.one.text", comment: "")
                 self.fadeInView(self.question)
+                
+                self.skipButton.isEnabled = true
+                self.fadeInView(self.skipButton)
                 
                 let nameTutorial = StageType.multiplicationBy1.string + "tutorial"
                 let durationTutorial = SoundHelper.shared.duration(nameTutorial)
@@ -149,8 +161,6 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
                 SoundHelper.shared.playVoice(name: nameTutorial)
                 self.perform(#selector(self.nextVC), with: nil, afterDelay: durationTutorial)
             }
-        } else {
-            self.view.isUserInteractionEnabled = true
         }
     }
     
@@ -159,6 +169,7 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
     }
     
     @objc func nextVC() {
+        guard needTutorial else { return }
         globalStagePassing.updateElapsedTime()
         let vc = MultByOneExampleVC(nibName: "MultByOneExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
@@ -167,8 +178,20 @@ class IntroductionOneVC: FadeInOutVC, IsGameVC {
         }
     }
     
-    @IBAction func touchUp(_ sender: Any) {
-        self.view.isUserInteractionEnabled = false
+    @IBAction func skipButtonAction(_ sender: TextButton) {
+        skipTutorial()
+    }
+    
+    func skipTutorial() {
+        needTutorial = false
+        SoundHelper.shared.stopVoice()
+        globalStagePassing.updateElapsedTime()
+        let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
+        vc.globalStagePassing = self.globalStagePassing
+        vc.mode = .afterOneTutorial
+        fadeOut {
+            AppDelegate.current.setRootVC(vc)
+        }
     }
 }
 

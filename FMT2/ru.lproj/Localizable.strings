@@ -135,3 +135,5 @@
 "StageMap.alert.cantMakePurchase.title" = "Ошибка";
 "StageMap.alert.cantMakePurchase.message" = "Покупка невозможна для данного устройства";
 
+"SkipButton.title" = "Пропустить";
+

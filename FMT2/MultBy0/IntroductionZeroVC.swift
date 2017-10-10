@@ -15,8 +15,11 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var newGameButton: TopButton!
     @IBOutlet weak var progressBar: ProgressBar!
     
+    @IBOutlet weak var skipButton: TextButton!
     @IBOutlet weak var animalImageView: UIImageView!
     @IBOutlet weak var digitImageView: UIImageView!
+    
+    var needTutorial = true
     
     var digitGuessed = false
     
@@ -38,6 +41,7 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
         configureQuestion()
         configureTopBar()
         configureImage()
+        configureSkipButton()
         configureVariantPanel()
     }
     
@@ -96,6 +100,13 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
         }
     }
     
+    func configureSkipButton() {
+        let title = NSLocalizedString("SkipButton.title", comment: "")
+        skipButton.setTitle(titleText: title)
+        skipButton.isEnabled = false
+        skipButton.alpha = 0.0
+    }
+    
     func configureImage() {
         background.image = SVGKImage(named: "background").uiImage
         let color = Game.current.getColor(forDigit: 0)
@@ -108,12 +119,11 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     }
     
     override func getFadeOutArray() -> [[UIView]] {
-        if newGameWasPressed {
-            return digitGuessed ? 
-            [[animalImageView, digitImageView], [question]] :
-            [[animalImageView, digitImageView], [question], [variantButton1, variantButton2, variantButton3, variantButton4]]
+        if needTutorial {
+            return [[animalImageView, digitImageView], [question]]
+        } else {
+            return [[animalImageView, digitImageView], [question], [skipButton]]
         }
-        return [[animalImageView], [question]]
     }
     
     @IBAction func menuTouchUpInside(_ sender: LeapingButton) {
@@ -141,12 +151,16 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
     
     @IBAction func variantTouchUpInside(_ sender: VariantButton) {
         if !sender.isWrongAnswer {
-            self.view.isUserInteractionEnabled = false
             digitGuessed = true
             fadeOut(array: [[digitImageView], [question], [variantButton1, variantButton2, variantButton3, variantButton4]]) {
+                
                 self.question.transform = .identity
                 self.question.text = NSLocalizedString("Tutorial.zero.text", comment: "")
                 self.fadeInView(self.question)
+                
+                self.skipButton.isEnabled = true
+                self.fadeInView(self.skipButton)
+                
                 let tutorial1Duration = SoundHelper.shared.duration(self.globalStagePassing.type.string + "tutorial1")
                 let tutorial2Duration = SoundHelper.shared.duration(self.globalStagePassing.type.string + "tutorial2")
                 
@@ -154,16 +168,16 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
                 self.perform(#selector(self.play), with: self.globalStagePassing.type.string + "tutorial2", afterDelay: tutorial1Duration)
                 self.perform(#selector(self.nextVC), with: nil, afterDelay: tutorial1Duration + tutorial2Duration)
             }
-        } else {
-            self.view.isUserInteractionEnabled = true
         }
     }
     
     @objc func play(name: String) {
+        guard needTutorial else { return }
         SoundHelper.shared.playVoice(name: name)
     }
     
     @objc func nextVC() {
+        guard needTutorial else { return }
         globalStagePassing.updateElapsedTime()
         let vc = MultByZeroExampleVC(nibName: "MultByZeroExampleVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
@@ -171,11 +185,22 @@ class IntroductionZeroVC: FadeInOutVC, IsGameVC {
             AppDelegate.current.setRootVC(vc)
         }
     }
-
-    @IBAction func touchUp(_ sender: Any) {
-        self.view.isUserInteractionEnabled = false
+    
+    func skipTutorial() {
+        needTutorial = false
+        SoundHelper.shared.stopVoice()
+        globalStagePassing.updateElapsedTime()
+        let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
+        vc.globalStagePassing = self.globalStagePassing
+        vc.mode = .afterZeroTutorial
+        fadeOut {
+            AppDelegate.current.setRootVC(vc)
+        }
     }
     
+    @IBAction func skipButtonAction(_ sender: TextButton) {
+        skipTutorial()
+    }
 }
 
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,6 +26,7 @@
                 <outlet property="progressBar" destination="UO1-GO-atu" id="Xpv-x8-IrU"/>
                 <outlet property="result" destination="yUZ-EA-j4v" id="J0s-xx-EvH"/>
                 <outlet property="secondDigit" destination="T4U-iH-pXw" id="yvB-HG-AQd"/>
+                <outlet property="skipButton" destination="lwk-ob-ODg" id="JdK-lj-BSu"/>
                 <outlet property="textLabel" destination="8C0-as-5Nn" id="Ua1-um-z8V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -81,25 +82,25 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Медвежонок со слоненком балуются, выдавливают крем из тюбика…" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="8C0-as-5Nn">
-                    <rect key="frame" x="41" y="485" width="331" height="130"/>
+                    <rect key="frame" x="41" y="416" width="331" height="129.66666666666663"/>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="27"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4qC-g5-0M7" userLabel="BackgroundImage">
-                    <rect key="frame" x="46" y="152" width="323" height="323"/>
+                    <rect key="frame" x="46" y="83" width="323" height="323"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="4qC-g5-0M7" secondAttribute="height" multiplier="1:1" id="D2d-tc-ORi"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="51e-8V-lBf" userLabel="FirstDigit">
-                    <rect key="frame" x="46" y="152" width="323" height="323"/>
+                    <rect key="frame" x="46" y="83" width="323" height="323"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T4U-iH-pXw" userLabel="SecondDigit">
-                    <rect key="frame" x="46" y="152" width="323" height="323"/>
+                    <rect key="frame" x="46" y="83" width="323" height="323"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yUZ-EA-j4v" userLabel="Result">
-                    <rect key="frame" x="46" y="152" width="323" height="323"/>
+                    <rect key="frame" x="46" y="83" width="323" height="323"/>
                 </imageView>
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IY-6D-0qv">
                     <rect key="frame" x="0.0" y="86" width="414" height="66"/>
@@ -108,6 +109,13 @@
                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMH-4V-Bzm">
                     <rect key="frame" x="0.0" y="702" width="414" height="34"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwk-ob-ODg" userLabel="Skip" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
+                    <rect key="frame" x="41.333333333333343" y="636" width="331.33333333333337" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="skipButtonAction:" destination="-1" eventType="touchUpInside" id="prK-41-XyA"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,10 +136,12 @@
                 <constraint firstItem="T4U-iH-pXw" firstAttribute="centerX" secondItem="51e-8V-lBf" secondAttribute="centerX" id="Nep-pr-CWS"/>
                 <constraint firstAttribute="trailing" secondItem="2za-T5-yGC" secondAttribute="trailing" id="OlH-EZ-OwG"/>
                 <constraint firstAttribute="bottom" secondItem="IMH-4V-Bzm" secondAttribute="bottom" id="QER-tA-dRn"/>
+                <constraint firstAttribute="bottom" secondItem="lwk-ob-ODg" secondAttribute="bottom" constant="20" id="Qe1-04-HDK"/>
                 <constraint firstItem="7IY-6D-0qv" firstAttribute="height" secondItem="ikx-2H-RrZ" secondAttribute="height" multiplier="41:456" id="Qlv-Jg-bgd"/>
                 <constraint firstItem="8C0-as-5Nn" firstAttribute="centerX" secondItem="ikx-2H-RrZ" secondAttribute="centerX" id="R5j-ut-C9w"/>
                 <constraint firstItem="4qC-g5-0M7" firstAttribute="height" secondItem="ikx-2H-RrZ" secondAttribute="height" multiplier="200:456" id="TeM-kV-HZ0"/>
                 <constraint firstItem="51e-8V-lBf" firstAttribute="width" secondItem="4qC-g5-0M7" secondAttribute="width" id="U44-WB-8Q2"/>
+                <constraint firstItem="lwk-ob-ODg" firstAttribute="width" secondItem="lwk-ob-ODg" secondAttribute="height" multiplier="253:61" id="W3C-qW-PFz"/>
                 <constraint firstItem="7IY-6D-0qv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XYC-84-hns"/>
                 <constraint firstItem="51e-8V-lBf" firstAttribute="height" secondItem="4qC-g5-0M7" secondAttribute="height" id="YAj-i8-m4T"/>
                 <constraint firstItem="51e-8V-lBf" firstAttribute="centerX" secondItem="4qC-g5-0M7" secondAttribute="centerX" id="ZH1-eb-58I"/>
@@ -140,10 +150,12 @@
                 <constraint firstItem="2za-T5-yGC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dU8-2W-r8u"/>
                 <constraint firstAttribute="trailing" secondItem="7IY-6D-0qv" secondAttribute="trailing" id="e4l-rv-BwC"/>
                 <constraint firstItem="8C0-as-5Nn" firstAttribute="width" secondItem="ikx-2H-RrZ" secondAttribute="width" multiplier="0.8" id="esF-N4-ZFq"/>
+                <constraint firstItem="lwk-ob-ODg" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="hgq-qI-Xex"/>
                 <constraint firstItem="IMH-4V-Bzm" firstAttribute="height" secondItem="ikx-2H-RrZ" secondAttribute="height" multiplier="21:455" id="l42-VN-nYD"/>
                 <constraint firstItem="ikx-2H-RrZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="md2-vA-lGT"/>
+                <constraint firstItem="lwk-ob-ODg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qje-qd-433"/>
                 <constraint firstItem="T4U-iH-pXw" firstAttribute="height" secondItem="51e-8V-lBf" secondAttribute="height" id="qzu-2e-OLf"/>
-                <constraint firstItem="4qC-g5-0M7" firstAttribute="top" secondItem="7IY-6D-0qv" secondAttribute="bottom" id="ua1-Kc-3eX"/>
+                <constraint firstItem="4qC-g5-0M7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="550:828" id="shw-hW-zSh"/>
                 <constraint firstItem="4qC-g5-0M7" firstAttribute="centerX" secondItem="ikx-2H-RrZ" secondAttribute="centerX" id="upE-Hf-7Pg"/>
                 <constraint firstItem="yUZ-EA-j4v" firstAttribute="width" secondItem="T4U-iH-pXw" secondAttribute="width" id="wFg-W5-PFp"/>
             </constraints>

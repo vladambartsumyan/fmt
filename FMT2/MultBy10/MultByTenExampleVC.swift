@@ -34,6 +34,10 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var resultWidth: NSLayoutConstraint!
     @IBOutlet weak var resultWidth2: NSLayoutConstraint!
     
+    @IBOutlet weak var skipButton: TextButton!
+    
+    var needTutorial = true
+    
     override var needsToTimeAccumulation: Bool {
         return true
     }
@@ -45,6 +49,7 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
         configureImage()
+        configureSkipButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,6 +78,11 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
         self.firstDigit.image = SVGKImage.init(named: "x2102" + gooseColor.rawValue).uiImage
     }
     
+    func configureSkipButton() {
+        let title = NSLocalizedString("SkipButton.title", comment: "")
+        skipButton.setTitle(titleText: title)
+    }
+    
     func configureExerciseSize() {
         [firstDigitWidth, secondDigitWidth, secondDigitWidth2, resultWidth, resultWidth2].forEach{$0?.constant = self.digitWidth}
         [equalityWidth, multiplicationWidth].forEach{$0?.constant = self.signWidth} 
@@ -87,11 +97,14 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
     override func getFadeOutArray() -> [[UIView]] {
         return [
             [backgroundImage, firstDigit, secondDigit, result], 
-            [firstDigitEx, secondDigitEx, secondDigitEx2, answerFirstDigit, answerSecondDigit, multiplicationEx, equalityEx]
+            [firstDigitEx, secondDigitEx, secondDigitEx2, answerFirstDigit, answerSecondDigit, multiplicationEx, equalityEx],
+            [skipButton]
         ]
     }
     
     @objc func nextScreen() {
+        guard needTutorial else { return }
+        needTutorial = false
         globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
@@ -100,4 +113,10 @@ class MultByTenExampleVC: FadeInOutVC, IsGameVC {
             AppDelegate.current.setRootVC(vc)
         }
     }
+    
+    @IBAction func skipButtonAction(_ sender: TextButton) {
+        SoundHelper.shared.stopVoice()
+        nextScreen()
+    }
+    
 }

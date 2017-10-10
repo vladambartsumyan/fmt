@@ -30,6 +30,10 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var multiplicationWidth: NSLayoutConstraint!
     @IBOutlet weak var resultWidth: NSLayoutConstraint!
     
+    @IBOutlet weak var skipButton: TextButton!
+    
+    var needTutorial = true
+    
     override var needsToTimeAccumulation: Bool {
         return true
     }
@@ -41,6 +45,7 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
         configureImage()
+        configureSkipButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,6 +73,11 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
         self.firstDigit.image = SVGKImage.init(named: "x212" + gooseColor.rawValue).uiImage
     }
     
+    func configureSkipButton() {
+        let title = NSLocalizedString("SkipButton.title", comment: "")
+        skipButton.setTitle(titleText: title)
+    }
+    
     func configureExerciseSize() {
         [firstDigitWidth, secondDigitWidth, resultWidth].forEach{$0?.constant = self.digitWidth}
         [equalityWidth, multiplicationWidth].forEach{$0?.constant = self.signWidth} 
@@ -83,11 +93,14 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
     override func getFadeOutArray() -> [[UIView]] {
         return [
             [backgroundImage, firstDigit, secondDigit, result], 
-            [firstDigitEx, secondDigitEx, answerFirstDigit, multiplicationEx, equalityEx]
+            [firstDigitEx, secondDigitEx, answerFirstDigit, multiplicationEx, equalityEx],
+            [skipButton]
         ]
     }
     
     @objc func nextScreen() {
+        guard needTutorial else { return }
+        needTutorial = false
         globalStagePassing.updateElapsedTime()
         let vc = InBetweenVC(nibName: "InBetweenVC", bundle: nil)
         vc.globalStagePassing = self.globalStagePassing
@@ -96,4 +109,10 @@ class MultByOneExampleVC: FadeInOutVC, IsGameVC {
             AppDelegate.current.setRootVC(vc)
         }
     }
+    
+    @IBAction func skipButtonAction(_ sender: TextButton) {
+        SoundHelper.shared.stopVoice()
+        nextScreen()
+    }
+    
 }

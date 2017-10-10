@@ -173,7 +173,7 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.init(width: menu.bounds.width, height: section == 0 ? 100 / 670 * menu.bounds.height : 67 / 670 * menu.bounds.height)
+        return CGSize.init(width: menu.bounds.width, height: section == 0 ? 50 / 670 * menu.bounds.height : 67 / 670 * menu.bounds.height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

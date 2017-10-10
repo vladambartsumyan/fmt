@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,6 +25,7 @@
                 <outlet property="newGameButton" destination="5Bw-kv-wwF" id="LoT-tw-XHy"/>
                 <outlet property="progressBar" destination="Igx-dF-P2k" id="M5b-Ya-eYY"/>
                 <outlet property="question" destination="OCn-VB-Gc7" id="KYI-6m-s3l"/>
+                <outlet property="skipButton" destination="022-7L-HuU" id="moL-U0-F7S"/>
                 <outlet property="variantButton1" destination="Iv8-vA-aYV" id="BiA-di-SwW"/>
                 <outlet property="variantButton2" destination="T4X-F9-N11" id="xOn-hC-6Cf"/>
                 <outlet property="variantButton3" destination="bUf-lX-MUl" id="GPB-Ur-nKx"/>
@@ -41,16 +42,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vBM-qI-7eE">
-                    <rect key="frame" x="62.5" y="110" width="195.5" height="195.5"/>
+                    <rect key="frame" x="62.5" y="61.5" width="195.5" height="195.5"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ze-aP-UEt">
-                    <rect key="frame" x="62.5" y="110" width="195.5" height="195.5"/>
+                    <rect key="frame" x="62.5" y="61.5" width="195.5" height="195.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8Ze-aP-UEt" secondAttribute="height" id="ruq-p5-20j"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="При умножении любого числа на ноль будет ноль" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="OCn-VB-Gc7">
-                    <rect key="frame" x="32" y="327.5" width="256" height="63"/>
+                    <rect key="frame" x="32" y="279" width="256" height="65"/>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="27"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -107,7 +108,6 @@
                                 <constraint firstAttribute="width" secondItem="Iv8-vA-aYV" secondAttribute="height" id="8OS-Cp-E1i"/>
                             </constraints>
                             <connections>
-                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="4Rx-En-ChY"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="yOV-ZS-m7H"/>
                             </connections>
                         </view>
@@ -118,7 +118,6 @@
                                 <constraint firstAttribute="width" secondItem="T4X-F9-N11" secondAttribute="height" id="07o-z9-EgW"/>
                             </constraints>
                             <connections>
-                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="axw-pt-Tcu"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="taU-Ax-pAi"/>
                             </connections>
                         </view>
@@ -129,7 +128,6 @@
                                 <constraint firstAttribute="width" secondItem="bUf-lX-MUl" secondAttribute="height" id="9Yu-yv-vcM"/>
                             </constraints>
                             <connections>
-                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="Mho-Rm-SAp"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="tvu-ba-TCZ"/>
                             </connections>
                         </view>
@@ -140,7 +138,6 @@
                                 <constraint firstAttribute="width" secondItem="sRp-1t-AaC" secondAttribute="height" id="IG5-r6-ahS"/>
                             </constraints>
                             <connections>
-                                <action selector="touchUp:" destination="-1" eventType="valueChanged" id="VVQ-5y-Lv4"/>
                                 <action selector="variantTouchUpInside:" destination="-1" eventType="touchUpInside" id="hFc-3L-D8T"/>
                             </connections>
                         </view>
@@ -162,11 +159,22 @@
                         <constraint firstItem="T4X-F9-N11" firstAttribute="width" secondItem="Iv8-vA-aYV" secondAttribute="width" id="xwW-ul-74w"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="022-7L-HuU" userLabel="Skip" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
+                    <rect key="frame" x="32" y="398" width="256" height="61.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="022-7L-HuU" secondAttribute="height" multiplier="253:61" id="fk9-W5-o9a"/>
+                    </constraints>
+                    <connections>
+                        <action selector="skipButtonAction:" destination="-1" eventType="touchUpInside" id="d6v-0S-3ag"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="8Ze-aP-UEt" firstAttribute="centerY" secondItem="vCC-3r-FWF" secondAttribute="centerY" multiplier="716:828" id="0uO-7w-9Hd"/>
+                <constraint firstItem="8Ze-aP-UEt" firstAttribute="centerY" secondItem="vCC-3r-FWF" secondAttribute="centerY" multiplier="550:828" id="0uO-7w-9Hd"/>
                 <constraint firstAttribute="trailing" secondItem="buy-SK-IE1" secondAttribute="trailing" id="2SD-hh-jlG"/>
+                <constraint firstItem="022-7L-HuU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Tm-GW-9fw"/>
                 <constraint firstItem="vCC-3r-FWF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3Vs-Ap-16l"/>
                 <constraint firstItem="ANI-rj-t8q" firstAttribute="centerX" secondItem="vCC-3r-FWF" secondAttribute="centerX" id="C3u-kC-aGg"/>
                 <constraint firstItem="buy-SK-IE1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="Eyf-fU-Sui"/>
@@ -175,6 +183,7 @@
                 <constraint firstItem="buy-SK-IE1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S9G-48-HhQ"/>
                 <constraint firstItem="OCn-VB-Gc7" firstAttribute="width" secondItem="vCC-3r-FWF" secondAttribute="width" multiplier="0.8" id="Uba-cR-2sE"/>
                 <constraint firstItem="vCC-3r-FWF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ulu-WG-EyN"/>
+                <constraint firstItem="022-7L-HuU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="bt4-TD-3ct"/>
                 <constraint firstAttribute="bottom" secondItem="ANI-rj-t8q" secondAttribute="bottom" constant="25" id="dCy-VX-KyN"/>
                 <constraint firstItem="OCn-VB-Gc7" firstAttribute="top" secondItem="8Ze-aP-UEt" secondAttribute="bottom" constant="22" id="eYx-eH-gB7"/>
                 <constraint firstItem="Iv8-vA-aYV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="76:464" id="fRi-7h-SgQ"/>
@@ -187,6 +196,7 @@
                 <constraint firstItem="8Ze-aP-UEt" firstAttribute="centerX" secondItem="vCC-3r-FWF" secondAttribute="centerX" id="wNe-tt-z8h"/>
                 <constraint firstItem="vBM-qI-7eE" firstAttribute="centerY" secondItem="8Ze-aP-UEt" secondAttribute="centerY" id="y8Q-tF-zbO"/>
                 <constraint firstItem="vBM-qI-7eE" firstAttribute="width" secondItem="8Ze-aP-UEt" secondAttribute="width" id="yHn-Xp-0hW"/>
+                <constraint firstAttribute="bottom" secondItem="022-7L-HuU" secondAttribute="bottom" constant="20" id="zEa-FI-WN4"/>
             </constraints>
             <point key="canvasLocation" x="-76" y="-131"/>
         </view>
