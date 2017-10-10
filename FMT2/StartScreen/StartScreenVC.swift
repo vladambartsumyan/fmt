@@ -92,6 +92,7 @@ class StartScreenVC: FadeInOutVC {
     }
     
     func newGame() {
+        Game.current.reset()
         Game.current.createGame()
         let vc = StageMapVC(nibName: "StageMapVC", bundle: nil)
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)

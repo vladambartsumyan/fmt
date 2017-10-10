@@ -76,7 +76,8 @@ class MenuVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     func newGameTransition() {
         Game.current.reset()
-        let vc = TutorialVC(nibName: "TutorialVC", bundle: nil)
+        Game.current.createGame()
+        let vc = StageMapVC(nibName: "StageMapVC", bundle: nil)
         AppDelegate.current.setRootVCWithAnimation(vc, animation: .transitionFlipFromRight)
     }
 

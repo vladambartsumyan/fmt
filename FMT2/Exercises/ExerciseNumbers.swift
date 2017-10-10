@@ -95,8 +95,9 @@ class ExerciseNumbers: FadeInOutVC, IsGameVC {
         let alert = AlertMaker.newGameAlert {
             self.view.isUserInteractionEnabled = false
             self.newGameWasPressed = true
-            let vc = TutorialVC(nibName: "TutorialVC", bundle: nil)
             Game.current.reset()
+            Game.current.createGame()
+            let vc = StageMapVC(nibName: "StageMapVC", bundle: nil)
             self.fadeOut {
                 AppDelegate.current.setRootVC(vc)
             }
