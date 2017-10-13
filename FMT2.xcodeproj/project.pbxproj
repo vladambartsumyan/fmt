@@ -2366,7 +2366,7 @@
 			name = Exercises;
 			sourceTree = "<group>";
 		};
-		653481A31F0BD03F0094A9CB /* MultBy10 */ = {
+		653481A31F0BD03F0094A9CB /* MultBy10_Tutorial */ = {
 			isa = PBXGroup;
 			children = (
 				653481A41F0BD0800094A9CB /* IntroductionTenVC.swift */,
@@ -2374,7 +2374,7 @@
 				653481A81F0BD4350094A9CB /* MultByTenExampleVC.swift */,
 				653481A91F0BD4350094A9CB /* MultByTenExampleVC.xib */,
 			);
-			name = MultBy10;
+			name = MultBy10_Tutorial;
 			sourceTree = "<group>";
 		};
 		653C42511F38A4F900407C46 /* Images */ = {
@@ -3441,7 +3441,7 @@
 			name = tutorial;
 			sourceTree = "<group>";
 		};
-		656BCDEC1F0A711200F81798 /* MultBy1 */ = {
+		656BCDEC1F0A711200F81798 /* MultBy1_Tutorial */ = {
 			isa = PBXGroup;
 			children = (
 				656BCDED1F0A715C00F81798 /* IntroductionOneVC.swift */,
@@ -3449,7 +3449,7 @@
 				656BCDF11F0A75B200F81798 /* MultByOneExampleVC.swift */,
 				656BCDF21F0A75B200F81798 /* MultByOneExampleVC.xib */,
 			);
-			name = MultBy1;
+			name = MultBy1_Tutorial;
 			sourceTree = "<group>";
 		};
 		659277C01F03C4A7009BC04E = {
@@ -3493,10 +3493,10 @@
 				65104DC51F0512EE00547F35 /* Tutorial */,
 				65104DB71F05114000547F35 /* StageMap */,
 				65104DBC1F05119B00547F35 /* Introduction */,
-				65DE92611F0A2D50009DDB77 /* MultBy0 */,
-				656BCDEC1F0A711200F81798 /* MultBy1 */,
-				653481A31F0BD03F0094A9CB /* MultBy10 */,
-				65F605481F0CE114004421E5 /* Permutation */,
+				65DE92611F0A2D50009DDB77 /* MultBy0_Tutorial */,
+				656BCDEC1F0A711200F81798 /* MultBy1_Tutorial */,
+				653481A31F0BD03F0094A9CB /* MultBy10_Tutorial */,
+				65F605481F0CE114004421E5 /* Permutation_Tutorial */,
 				65104DC61F051AE100547F35 /* Exercises */,
 				656222AE1F0538C400B6C64B /* Statistic */,
 			);
@@ -3532,7 +3532,7 @@
 			name = "Google Analytics";
 			sourceTree = "<group>";
 		};
-		65DE92611F0A2D50009DDB77 /* MultBy0 */ = {
+		65DE92611F0A2D50009DDB77 /* MultBy0_Tutorial */ = {
 			isa = PBXGroup;
 			children = (
 				65DE92661F0A2DAA009DDB77 /* IntroductionZeroVC.swift */,
@@ -3540,10 +3540,10 @@
 				650217751F288CC10067D08B /* MultByZeroExampleVC.swift */,
 				650217761F288CC10067D08B /* MultByZeroExampleVC.xib */,
 			);
-			name = MultBy0;
+			name = MultBy0_Tutorial;
 			sourceTree = "<group>";
 		};
-		65F605481F0CE114004421E5 /* Permutation */ = {
+		65F605481F0CE114004421E5 /* Permutation_Tutorial */ = {
 			isa = PBXGroup;
 			children = (
 				65F6054D1F0CE35C004421E5 /* IntroductionPermutationVC.swift */,
@@ -3551,7 +3551,7 @@
 				65F605491F0CE1F6004421E5 /* PermutationExampleVC.swift */,
 				65F6054A1F0CE1F6004421E5 /* PermutationExampleVC.xib */,
 			);
-			name = Permutation;
+			name = Permutation_Tutorial;
 			sourceTree = "<group>";
 		};
 		A58D1124A11084874685B2A8 /* Pods */ = {

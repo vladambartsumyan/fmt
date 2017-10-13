@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerMyTracker()
         
         UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
-        
         SoundHelper.prepareButtonSounds()
 
         registerLocalNotification(application: application)

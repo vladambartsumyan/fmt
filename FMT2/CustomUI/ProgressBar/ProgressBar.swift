@@ -26,7 +26,7 @@ class ProgressBar: UIControl {
     var bodyColor: UIColor = UIColor.init(red255: 207, green: 193, blue: 162)
 
     var proportionBodyToHead: CGFloat = 0.4
-    var proportionHeadToFrameHeight: CGFloat = 1.0 / 1.3
+    var proportionHeadToFrameHeight: CGFloat = 1.0 / 1.5
     var proportionFillingToBody: CGFloat = 1.3
 
     var progress: CGFloat = 0

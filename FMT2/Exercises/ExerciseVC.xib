@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,6 +15,7 @@
             <connections>
                 <outlet property="background" destination="SPu-pO-gAu" id="eJF-vD-Vea"/>
                 <outlet property="backgroundImage" destination="ap5-P5-sqi" id="YQV-3w-Wga"/>
+                <outlet property="countLabel" destination="CRL-YH-7eO" id="LFJ-vT-Usn"/>
                 <outlet property="eqWidth" destination="Jz5-hb-8wI" id="h65-EE-1Lj"/>
                 <outlet property="equality" destination="VY8-P5-fhH" id="4oU-8h-O7l"/>
                 <outlet property="firstDigit" destination="zNd-dE-Xsh" id="mHn-Cf-aI9"/>
@@ -313,6 +314,12 @@
                         <constraint firstItem="yCS-NL-SV7" firstAttribute="leading" secondItem="JUd-a6-kpe" secondAttribute="trailing" constant="21" id="wt0-1H-fsS"/>
                     </constraints>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Осталось 10 из 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRL-YH-7eO">
+                    <rect key="frame" x="128.33333333333331" y="38" width="128.33333333333331" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -349,6 +356,7 @@
                 <constraint firstItem="SPu-pO-gAu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="noh-F1-cO4"/>
                 <constraint firstAttribute="trailing" secondItem="ShJ-pr-A5Y" secondAttribute="trailing" id="ntc-Yw-hL8"/>
                 <constraint firstItem="SPu-pO-gAu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="okc-1O-s9m"/>
+                <constraint firstItem="CRL-YH-7eO" firstAttribute="centerX" secondItem="JUd-a6-kpe" secondAttribute="centerX" constant="-15" id="qb6-H8-GpL"/>
                 <constraint firstItem="Lmg-fo-mvN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qh2-ae-feV"/>
                 <constraint firstItem="wf8-bn-dRa" firstAttribute="top" secondItem="YNA-Uc-rNt" secondAttribute="bottom" id="qvb-7R-Oib"/>
                 <constraint firstItem="ydO-NO-04u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="rQ3-CT-h5j"/>
@@ -356,6 +364,7 @@
                 <constraint firstItem="YNA-Uc-rNt" firstAttribute="centerX" secondItem="SPu-pO-gAu" secondAttribute="centerX" id="vH7-g3-BmV"/>
                 <constraint firstItem="Mwd-0D-iPi" firstAttribute="width" secondItem="SPu-pO-gAu" secondAttribute="width" multiplier="76:464" id="vlj-4Q-Iki"/>
                 <constraint firstItem="vN6-5U-18p" firstAttribute="width" secondItem="R59-HR-owU" secondAttribute="width" id="xuw-vI-AHd"/>
+                <constraint firstItem="CRL-YH-7eO" firstAttribute="top" secondItem="JUd-a6-kpe" secondAttribute="top" constant="3" id="zMd-nc-nCz"/>
                 <constraint firstItem="R59-HR-owU" firstAttribute="width" secondItem="zNd-dE-Xsh" secondAttribute="width" id="zhX-Kn-aSp"/>
             </constraints>
             <point key="canvasLocation" x="8" y="61"/>

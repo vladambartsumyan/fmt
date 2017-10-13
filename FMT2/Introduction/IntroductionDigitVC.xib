@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="animalImageView" destination="vBM-qI-7eE" id="Yx9-rO-1oY"/>
                 <outlet property="background" destination="vCC-3r-FWF" id="PXr-pK-Zn1"/>
+                <outlet property="countLabel" destination="xU4-e0-ma9" id="ZM4-aZ-a2W"/>
                 <outlet property="digitImageView" destination="8Ze-aP-UEt" id="5Hd-FJ-hly"/>
                 <outlet property="menuButton" destination="xlQ-VH-nsy" id="DwB-0d-JP4"/>
                 <outlet property="newGameButton" destination="5Bw-kv-wwF" id="LoT-tw-XHy"/>
@@ -34,32 +35,32 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vCC-3r-FWF">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2clear" translatesAutoresizingMaskIntoConstraints="NO" id="vBM-qI-7eE">
-                    <rect key="frame" x="57" y="169" width="299" height="299"/>
+                    <rect key="frame" x="44" y="130.5" width="231" height="230.5"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="8Ze-aP-UEt">
-                    <rect key="frame" x="57" y="169" width="299" height="299"/>
+                    <rect key="frame" x="44" y="130.5" width="231" height="230.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8Ze-aP-UEt" secondAttribute="height" id="ruq-p5-20j"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="На какую цифру похож гусь?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="OCn-VB-Gc7">
-                    <rect key="frame" x="57" y="490" width="299" height="65"/>
+                    <rect key="frame" x="44" y="383" width="231" height="65"/>
                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="27"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buy-SK-IE1" userLabel="TopBar">
-                    <rect key="frame" x="0.0" y="35" width="414" height="51"/>
+                    <rect key="frame" x="0.0" y="35" width="320" height="39.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlQ-VH-nsy" customClass="TopButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="21" y="0.0" width="51" height="51"/>
+                            <rect key="frame" x="21" y="0.0" width="39.5" height="39.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="xlQ-VH-nsy" secondAttribute="height" id="IWp-tA-UeZ"/>
@@ -69,7 +70,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Bw-kv-wwF" customClass="TopButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="343" y="0.0" width="51" height="51"/>
+                            <rect key="frame" x="260.5" y="0.0" width="39.5" height="39.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="5Bw-kv-wwF" secondAttribute="height" id="EZo-8e-HFK"/>
@@ -79,7 +80,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igx-dF-P2k" customClass="ProgressBar" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="93" y="0.0" width="229" height="51"/>
+                            <rect key="frame" x="81.5" y="0.0" width="158" height="39.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
@@ -98,10 +99,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANI-rj-t8q" userLabel="VariantPanel">
-                    <rect key="frame" x="41" y="623" width="332" height="88"/>
+                    <rect key="frame" x="25" y="470.5" width="270" height="72.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iv8-vA-aYV" customClass="VariantButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="15" y="10" width="68" height="68"/>
+                            <rect key="frame" x="15" y="10" width="52.5" height="52.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Iv8-vA-aYV" secondAttribute="height" id="8OS-Cp-E1i"/>
@@ -112,7 +113,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4X-F9-N11" customClass="VariantButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="93" y="10" width="68" height="68"/>
+                            <rect key="frame" x="77.5" y="10" width="52.5" height="52.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="T4X-F9-N11" secondAttribute="height" id="07o-z9-EgW"/>
@@ -123,7 +124,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-lX-MUl" customClass="VariantButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="171" y="10" width="68" height="68"/>
+                            <rect key="frame" x="140" y="10" width="52.5" height="52.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="bUf-lX-MUl" secondAttribute="height" id="9Yu-yv-vcM"/>
@@ -134,7 +135,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRp-1t-AaC" customClass="VariantButton" customModule="FMT2" customModuleProvider="target">
-                            <rect key="frame" x="249" y="10" width="68" height="68"/>
+                            <rect key="frame" x="202.5" y="10" width="52.5" height="52.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="sRp-1t-AaC" secondAttribute="height" id="IG5-r6-ahS"/>
@@ -162,9 +163,16 @@
                         <constraint firstItem="T4X-F9-N11" firstAttribute="width" secondItem="Iv8-vA-aYV" secondAttribute="width" id="xwW-ul-74w"/>
                     </constraints>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Осталось 10 из 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xU4-e0-ma9">
+                    <rect key="frame" x="82" y="38" width="128.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="xU4-e0-ma9" firstAttribute="top" secondItem="Igx-dF-P2k" secondAttribute="top" constant="3" id="0RC-IB-lPU"/>
                 <constraint firstItem="8Ze-aP-UEt" firstAttribute="centerY" secondItem="vCC-3r-FWF" secondAttribute="centerY" multiplier="716:828" id="0uO-7w-9Hd"/>
                 <constraint firstAttribute="trailing" secondItem="buy-SK-IE1" secondAttribute="trailing" id="2SD-hh-jlG"/>
                 <constraint firstItem="vCC-3r-FWF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3Vs-Ap-16l"/>
@@ -174,6 +182,7 @@
                 <constraint firstItem="buy-SK-IE1" firstAttribute="height" secondItem="vCC-3r-FWF" secondAttribute="height" multiplier="57:830" id="Kfr-GW-07v"/>
                 <constraint firstItem="OCn-VB-Gc7" firstAttribute="centerX" secondItem="8Ze-aP-UEt" secondAttribute="centerX" id="Q6F-iy-o7V"/>
                 <constraint firstItem="buy-SK-IE1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S9G-48-HhQ"/>
+                <constraint firstItem="xU4-e0-ma9" firstAttribute="centerX" secondItem="Igx-dF-P2k" secondAttribute="centerX" constant="-15" id="Ubj-cn-9wj"/>
                 <constraint firstItem="vCC-3r-FWF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ulu-WG-EyN"/>
                 <constraint firstItem="ANI-rj-t8q" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OCn-VB-Gc7" secondAttribute="bottom" constant="10" id="am2-Uq-ERD"/>
                 <constraint firstAttribute="bottom" secondItem="ANI-rj-t8q" secondAttribute="bottom" constant="25" id="dCy-VX-KyN"/>

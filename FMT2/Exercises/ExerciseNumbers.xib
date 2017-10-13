@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="background" destination="oLo-7e-dq8" id="oDz-kY-GZt"/>
                 <outlet property="backgroundImage" destination="BxK-H1-Trj" id="ApM-2G-RVZ"/>
+                <outlet property="countLabel" destination="rT0-xn-Wzm" id="8kk-Ra-7xc"/>
                 <outlet property="firstDigit" destination="NIP-MA-Eck" id="rqQ-03-Rkw"/>
                 <outlet property="firstVariant" destination="9Df-is-vE4" id="G2P-oL-Bes"/>
                 <outlet property="fourthVariant" destination="mO9-zw-zil" id="q4k-I1-IAf"/>
@@ -182,6 +183,12 @@
                     <rect key="frame" x="0.0" y="701.66666666666652" width="414" height="34.333333333333371"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Осталось 10 из 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT0-xn-Wzm">
+                    <rect key="frame" x="128.33333333333337" y="38" width="128.66666666666663" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -206,6 +213,7 @@
                 <constraint firstItem="BxK-H1-Trj" firstAttribute="centerX" secondItem="oLo-7e-dq8" secondAttribute="centerX" id="OfO-tT-kVr"/>
                 <constraint firstItem="KHT-Mh-2c6" firstAttribute="centerY" secondItem="BxK-H1-Trj" secondAttribute="centerY" id="PPy-pT-Wn1"/>
                 <constraint firstItem="LjU-EU-mJd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PTp-vZ-UjV"/>
+                <constraint firstItem="rT0-xn-Wzm" firstAttribute="centerX" secondItem="7nT-gU-utv" secondAttribute="centerX" constant="-15" id="QhX-G3-YrS"/>
                 <constraint firstItem="KHT-Mh-2c6" firstAttribute="height" secondItem="NIP-MA-Eck" secondAttribute="height" id="TEZ-qP-b5p"/>
                 <constraint firstAttribute="bottom" secondItem="oLo-7e-dq8" secondAttribute="bottom" id="UZ7-Kt-sWz"/>
                 <constraint firstAttribute="trailing" secondItem="vQw-Bw-bGd" secondAttribute="trailing" id="UfL-OX-46S"/>
@@ -221,6 +229,7 @@
                 <constraint firstItem="Zqc-Q4-cnS" firstAttribute="width" secondItem="BxK-H1-Trj" secondAttribute="width" id="eu3-vM-n3d"/>
                 <constraint firstAttribute="trailing" secondItem="uGB-2U-efJ" secondAttribute="trailing" id="fae-ug-qSh"/>
                 <constraint firstItem="BxK-H1-Trj" firstAttribute="top" secondItem="uGB-2U-efJ" secondAttribute="bottom" id="g5c-Ps-8Xg"/>
+                <constraint firstItem="rT0-xn-Wzm" firstAttribute="top" secondItem="7nT-gU-utv" secondAttribute="top" constant="3" id="g6Z-n9-KmM"/>
                 <constraint firstItem="9Df-is-vE4" firstAttribute="width" secondItem="oLo-7e-dq8" secondAttribute="width" multiplier="76:464" id="gvF-Bd-wOs"/>
                 <constraint firstItem="vQw-Bw-bGd" firstAttribute="height" secondItem="oLo-7e-dq8" secondAttribute="height" multiplier="21:455" id="hUh-cv-FI4"/>
                 <constraint firstAttribute="bottom" secondItem="vQw-Bw-bGd" secondAttribute="bottom" id="iG1-Hd-hEe"/>

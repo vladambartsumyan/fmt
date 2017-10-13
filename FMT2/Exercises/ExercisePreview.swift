@@ -20,6 +20,8 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
     // Button
     @IBOutlet weak var continueButton: TextButton!
     
+    @IBOutlet weak var countLabel: UILabel!
+    
     var timer: Timer? = nil
     
     // Level
@@ -117,6 +119,17 @@ class ExercisePreview: FadeInOutVC, IsGameVC {
             progressBar.alpha = 0
         } else {
             progressBar.progress = CGFloat(globalStagePassing.progress)
+        }
+        let isExam = globalStagePassing.currentStagePassing!.stage.mode == .exam
+        let isTraining = globalStagePassing._type == StageType.training.rawValue
+        if isExam && !isTraining {
+            let progressBarHeight = UIScreen.main.bounds.height * 57 / 830
+            progressBar.transform = CGAffineTransform(translationX: 0, y: progressBarHeight / 6)
+            countLabel.isHidden = false
+            let numberOfExercises = globalStagePassing.currentStagePassing!.exercises.count
+            let currentExerciseNumber = globalStagePassing.currentStagePassing!.index
+            countLabel.text = "Осталось \(numberOfExercises - currentExerciseNumber) из \(numberOfExercises)"
+            countLabel.font = UIFont.systemFont(ofSize: 14 * UIScreen.main.bounds.width / 320)
         }
     }
     

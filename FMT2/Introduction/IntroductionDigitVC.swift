@@ -18,6 +18,8 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var animalImageView: UIImageView!
     @IBOutlet weak var digitImageView: UIImageView!
     
+    @IBOutlet weak var countLabel: UILabel!
+    
     var globalStagePassing: GlobalStagePassing!
     
     var mode: StageMode!
@@ -35,9 +37,9 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
         [variantButton1, variantButton2, variantButton3, variantButton4].forEach{$0?.isExclusiveTouch = true}
         configureLevel()
         configureQuestion()
-        configureTopBar()
         configureVariantPanel()
         configureImage()
+        configureTopBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,6 +75,16 @@ class IntroductionDigitVC: FadeInOutVC, IsGameVC {
         menuButton.setIcon(withName: "MenuIcon")
         newGameButton.setIcon(withName: "NewGameIcon")
         progressBar.progress = CGFloat(globalStagePassing.progress)
+        let isExam = globalStagePassing.currentStagePassing!.stage.mode == .exam
+        if isExam {
+            let progressBarHeight = UIScreen.main.bounds.height * 57 / 830
+            progressBar.transform = CGAffineTransform(translationX: 0, y: progressBarHeight / 6)
+            countLabel.isHidden = false
+            let numberOfExercises = globalStagePassing.currentStagePassing!.exercises.count
+            let currentExerciseNumber = globalStagePassing.currentStagePassing!.index
+            countLabel.text = "Осталось \(numberOfExercises - currentExerciseNumber) из \(numberOfExercises)"
+            countLabel.font = UIFont.systemFont(ofSize: 14 * UIScreen.main.bounds.width / 320)
+        }
     }
     
     func configureVariantPanel() {
