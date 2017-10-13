@@ -33,6 +33,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
     @IBOutlet weak var res2: UIImageView!
     @IBOutlet weak var question: UIImageView!
 
+    @IBOutlet weak var topBarHeightConstraint: NSLayoutConstraint!
     let digitWidth = 40.0 * UIScreen.main.bounds.width / 414.0
     let signWidth = 30.0 * UIScreen.main.bounds.width / 414.0
 
@@ -120,7 +121,7 @@ class ExerciseVC: FadeInOutVC, IsGameVC {
         let isExam = globalStagePassing.currentStagePassing!.stage.mode == .exam
         let isTraining = globalStagePassing._type == StageType.training.rawValue
         if isExam && !isTraining {
-            let progressBarHeight = UIScreen.main.bounds.height * 57 / 830
+            let progressBarHeight = UIScreen.main.bounds.height * topBarHeightConstraint.multiplier
             progressBar.transform = CGAffineTransform(translationX: 0, y: progressBarHeight / 6)
             countLabel.isHidden = false
             let numberOfExercises = globalStagePassing.currentStagePassing!.exercises.count

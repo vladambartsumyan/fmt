@@ -44,6 +44,7 @@
                 <outlet property="snd2" destination="0RN-Cs-P1V" id="oZ1-ia-ogP"/>
                 <outlet property="snd2width" destination="tGm-KR-fax" id="GCY-I6-kGe"/>
                 <outlet property="thirdVariant" destination="xW3-ZM-N0u" id="gn0-xE-TxS"/>
+                <outlet property="topBarHeightConstraint" destination="tt3-cy-nYe" id="0DX-n7-V2G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
