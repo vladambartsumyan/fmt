@@ -10,6 +10,7 @@ enum TrackingAction {
     case applicationInForeground(skippedNotifications: Int)
     case applicationInBackground
     case notificationClick(skippedNotifications: Int)
+    case purchaseSuccess
     // Game
     case startNewGame
     // Introduction
@@ -42,6 +43,7 @@ enum TrackingAction {
         case .applicationInForeground(let skippedNotifications):                                return ("application_in", "\(skippedNotifications)")
         case .applicationInBackground:                                                          return ("application_out", nil)
         case .notificationClick(let skippedNotification):                                       return ("push_click", "\(skippedNotification)")
+        case .purchaseSuccess:                                                                  return ("purchase_success", nil)
         // Game
         case .startNewGame:                                                                     return ("start_new_game", nil)
         // Introduction

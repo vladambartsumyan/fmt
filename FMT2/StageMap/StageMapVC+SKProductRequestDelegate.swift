@@ -1,5 +1,6 @@
 import UIKit
 import StoreKit 
+import MyTrackerSDK
 
 extension StageMapVC: SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
@@ -58,6 +59,10 @@ extension StageMapVC: SKProductsRequestDelegate, SKPaymentTransactionObserver {
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     UserDefaults.standard.set(true, forKey: UserDefaultsKey.isFullVersion.rawValue)
                     isFullVersion = true
+                    if fullVersion != nil {
+                        MRMyTracker.trackPurchase(withProduct: fullVersion!, transaction: trans)
+                        GAManager.track(action: .purchaseSuccess, with: .application)
+                    }
                     updateButtons()
                     break
                 case .failed:
