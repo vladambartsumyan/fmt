@@ -111,7 +111,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwk-ob-ODg" userLabel="Skip" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
-                    <rect key="frame" x="41.333333333333343" y="636" width="331.33333333333337" height="80"/>
+                    <rect key="frame" x="41.333333333333343" y="626" width="331.33333333333337" height="80"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <action selector="skipButtonAction:" destination="-1" eventType="touchUpInside" id="prK-41-XyA"/>
@@ -136,7 +136,7 @@
                 <constraint firstItem="T4U-iH-pXw" firstAttribute="centerX" secondItem="51e-8V-lBf" secondAttribute="centerX" id="Nep-pr-CWS"/>
                 <constraint firstAttribute="trailing" secondItem="2za-T5-yGC" secondAttribute="trailing" id="OlH-EZ-OwG"/>
                 <constraint firstAttribute="bottom" secondItem="IMH-4V-Bzm" secondAttribute="bottom" id="QER-tA-dRn"/>
-                <constraint firstAttribute="bottom" secondItem="lwk-ob-ODg" secondAttribute="bottom" constant="20" id="Qe1-04-HDK"/>
+                <constraint firstAttribute="bottom" secondItem="lwk-ob-ODg" secondAttribute="bottom" constant="30" id="Qe1-04-HDK"/>
                 <constraint firstItem="7IY-6D-0qv" firstAttribute="height" secondItem="ikx-2H-RrZ" secondAttribute="height" multiplier="41:456" id="Qlv-Jg-bgd"/>
                 <constraint firstItem="8C0-as-5Nn" firstAttribute="centerX" secondItem="ikx-2H-RrZ" secondAttribute="centerX" id="R5j-ut-C9w"/>
                 <constraint firstItem="4qC-g5-0M7" firstAttribute="height" secondItem="ikx-2H-RrZ" secondAttribute="height" multiplier="200:456" id="TeM-kV-HZ0"/>

@@ -229,7 +229,7 @@
                     <rect key="frame" x="41" y="75.5" width="292" height="292.5"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cht-o2-kUL" userLabel="Skip" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
-                    <rect key="frame" x="37" y="574.5" width="300" height="72.5"/>
+                    <rect key="frame" x="37" y="564.5" width="300" height="72.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Cht-o2-kUL" secondAttribute="height" multiplier="253:61" id="0sR-ZZ-afb"/>
@@ -265,7 +265,7 @@
                 <constraint firstItem="ShJ-pr-A5Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RPj-So-oDA"/>
                 <constraint firstItem="R59-HR-owU" firstAttribute="height" secondItem="zNd-dE-Xsh" secondAttribute="height" id="UVR-s0-to2"/>
                 <constraint firstItem="R59-HR-owU" firstAttribute="centerX" secondItem="zNd-dE-Xsh" secondAttribute="centerX" id="WHB-Pc-chL"/>
-                <constraint firstAttribute="bottom" secondItem="Cht-o2-kUL" secondAttribute="bottom" constant="20" id="XD0-sd-wpB"/>
+                <constraint firstAttribute="bottom" secondItem="Cht-o2-kUL" secondAttribute="bottom" constant="30" id="XD0-sd-wpB"/>
                 <constraint firstAttribute="trailing" secondItem="wf8-bn-dRa" secondAttribute="trailing" id="Xea-kV-n9t"/>
                 <constraint firstItem="ap5-P5-sqi" firstAttribute="height" secondItem="SPu-pO-gAu" secondAttribute="height" multiplier="200:456" id="YWD-t0-NCI"/>
                 <constraint firstItem="vN6-5U-18p" firstAttribute="centerX" secondItem="R59-HR-owU" secondAttribute="centerX" id="b0Y-hQ-hRG"/>

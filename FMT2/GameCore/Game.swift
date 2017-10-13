@@ -110,31 +110,31 @@ class Game {
             Stage.create(type: .multiplicationBy10, mode: .exam,   numberOfExercises: 8,  possibleExercises: fun(["2x10", "3x10", "4x10", "5x10", "6x10", "7x10", "8x10", "9x10"])),
             
             Stage.create(type: .multiplicationBy2,  mode: .simple, numberOfExercises: 8,  possibleExercises: fun(["2x2", "2x3", "2x4", "2x5", "2x6", "2x7", "2x8", "2x9"])),
-            Stage.create(type: .multiplicationBy2,  mode: .exam,   numberOfExercises: 11,  possibleExercises: fun(["2x0", "2x1", "2x10", "2x2", "2x3", "2x4", "2x5", "2x6", "2x7", "2x8", "2x9", "9x1", "8x1"])),
+            Stage.create(type: .multiplicationBy2,  mode: .exam,   numberOfExercises: 8,  possibleExercises: fun(["2x2", "2x3", "2x4", "2x5", "2x6", "2x7", "2x8", "2x9"])),
             
             Stage.create(type: .multiplicationBy3,  mode: .simple, numberOfExercises: 7,  possibleExercises: fun(["3x3", "3x4", "3x5", "3x6", "3x7", "3x8", "3x9"])),
-            Stage.create(type: .multiplicationBy3,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["2x3", "3x3", "3x4", "3x5", "3x6", "3x7", "3x8", "3x9", "2x6", "2x7", "2x8", "2x9"])),
+            Stage.create(type: .multiplicationBy3,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["2x3", "3x3", "3x4", "3x5", "3x6", "3x7", "3x8", "3x9", "2x8", "2x9"])),
             
             Stage.create(type: .multiplicationBy4,  mode: .simple, numberOfExercises: 6,  possibleExercises: fun(["4x4", "4x5", "4x6", "4x7", "4x8", "4x9"])),
-            Stage.create(type: .multiplicationBy4,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["4x4", "4x5", "4x6", "4x7", "4x8", "4x9", "3x4", "2x4", "3x5", "3x6", "3x7", "3x8", "3x9", "2x8", "2x9"])),
+            Stage.create(type: .multiplicationBy4,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["4x4", "4x5", "4x6", "4x7", "4x8", "4x9", "3x4", "2x4", "3x8", "3x9"])),
             
             Stage.create(type: .multiplicationBy5,  mode: .simple, numberOfExercises: 5,  possibleExercises: fun(["5x5", "5x6", "5x7", "5x8", "5x9"])),
-            Stage.create(type: .multiplicationBy5,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["5x5", "5x6", "5x7", "5x8", "5x9", "4x5", "3x5", "2x5", "4x6", "4x7", "4x8", "4x9", "3x7", "3x8", "3x9"])),
+            Stage.create(type: .multiplicationBy5,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["5x5", "5x6", "5x7", "5x8", "5x9", "4x5", "3x5", "2x5", "4x8", "4x9"])),
             
             Stage.create(type: .multiplicationBy6,  mode: .simple, numberOfExercises: 4,  possibleExercises: fun(["6x6", "6x7", "6x8", "6x9"])),
-            Stage.create(type: .multiplicationBy6,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["6x6", "6x7", "6x8", "6x9", "2x6", "3x6", "4x6", "5x6", "5x7", "5x8", "5x9", "4x7", "4x8", "4x9", "3x9"])),
+            Stage.create(type: .multiplicationBy6,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["6x6", "6x7", "6x8", "6x9", "2x6", "3x6", "4x6", "5x6", "5x8", "5x9"])),
             
             Stage.create(type: .multiplicationBy7,  mode: .simple, numberOfExercises: 3,  possibleExercises: fun(["7x7", "7x8", "7x9"])),
-            Stage.create(type: .multiplicationBy7,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["7x7", "7x8", "7x9", "6x7", "5x7", "4x7", "3x7", "2x7", "6x8", "6x9", "5x8", "5x9", "4x8", "4x9", "3x9"])),
+            Stage.create(type: .multiplicationBy7,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["7x7", "7x8", "7x9", "6x7", "5x7", "4x7", "3x7", "2x7", "6x8", "6x9"])),
             
             Stage.create(type: .multiplicationBy8,  mode: .simple, numberOfExercises: 2,  possibleExercises: fun(["8x8", "8x9"])),
-            Stage.create(type: .multiplicationBy8,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["8x8", "8x9", "7x8", "6x8", "5x8", "4x8", "3x8", "2x8", "6x9", "5x9", "4x9", "3x9", "6x7", "5x7", "7x7"])),
+            Stage.create(type: .multiplicationBy8,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["8x8", "8x9", "7x8", "6x8", "5x8", "4x8", "3x8", "2x8", "7x7", "7x9"])),
             
             Stage.create(type: .multiplicationBy9,  mode: .simple, numberOfExercises: 1,  possibleExercises: fun(["9x9"])),
-            Stage.create(type: .multiplicationBy9,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["9x9", "8x9", "7x9", "6x9", "5x9", "4x9", "3x9", "2x9", "7x8", "6x8", "5x8", "8x8", "7x7", "6x7", "6x6"])),
+            Stage.create(type: .multiplicationBy9,  mode: .exam,   numberOfExercises: 8, possibleExercises: fun(["9x9", "8x9", "7x9", "6x9", "5x9", "4x9", "3x9", "2x9", "7x8", "8x8"])),
             
             Stage.create(type: .permutation,        mode: .simple, numberOfExercises: 28, possibleExercises: fun(["3x2", "4x2", "5x2", "6x2", "7x2", "8x2", "9x2", "4x3", "5x3", "6x3", "7x3", "8x3", "9x3", "5x4", "6x4", "7x4", "8x4", "9x4", "6x5", "7x5", "8x5", "9x5", "7x6", "8x6", "9x6", "8x7", "9x7", "9x8"])),
-            Stage.create(type: .permutation,        mode: .exam,   numberOfExercises: 15, possibleExercises: fun(["3x2", "4x2", "5x2", "6x2", "7x2", "8x2", "9x2", "4x3", "5x3", "6x3", "7x3", "8x3", "9x3", "5x4", "6x4", "7x4", "8x4", "9x4", "6x5", "7x5", "8x5", "9x5", "7x6", "8x6", "9x6", "8x7", "9x7", "9x8"]))            
+            Stage.create(type: .permutation,        mode: .exam,   numberOfExercises: 10, possibleExercises: fun(["3x2", "4x2", "5x2", "6x2", "7x2", "8x2", "9x2", "4x3", "5x3", "6x3", "7x3", "8x3", "9x3", "5x4", "6x4", "7x4", "8x4", "9x4", "6x5", "7x5", "8x5", "9x5", "7x6", "8x6", "9x6", "8x7", "9x7", "9x8"]))            
         ]
         return allStages
     }
@@ -153,7 +153,11 @@ class Game {
             realm.delete(realm.objects(ExercisePassing.self))
             realm.delete(realm.objects(StagePassing.self))
             realm.delete(realm.objects(GlobalStagePassing.self))
+            realm.delete(realm.objects(Exercise.self))
+            realm.delete(realm.objects(GlobalStage.self))
+            realm.delete(realm.objects(Stage.self))
         }
+        initOnDevice()
         ServerTaskManager.pushBack(.startGame())
     }
     

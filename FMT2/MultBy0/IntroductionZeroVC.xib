@@ -160,7 +160,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="022-7L-HuU" userLabel="Skip" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
-                    <rect key="frame" x="32" y="398" width="256" height="61.5"/>
+                    <rect key="frame" x="32" y="388.5" width="256" height="61.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="022-7L-HuU" secondAttribute="height" multiplier="253:61" id="fk9-W5-o9a"/>
@@ -196,7 +196,7 @@
                 <constraint firstItem="8Ze-aP-UEt" firstAttribute="centerX" secondItem="vCC-3r-FWF" secondAttribute="centerX" id="wNe-tt-z8h"/>
                 <constraint firstItem="vBM-qI-7eE" firstAttribute="centerY" secondItem="8Ze-aP-UEt" secondAttribute="centerY" id="y8Q-tF-zbO"/>
                 <constraint firstItem="vBM-qI-7eE" firstAttribute="width" secondItem="8Ze-aP-UEt" secondAttribute="width" id="yHn-Xp-0hW"/>
-                <constraint firstAttribute="bottom" secondItem="022-7L-HuU" secondAttribute="bottom" constant="20" id="zEa-FI-WN4"/>
+                <constraint firstAttribute="bottom" secondItem="022-7L-HuU" secondAttribute="bottom" constant="30" id="zEa-FI-WN4"/>
             </constraints>
             <point key="canvasLocation" x="-76" y="-131"/>
         </view>

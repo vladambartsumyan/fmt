@@ -160,7 +160,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Op-ya-Ugn" userLabel="Skip" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
-                    <rect key="frame" x="31.5" y="486.5" width="256" height="61.5"/>
+                    <rect key="frame" x="31.5" y="476.5" width="256" height="61.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2Op-ya-Ugn" secondAttribute="height" multiplier="253:61" id="obI-gA-xMX"/>
@@ -188,7 +188,7 @@
                 <constraint firstItem="Iv8-vA-aYV" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="76:464" id="fRi-7h-SgQ"/>
                 <constraint firstAttribute="trailing" secondItem="vCC-3r-FWF" secondAttribute="trailing" id="ifX-LN-Xzn"/>
                 <constraint firstItem="vBM-qI-7eE" firstAttribute="centerX" secondItem="8Ze-aP-UEt" secondAttribute="centerX" id="njP-Jz-PJ0"/>
-                <constraint firstAttribute="bottom" secondItem="2Op-ya-Ugn" secondAttribute="bottom" constant="20" id="owU-to-LTq"/>
+                <constraint firstAttribute="bottom" secondItem="2Op-ya-Ugn" secondAttribute="bottom" constant="30" id="owU-to-LTq"/>
                 <constraint firstItem="2Op-ya-Ugn" firstAttribute="width" secondItem="vCC-3r-FWF" secondAttribute="width" multiplier="0.8" id="pUY-a5-nET"/>
                 <constraint firstItem="8Ze-aP-UEt" firstAttribute="height" secondItem="vCC-3r-FWF" secondAttribute="height" multiplier="338:830" id="rBK-0A-hux"/>
                 <constraint firstItem="vBM-qI-7eE" firstAttribute="height" secondItem="8Ze-aP-UEt" secondAttribute="height" id="rgc-sY-MHG"/>

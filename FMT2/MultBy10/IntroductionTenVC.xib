@@ -107,7 +107,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23d-dz-bRl" userLabel="Skip" customClass="TextButton" customModule="FMT2" customModuleProvider="target">
-                    <rect key="frame" x="37" y="574.5" width="300" height="72.5"/>
+                    <rect key="frame" x="37" y="564.5" width="300" height="72.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="23d-dz-bRl" secondAttribute="height" multiplier="253:61" id="JbL-Bz-jE7"/>
@@ -121,7 +121,7 @@
             <constraints>
                 <constraint firstItem="51e-8V-lBf" firstAttribute="centerY" secondItem="4qC-g5-0M7" secondAttribute="centerY" id="0BM-py-emh"/>
                 <constraint firstItem="T4U-iH-pXw" firstAttribute="width" secondItem="51e-8V-lBf" secondAttribute="width" id="0Eo-Pb-OzU"/>
-                <constraint firstAttribute="bottom" secondItem="23d-dz-bRl" secondAttribute="bottom" constant="20" id="5Pq-IX-dRP"/>
+                <constraint firstAttribute="bottom" secondItem="23d-dz-bRl" secondAttribute="bottom" constant="30" id="5Pq-IX-dRP"/>
                 <constraint firstItem="7IY-6D-0qv" firstAttribute="top" secondItem="2za-T5-yGC" secondAttribute="bottom" id="6E6-qa-dXa"/>
                 <constraint firstItem="23d-dz-bRl" firstAttribute="centerX" secondItem="ikx-2H-RrZ" secondAttribute="centerX" id="6aQ-eG-Np0"/>
                 <constraint firstItem="2za-T5-yGC" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="57:830" id="8S1-8m-fcg"/>
