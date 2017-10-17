@@ -226,11 +226,10 @@ class StageMapVC: FadeInOutVC {
 
     func stageToButtonMode(stage: GlobalStagePassing) -> MapButton.MapButtonMode {
         if let curGlobalStagePassing = curGlobalStagePassing {
-            if stage == curGlobalStagePassing {
+            if stage._type == curGlobalStagePassing._type {
                 return .current
             }
         }
-        
         if stage.isPassed {
             return .passed
         }

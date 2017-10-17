@@ -50,7 +50,7 @@ class ServerTaskManager {
     init() {
         let realm = try! Realm()
         ServerTaskManager.serverTasks = realm.objects(ServerTask.self).sorted(byKeyPath: "createdAt")
-        ServerTaskManager.notificationToken = ServerTaskManager.serverTasks.addNotificationBlock { changes in
+        ServerTaskManager.notificationToken = ServerTaskManager.serverTasks.observe { changes in
             switch changes {
             case .update(_, let deletions, let insertions, _):
                 if ServerTaskManager.serverTasks.count + deletions.count - insertions.count == 0 {

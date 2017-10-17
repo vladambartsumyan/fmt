@@ -2,25 +2,41 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>TRACKING_ID</key>
-	<string>UA-103178212-1</string>
+	<string>UA-108274588-1</string>
+	<key>CLIENT_ID</key>
+	<string>642681318907-l7gg80ekfh0ouiva387sb4jf1jb4eqom.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.642681318907-l7gg80ekfh0ouiva387sb4jf1jb4eqom</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBS3LfTqhacVMU5bLZQvkK9XFDu0gHajoU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>642681318907</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>leko.team.fmt</string>
 	<key>PROJECT_ID</key>
-	<string>tablica-umnojeniya</string>
+	<string>firebase-funnymultitable</string>
+	<key>STORAGE_BUCKET</key>
+	<string>firebase-funnymultitable.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<false/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<false/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:636837804151:ios:1f5ed7d52d439a1a</string>
+	<string>1:642681318907:ios:1f5ed7d52d439a1a</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-funnymultitable.firebaseio.com</string>
 </dict>
 </plist>

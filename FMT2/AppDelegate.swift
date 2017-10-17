@@ -2,6 +2,7 @@ import UIKit
 import RealmSwift
 import UserNotifications
 import MyTrackerSDK
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         registerGoogleAnalytics()
         registerMyTracker()
+        registerFirebase()
         
         UserDefaults.standard.set(Date(), forKey: UserDefaultsKey.timeMark.rawValue)
         SoundHelper.prepareButtonSounds()
@@ -170,13 +172,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         gai.trackUncaughtExceptions = true
-        gai.defaultTracker = gai.tracker(withTrackingId: "UA-103178212-1")
-        gai.logger.logLevel = .verbose
+        gai.defaultTracker = gai.tracker(withTrackingId: "UA-108274588-1")
+//        gai.logger.logLevel = .verbose
     }
     
     func registerMyTracker() {
         MRMyTracker.createTracker("57895877048205058238")
         MRMyTracker.setupTracker()
+    }
+    
+    func registerFirebase() {
+        FIRApp.configure()
     }
     
     func cancelAllNotifications() {

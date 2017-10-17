@@ -24,11 +24,11 @@ class StagePassing: Object {
             try! realm.write {
                 if index < stage.numberOfExercises {
                     let exercisePassing = exercises[index]
-                    exercises.remove(objectAtIndex: index)
+                    exercises.remove(at: index)
                     exercises.insert(exercisePassing, at: stage.numberOfExercises - 1)
                 } else {
                     let exercisePassing = exercises[index]
-                    exercises.remove(objectAtIndex: index)
+                    exercises.remove(at: index)
                     exercises.insert(exercisePassing, at: exercises.count)
                 }
             }
