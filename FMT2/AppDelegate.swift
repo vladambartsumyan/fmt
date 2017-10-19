@@ -173,11 +173,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         gai.trackUncaughtExceptions = true
         gai.defaultTracker = gai.tracker(withTrackingId: "UA-108274588-1")
-//        gai.logger.logLevel = .verbose
+        gai.logger.logLevel = .verbose
     }
     
     func registerMyTracker() {
-        MRMyTracker.createTracker("57895877048205058238")
+        MRMyTracker.createTracker("22132836834420588905")
         MRMyTracker.setupTracker()
     }
     
