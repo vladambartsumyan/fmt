@@ -377,7 +377,7 @@ class StageMapVC: FadeInOutVC {
         
         self.view.isUserInteractionEnabled = false
         let stage = globalStages[index]
-        if curGlobalStagePassing != nil && stage == curGlobalStagePassing {
+        if curGlobalStagePassing != nil && stage._type == curGlobalStagePassing!._type {
             if curGlobalStagePassing!.index == -1 {
                 curGlobalStagePassing!.setZeroIndex()
                 GAManager.track(action: .levelStart(level: curGlobalStagePassing!.type), with: .game)
